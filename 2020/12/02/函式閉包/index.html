@@ -20,16 +20,20 @@
     var CONFIG = {"hostname":"github.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="默刻">
-<meta property="og:url" content="https://github.com/LeeU-1230/leeu-1230.github.io.git/archives/index.html">
+  <meta name="description" content="保存了內部函式的執行環境，可以持續存取。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript - 函式閉包">
+<meta property="og:url" content="https://github.com/LeeU-1230/leeu-1230.github.io.git/2020/12/02/%E5%87%BD%E5%BC%8F%E9%96%89%E5%8C%85/index.html">
 <meta property="og:site_name" content="默刻">
+<meta property="og:description" content="保存了內部函式的執行環境，可以持續存取。">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2020-12-02T13:20:45.000Z">
+<meta property="article:modified_time" content="2020-12-02T13:23:48.639Z">
 <meta property="article:author" content="LeeU">
-<meta property="article:tag" content="JavaScript,HTML,CSS,部落格,網頁,程式,文學,閱讀,小說,散文,詩集,電影,戲劇,紀錄">
+<meta property="article:tag" content="Javascript">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://github.com/LeeU-1230/leeu-1230.github.io.git/archives/">
+<link rel="canonical" href="https://github.com/LeeU-1230/leeu-1230.github.io.git/2020/12/02/%E5%87%BD%E5%BC%8F%E9%96%89%E5%8C%85/">
 
 
 <script id="page-configurations">
@@ -37,12 +41,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-TW'
   };
 </script>
 
-  <title>歸檔 | 默刻</title>
+  <title>Javascript - 函式閉包 | 默刻</title>
   
 
 
@@ -174,156 +178,112 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://github.com/LeeU-1230/leeu-1230.github.io.git/2020/12/02/%E5%87%BD%E5%BC%8F%E9%96%89%E5%8C%85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="LeeU">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="默刻">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Javascript - 函式閉包
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2020-12-02 21:20:45 / 修改時間：21:23:48" itemprop="dateCreated datePublished" datetime="2020-12-02T21:20:45+08:00">2020-12-02</time>
+            </span>
+
+          
   
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共有 6 篇文章。 繼續努力。</span>
-      </div>
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/12/02/%E5%87%BD%E5%BC%8F%E9%96%89%E5%8C%85/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/12/02/函式閉包/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <div class="post-description">保存了內部函式的執行環境，可以持續存取。</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+        <h3 id="函式閉包"><a href="#函式閉包" class="headerlink" title="函式閉包"></a>函式閉包</h3><p>保存了內部函式的執行環境，可以持續存取。<br>將變數指向外層函式，每一個變數都是獨立環境，可以反覆呼叫，重複持續存取內部函式環境。</p>
+<h3 id="建立"><a href="#建立" class="headerlink" title="建立"></a>建立</h3><p>在一個function函式中，return 另一個內部function函式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function wallet() &#123;</span><br><span class="line">    let money &#x3D; 1000;</span><br><span class="line">    return function (cash) &#123;</span><br><span class="line">        money &#x3D; cash + money;</span><br><span class="line">        return money;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let personA &#x3D; wallet();</span><br><span class="line">console.log(personA(100));   &#x2F;&#x2F; 1100</span><br><span class="line">console.log(personA(100));   &#x2F;&#x2F; 1200</span><br><span class="line">console.log(personA(300));   &#x2F;&#x2F; 1500</span><br><span class="line"></span><br><span class="line">let personB &#x3D; wallet();</span><br><span class="line">console.log(personB(200));   &#x2F;&#x2F; 1200</span><br><span class="line">console.log(personB(500));   &#x2F;&#x2F; 1700</span><br><span class="line">console.log(personB(-800));   &#x2F;&#x2F; 900</span><br></pre></td></tr></table></figure>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-12-02T21:29:08+08:00"
-              content="2020-12-02">
-          12-02
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Javascript/" rel="tag"># Javascript</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/12/02/Promise/" itemprop="url">
-            <span itemprop="name">Javascript - Promise</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-12-02T21:20:45+08:00"
-              content="2020-12-02">
-          12-02
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/12/02/%E5%87%BD%E5%BC%8F%E9%96%89%E5%8C%85/" itemprop="url">
-            <span itemprop="name">Javascript - 函式閉包</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-12-01T20:40:25+08:00"
-              content="2020-12-01">
-          12-01
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/12/01/AJAX/" itemprop="url">
-            <span itemprop="name">Javascript - AJAX</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-12-01T20:13:57+08:00"
-              content="2020-12-01">
-          12-01
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/12/01/Fetch/" itemprop="url">
-            <span itemprop="name">Javascript - Fetch</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-11-25T22:05:24+08:00"
-              content="2020-11-25">
-          11-25
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/11/25/google%20Drive%E5%BB%BA%E7%AB%8B%E5%9C%96%E5%BA%8A/" itemprop="url">
-            <span itemprop="name">google Drive建立圖床</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-11-25T10:15:02+08:00"
-              content="2020-11-25">
-          11-25
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/11/25/markdown%20%E5%9F%BA%E6%9C%AC%E6%A8%99%E7%B1%A4%E4%BD%BF%E7%94%A8/" itemprop="url">
-            <span itemprop="name">markdown 基本標籤使用</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
+        
 
 
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/12/01/AJAX/" rel="prev" title="Javascript - AJAX">
+      <i class="fa fa-chevron-left"></i> Javascript - AJAX
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/12/02/Promise/" rel="next" title="Javascript - Promise">
+      Javascript - Promise <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
-  </div>
+      </footer>
+    
+  </article>
   
   
-  
-
   
 
 
 
           </div>
           
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -370,6 +330,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E5%BC%8F%E9%96%89%E5%8C%85"><span class="nav-number">1.</span> <span class="nav-text">函式閉包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B"><span class="nav-number">2.</span> <span class="nav-text">建立</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -489,6 +450,26 @@
   }
   // defer loading until the whole page loading is completed
   window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://github.com/LeeU-1230/leeu-1230.github.io.git/2020/12/02/%E5%87%BD%E5%BC%8F%E9%96%89%E5%8C%85/";
+    this.page.identifier = "2020/12/02/函式閉包/";
+    this.page.title = "Javascript - 函式閉包";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://LeeU.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
 </script>
 
 </body>
