@@ -1,41 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Javascript - Fetch</title>
-    <url>/2020/12/01/Fetch/</url>
-    <content><![CDATA[<h3 id="Fetch"><a href="#Fetch" class="headerlink" title="Fetch"></a>Fetch</h3><p>基於 Promise 語法結構，用來執行請求、獲取 Response (回應)物件。</p>
-<p><strong>注意</strong><br>Fetch在只要伺服器有回應的情況，都會回傳fulfilled(已實現)的Promise物件狀態，其中也包含錯誤碼(404…)的情況。<br>因此要以 response 的 status 的屬性值來判斷。可以使用 throw拋出例外，在 catch 區塊中引用。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fetch(url).then((response) &#x3D;&gt; &#123;</span><br><span class="line">    if (response.status !&#x3D;&#x3D; 200) throw new Error(response.status)</span><br><span class="line">&#125;).catch((error) &#x3D;&gt; &#123;</span><br><span class="line">     ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="Request-屬性"><a href="#Request-屬性" class="headerlink" title="Request 屬性"></a>Request 屬性</h3><ul>
-<li><strong>url</strong> : 第一個參數，必填項目。</li>
-<li><strong>method</strong> : GET(預設)、POST、PUT、DELETE、HEAD。</li>
-<li><strong>headers</strong> : 要求相關的 Headers 物件 ( 預設 {} )。</li>
-</ul>
-<h3 id="Response-屬性"><a href="#Response-屬性" class="headerlink" title="Response 屬性"></a>Response 屬性</h3><ul>
-<li><strong>response.ok</strong> : 成功 ( 狀態碼 200-299 ) 為 true，失敗為 false。</li>
-<li><strong>response.status</strong> : 狀態代碼。</li>
-<li><strong>response.statusText</strong> : 狀態文字。</li>
-<li><strong>response.headers</strong> : 相關的 Headers 物件。</li>
-<li><strong>response.type</strong> : 此 response 的類型(例如： basic, cors)。</li>
-<li><strong>response.url</strong> : response 的 url。</li>
-</ul>
-<h3 id="Response-方法"><a href="#Response-方法" class="headerlink" title="Response 方法"></a>Response 方法</h3><p>依照不同的資料類型使用對應的方法，才能真正取到資料物件。</p>
-<ul>
-<li><strong>json()</strong></li>
-<li><strong>text()</strong></li>
-<li><strong>blob()</strong></li>
-<li><strong>formData()</strong></li>
-<li><strong>arrayBuffer()</strong></li>
-</ul>
-<h3 id="GET用法"><a href="#GET用法" class="headerlink" title="GET用法"></a>GET用法</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fetch(&#39;https:&#x2F;&#x2F;randomuser.me&#x2F;api&#x2F;&#39;, &#123; method: &#39;GET&#39; &#125;)</span><br><span class="line">    .then((response) &#x3D;&gt; &#123;</span><br><span class="line">        if (response.status !&#x3D;&#x3D; 200) throw new Error(response.status)</span><br><span class="line">        console.log(response);</span><br><span class="line">        return response.json();</span><br><span class="line">    &#125;)</span><br><span class="line">    .then((jsonData) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(jsonData)</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch((error) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(&#39;錯誤&#39;, error);</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="POST用法"><a href="#POST用法" class="headerlink" title="POST用法"></a>POST用法</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fetch(url, &#123;method: &#39;POST&#39;,</span><br><span class="line">    &#x2F;&#x2F; headers 加入json格式</span><br><span class="line">    headers: &#123;</span><br><span class="line">        &#39;Content-Type&#39;: &#39;application&#x2F;json&#39;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#x2F;&#x2F; body 將字串轉為json格式送出</span><br><span class="line">    body: JSON.stringify(&#123;</span><br><span class="line">        email: &#39;lovef1232e@hexschool.com&#39;,</span><br><span class="line">        password: &#39;12345678&#39;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;).then((response) &#x3D;&gt; &#123;</span><br><span class="line">    return response.json();</span><br><span class="line">&#125;).then((jsonData) &#x3D;&gt; &#123;</span><br><span class="line">    console.log(jsonData);</span><br><span class="line">&#125;).catch((err) &#x3D;&gt; &#123;</span><br><span class="line">    console.log(&#39;錯誤:&#39;, err);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>Javascript</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Javascript - AJAX</title>
     <url>/2020/12/01/AJAX/</url>
     <content><![CDATA[<h3 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h3><p>利用 JavaScript 的 XMLHttpRequest 物件與遠端server 進行非同步的資料交換。<br>特性是無須重載整個頁面，便能對遠端server 發送請求。<br><br></p>
@@ -77,9 +42,9 @@
 
 <h3 id="POST請求範例"><a href="#POST請求範例" class="headerlink" title="POST請求範例"></a>POST請求範例</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"> var xhr &#x3D; new XMLHttpRequest();</span><br><span class="line"></span><br><span class="line"> xhr.open(&#39;post&#39;, url);</span><br><span class="line"></span><br><span class="line"> xhr.setRequestHeader(&#39;Content-Type&#39;, &#39;application&#x2F;x-www-form-urlencoded&#39;);</span><br><span class="line"></span><br><span class="line"> xhr.send(&#39;email &#x3D; abcde123@gmail.com &amp; password &#x3D; 1234&#39;);</span><br><span class="line"></span><br><span class="line"> xhr.onreadystatechange &#x3D; function () &#123;</span><br><span class="line">    if (httpRequest.readyState &#x3D;&#x3D;&#x3D; 4) &#123;</span><br><span class="line">        if (httpRequest.status &#x3D;&#x3D; 200) &#123;</span><br><span class="line">            console.log(xhr.responseText)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
-      <tags>
-        <tag>Javascript</tag>
-      </tags>
+      <categories>
+        <category>Javascript</category>
+      </categories>
   </entry>
   <entry>
     <title>Javascript - Promise</title>
@@ -116,9 +81,9 @@
 
 <h3 id="Promise-race"><a href="#Promise-race" class="headerlink" title="Promise.race"></a>Promise.race</h3><p>Promise.race() 一樣透過陣列形式傳入多個promise物件，不同的是取回第一個改變狀態promise物件的值。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Promise.race([promiseFn(15),promiseFn(5),promiseFn(35)]).then(</span><br><span class="line">    (res) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(res);</span><br><span class="line">        return res</span><br><span class="line">    &#125;,</span><br><span class="line">    (rej) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(rej);   &#x2F;&#x2F; 成功投幣 15 元</span><br><span class="line">        return rej</span><br><span class="line">    &#125;</span><br><span class="line">).then(</span><br><span class="line">    (res) &#x3D;&gt; &#123;</span><br><span class="line">        text.textContent &#x3D; res;</span><br><span class="line">    &#125;,</span><br><span class="line">    (rej) &#x3D;&gt; &#123;</span><br><span class="line">        text.textContent &#x3D; rej;   &#x2F;&#x2F; 成功投幣 15 元</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>Javascript</tag>
-      </tags>
+      <categories>
+        <category>Javascript</category>
+      </categories>
   </entry>
   <entry>
     <title>google Drive建立圖床</title>
@@ -130,6 +95,44 @@
 <h5 id="3-複製網址列中的圖片id字串"><a href="#3-複製網址列中的圖片id字串" class="headerlink" title="3.複製網址列中的圖片id字串"></a>3.複製網址列中的圖片id字串</h5><h5 id="https-drive-google-com-file-d-id字串-view"><a href="#https-drive-google-com-file-d-id字串-view" class="headerlink" title="https://drive.google.com/file/d/id字串/view"></a><code>https://drive.google.com/file/d/id字串/view</code></h5><br>
 
 <h5 id="4-以https-drive-google-com-uc-export-view-amp-id-加上id字串就是連結顯示的網址。"><a href="#4-以https-drive-google-com-uc-export-view-amp-id-加上id字串就是連結顯示的網址。" class="headerlink" title="4.以https://drive.google.com/uc?export=view&amp;id=加上id字串就是連結顯示的網址。"></a>4.以<code>https://drive.google.com/uc?export=view&amp;id=加上id字串就是連結顯示的網址</code>。</h5><h5 id="例-https-drive-google-com-uc-export-view-amp-id-id字串"><a href="#例-https-drive-google-com-uc-export-view-amp-id-id字串" class="headerlink" title="例: https://drive.google.com/uc?export=view&amp;id=id字串"></a>例: <code>https://drive.google.com/uc?export=view&amp;id=id字串</code></h5>]]></content>
+      <categories>
+        <category>google</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Javascript - Fetch</title>
+    <url>/2020/12/01/Fetch/</url>
+    <content><![CDATA[<h3 id="Fetch"><a href="#Fetch" class="headerlink" title="Fetch"></a>Fetch</h3><p>基於 Promise 語法結構，用來執行請求、獲取 Response (回應)物件。</p>
+<p><strong>注意</strong><br>Fetch在只要伺服器有回應的情況，都會回傳fulfilled(已實現)的Promise物件狀態，其中也包含錯誤碼(404…)的情況。<br>因此要以 response 的 status 的屬性值來判斷。可以使用 throw拋出例外，在 catch 區塊中引用。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fetch(url).then((response) &#x3D;&gt; &#123;</span><br><span class="line">    if (response.status !&#x3D;&#x3D; 200) throw new Error(response.status)</span><br><span class="line">&#125;).catch((error) &#x3D;&gt; &#123;</span><br><span class="line">     ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Request-屬性"><a href="#Request-屬性" class="headerlink" title="Request 屬性"></a>Request 屬性</h3><ul>
+<li><strong>url</strong> : 第一個參數，必填項目。</li>
+<li><strong>method</strong> : GET(預設)、POST、PUT、DELETE、HEAD。</li>
+<li><strong>headers</strong> : 要求相關的 Headers 物件 ( 預設 {} )。</li>
+</ul>
+<h3 id="Response-屬性"><a href="#Response-屬性" class="headerlink" title="Response 屬性"></a>Response 屬性</h3><ul>
+<li><strong>response.ok</strong> : 成功 ( 狀態碼 200-299 ) 為 true，失敗為 false。</li>
+<li><strong>response.status</strong> : 狀態代碼。</li>
+<li><strong>response.statusText</strong> : 狀態文字。</li>
+<li><strong>response.headers</strong> : 相關的 Headers 物件。</li>
+<li><strong>response.type</strong> : 此 response 的類型(例如： basic, cors)。</li>
+<li><strong>response.url</strong> : response 的 url。</li>
+</ul>
+<h3 id="Response-方法"><a href="#Response-方法" class="headerlink" title="Response 方法"></a>Response 方法</h3><p>依照不同的資料類型使用對應的方法，才能真正取到資料物件。</p>
+<ul>
+<li><strong>json()</strong></li>
+<li><strong>text()</strong></li>
+<li><strong>blob()</strong></li>
+<li><strong>formData()</strong></li>
+<li><strong>arrayBuffer()</strong></li>
+</ul>
+<h3 id="GET用法"><a href="#GET用法" class="headerlink" title="GET用法"></a>GET用法</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fetch(&#39;https:&#x2F;&#x2F;randomuser.me&#x2F;api&#x2F;&#39;, &#123; method: &#39;GET&#39; &#125;)</span><br><span class="line">    .then((response) &#x3D;&gt; &#123;</span><br><span class="line">        if (response.status !&#x3D;&#x3D; 200) throw new Error(response.status)</span><br><span class="line">        console.log(response);</span><br><span class="line">        return response.json();</span><br><span class="line">    &#125;)</span><br><span class="line">    .then((jsonData) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(jsonData)</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch((error) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(&#39;錯誤&#39;, error);</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="POST用法"><a href="#POST用法" class="headerlink" title="POST用法"></a>POST用法</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fetch(url, &#123;method: &#39;POST&#39;,</span><br><span class="line">    &#x2F;&#x2F; headers 加入json格式</span><br><span class="line">    headers: &#123;</span><br><span class="line">        &#39;Content-Type&#39;: &#39;application&#x2F;json&#39;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#x2F;&#x2F; body 將字串轉為json格式送出</span><br><span class="line">    body: JSON.stringify(&#123;</span><br><span class="line">        email: &#39;lovef1232e@hexschool.com&#39;,</span><br><span class="line">        password: &#39;12345678&#39;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;).then((response) &#x3D;&gt; &#123;</span><br><span class="line">    return response.json();</span><br><span class="line">&#125;).then((jsonData) &#x3D;&gt; &#123;</span><br><span class="line">    console.log(jsonData);</span><br><span class="line">&#125;).catch((err) &#x3D;&gt; &#123;</span><br><span class="line">    console.log(&#39;錯誤:&#39;, err);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Javascript</category>
+      </categories>
   </entry>
   <entry>
     <title>markdown 基本標籤使用</title>
@@ -158,9 +161,9 @@
 <h3 id="程式碼片段"><a href="#程式碼片段" class="headerlink" title="程式碼片段"></a>程式碼片段</h3><p>使用反引號`前後包覆。</p>
 <h3 id="程式碼區塊"><a href="#程式碼區塊" class="headerlink" title="程式碼區塊"></a>程式碼區塊</h3><p>使用三個反引號```前後包覆。</p>
 ]]></content>
-      <tags>
-        <tag>markdown</tag>
-      </tags>
+      <categories>
+        <category>markdown</category>
+      </categories>
   </entry>
   <entry>
     <title>Javascript - 函式閉包</title>
@@ -168,8 +171,8 @@
     <content><![CDATA[<h3 id="函式閉包"><a href="#函式閉包" class="headerlink" title="函式閉包"></a>函式閉包</h3><p>保存了內部函式的執行環境，可以持續存取。<br>將變數指向外層函式，每一個變數都是獨立環境，可以反覆呼叫，重複持續存取內部函式環境。</p>
 <h3 id="建立"><a href="#建立" class="headerlink" title="建立"></a>建立</h3><p>在一個function函式中，return 另一個內部function函式。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function wallet() &#123;</span><br><span class="line">    let money &#x3D; 1000;</span><br><span class="line">    return function (cash) &#123;</span><br><span class="line">        money &#x3D; cash + money;</span><br><span class="line">        return money;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let personA &#x3D; wallet();</span><br><span class="line">console.log(personA(100));   &#x2F;&#x2F; 1100</span><br><span class="line">console.log(personA(100));   &#x2F;&#x2F; 1200</span><br><span class="line">console.log(personA(300));   &#x2F;&#x2F; 1500</span><br><span class="line"></span><br><span class="line">let personB &#x3D; wallet();</span><br><span class="line">console.log(personB(200));   &#x2F;&#x2F; 1200</span><br><span class="line">console.log(personB(500));   &#x2F;&#x2F; 1700</span><br><span class="line">console.log(personB(-800));   &#x2F;&#x2F; 900</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>Javascript</tag>
-      </tags>
+      <categories>
+        <category>Javascript</category>
+      </categories>
   </entry>
 </search>
