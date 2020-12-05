@@ -169,7 +169,7 @@
       </categories>
   </entry>
   <entry>
-    <title></title>
+    <title>CSS - Flex</title>
     <url>/2020/12/04/Flex%E7%B4%80%E9%8C%84/</url>
     <content><![CDATA[<h3 id="Flexbox"><a href="#Flexbox" class="headerlink" title="Flexbox"></a>Flexbox</h3><p>CSS 常見的排版方式之一，Flex 中分為外部容器與內部元件，外部容器設定 display: flex</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    .box &#123;</span><br><span class="line">        display: flex;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    .inbox &#123;</span><br><span class="line">        width: 100px;</span><br><span class="line">        height: 100px;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    .inbox-big &#123;</span><br><span class="line">        width: 100px;</span><br><span class="line">        height: 100px;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class&#x3D;&quot;box&quot;&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;inbox&quot;&gt;1&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;inbox-big&quot;&gt;2&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;inbox&quot;&gt;3&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;inbox-big&quot;&gt;4&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;inbox&quot;&gt;5&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
