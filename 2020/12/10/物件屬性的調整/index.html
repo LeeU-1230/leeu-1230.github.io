@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"github.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="保存了內部函式的執行環境，可以持續存取。">
+  <meta name="description" content="Object.defineProperty(obj, prop, descriptor)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Javascript - 函式閉包">
-<meta property="og:url" content="https://github.com/LeeU-1230/leeu-1230.github.io.git/2020/12/02/%E5%87%BD%E5%BC%8F%E9%96%89%E5%8C%85/index.html">
+<meta property="og:title" content="JavaScript – 物件屬性的調整">
+<meta property="og:url" content="https://github.com/LeeU-1230/leeu-1230.github.io.git/2020/12/10/%E7%89%A9%E4%BB%B6%E5%B1%AC%E6%80%A7%E7%9A%84%E8%AA%BF%E6%95%B4/index.html">
 <meta property="og:site_name" content="默刻">
-<meta property="og:description" content="保存了內部函式的執行環境，可以持續存取。">
+<meta property="og:description" content="Object.defineProperty(obj, prop, descriptor)">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2020-12-02T13:20:45.000Z">
-<meta property="article:modified_time" content="2020-12-10T12:30:00.585Z">
+<meta property="article:published_time" content="2020-12-10T12:22:09.000Z">
+<meta property="article:modified_time" content="2020-12-10T12:32:48.800Z">
 <meta property="article:author" content="LeeU">
 <meta property="article:tag" content="JavaScript,HTML,CSS,部落格,網頁,程式,文學,閱讀,小說,散文,詩集,電影,戲劇,紀錄">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://github.com/LeeU-1230/leeu-1230.github.io.git/2020/12/02/%E5%87%BD%E5%BC%8F%E9%96%89%E5%8C%85/">
+<link rel="canonical" href="https://github.com/LeeU-1230/leeu-1230.github.io.git/2020/12/10/%E7%89%A9%E4%BB%B6%E5%B1%AC%E6%80%A7%E7%9A%84%E8%AA%BF%E6%95%B4/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>Javascript - 函式閉包 | 默刻</title>
+  <title>JavaScript – 物件屬性的調整 | 默刻</title>
   
 
 
@@ -190,7 +190,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://github.com/LeeU-1230/leeu-1230.github.io.git/2020/12/02/%E5%87%BD%E5%BC%8F%E9%96%89%E5%8C%85/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/LeeU-1230/leeu-1230.github.io.git/2020/12/10/%E7%89%A9%E4%BB%B6%E5%B1%AC%E6%80%A7%E7%9A%84%E8%AA%BF%E6%95%B4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -203,7 +203,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Javascript - 函式閉包
+          JavaScript – 物件屬性的調整
         </h1>
 
         <div class="post-meta">
@@ -212,16 +212,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
+              
 
-              <time title="創建時間：2020-12-02 21:20:45" itemprop="dateCreated datePublished" datetime="2020-12-02T21:20:45+08:00">2020-12-02</time>
+              <time title="創建時間：2020-12-10 20:22:09 / 修改時間：20:32:48" itemprop="dateCreated datePublished" datetime="2020-12-10T20:22:09+08:00">2020-12-10</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-12-10 20:30:00" itemprop="dateModified" datetime="2020-12-10T20:30:00+08:00">2020-12-10</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -232,7 +226,7 @@
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Javascript/Function/" itemprop="url" rel="index"><span itemprop="name">Function</span></a>
+                  <a href="/categories/Javascript/Object/" itemprop="url" rel="index"><span itemprop="name">Object</span></a>
                 </span>
             </span>
 
@@ -245,13 +239,13 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2020/12/02/%E5%87%BD%E5%BC%8F%E9%96%89%E5%8C%85/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/12/02/函式閉包/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2020/12/10/%E7%89%A9%E4%BB%B6%E5%B1%AC%E6%80%A7%E7%9A%84%E8%AA%BF%E6%95%B4/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/12/10/物件屬性的調整/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-            <div class="post-description">保存了內部函式的執行環境，可以持續存取。</div>
+            <div class="post-description">Object.defineProperty(obj, prop, descriptor)</div>
 
         </div>
       </header>
@@ -262,9 +256,23 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="函式閉包"><a href="#函式閉包" class="headerlink" title="函式閉包"></a>函式閉包</h3><p>保存了內部函式的執行環境，可以持續存取。<br>將變數指向外層函式，每一個變數都是獨立環境，可以反覆呼叫，重複持續存取內部函式環境。</p>
-<h3 id="建立"><a href="#建立" class="headerlink" title="建立"></a>建立</h3><p>在一個function函式中，return 另一個內部function函式。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function wallet() &#123;</span><br><span class="line">    let money &#x3D; 1000;</span><br><span class="line">    return function (cash) &#123;</span><br><span class="line">        money &#x3D; cash + money;</span><br><span class="line">        return money;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let personA &#x3D; wallet();</span><br><span class="line">console.log(personA(100));   &#x2F;&#x2F; 1100</span><br><span class="line">console.log(personA(100));   &#x2F;&#x2F; 1200</span><br><span class="line">console.log(personA(300));   &#x2F;&#x2F; 1500</span><br><span class="line"></span><br><span class="line">let personB &#x3D; wallet();</span><br><span class="line">console.log(personB(200));   &#x2F;&#x2F; 1200</span><br><span class="line">console.log(personB(500));   &#x2F;&#x2F; 1700</span><br><span class="line">console.log(personB(-800));   &#x2F;&#x2F; 900</span><br></pre></td></tr></table></figure>
+        <h3 id="Object-defineProperty-obj-prop-descriptor"><a href="#Object-defineProperty-obj-prop-descriptor" class="headerlink" title="Object.defineProperty(obj, prop, descriptor)"></a>Object.defineProperty(obj, prop, descriptor)</h3><p>調整物件屬性的特徵。</p>
+<p>obj: 要定義屬性的目標物件。</p>
+<p>prop: 要定義或修改的屬性的名稱。</p>
+<p>descriptor: 參數，有value、writable、configurable、enumerable。</p>
+<h3 id="value"><a href="#value" class="headerlink" title="value"></a>value</h3><p>修改屬性的值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var list &#x3D; &#123;a: 1,b: 2,c: 3&#125;;</span><br><span class="line"></span><br><span class="line">Object.defineProperty(list,&#39;a&#39;, &#123;value :5&#125;);</span><br><span class="line"></span><br><span class="line">console.log(list);   &#x2F;&#x2F; &#123;a: 5, b: 2, c: 3&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="writable"><a href="#writable" class="headerlink" title="writable"></a>writable</h3><p>屬性可否重新賦值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var list &#x3D; &#123;a: 1,b: 2,c: 3&#125;;</span><br><span class="line"></span><br><span class="line">list.a &#x3D; 7 ;</span><br><span class="line">console.log(list);   &#x2F;&#x2F; &#123;a: 7, b: 2, c: 3,&#125;</span><br><span class="line"></span><br><span class="line">Object.defineProperty(list, &#39;a&#39;, &#123;writable: false&#125;);</span><br><span class="line">list.a &#x3D; 5 </span><br><span class="line">console.log(list);   &#x2F;&#x2F; &#123;a: 7, b: 2, c: 3,&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="configurable"><a href="#configurable" class="headerlink" title="configurable"></a>configurable</h3><p>屬性可否刪除。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var list &#x3D; &#123;a: 1,b: 2,c: 3&#125;;</span><br><span class="line"></span><br><span class="line">Object.defineProperty(list, &#39;a&#39;, &#123;configurable: false&#125;);</span><br><span class="line">delete list.a;</span><br><span class="line">console.log(list);  &#x2F;&#x2F; &#123;a: 1,b: 2,c: 3&#125;</span><br><span class="line"></span><br><span class="line">delete list.b;</span><br><span class="line">console.log(list);   &#x2F;&#x2F; &#123;a: 1,c: 3&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="enumerable"><a href="#enumerable" class="headerlink" title="enumerable"></a>enumerable</h3><p>屬性可否被列舉(遍歷顯示)。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var list &#x3D; &#123;a: 1,b: 2,c: 3&#125;;</span><br><span class="line"></span><br><span class="line">for (key in list)&#123;</span><br><span class="line">    console.log(key);   &#x2F;&#x2F; a, b, c</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Object.defineProperty(list, &#39;a&#39;, &#123;enumerable: false&#125;);</span><br><span class="line"></span><br><span class="line">for (key in list)&#123;</span><br><span class="line">    console.log(key);   &#x2F;&#x2F; b, c</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
     </div>
 
     
@@ -279,12 +287,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/12/01/AJAX/" rel="prev" title="Javascript - AJAX">
-      <i class="fa fa-chevron-left"></i> Javascript - AJAX
+    <a href="/2020/12/07/%E4%BD%BF%E7%94%A8CSS%E9%99%90%E5%88%B6%E5%85%A7%E5%AE%B9/" rel="prev" title="使用CSS限制內容">
+      <i class="fa fa-chevron-left"></i> 使用CSS限制內容
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/12/02/Promise/" rel="next" title="Javascript - Promise">
-      Javascript - Promise <i class="fa fa-chevron-right"></i>
+    <a href="/2020/12/10/call-apply-bind%E6%96%B9%E6%B3%95/" rel="next" title="JavaScript – call,apply,bind">
+      JavaScript – call,apply,bind <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -351,7 +359,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E5%BC%8F%E9%96%89%E5%8C%85"><span class="nav-number">1.</span> <span class="nav-text">函式閉包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B"><span class="nav-number">2.</span> <span class="nav-text">建立</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-defineProperty-obj-prop-descriptor"><span class="nav-number">1.</span> <span class="nav-text">Object.defineProperty(obj, prop, descriptor)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#value"><span class="nav-number">2.</span> <span class="nav-text">value</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#writable"><span class="nav-number">3.</span> <span class="nav-text">writable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#configurable"><span class="nav-number">4.</span> <span class="nav-text">configurable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#enumerable"><span class="nav-number">5.</span> <span class="nav-text">enumerable</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -480,9 +488,9 @@
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "https://github.com/LeeU-1230/leeu-1230.github.io.git/2020/12/02/%E5%87%BD%E5%BC%8F%E9%96%89%E5%8C%85/";
-    this.page.identifier = "2020/12/02/函式閉包/";
-    this.page.title = "Javascript - 函式閉包";
+    this.page.url = "https://github.com/LeeU-1230/leeu-1230.github.io.git/2020/12/10/%E7%89%A9%E4%BB%B6%E5%B1%AC%E6%80%A7%E7%9A%84%E8%AA%BF%E6%95%B4/";
+    this.page.identifier = "2020/12/10/物件屬性的調整/";
+    this.page.title = "JavaScript – 物件屬性的調整";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
