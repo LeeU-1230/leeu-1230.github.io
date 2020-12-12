@@ -84,6 +84,23 @@
       </categories>
   </entry>
   <entry>
+    <title>JavaScript – Object 資料複製</title>
+    <url>/2020/12/12/Object%E8%B3%87%E6%96%99%E8%A4%87%E8%A3%BD/</url>
+    <content><![CDATA[<h3 id="淺層複製方法-Object-assign"><a href="#淺層複製方法-Object-assign" class="headerlink" title="淺層複製方法: Object.assign"></a>淺層複製方法: Object.assign</h3><p>複製到第一層物件的屬性，若有第二層以上的資料會與舊物件一起共用同一塊記憶體。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var dog &#x3D; &#123;</span><br><span class="line">          name : &#39;舒跑&#39;,</span><br><span class="line">          like : &#123;</span><br><span class="line">              food : &#39;雞胸肉&#39;,</span><br><span class="line">              game : &#39;你丟我撿&#39;,</span><br><span class="line">              bed : &#39;主人的床&#39;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">var newDog &#x3D; Object.assign(&#123;&#125;, dog);</span><br><span class="line">newDog.name &#x3D; &#39;可爾必思&#39;;</span><br><span class="line">      </span><br><span class="line">console.log(dog.name);  &#x2F;&#x2F; 舒跑</span><br><span class="line">console.log(newDog.name);  &#x2F;&#x2F; 可爾必思</span><br><span class="line"></span><br><span class="line">newDog.like.bed &#x3D; &#39;地板&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.like.bed);  &#x2F;&#x2F; 地板</span><br><span class="line">console.log(newDog.like.bed);  &#x2F;&#x2F; 地板</span><br></pre></td></tr></table></figure>
+
+<h3 id="淺層複製方法-…其餘運算子"><a href="#淺層複製方法-…其餘運算子" class="headerlink" title="淺層複製方法: …其餘運算子"></a>淺層複製方法: …其餘運算子</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var dog &#x3D; &#123;</span><br><span class="line">    name : &#39;舒跑&#39;,</span><br><span class="line">    like : &#123;</span><br><span class="line">        food : &#39;雞胸肉&#39;,</span><br><span class="line">        game : &#39;你丟我撿&#39;,</span><br><span class="line">        bed : &#39;主人的床&#39;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var newDog &#x3D; &#123;...dog&#125;;</span><br><span class="line">newDog.name &#x3D; &#39;可爾必思&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.name);  &#x2F;&#x2F; 舒跑</span><br><span class="line">console.log(newDog.name);  &#x2F;&#x2F; 可爾必思</span><br><span class="line"></span><br><span class="line">newDog.like.bed &#x3D; &#39;地板&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.like.bed);  &#x2F;&#x2F; 地板</span><br><span class="line">console.log(newDog.like.bed);  &#x2F;&#x2F; 地板</span><br></pre></td></tr></table></figure>
+
+<h3 id="深層複製方法-JSON"><a href="#深層複製方法-JSON" class="headerlink" title="深層複製方法: JSON"></a>深層複製方法: JSON</h3><p>複製建立全新的物件。<br>JSON 方法限制:純資料的物件可行，有Function、Set、Map、undefined等型態會失效。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var dog &#x3D; &#123;</span><br><span class="line">    name : &#39;舒跑&#39;,</span><br><span class="line">    like : &#123;</span><br><span class="line">        food : &#39;雞胸肉&#39;,</span><br><span class="line">        game : &#39;你丟我撿&#39;,</span><br><span class="line">        bed : &#39;主人的床&#39;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var newDog &#x3D; JSON.parse(JSON.stringify(dog));</span><br><span class="line">newDog.name &#x3D; &#39;可爾必思&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.name);  &#x2F;&#x2F; 舒跑</span><br><span class="line">console.log(newDog.name);  &#x2F;&#x2F; 可爾必思</span><br><span class="line"></span><br><span class="line">newDog.like.bed &#x3D; &#39;地板&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.like.bed);  &#x2F;&#x2F; 主人的床</span><br><span class="line">console.log(newDog.like.bed);  &#x2F;&#x2F; 地板</span><br></pre></td></tr></table></figure>
+
+<h3 id="深層複製方法-extend"><a href="#深層複製方法-extend" class="headerlink" title="深層複製方法: $.extend"></a>深層複製方法: $.extend</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var newDog &#x3D; $.extend(true,&#123;&#125;,dog);</span><br><span class="line">newDog.name &#x3D; &#39;可爾必思&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.name);  &#x2F;&#x2F; 舒跑</span><br><span class="line">console.log(newDog.name);  &#x2F;&#x2F; 可爾必思</span><br><span class="line"></span><br><span class="line">newDog.like.bed &#x3D; &#39;地板&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.like.bed);  &#x2F;&#x2F; 主人的床</span><br><span class="line">console.log(newDog.like.bed);  &#x2F;&#x2F; 地板</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Javascript</category>
+        <category>Object</category>
+      </categories>
+  </entry>
+  <entry>
     <title>CSS - Flex</title>
     <url>/2020/12/04/Flex%E7%B4%80%E9%8C%84/</url>
     <content><![CDATA[<h3 id="Flexbox"><a href="#Flexbox" class="headerlink" title="Flexbox"></a>Flexbox</h3><p>CSS 常見的排版方式之一，Flex 中分為外部容器與內部元件，外部容器設定 display: flex</p>
@@ -191,6 +208,94 @@
       </categories>
   </entry>
   <entry>
+    <title>google Drive建立圖床</title>
+    <url>/2020/11/25/google%20Drive%E5%BB%BA%E7%AB%8B%E5%9C%96%E5%BA%8A/</url>
+    <content><![CDATA[<h2 id="步驟"><a href="#步驟" class="headerlink" title="步驟"></a>步驟</h2><h5 id="1-圖片需開啟共用連結的權限。"><a href="#1-圖片需開啟共用連結的權限。" class="headerlink" title="1.圖片需開啟共用連結的權限。"></a>1.圖片需開啟共用連結的權限。</h5><br>
+
+<h5 id="2-點圖呈現預覽畫面後，在右上方的更多動作中選擇在新視窗開啟。"><a href="#2-點圖呈現預覽畫面後，在右上方的更多動作中選擇在新視窗開啟。" class="headerlink" title="2.點圖呈現預覽畫面後，在右上方的更多動作中選擇在新視窗開啟。"></a>2.點圖呈現預覽畫面後，在右上方的更多動作中選擇在新視窗開啟。</h5><br>
+
+<h5 id="3-複製網址列中的圖片id字串"><a href="#3-複製網址列中的圖片id字串" class="headerlink" title="3.複製網址列中的圖片id字串"></a>3.複製網址列中的圖片id字串</h5><h5 id="https-drive-google-com-file-d-id字串-view"><a href="#https-drive-google-com-file-d-id字串-view" class="headerlink" title="https://drive.google.com/file/d/id字串/view"></a><code>https://drive.google.com/file/d/id字串/view</code></h5><br>
+
+<h5 id="4-以https-drive-google-com-uc-export-view-amp-id-加上id字串就是連結顯示的網址。"><a href="#4-以https-drive-google-com-uc-export-view-amp-id-加上id字串就是連結顯示的網址。" class="headerlink" title="4.以https://drive.google.com/uc?export=view&amp;id=加上id字串就是連結顯示的網址。"></a>4.以<code>https://drive.google.com/uc?export=view&amp;id=加上id字串就是連結顯示的網址</code>。</h5><h5 id="例-https-drive-google-com-uc-export-view-amp-id-id字串"><a href="#例-https-drive-google-com-uc-export-view-amp-id-id字串" class="headerlink" title="例: https://drive.google.com/uc?export=view&amp;id=id字串"></a>例: <code>https://drive.google.com/uc?export=view&amp;id=id字串</code></h5>]]></content>
+      <categories>
+        <category>google</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaScript – String(字串)</title>
+    <url>/2020/12/12/String-%E5%AD%97%E4%B8%B2/</url>
+    <content><![CDATA[<h3 id="String-x"><a href="#String-x" class="headerlink" title="String(x)"></a>String(x)</h3><p>將型別轉換成字串。</p>
+<br>
+
+<h3 id="charAt-index"><a href="#charAt-index" class="headerlink" title="charAt(index)"></a>charAt(index)</h3><p>取得字串中特定位置的字。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let sentence &#x3D; &#39;Dink some water &#x2F; tea &#x2F; milk.&#39;;</span><br><span class="line"></span><br><span class="line">sentence.charAt(3);   &#x2F;&#x2F; k</span><br></pre></td></tr></table></figure>
+<br>
+
+<h3 id="indexOf-str-value-index"><a href="#indexOf-str-value-index" class="headerlink" title="indexOf(str-value, index)"></a>indexOf(str-value, index)</h3><p>找出某個字串在字串中的出現位置。返回找到的位置，找不到則返回 -1 。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let sentence &#x3D; &#39;Dink some water &#x2F; tea &#x2F; milk.&#39;;</span><br><span class="line"></span><br><span class="line">sentence.indexOf(&#39;a&#39;);   &#x2F;&#x2F; 11</span><br><span class="line"></span><br><span class="line">sentence.indexOf(&#39;a&#39;, 12);   &#x2F;&#x2F; 20</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="lastIndexOf-str-value-index"><a href="#lastIndexOf-str-value-index" class="headerlink" title="lastIndexOf(str-value, index)"></a>lastIndexOf(str-value, index)</h3><p>找出某個字串在字串中最後出現的位置。相對於indexOf()</p>
+<br>
+
+<h3 id="match-str-value"><a href="#match-str-value" class="headerlink" title="match(str-value)"></a>match(str-value)</h3><p>找出字串中匹配的內容，返回一個陣列。可搭配正規表達式 (Regex)使用。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let sentence &#x3D; &#39;Dink some water &#x2F; tea &#x2F; milk.&#39;;</span><br><span class="line">let data &#x3D; &#39;water &#x2F; tea &#x2F; milk.&#39;</span><br><span class="line"></span><br><span class="line">console.log(sentence.match(data));    </span><br><span class="line">&#x2F;&#x2F; [&quot;water &#x2F; tea &#x2F; milk.&quot;, index: 10, input: &quot;Dink some water &#x2F; tea &#x2F; milk.&quot;, groups: undefined]</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="replace-old-str-new-str-function"><a href="#replace-old-str-new-str-function" class="headerlink" title="replace(old-str, new-str|function)"></a>replace(old-str, new-str|function)</h3><p>將字串中的字取代為另外的字。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let sentence &#x3D; &#39;Dink some water &#x2F; tea &#x2F; milk.&#39;;</span><br><span class="line"></span><br><span class="line">sentence.replace(&#39;water&#39;, &#39;coffee&#39;);   &#x2F;&#x2F; Dink some coffee &#x2F; tea &#x2F; milk.</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="search-str-value"><a href="#search-str-value" class="headerlink" title="search(str-value)"></a>search(str-value)</h3><p>找出某個字串在字串中的出現位置，找不到則返回 -1 。可以用正規表達式 (Regex)當參數。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let sentence &#x3D; &#39;Dink some water &#x2F; tea &#x2F; milk.&#39;;</span><br><span class="line"></span><br><span class="line">sentence.search(&#39;a&#39;);   &#x2F;&#x2F; 11</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="slice-begin-index-end-index"><a href="#slice-begin-index-end-index" class="headerlink" title="slice(begin-index, end-index)"></a>slice(begin-index, end-index)</h3><p>擷取兩個索引位置之間的字串，返回一個新字串。若begin-index大於字串長度，結果會返回空字串。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let sentence &#x3D; &#39;Dink some water &#x2F; tea &#x2F; milk.&#39;;</span><br><span class="line"></span><br><span class="line">sentence.slice(1, 7);   &#x2F;&#x2F; ink so</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="split-分隔符號-返回數量"><a href="#split-分隔符號-返回數量" class="headerlink" title="split.(分隔符號 [,返回數量])"></a>split.(分隔符號 [,返回數量])</h3><p>根據指定的分隔字符，切割字串，返回一個字串陣列。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let sentence &#x3D; &#39;Dink some water &#x2F; tea &#x2F; milk.&#39;;</span><br><span class="line"></span><br><span class="line">sentence.split(&#39; &#39;);   &#x2F;&#x2F; [&quot;Dink&quot;, &quot;some&quot;, &quot;water&quot;, &quot;&#x2F;&quot;, &quot;tea&quot;, &quot;&#x2F;&quot;, &quot;milk.&quot;]</span><br><span class="line"></span><br><span class="line">sentence.split(&#39;k&#39;);   &#x2F;&#x2F; [&quot;Din&quot;, &quot; some water &#x2F; tea &#x2F; mil&quot;, &quot;.&quot;]</span><br><span class="line"></span><br><span class="line">sentence.split(&#39; &#39;, 3);   &#x2F;&#x2F; [&quot;Dink&quot;, &quot;some&quot;, &quot;water&quot;]</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="substr-start-index-擷取長度"><a href="#substr-start-index-擷取長度" class="headerlink" title="substr.(start-index [,擷取長度])"></a>substr.(start-index [,擷取長度])</h3><p>切割擷取字串，返回一個新字串。擷取長度預設取到字串結尾。若start-index大於字串長度，結果會返回空字串。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let sentence &#x3D; &#39;Dink some water &#x2F; tea &#x2F; milk.&#39;;</span><br><span class="line"></span><br><span class="line">sentence.substr(3);   &#x2F;&#x2F; k some water &#x2F; tea &#x2F; milk.</span><br><span class="line"></span><br><span class="line">sentence.substr(6, 3);   &#x2F;&#x2F; ome</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="toLowerCase"><a href="#toLowerCase" class="headerlink" title="toLowerCase()"></a>toLowerCase()</h3><p>將字串中的英文字母都轉成小寫。</p>
+<br>
+
+<h3 id="toUpperCase"><a href="#toUpperCase" class="headerlink" title="toUpperCase()"></a>toUpperCase()</h3><p>將字串中的英文字母都轉成大寫。</p>
+]]></content>
+      <categories>
+        <category>Javascript</category>
+        <category>String</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaScript – call,apply,bind</title>
+    <url>/2020/12/10/call-apply-bind%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h3 id="fn-call-this-obj-value1…"><a href="#fn-call-this-obj-value1…" class="headerlink" title="fn.call(this-obj, value1…)"></a>fn.call(this-obj, value1…)</h3><p>call() 方法，可以用來改變 this 指向的物件，this-obj是 this 要指向的物件，value1…是要傳進函數的參數。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function tagName(a, b) &#123;</span><br><span class="line">    console.log(this.myName, a, b);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var family &#x3D; &#123;</span><br><span class="line">    myName: &#39;Wei&#39;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">tagName(1, 2);  &#x2F;&#x2F; Louisa 1 2</span><br><span class="line">tagName.call(family, 1, 2);  &#x2F;&#x2F; Wei 1 2</span><br></pre></td></tr></table></figure>
+
+<h3 id="fn-apply-this-obj-value1…"><a href="#fn-apply-this-obj-value1…" class="headerlink" title="fn.apply(this-obj[, value1…])"></a>fn.apply(this-obj[, value1…])</h3><p>apply() 跟 call() 的用途是一樣的，只是第二個參數是一個陣列。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function tagName(a, b) &#123;</span><br><span class="line">    console.log(this.myName, a, b);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var family &#x3D; &#123;</span><br><span class="line">    myName: &#39;Wei&#39;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">tagName.apply(family, [5, 6, 7]);   &#x2F;&#x2F; Wei 5 6</span><br><span class="line"></span><br><span class="line">function re_tagName(a)&#123;</span><br><span class="line">    console.log(this.myName, a, arguments);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">re_tagName.apply(family, [5, 6, 7]);  &#x2F;&#x2F; Wei 5 Arguments(3) [5, 6, 7]</span><br></pre></td></tr></table></figure>
+
+<h3 id="fn-bind-this-obj-value1…"><a href="#fn-bind-this-obj-value1…" class="headerlink" title="fn.bind(this-obj[, value1…])"></a>fn.bind(this-obj[, value1…])</h3><p>亦用來綁定 this 指向的方法，但call() 和 apply() 是直接執行function，bind() 是建立一個新的 function。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function tagName(a, b) &#123;</span><br><span class="line">    console.log(this.myName, a, b);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var family &#x3D; &#123;</span><br><span class="line">    myName: &#39;Wei&#39;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">function re_tagName(a)&#123;</span><br><span class="line">    console.log(this.myName, a, arguments);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var fn &#x3D; tagName.bind(family, 8, 9);</span><br><span class="line">fn();  &#x2F;&#x2F; Wei 8 9</span><br><span class="line"></span><br><span class="line">var fn2 &#x3D; re_tagName.bind(family, 8, 9, 10);</span><br><span class="line">fn2();  &#x2F;&#x2F;  Wei 8 Arguments(3) [8, 9, 10]</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Javascript</category>
+        <category>this</category>
+      </categories>
+  </entry>
+  <entry>
     <title>markdown 基本標籤使用</title>
     <url>/2020/11/25/markdown%20%E5%9F%BA%E6%9C%AC%E6%A8%99%E7%B1%A4%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h3 id="標題"><a href="#標題" class="headerlink" title="標題"></a>標題</h3><p>使用井字號為開頭。<br><code>#</code> 產生&lt;h1&gt;樣式，<code>##</code> 產生&lt;h2&gt;樣式。</p>
@@ -222,36 +327,6 @@
       </categories>
   </entry>
   <entry>
-    <title>JavaScript – call,apply,bind</title>
-    <url>/2020/12/10/call-apply-bind%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<h3 id="fn-call-this-obj-value1…"><a href="#fn-call-this-obj-value1…" class="headerlink" title="fn.call(this-obj, value1…)"></a>fn.call(this-obj, value1…)</h3><p>call() 方法，可以用來改變 this 指向的物件，this-obj是 this 要指向的物件，value1…是要傳進函數的參數。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function tagName(a, b) &#123;</span><br><span class="line">    console.log(this.myName, a, b);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var family &#x3D; &#123;</span><br><span class="line">    myName: &#39;Wei&#39;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">tagName(1, 2);  &#x2F;&#x2F; Louisa 1 2</span><br><span class="line">tagName.call(family, 1, 2);  &#x2F;&#x2F; Wei 1 2</span><br></pre></td></tr></table></figure>
-
-<h3 id="fn-apply-this-obj-value1…"><a href="#fn-apply-this-obj-value1…" class="headerlink" title="fn.apply(this-obj[, value1…])"></a>fn.apply(this-obj[, value1…])</h3><p>apply() 跟 call() 的用途是一樣的，只是第二個參數是一個陣列。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function tagName(a, b) &#123;</span><br><span class="line">    console.log(this.myName, a, b);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var family &#x3D; &#123;</span><br><span class="line">    myName: &#39;Wei&#39;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">tagName.apply(family, [5, 6, 7]);   &#x2F;&#x2F; Wei 5 6</span><br><span class="line"></span><br><span class="line">function re_tagName(a)&#123;</span><br><span class="line">    console.log(this.myName, a, arguments);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">re_tagName.apply(family, [5, 6, 7]);  &#x2F;&#x2F; Wei 5 Arguments(3) [5, 6, 7]</span><br></pre></td></tr></table></figure>
-
-<h3 id="fn-bind-this-obj-value1…"><a href="#fn-bind-this-obj-value1…" class="headerlink" title="fn.bind(this-obj[, value1…])"></a>fn.bind(this-obj[, value1…])</h3><p>亦用來綁定 this 指向的方法，但call() 和 apply() 是直接執行function，bind() 是建立一個新的 function。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function tagName(a, b) &#123;</span><br><span class="line">    console.log(this.myName, a, b);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var family &#x3D; &#123;</span><br><span class="line">    myName: &#39;Wei&#39;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">function re_tagName(a)&#123;</span><br><span class="line">    console.log(this.myName, a, arguments);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var fn &#x3D; tagName.bind(family, 8, 9);</span><br><span class="line">fn();  &#x2F;&#x2F; Wei 8 9</span><br><span class="line"></span><br><span class="line">var fn2 &#x3D; re_tagName.bind(family, 8, 9, 10);</span><br><span class="line">fn2();  &#x2F;&#x2F;  Wei 8 Arguments(3) [8, 9, 10]</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Javascript</category>
-        <category>this</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>google Drive建立圖床</title>
-    <url>/2020/11/25/google%20Drive%E5%BB%BA%E7%AB%8B%E5%9C%96%E5%BA%8A/</url>
-    <content><![CDATA[<h2 id="步驟"><a href="#步驟" class="headerlink" title="步驟"></a>步驟</h2><h5 id="1-圖片需開啟共用連結的權限。"><a href="#1-圖片需開啟共用連結的權限。" class="headerlink" title="1.圖片需開啟共用連結的權限。"></a>1.圖片需開啟共用連結的權限。</h5><br>
-
-<h5 id="2-點圖呈現預覽畫面後，在右上方的更多動作中選擇在新視窗開啟。"><a href="#2-點圖呈現預覽畫面後，在右上方的更多動作中選擇在新視窗開啟。" class="headerlink" title="2.點圖呈現預覽畫面後，在右上方的更多動作中選擇在新視窗開啟。"></a>2.點圖呈現預覽畫面後，在右上方的更多動作中選擇在新視窗開啟。</h5><br>
-
-<h5 id="3-複製網址列中的圖片id字串"><a href="#3-複製網址列中的圖片id字串" class="headerlink" title="3.複製網址列中的圖片id字串"></a>3.複製網址列中的圖片id字串</h5><h5 id="https-drive-google-com-file-d-id字串-view"><a href="#https-drive-google-com-file-d-id字串-view" class="headerlink" title="https://drive.google.com/file/d/id字串/view"></a><code>https://drive.google.com/file/d/id字串/view</code></h5><br>
-
-<h5 id="4-以https-drive-google-com-uc-export-view-amp-id-加上id字串就是連結顯示的網址。"><a href="#4-以https-drive-google-com-uc-export-view-amp-id-加上id字串就是連結顯示的網址。" class="headerlink" title="4.以https://drive.google.com/uc?export=view&amp;id=加上id字串就是連結顯示的網址。"></a>4.以<code>https://drive.google.com/uc?export=view&amp;id=加上id字串就是連結顯示的網址</code>。</h5><h5 id="例-https-drive-google-com-uc-export-view-amp-id-id字串"><a href="#例-https-drive-google-com-uc-export-view-amp-id-id字串" class="headerlink" title="例: https://drive.google.com/uc?export=view&amp;id=id字串"></a>例: <code>https://drive.google.com/uc?export=view&amp;id=id字串</code></h5>]]></content>
-      <categories>
-        <category>google</category>
-      </categories>
-  </entry>
-  <entry>
     <title>JavaScript – ... 其餘 / 展開</title>
     <url>/2020/12/10/%E5%B1%95%E9%96%8B/</url>
     <content><![CDATA[<h3 id="其餘參數"><a href="#其餘參數" class="headerlink" title="其餘參數"></a>其餘參數</h3><p>表示函式所接受的參數數量不固定，而讓其餘參數合併成一個陣列。</p>
@@ -265,25 +340,6 @@
       <categories>
         <category>Javascript</category>
         <category>Function</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>JavaScript – this 指向</title>
-    <url>/2020/12/10/%E6%8C%87%E5%90%91/</url>
-    <content><![CDATA[<h3 id="函式this的指向-全域物件window"><a href="#函式this的指向-全域物件window" class="headerlink" title="函式this的指向: 全域物件window"></a>函式this的指向: 全域物件window</h3><p>直接調用函式，函式的 this 會指向 window。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function callName() &#123;</span><br><span class="line">    var myName &#x3D; &quot;John&quot;;</span><br><span class="line">    console.log(this.myName);</span><br><span class="line">&#125;</span><br><span class="line">callName();  &#x2F;&#x2F; Louisa</span><br></pre></td></tr></table></figure>
-
-<h3 id="函式this的指向-物件本身"><a href="#函式this的指向-物件本身" class="headerlink" title="函式this的指向: 物件本身"></a>函式this的指向: 物件本身</h3><p>作為物件方法來調用函式this，則會指向此物件。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function callName() &#123;</span><br><span class="line">    var myName &#x3D; &quot;John&quot;;</span><br><span class="line">    console.log(this.myName);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var family &#x3D; &#123;</span><br><span class="line">    myName: &#39;Lee&#39;,</span><br><span class="line">    callname: callName,</span><br><span class="line">    Ming: &#123;</span><br><span class="line">        myName: &#39; Ming&#39;,</span><br><span class="line">        callname: callName</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> family.callname();   &#x2F;&#x2F; Lee</span><br><span class="line"> family.Ming.callname();   &#x2F;&#x2F; Ming</span><br></pre></td></tr></table></figure>
-
-<h3 id="間接執行函式，this的指向-全域物件window"><a href="#間接執行函式，this的指向-全域物件window" class="headerlink" title="間接執行函式，this的指向 : 全域物件window"></a>間接執行函式，this的指向 : 全域物件window</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function callName() &#123;</span><br><span class="line">    var myName &#x3D; &quot;John&quot;;</span><br><span class="line">    console.log(this.myName);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var family &#x3D; &#123;</span><br><span class="line">    myName: &#39;Lee&#39;,</span><br><span class="line">    callname: callName,</span><br><span class="line">    Ming: &#123;</span><br><span class="line">        myName: &#39; Ming&#39;,</span><br><span class="line">        callname: callName</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">var call_name &#x3D; family.callname;</span><br><span class="line">call_name();   &#x2F;&#x2F; Louisa</span><br></pre></td></tr></table></figure>
-
-<h3 id="函式中的函式的this指向-全域物件window"><a href="#函式中的函式的this指向-全域物件window" class="headerlink" title="函式中的函式的this指向: 全域物件window"></a>函式中的函式的this指向: 全域物件window</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function callName() &#123;</span><br><span class="line">    var myName &#x3D; &quot;John&quot;;</span><br><span class="line">    console.log(this.myName);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var family &#x3D; &#123;</span><br><span class="line">    myName: &#39;Fido&#39;,</span><br><span class="line">    rename: function () &#123;</span><br><span class="line">        setTimeout(function () &#123;</span><br><span class="line">            console.log(this.myName);</span><br><span class="line">        &#125;, 1000);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">family.rename();   &#x2F;&#x2F; Louisa</span><br></pre></td></tr></table></figure>
-
-<h3 id="函式中的函式的this指向-指回物件本身的方法"><a href="#函式中的函式的this指向-指回物件本身的方法" class="headerlink" title="函式中的函式的this指向 : 指回物件本身的方法"></a>函式中的函式的this指向 : 指回物件本身的方法</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function callName() &#123;</span><br><span class="line">    var myName &#x3D; &quot;John&quot;;</span><br><span class="line">    console.log(this.myName);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var family &#x3D; &#123;</span><br><span class="line">    myName: &#39;Fido&#39;,</span><br><span class="line">    rename: function () &#123;</span><br><span class="line">        var self &#x3D; this;</span><br><span class="line">        setTimeout(function () &#123;</span><br><span class="line">            console.log(self.myName);</span><br><span class="line">        &#125;, 1000);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">family.rename();   &#x2F;&#x2F; Fido</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Javascript</category>
-        <category>this</category>
       </categories>
   </entry>
   <entry>
@@ -315,29 +371,22 @@
       </categories>
   </entry>
   <entry>
-    <title>JavaScript – 物件原型、繼承</title>
-    <url>/2020/12/10/%E7%89%A9%E4%BB%B6%E5%8E%9F%E5%9E%8B%E3%80%81%E7%B9%BC%E6%89%BF/</url>
-    <content><![CDATA[<h3 id="物件建構式"><a href="#物件建構式" class="headerlink" title="物件建構式"></a>物件建構式</h3><p>在建立Object時被呼叫，透過物件的建構函式定義屬性、方法，來建立物件實例。</p>
-<ul>
-<li>宣告一個類別 (class)。</li>
-<li>this 定義屬性。</li>
-<li>prototype 定義方法。</li>
-<li>new 添加物件實例。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function Dog(name, color, weight) &#123;</span><br><span class="line">            this.name &#x3D; name;</span><br><span class="line">            this.color &#x3D; color;</span><br><span class="line">            this.weight &#x3D; weight;</span><br><span class="line">        &#125;</span><br><span class="line">Dog.prototype.bark &#x3D; function()&#123;</span><br><span class="line">            console.log(this.name + &#39;汪汪!&#39;);</span><br><span class="line">        &#125;</span><br><span class="line">let Fido &#x3D; new Dog(&#39;Fido&#39;,&#39;棕色&#39;,12);</span><br><span class="line"></span><br><span class="line">Fido.bark();  &#x2F;&#x2F; Fido汪汪!</span><br><span class="line">console.log(Fido);  </span><br><span class="line">&#x2F;&#x2F; Dog &#123;name: &quot;Fido&quot;, color: &quot;棕色&quot;, weight: 12&#125;</span><br><span class="line"></span><br><span class="line">Fido.size &#x3D; &quot;中型犬&quot;;  &#x2F;&#x2F; 添加新屬性</span><br><span class="line">delete Fido.size;  &#x2F;&#x2F; 刪除屬性</span><br><span class="line"></span><br><span class="line">Fido.game &#x3D; function()&#123;    &#x2F;&#x2F; 添加新方法</span><br><span class="line">      console.log(this.name + &#39;來玩你丟我撿&#39;);</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+    <title>JavaScript – this 指向</title>
+    <url>/2020/12/10/%E6%8C%87%E5%90%91/</url>
+    <content><![CDATA[<h3 id="函式this的指向-全域物件window"><a href="#函式this的指向-全域物件window" class="headerlink" title="函式this的指向: 全域物件window"></a>函式this的指向: 全域物件window</h3><p>直接調用函式，函式的 this 會指向 window。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function callName() &#123;</span><br><span class="line">    var myName &#x3D; &quot;John&quot;;</span><br><span class="line">    console.log(this.myName);</span><br><span class="line">&#125;</span><br><span class="line">callName();  &#x2F;&#x2F; Louisa</span><br></pre></td></tr></table></figure>
 
-<h3 id="原型繼承"><a href="#原型繼承" class="headerlink" title="原型繼承"></a>原型繼承</h3><p>一個類別 (class)可繼承其他類別的屬性和方法，然後再延伸增加自己的屬性和方法。</p>
-<ul>
-<li><strong>.prototype.constructor</strong> 屬性，指向物件的建構函式。</li>
-<li><strong>.prototype._proto__ 屬性</strong>，指向物件繼承的原型。</li>
-<li><strong>Object.create(目標物件原型[，屬性])</strong> 方法，使用目標物件作為新創建物件的原型來創建新物件。</li>
-<li><strong>Object.getPrototypeOf(obj)</strong> 方法，取得該物件的原型。</li>
-<li><strong>instanceof</strong> 運算子，判斷物件是否建立自指定的建構函式。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function Animal(family) &#123;</span><br><span class="line">    this.kingdom &#x3D; &#39;動物界&#39;;</span><br><span class="line">    this.family &#x3D; family;</span><br><span class="line">    &#125;</span><br><span class="line">Animal.prototype.move &#x3D; function() &#123;</span><br><span class="line">    console.log(this.name + &#39;奔跑&#39;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">function Dog(name, color, weight) &#123;</span><br><span class="line">    Animal.call(this, &#39;犬科&#39;);</span><br><span class="line">    this.name &#x3D; name;</span><br><span class="line">    this.color &#x3D; color;</span><br><span class="line">    this.weight &#x3D; weight;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">Dog.prototype &#x3D; Object.create(Animal.prototype);</span><br><span class="line">&#x2F;&#x2F;建立多層繼承，透過Object.create複製了Animal.prototype全部的屬性</span><br><span class="line"></span><br><span class="line">Dog.prototype.constructor &#x3D; Dog;</span><br><span class="line">&#x2F;&#x2F;需要再將constructor重新指定回物件的建構函式本身。</span><br><span class="line"></span><br><span class="line">Dog.prototype.bark &#x3D; function()&#123;</span><br><span class="line">     console.log(this.name + &#39;汪汪!&#39;);</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">let Fido &#x3D; new Dog(&#39;Fido&#39;,&#39;棕色&#39;,12);</span><br><span class="line"></span><br><span class="line">Fido.bark();  &#x2F;&#x2F; Fido汪汪!</span><br><span class="line">Fido.move();  &#x2F;&#x2F; Fido奔跑</span><br><span class="line"></span><br><span class="line">console.log(Fido);  </span><br><span class="line">&#x2F;&#x2F; Dog &#123;kingdom: &quot;動物界&quot;, family: &quot;犬科&quot;, name: &quot;Fido&quot;, color: &quot;棕色&quot;, weight: 12&#125;</span><br><span class="line"></span><br><span class="line">console.log(Object.getPrototypeOf(Fido));  </span><br><span class="line">&#x2F;&#x2F; Animal &#123;constructor: ƒ, bark: ƒ&#125;</span><br><span class="line"></span><br><span class="line">console.log(Fido instanceof Animal);     &#x2F;&#x2F; true</span><br></pre></td></tr></table></figure>]]></content>
+<h3 id="函式this的指向-物件本身"><a href="#函式this的指向-物件本身" class="headerlink" title="函式this的指向: 物件本身"></a>函式this的指向: 物件本身</h3><p>作為物件方法來調用函式this，則會指向此物件。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function callName() &#123;</span><br><span class="line">    var myName &#x3D; &quot;John&quot;;</span><br><span class="line">    console.log(this.myName);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var family &#x3D; &#123;</span><br><span class="line">    myName: &#39;Lee&#39;,</span><br><span class="line">    callname: callName,</span><br><span class="line">    Ming: &#123;</span><br><span class="line">        myName: &#39; Ming&#39;,</span><br><span class="line">        callname: callName</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> family.callname();   &#x2F;&#x2F; Lee</span><br><span class="line"> family.Ming.callname();   &#x2F;&#x2F; Ming</span><br></pre></td></tr></table></figure>
+
+<h3 id="間接執行函式，this的指向-全域物件window"><a href="#間接執行函式，this的指向-全域物件window" class="headerlink" title="間接執行函式，this的指向 : 全域物件window"></a>間接執行函式，this的指向 : 全域物件window</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function callName() &#123;</span><br><span class="line">    var myName &#x3D; &quot;John&quot;;</span><br><span class="line">    console.log(this.myName);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var family &#x3D; &#123;</span><br><span class="line">    myName: &#39;Lee&#39;,</span><br><span class="line">    callname: callName,</span><br><span class="line">    Ming: &#123;</span><br><span class="line">        myName: &#39; Ming&#39;,</span><br><span class="line">        callname: callName</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">var call_name &#x3D; family.callname;</span><br><span class="line">call_name();   &#x2F;&#x2F; Louisa</span><br></pre></td></tr></table></figure>
+
+<h3 id="函式中的函式的this指向-全域物件window"><a href="#函式中的函式的this指向-全域物件window" class="headerlink" title="函式中的函式的this指向: 全域物件window"></a>函式中的函式的this指向: 全域物件window</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function callName() &#123;</span><br><span class="line">    var myName &#x3D; &quot;John&quot;;</span><br><span class="line">    console.log(this.myName);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var family &#x3D; &#123;</span><br><span class="line">    myName: &#39;Fido&#39;,</span><br><span class="line">    rename: function () &#123;</span><br><span class="line">        setTimeout(function () &#123;</span><br><span class="line">            console.log(this.myName);</span><br><span class="line">        &#125;, 1000);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">family.rename();   &#x2F;&#x2F; Louisa</span><br></pre></td></tr></table></figure>
+
+<h3 id="函式中的函式的this指向-指回物件本身的方法"><a href="#函式中的函式的this指向-指回物件本身的方法" class="headerlink" title="函式中的函式的this指向 : 指回物件本身的方法"></a>函式中的函式的this指向 : 指回物件本身的方法</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function callName() &#123;</span><br><span class="line">    var myName &#x3D; &quot;John&quot;;</span><br><span class="line">    console.log(this.myName);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var family &#x3D; &#123;</span><br><span class="line">    myName: &#39;Fido&#39;,</span><br><span class="line">    rename: function () &#123;</span><br><span class="line">        var self &#x3D; this;</span><br><span class="line">        setTimeout(function () &#123;</span><br><span class="line">            console.log(self.myName);</span><br><span class="line">        &#125;, 1000);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">family.rename();   &#x2F;&#x2F; Fido</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Javascript</category>
-        <category>Object</category>
+        <category>this</category>
       </categories>
   </entry>
   <entry>
@@ -360,6 +409,32 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var list &#x3D; &#123;a: 1,b: 2,c: 3&#125;;</span><br><span class="line"></span><br><span class="line">for (key in list)&#123;</span><br><span class="line">    console.log(key);   &#x2F;&#x2F; a, b, c</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Object.defineProperty(list, &#39;a&#39;, &#123;enumerable: false&#125;);</span><br><span class="line"></span><br><span class="line">for (key in list)&#123;</span><br><span class="line">    console.log(key);   &#x2F;&#x2F; b, c</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>Javascript</category>
+        <category>Object</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaScript – 物件原型、繼承</title>
+    <url>/2020/12/10/%E7%89%A9%E4%BB%B6%E5%8E%9F%E5%9E%8B%E3%80%81%E7%B9%BC%E6%89%BF/</url>
+    <content><![CDATA[<h3 id="物件建構式"><a href="#物件建構式" class="headerlink" title="物件建構式"></a>物件建構式</h3><p>在建立Object時被呼叫，透過物件的建構函式定義屬性、方法，來建立物件實例。</p>
+<ul>
+<li>宣告一個類別 (class)。</li>
+<li>this 定義屬性。</li>
+<li>prototype 定義方法。</li>
+<li>new 添加物件實例。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function Dog(name, color, weight) &#123;</span><br><span class="line">            this.name &#x3D; name;</span><br><span class="line">            this.color &#x3D; color;</span><br><span class="line">            this.weight &#x3D; weight;</span><br><span class="line">        &#125;</span><br><span class="line">Dog.prototype.bark &#x3D; function()&#123;</span><br><span class="line">            console.log(this.name + &#39;汪汪!&#39;);</span><br><span class="line">        &#125;</span><br><span class="line">let Fido &#x3D; new Dog(&#39;Fido&#39;,&#39;棕色&#39;,12);</span><br><span class="line"></span><br><span class="line">Fido.bark();  &#x2F;&#x2F; Fido汪汪!</span><br><span class="line">console.log(Fido);  </span><br><span class="line">&#x2F;&#x2F; Dog &#123;name: &quot;Fido&quot;, color: &quot;棕色&quot;, weight: 12&#125;</span><br><span class="line"></span><br><span class="line">Fido.size &#x3D; &quot;中型犬&quot;;  &#x2F;&#x2F; 添加新屬性</span><br><span class="line">delete Fido.size;  &#x2F;&#x2F; 刪除屬性</span><br><span class="line"></span><br><span class="line">Fido.game &#x3D; function()&#123;    &#x2F;&#x2F; 添加新方法</span><br><span class="line">      console.log(this.name + &#39;來玩你丟我撿&#39;);</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="原型繼承"><a href="#原型繼承" class="headerlink" title="原型繼承"></a>原型繼承</h3><p>一個類別 (class)可繼承其他類別的屬性和方法，然後再延伸增加自己的屬性和方法。</p>
+<ul>
+<li><strong>.prototype.constructor</strong> 屬性，指向物件的建構函式。</li>
+<li><strong>.prototype._proto__ 屬性</strong>，指向物件繼承的原型。</li>
+<li><strong>Object.create(目標物件原型[，屬性])</strong> 方法，使用目標物件作為新創建物件的原型來創建新物件。</li>
+<li><strong>Object.getPrototypeOf(obj)</strong> 方法，取得該物件的原型。</li>
+<li><strong>instanceof</strong> 運算子，判斷物件是否建立自指定的建構函式。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function Animal(family) &#123;</span><br><span class="line">    this.kingdom &#x3D; &#39;動物界&#39;;</span><br><span class="line">    this.family &#x3D; family;</span><br><span class="line">    &#125;</span><br><span class="line">Animal.prototype.move &#x3D; function() &#123;</span><br><span class="line">    console.log(this.name + &#39;奔跑&#39;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">function Dog(name, color, weight) &#123;</span><br><span class="line">    Animal.call(this, &#39;犬科&#39;);</span><br><span class="line">    this.name &#x3D; name;</span><br><span class="line">    this.color &#x3D; color;</span><br><span class="line">    this.weight &#x3D; weight;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">Dog.prototype &#x3D; Object.create(Animal.prototype);</span><br><span class="line">&#x2F;&#x2F;建立多層繼承，透過Object.create複製了Animal.prototype全部的屬性</span><br><span class="line"></span><br><span class="line">Dog.prototype.constructor &#x3D; Dog;</span><br><span class="line">&#x2F;&#x2F;需要再將constructor重新指定回物件的建構函式本身。</span><br><span class="line"></span><br><span class="line">Dog.prototype.bark &#x3D; function()&#123;</span><br><span class="line">     console.log(this.name + &#39;汪汪!&#39;);</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">let Fido &#x3D; new Dog(&#39;Fido&#39;,&#39;棕色&#39;,12);</span><br><span class="line"></span><br><span class="line">Fido.bark();  &#x2F;&#x2F; Fido汪汪!</span><br><span class="line">Fido.move();  &#x2F;&#x2F; Fido奔跑</span><br><span class="line"></span><br><span class="line">console.log(Fido);  </span><br><span class="line">&#x2F;&#x2F; Dog &#123;kingdom: &quot;動物界&quot;, family: &quot;犬科&quot;, name: &quot;Fido&quot;, color: &quot;棕色&quot;, weight: 12&#125;</span><br><span class="line"></span><br><span class="line">console.log(Object.getPrototypeOf(Fido));  </span><br><span class="line">&#x2F;&#x2F; Animal &#123;constructor: ƒ, bark: ƒ&#125;</span><br><span class="line"></span><br><span class="line">console.log(Fido instanceof Animal);     &#x2F;&#x2F; true</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Javascript</category>
         <category>Object</category>

@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"github.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="JavaScript 的物件透過原型 (Prototype) 機制相互繼承功能。">
+  <meta name="description" content="紀錄JavaScript處理字串的一些方法。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript – 物件原型、繼承">
-<meta property="og:url" content="https://github.com/LeeU-1230/leeu-1230.github.io.git/2020/12/10/%E7%89%A9%E4%BB%B6%E5%8E%9F%E5%9E%8B%E3%80%81%E7%B9%BC%E6%89%BF/index.html">
+<meta property="og:title" content="JavaScript – String(字串)">
+<meta property="og:url" content="https://github.com/LeeU-1230/leeu-1230.github.io.git/2020/12/12/String-%E5%AD%97%E4%B8%B2/index.html">
 <meta property="og:site_name" content="默刻">
-<meta property="og:description" content="JavaScript 的物件透過原型 (Prototype) 機制相互繼承功能。">
+<meta property="og:description" content="紀錄JavaScript處理字串的一些方法。">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2020-12-10T12:54:15.000Z">
-<meta property="article:modified_time" content="2020-12-10T13:16:08.385Z">
+<meta property="article:published_time" content="2020-12-12T07:02:06.000Z">
+<meta property="article:modified_time" content="2020-12-12T07:24:57.904Z">
 <meta property="article:author" content="LeeU">
 <meta property="article:tag" content="JavaScript,HTML,CSS,部落格,網頁,程式,文學,閱讀,小說,散文,詩集,電影,戲劇,紀錄">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://github.com/LeeU-1230/leeu-1230.github.io.git/2020/12/10/%E7%89%A9%E4%BB%B6%E5%8E%9F%E5%9E%8B%E3%80%81%E7%B9%BC%E6%89%BF/">
+<link rel="canonical" href="https://github.com/LeeU-1230/leeu-1230.github.io.git/2020/12/12/String-%E5%AD%97%E4%B8%B2/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>JavaScript – 物件原型、繼承 | 默刻</title>
+  <title>JavaScript – String(字串) | 默刻</title>
   
 
 
@@ -190,7 +190,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://github.com/LeeU-1230/leeu-1230.github.io.git/2020/12/10/%E7%89%A9%E4%BB%B6%E5%8E%9F%E5%9E%8B%E3%80%81%E7%B9%BC%E6%89%BF/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/LeeU-1230/leeu-1230.github.io.git/2020/12/12/String-%E5%AD%97%E4%B8%B2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -203,7 +203,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          JavaScript – 物件原型、繼承
+          JavaScript – String(字串)
         </h1>
 
         <div class="post-meta">
@@ -214,7 +214,7 @@
               <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="創建時間：2020-12-10 20:54:15 / 修改時間：21:16:08" itemprop="dateCreated datePublished" datetime="2020-12-10T20:54:15+08:00">2020-12-10</time>
+              <time title="創建時間：2020-12-12 15:02:06 / 修改時間：15:24:57" itemprop="dateCreated datePublished" datetime="2020-12-12T15:02:06+08:00">2020-12-12</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -226,7 +226,7 @@
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Javascript/Object/" itemprop="url" rel="index"><span itemprop="name">Object</span></a>
+                  <a href="/categories/Javascript/String/" itemprop="url" rel="index"><span itemprop="name">String</span></a>
                 </span>
             </span>
 
@@ -239,13 +239,13 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2020/12/10/%E7%89%A9%E4%BB%B6%E5%8E%9F%E5%9E%8B%E3%80%81%E7%B9%BC%E6%89%BF/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/12/10/物件原型、繼承/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2020/12/12/String-%E5%AD%97%E4%B8%B2/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/12/12/String-字串/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-            <div class="post-description">JavaScript 的物件透過原型 (Prototype) 機制相互繼承功能。</div>
+            <div class="post-description">紀錄JavaScript處理字串的一些方法。</div>
 
         </div>
       </header>
@@ -256,24 +256,56 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="物件建構式"><a href="#物件建構式" class="headerlink" title="物件建構式"></a>物件建構式</h3><p>在建立Object時被呼叫，透過物件的建構函式定義屬性、方法，來建立物件實例。</p>
-<ul>
-<li>宣告一個類別 (class)。</li>
-<li>this 定義屬性。</li>
-<li>prototype 定義方法。</li>
-<li>new 添加物件實例。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">function Dog(name, color, weight) &#123;</span><br><span class="line">            this.name &#x3D; name;</span><br><span class="line">            this.color &#x3D; color;</span><br><span class="line">            this.weight &#x3D; weight;</span><br><span class="line">        &#125;</span><br><span class="line">Dog.prototype.bark &#x3D; function()&#123;</span><br><span class="line">            console.log(this.name + &#39;汪汪!&#39;);</span><br><span class="line">        &#125;</span><br><span class="line">let Fido &#x3D; new Dog(&#39;Fido&#39;,&#39;棕色&#39;,12);</span><br><span class="line"></span><br><span class="line">Fido.bark();  &#x2F;&#x2F; Fido汪汪!</span><br><span class="line">console.log(Fido);  </span><br><span class="line">&#x2F;&#x2F; Dog &#123;name: &quot;Fido&quot;, color: &quot;棕色&quot;, weight: 12&#125;</span><br><span class="line"></span><br><span class="line">Fido.size &#x3D; &quot;中型犬&quot;;  &#x2F;&#x2F; 添加新屬性</span><br><span class="line">delete Fido.size;  &#x2F;&#x2F; 刪除屬性</span><br><span class="line"></span><br><span class="line">Fido.game &#x3D; function()&#123;    &#x2F;&#x2F; 添加新方法</span><br><span class="line">      console.log(this.name + &#39;來玩你丟我撿&#39;);</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+        <h3 id="String-x"><a href="#String-x" class="headerlink" title="String(x)"></a>String(x)</h3><p>將型別轉換成字串。</p>
+<br>
 
-<h3 id="原型繼承"><a href="#原型繼承" class="headerlink" title="原型繼承"></a>原型繼承</h3><p>一個類別 (class)可繼承其他類別的屬性和方法，然後再延伸增加自己的屬性和方法。</p>
-<ul>
-<li><strong>.prototype.constructor</strong> 屬性，指向物件的建構函式。</li>
-<li><strong>.prototype._proto__ 屬性</strong>，指向物件繼承的原型。</li>
-<li><strong>Object.create(目標物件原型[，屬性])</strong> 方法，使用目標物件作為新創建物件的原型來創建新物件。</li>
-<li><strong>Object.getPrototypeOf(obj)</strong> 方法，取得該物件的原型。</li>
-<li><strong>instanceof</strong> 運算子，判斷物件是否建立自指定的建構函式。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">function Animal(family) &#123;</span><br><span class="line">    this.kingdom &#x3D; &#39;動物界&#39;;</span><br><span class="line">    this.family &#x3D; family;</span><br><span class="line">    &#125;</span><br><span class="line">Animal.prototype.move &#x3D; function() &#123;</span><br><span class="line">    console.log(this.name + &#39;奔跑&#39;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">function Dog(name, color, weight) &#123;</span><br><span class="line">    Animal.call(this, &#39;犬科&#39;);</span><br><span class="line">    this.name &#x3D; name;</span><br><span class="line">    this.color &#x3D; color;</span><br><span class="line">    this.weight &#x3D; weight;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">Dog.prototype &#x3D; Object.create(Animal.prototype);</span><br><span class="line">&#x2F;&#x2F;建立多層繼承，透過Object.create複製了Animal.prototype全部的屬性</span><br><span class="line"></span><br><span class="line">Dog.prototype.constructor &#x3D; Dog;</span><br><span class="line">&#x2F;&#x2F;需要再將constructor重新指定回物件的建構函式本身。</span><br><span class="line"></span><br><span class="line">Dog.prototype.bark &#x3D; function()&#123;</span><br><span class="line">     console.log(this.name + &#39;汪汪!&#39;);</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">let Fido &#x3D; new Dog(&#39;Fido&#39;,&#39;棕色&#39;,12);</span><br><span class="line"></span><br><span class="line">Fido.bark();  &#x2F;&#x2F; Fido汪汪!</span><br><span class="line">Fido.move();  &#x2F;&#x2F; Fido奔跑</span><br><span class="line"></span><br><span class="line">console.log(Fido);  </span><br><span class="line">&#x2F;&#x2F; Dog &#123;kingdom: &quot;動物界&quot;, family: &quot;犬科&quot;, name: &quot;Fido&quot;, color: &quot;棕色&quot;, weight: 12&#125;</span><br><span class="line"></span><br><span class="line">console.log(Object.getPrototypeOf(Fido));  </span><br><span class="line">&#x2F;&#x2F; Animal &#123;constructor: ƒ, bark: ƒ&#125;</span><br><span class="line"></span><br><span class="line">console.log(Fido instanceof Animal);     &#x2F;&#x2F; true</span><br></pre></td></tr></table></figure>
+<h3 id="charAt-index"><a href="#charAt-index" class="headerlink" title="charAt(index)"></a>charAt(index)</h3><p>取得字串中特定位置的字。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let sentence &#x3D; &#39;Dink some water &#x2F; tea &#x2F; milk.&#39;;</span><br><span class="line"></span><br><span class="line">sentence.charAt(3);   &#x2F;&#x2F; k</span><br></pre></td></tr></table></figure>
+<br>
+
+<h3 id="indexOf-str-value-index"><a href="#indexOf-str-value-index" class="headerlink" title="indexOf(str-value, index)"></a>indexOf(str-value, index)</h3><p>找出某個字串在字串中的出現位置。返回找到的位置，找不到則返回 -1 。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let sentence &#x3D; &#39;Dink some water &#x2F; tea &#x2F; milk.&#39;;</span><br><span class="line"></span><br><span class="line">sentence.indexOf(&#39;a&#39;);   &#x2F;&#x2F; 11</span><br><span class="line"></span><br><span class="line">sentence.indexOf(&#39;a&#39;, 12);   &#x2F;&#x2F; 20</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="lastIndexOf-str-value-index"><a href="#lastIndexOf-str-value-index" class="headerlink" title="lastIndexOf(str-value, index)"></a>lastIndexOf(str-value, index)</h3><p>找出某個字串在字串中最後出現的位置。相對於indexOf()</p>
+<br>
+
+<h3 id="match-str-value"><a href="#match-str-value" class="headerlink" title="match(str-value)"></a>match(str-value)</h3><p>找出字串中匹配的內容，返回一個陣列。可搭配正規表達式 (Regex)使用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let sentence &#x3D; &#39;Dink some water &#x2F; tea &#x2F; milk.&#39;;</span><br><span class="line">let data &#x3D; &#39;water &#x2F; tea &#x2F; milk.&#39;</span><br><span class="line"></span><br><span class="line">console.log(sentence.match(data));    </span><br><span class="line">&#x2F;&#x2F; [&quot;water &#x2F; tea &#x2F; milk.&quot;, index: 10, input: &quot;Dink some water &#x2F; tea &#x2F; milk.&quot;, groups: undefined]</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="replace-old-str-new-str-function"><a href="#replace-old-str-new-str-function" class="headerlink" title="replace(old-str, new-str|function)"></a>replace(old-str, new-str|function)</h3><p>將字串中的字取代為另外的字。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let sentence &#x3D; &#39;Dink some water &#x2F; tea &#x2F; milk.&#39;;</span><br><span class="line"></span><br><span class="line">sentence.replace(&#39;water&#39;, &#39;coffee&#39;);   &#x2F;&#x2F; Dink some coffee &#x2F; tea &#x2F; milk.</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="search-str-value"><a href="#search-str-value" class="headerlink" title="search(str-value)"></a>search(str-value)</h3><p>找出某個字串在字串中的出現位置，找不到則返回 -1 。可以用正規表達式 (Regex)當參數。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let sentence &#x3D; &#39;Dink some water &#x2F; tea &#x2F; milk.&#39;;</span><br><span class="line"></span><br><span class="line">sentence.search(&#39;a&#39;);   &#x2F;&#x2F; 11</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="slice-begin-index-end-index"><a href="#slice-begin-index-end-index" class="headerlink" title="slice(begin-index, end-index)"></a>slice(begin-index, end-index)</h3><p>擷取兩個索引位置之間的字串，返回一個新字串。若begin-index大於字串長度，結果會返回空字串。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let sentence &#x3D; &#39;Dink some water &#x2F; tea &#x2F; milk.&#39;;</span><br><span class="line"></span><br><span class="line">sentence.slice(1, 7);   &#x2F;&#x2F; ink so</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="split-分隔符號-返回數量"><a href="#split-分隔符號-返回數量" class="headerlink" title="split.(分隔符號 [,返回數量])"></a>split.(分隔符號 [,返回數量])</h3><p>根據指定的分隔字符，切割字串，返回一個字串陣列。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let sentence &#x3D; &#39;Dink some water &#x2F; tea &#x2F; milk.&#39;;</span><br><span class="line"></span><br><span class="line">sentence.split(&#39; &#39;);   &#x2F;&#x2F; [&quot;Dink&quot;, &quot;some&quot;, &quot;water&quot;, &quot;&#x2F;&quot;, &quot;tea&quot;, &quot;&#x2F;&quot;, &quot;milk.&quot;]</span><br><span class="line"></span><br><span class="line">sentence.split(&#39;k&#39;);   &#x2F;&#x2F; [&quot;Din&quot;, &quot; some water &#x2F; tea &#x2F; mil&quot;, &quot;.&quot;]</span><br><span class="line"></span><br><span class="line">sentence.split(&#39; &#39;, 3);   &#x2F;&#x2F; [&quot;Dink&quot;, &quot;some&quot;, &quot;water&quot;]</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="substr-start-index-擷取長度"><a href="#substr-start-index-擷取長度" class="headerlink" title="substr.(start-index [,擷取長度])"></a>substr.(start-index [,擷取長度])</h3><p>切割擷取字串，返回一個新字串。擷取長度預設取到字串結尾。若start-index大於字串長度，結果會返回空字串。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let sentence &#x3D; &#39;Dink some water &#x2F; tea &#x2F; milk.&#39;;</span><br><span class="line"></span><br><span class="line">sentence.substr(3);   &#x2F;&#x2F; k some water &#x2F; tea &#x2F; milk.</span><br><span class="line"></span><br><span class="line">sentence.substr(6, 3);   &#x2F;&#x2F; ome</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="toLowerCase"><a href="#toLowerCase" class="headerlink" title="toLowerCase()"></a>toLowerCase()</h3><p>將字串中的英文字母都轉成小寫。</p>
+<br>
+
+<h3 id="toUpperCase"><a href="#toUpperCase" class="headerlink" title="toUpperCase()"></a>toUpperCase()</h3><p>將字串中的英文字母都轉成大寫。</p>
+
     </div>
 
     
@@ -288,12 +320,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/12/10/%E6%8C%87%E5%90%91/" rel="prev" title="JavaScript – this 指向">
-      <i class="fa fa-chevron-left"></i> JavaScript – this 指向
+    <a href="/2020/12/10/%E5%B1%95%E9%96%8B/" rel="prev" title="JavaScript – ... 其餘 / 展開">
+      <i class="fa fa-chevron-left"></i> JavaScript – ... 其餘 / 展開
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/12/10/%E5%B1%95%E9%96%8B/" rel="next" title="JavaScript – ... 其餘 / 展開">
-      JavaScript – ... 其餘 / 展開 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/12/12/Object%E8%B3%87%E6%96%99%E8%A4%87%E8%A3%BD/" rel="next" title="JavaScript – Object 資料複製">
+      JavaScript – Object 資料複製 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -360,7 +392,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%A9%E4%BB%B6%E5%BB%BA%E6%A7%8B%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">物件建構式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E5%9E%8B%E7%B9%BC%E6%89%BF"><span class="nav-number">2.</span> <span class="nav-text">原型繼承</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#String-x"><span class="nav-number">1.</span> <span class="nav-text">String(x)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#charAt-index"><span class="nav-number">2.</span> <span class="nav-text">charAt(index)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#indexOf-str-value-index"><span class="nav-number">3.</span> <span class="nav-text">indexOf(str-value, index)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lastIndexOf-str-value-index"><span class="nav-number">4.</span> <span class="nav-text">lastIndexOf(str-value, index)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#match-str-value"><span class="nav-number">5.</span> <span class="nav-text">match(str-value)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#replace-old-str-new-str-function"><span class="nav-number">6.</span> <span class="nav-text">replace(old-str, new-str|function)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#search-str-value"><span class="nav-number">7.</span> <span class="nav-text">search(str-value)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#slice-begin-index-end-index"><span class="nav-number">8.</span> <span class="nav-text">slice(begin-index, end-index)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#split-%E5%88%86%E9%9A%94%E7%AC%A6%E8%99%9F-%E8%BF%94%E5%9B%9E%E6%95%B8%E9%87%8F"><span class="nav-number">9.</span> <span class="nav-text">split.(分隔符號 [,返回數量])</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#substr-start-index-%E6%93%B7%E5%8F%96%E9%95%B7%E5%BA%A6"><span class="nav-number">10.</span> <span class="nav-text">substr.(start-index [,擷取長度])</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#toLowerCase"><span class="nav-number">11.</span> <span class="nav-text">toLowerCase()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#toUpperCase"><span class="nav-number">12.</span> <span class="nav-text">toUpperCase()</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -489,9 +521,9 @@
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "https://github.com/LeeU-1230/leeu-1230.github.io.git/2020/12/10/%E7%89%A9%E4%BB%B6%E5%8E%9F%E5%9E%8B%E3%80%81%E7%B9%BC%E6%89%BF/";
-    this.page.identifier = "2020/12/10/物件原型、繼承/";
-    this.page.title = "JavaScript – 物件原型、繼承";
+    this.page.url = "https://github.com/LeeU-1230/leeu-1230.github.io.git/2020/12/12/String-%E5%AD%97%E4%B8%B2/";
+    this.page.identifier = "2020/12/12/String-字串/";
+    this.page.title = "JavaScript – String(字串)";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
