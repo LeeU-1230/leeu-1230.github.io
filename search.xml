@@ -266,20 +266,6 @@
       </categories>
   </entry>
   <entry>
-    <title>google Drive建立圖床</title>
-    <url>/2020/11/25/google%20Drive%E5%BB%BA%E7%AB%8B%E5%9C%96%E5%BA%8A/</url>
-    <content><![CDATA[<h2 id="步驟"><a href="#步驟" class="headerlink" title="步驟"></a>步驟</h2><h5 id="1-圖片需開啟共用連結的權限。"><a href="#1-圖片需開啟共用連結的權限。" class="headerlink" title="1.圖片需開啟共用連結的權限。"></a>1.圖片需開啟共用連結的權限。</h5><br>
-
-<h5 id="2-點圖呈現預覽畫面後，在右上方的更多動作中選擇在新視窗開啟。"><a href="#2-點圖呈現預覽畫面後，在右上方的更多動作中選擇在新視窗開啟。" class="headerlink" title="2.點圖呈現預覽畫面後，在右上方的更多動作中選擇在新視窗開啟。"></a>2.點圖呈現預覽畫面後，在右上方的更多動作中選擇在新視窗開啟。</h5><br>
-
-<h5 id="3-複製網址列中的圖片id字串"><a href="#3-複製網址列中的圖片id字串" class="headerlink" title="3.複製網址列中的圖片id字串"></a>3.複製網址列中的圖片id字串</h5><h5 id="https-drive-google-com-file-d-id字串-view"><a href="#https-drive-google-com-file-d-id字串-view" class="headerlink" title="https://drive.google.com/file/d/id字串/view"></a><code>https://drive.google.com/file/d/id字串/view</code></h5><br>
-
-<h5 id="4-以https-drive-google-com-uc-export-view-amp-id-加上id字串就是連結顯示的網址。"><a href="#4-以https-drive-google-com-uc-export-view-amp-id-加上id字串就是連結顯示的網址。" class="headerlink" title="4.以https://drive.google.com/uc?export=view&amp;id=加上id字串就是連結顯示的網址。"></a>4.以<code>https://drive.google.com/uc?export=view&amp;id=加上id字串就是連結顯示的網址</code>。</h5><h5 id="例-https-drive-google-com-uc-export-view-amp-id-id字串"><a href="#例-https-drive-google-com-uc-export-view-amp-id-id字串" class="headerlink" title="例: https://drive.google.com/uc?export=view&amp;id=id字串"></a>例: <code>https://drive.google.com/uc?export=view&amp;id=id字串</code></h5>]]></content>
-      <categories>
-        <category>google</category>
-      </categories>
-  </entry>
-  <entry>
     <title>JavaScript – call,apply,bind</title>
     <url>/2020/12/10/call-apply-bind%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<h3 id="fn-call-this-obj-value1…"><a href="#fn-call-this-obj-value1…" class="headerlink" title="fn.call(this-obj, value1…)"></a>fn.call(this-obj, value1…)</h3><p>call() 方法，可以用來改變 this 指向的物件，this-obj是 this 要指向的物件，value1…是要傳進函數的參數。</p>
@@ -296,48 +282,17 @@
       </categories>
   </entry>
   <entry>
-    <title>Javascript - 函式閉包</title>
-    <url>/2020/12/02/%E5%87%BD%E5%BC%8F%E9%96%89%E5%8C%85/</url>
-    <content><![CDATA[<h3 id="函式閉包"><a href="#函式閉包" class="headerlink" title="函式閉包"></a>函式閉包</h3><p>保存了內部函式的執行環境，可以持續存取。<br>將變數指向外層函式，每一個變數都是獨立環境，可以反覆呼叫，重複持續存取內部函式環境。</p>
-<h3 id="建立"><a href="#建立" class="headerlink" title="建立"></a>建立</h3><p>在一個function函式中，return 另一個內部function函式。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function wallet() &#123;</span><br><span class="line">    let money &#x3D; 1000;</span><br><span class="line">    return function (cash) &#123;</span><br><span class="line">        money &#x3D; cash + money;</span><br><span class="line">        return money;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let personA &#x3D; wallet();</span><br><span class="line">console.log(personA(100));   &#x2F;&#x2F; 1100</span><br><span class="line">console.log(personA(100));   &#x2F;&#x2F; 1200</span><br><span class="line">console.log(personA(300));   &#x2F;&#x2F; 1500</span><br><span class="line"></span><br><span class="line">let personB &#x3D; wallet();</span><br><span class="line">console.log(personB(200));   &#x2F;&#x2F; 1200</span><br><span class="line">console.log(personB(500));   &#x2F;&#x2F; 1700</span><br><span class="line">console.log(personB(-800));   &#x2F;&#x2F; 900</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Javascript</category>
-        <category>Function</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>使用CSS限制內容</title>
-    <url>/2020/12/07/%E4%BD%BF%E7%94%A8CSS%E9%99%90%E5%88%B6%E5%85%A7%E5%AE%B9/</url>
-    <content><![CDATA[<h3 id="目標-當文字超過限制時會自動顯示”…”的刪節號。"><a href="#目標-當文字超過限制時會自動顯示”…”的刪節號。" class="headerlink" title="目標 : 當文字超過限制時會自動顯示”…”的刪節號。"></a>目標 : 當文字超過限制時會自動顯示”…”的刪節號。</h3><p>HTML :</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;box&quot;&gt;</span><br><span class="line">        &lt;p&gt;臣亮言：先帝創業未半，而中道崩殂。今天下三分，益州疲弊，此誠危急存亡之秋也。然侍衛之臣，不懈於內；忠志之士，忘身於外者，蓋追先帝之殊遇，欲報之於陛下也。誠宜開張聖聽，以光先帝遺德，恢宏志士之氣；不宜妄自菲薄，引喻失義，以塞忠諫之路也。</span><br><span class="line">        &lt;&#x2F;p&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
-<p>CSS :</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 50px;</span><br><span class="line">    padding: 10px;</span><br><span class="line">    border: 2px blueviolet solid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://drive.google.com/uc?export=view&id=1bDiwYKOQaE_j6Kn7U5Y8k1bE8oOM8cd1"></p>
-<h3 id="在文字的區塊使用-text-overflow-ellipsis"><a href="#在文字的區塊使用-text-overflow-ellipsis" class="headerlink" title="在文字的區塊使用 text-overflow: ellipsis;"></a>在文字的區塊使用 text-overflow: ellipsis;</h3><p>需一併設定 white-space: nowrap; 及 text-overflow: ellipsis; 才會有效果。</p>
-<p>CSS :</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 50px;</span><br><span class="line">    padding: 10px;</span><br><span class="line">    border: 2px blueviolet solid;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p &#123;</span><br><span class="line">    overflow: hidden;</span><br><span class="line">    white-space: nowrap;</span><br><span class="line">    text-overflow: ellipsis;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://drive.google.com/uc?export=view&id=16e0fP4BhD0smmyRLr-OQnpSKxaFt9FTW"></p>
-]]></content>
-      <categories>
-        <category>CSS</category>
-        <category>overflow</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>JavaScript – ... 其餘 / 展開</title>
-    <url>/2020/12/10/%E5%B1%95%E9%96%8B/</url>
-    <content><![CDATA[<h3 id="其餘參數"><a href="#其餘參數" class="headerlink" title="其餘參數"></a>其餘參數</h3><p>表示函式所接受的參數數量不固定，而讓其餘參數合併成一個陣列。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function Fun(...arg) &#123; console.log(arg.length); &#125;</span><br><span class="line">Fun();   &#x2F;&#x2F; 0</span><br><span class="line">Fun(5);   &#x2F;&#x2F; 1</span><br><span class="line">Fun(5, 6, 7);   &#x2F;&#x2F; 3</span><br></pre></td></tr></table></figure>
+    <title>google Drive建立圖床</title>
+    <url>/2020/11/25/google%20Drive%E5%BB%BA%E7%AB%8B%E5%9C%96%E5%BA%8A/</url>
+    <content><![CDATA[<h2 id="步驟"><a href="#步驟" class="headerlink" title="步驟"></a>步驟</h2><h5 id="1-圖片需開啟共用連結的權限。"><a href="#1-圖片需開啟共用連結的權限。" class="headerlink" title="1.圖片需開啟共用連結的權限。"></a>1.圖片需開啟共用連結的權限。</h5><br>
 
-<h3 id="展開運算子"><a href="#展開運算子" class="headerlink" title="展開運算子"></a>展開運算子</h3><p>用在執行函式時的參數上，可將一個陣列展開成多個獨立參數。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const vau &#x3D; (...args) &#x3D;&gt; &#123;     </span><br><span class="line">return args.reduce((a, b) &#x3D;&gt; a + b, 0);    &#125;</span><br><span class="line"></span><br><span class="line">let arr &#x3D; [2, 3, 4];</span><br><span class="line">vau(...arr);   &#x2F;&#x2F; 9</span><br><span class="line">vau(1, ...arr, 5);   &#x2F;&#x2F; 15</span><br></pre></td></tr></table></figure>
+<h5 id="2-點圖呈現預覽畫面後，在右上方的更多動作中選擇在新視窗開啟。"><a href="#2-點圖呈現預覽畫面後，在右上方的更多動作中選擇在新視窗開啟。" class="headerlink" title="2.點圖呈現預覽畫面後，在右上方的更多動作中選擇在新視窗開啟。"></a>2.點圖呈現預覽畫面後，在右上方的更多動作中選擇在新視窗開啟。</h5><br>
 
-<p>也可用來合併及展開陣列。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let drink1 &#x3D; [&#39;milk&#39;, &#39;juice&#39;];</span><br><span class="line">let drink2 &#x3D; [&#39;coffee&#39;, &#39;water&#39;];</span><br><span class="line">let drink_menu &#x3D; [...drink1, ...drink2];   &#x2F;&#x2F;[&quot;milk&quot;, &quot;juice&quot;, &quot;coffee&quot;, &quot;water&quot;] </span><br></pre></td></tr></table></figure>]]></content>
+<h5 id="3-複製網址列中的圖片id字串"><a href="#3-複製網址列中的圖片id字串" class="headerlink" title="3.複製網址列中的圖片id字串"></a>3.複製網址列中的圖片id字串</h5><h5 id="https-drive-google-com-file-d-id字串-view"><a href="#https-drive-google-com-file-d-id字串-view" class="headerlink" title="https://drive.google.com/file/d/id字串/view"></a><code>https://drive.google.com/file/d/id字串/view</code></h5><br>
+
+<h5 id="4-以https-drive-google-com-uc-export-view-amp-id-加上id字串就是連結顯示的網址。"><a href="#4-以https-drive-google-com-uc-export-view-amp-id-加上id字串就是連結顯示的網址。" class="headerlink" title="4.以https://drive.google.com/uc?export=view&amp;id=加上id字串就是連結顯示的網址。"></a>4.以<code>https://drive.google.com/uc?export=view&amp;id=加上id字串就是連結顯示的網址</code>。</h5><h5 id="例-https-drive-google-com-uc-export-view-amp-id-id字串"><a href="#例-https-drive-google-com-uc-export-view-amp-id-id字串" class="headerlink" title="例: https://drive.google.com/uc?export=view&amp;id=id字串"></a>例: <code>https://drive.google.com/uc?export=view&amp;id=id字串</code></h5>]]></content>
       <categories>
-        <category>Javascript</category>
-        <category>Function</category>
+        <category>google</category>
       </categories>
   </entry>
   <entry>
@@ -372,6 +327,17 @@
       </categories>
   </entry>
   <entry>
+    <title>Javascript - 函式閉包</title>
+    <url>/2020/12/02/%E5%87%BD%E5%BC%8F%E9%96%89%E5%8C%85/</url>
+    <content><![CDATA[<h3 id="函式閉包"><a href="#函式閉包" class="headerlink" title="函式閉包"></a>函式閉包</h3><p>保存了內部函式的執行環境，可以持續存取。<br>將變數指向外層函式，每一個變數都是獨立環境，可以反覆呼叫，重複持續存取內部函式環境。</p>
+<h3 id="建立"><a href="#建立" class="headerlink" title="建立"></a>建立</h3><p>在一個function函式中，return 另一個內部function函式。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function wallet() &#123;</span><br><span class="line">    let money &#x3D; 1000;</span><br><span class="line">    return function (cash) &#123;</span><br><span class="line">        money &#x3D; cash + money;</span><br><span class="line">        return money;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let personA &#x3D; wallet();</span><br><span class="line">console.log(personA(100));   &#x2F;&#x2F; 1100</span><br><span class="line">console.log(personA(100));   &#x2F;&#x2F; 1200</span><br><span class="line">console.log(personA(300));   &#x2F;&#x2F; 1500</span><br><span class="line"></span><br><span class="line">let personB &#x3D; wallet();</span><br><span class="line">console.log(personB(200));   &#x2F;&#x2F; 1200</span><br><span class="line">console.log(personB(500));   &#x2F;&#x2F; 1700</span><br><span class="line">console.log(personB(-800));   &#x2F;&#x2F; 900</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Javascript</category>
+        <category>Function</category>
+      </categories>
+  </entry>
+  <entry>
     <title>JavaScript – this 指向</title>
     <url>/2020/12/10/%E6%8C%87%E5%90%91/</url>
     <content><![CDATA[<h3 id="函式this的指向-全域物件window"><a href="#函式this的指向-全域物件window" class="headerlink" title="函式this的指向: 全域物件window"></a>函式this的指向: 全域物件window</h3><p>直接調用函式，函式的 this 會指向 window。</p>
@@ -391,28 +357,84 @@
       </categories>
   </entry>
   <entry>
-    <title>JavaScript – 物件屬性的調整</title>
-    <url>/2020/12/10/%E7%89%A9%E4%BB%B6%E5%B1%AC%E6%80%A7%E7%9A%84%E8%AA%BF%E6%95%B4/</url>
-    <content><![CDATA[<h3 id="Object-defineProperty-obj-prop-descriptor"><a href="#Object-defineProperty-obj-prop-descriptor" class="headerlink" title="Object.defineProperty(obj, prop, descriptor)"></a>Object.defineProperty(obj, prop, descriptor)</h3><p>調整物件屬性的特徵。</p>
-<p>obj: 要定義屬性的目標物件。</p>
-<p>prop: 要定義或修改的屬性的名稱。</p>
-<p>descriptor: 參數，有value、writable、configurable、enumerable。</p>
-<h3 id="value"><a href="#value" class="headerlink" title="value"></a>value</h3><p>修改屬性的值。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var list &#x3D; &#123;a: 1,b: 2,c: 3&#125;;</span><br><span class="line"></span><br><span class="line">Object.defineProperty(list,&#39;a&#39;, &#123;value :5&#125;);</span><br><span class="line"></span><br><span class="line">console.log(list);   &#x2F;&#x2F; &#123;a: 5, b: 2, c: 3&#125;</span><br></pre></td></tr></table></figure>
+    <title>JavaScript – ... 其餘 / 展開</title>
+    <url>/2020/12/10/%E5%B1%95%E9%96%8B/</url>
+    <content><![CDATA[<h3 id="其餘參數"><a href="#其餘參數" class="headerlink" title="其餘參數"></a>其餘參數</h3><p>表示函式所接受的參數數量不固定，而讓其餘參數合併成一個陣列。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function Fun(...arg) &#123; console.log(arg.length); &#125;</span><br><span class="line">Fun();   &#x2F;&#x2F; 0</span><br><span class="line">Fun(5);   &#x2F;&#x2F; 1</span><br><span class="line">Fun(5, 6, 7);   &#x2F;&#x2F; 3</span><br></pre></td></tr></table></figure>
 
-<h3 id="writable"><a href="#writable" class="headerlink" title="writable"></a>writable</h3><p>屬性可否重新賦值。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var list &#x3D; &#123;a: 1,b: 2,c: 3&#125;;</span><br><span class="line"></span><br><span class="line">list.a &#x3D; 7 ;</span><br><span class="line">console.log(list);   &#x2F;&#x2F; &#123;a: 7, b: 2, c: 3,&#125;</span><br><span class="line"></span><br><span class="line">Object.defineProperty(list, &#39;a&#39;, &#123;writable: false&#125;);</span><br><span class="line">list.a &#x3D; 5 </span><br><span class="line">console.log(list);   &#x2F;&#x2F; &#123;a: 7, b: 2, c: 3,&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="展開運算子"><a href="#展開運算子" class="headerlink" title="展開運算子"></a>展開運算子</h3><p>用在執行函式時的參數上，可將一個陣列展開成多個獨立參數。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const vau &#x3D; (...args) &#x3D;&gt; &#123;     </span><br><span class="line">return args.reduce((a, b) &#x3D;&gt; a + b, 0);    &#125;</span><br><span class="line"></span><br><span class="line">let arr &#x3D; [2, 3, 4];</span><br><span class="line">vau(...arr);   &#x2F;&#x2F; 9</span><br><span class="line">vau(1, ...arr, 5);   &#x2F;&#x2F; 15</span><br></pre></td></tr></table></figure>
 
-<h3 id="configurable"><a href="#configurable" class="headerlink" title="configurable"></a>configurable</h3><p>屬性可否刪除。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var list &#x3D; &#123;a: 1,b: 2,c: 3&#125;;</span><br><span class="line"></span><br><span class="line">Object.defineProperty(list, &#39;a&#39;, &#123;configurable: false&#125;);</span><br><span class="line">delete list.a;</span><br><span class="line">console.log(list);  &#x2F;&#x2F; &#123;a: 1,b: 2,c: 3&#125;</span><br><span class="line"></span><br><span class="line">delete list.b;</span><br><span class="line">console.log(list);   &#x2F;&#x2F; &#123;a: 1,c: 3&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="enumerable"><a href="#enumerable" class="headerlink" title="enumerable"></a>enumerable</h3><p>屬性可否被列舉(遍歷顯示)。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var list &#x3D; &#123;a: 1,b: 2,c: 3&#125;;</span><br><span class="line"></span><br><span class="line">for (key in list)&#123;</span><br><span class="line">    console.log(key);   &#x2F;&#x2F; a, b, c</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Object.defineProperty(list, &#39;a&#39;, &#123;enumerable: false&#125;);</span><br><span class="line"></span><br><span class="line">for (key in list)&#123;</span><br><span class="line">    console.log(key);   &#x2F;&#x2F; b, c</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
+<p>也可用來合併及展開陣列。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let drink1 &#x3D; [&#39;milk&#39;, &#39;juice&#39;];</span><br><span class="line">let drink2 &#x3D; [&#39;coffee&#39;, &#39;water&#39;];</span><br><span class="line">let drink_menu &#x3D; [...drink1, ...drink2];   &#x2F;&#x2F;[&quot;milk&quot;, &quot;juice&quot;, &quot;coffee&quot;, &quot;water&quot;] </span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Javascript</category>
-        <category>Object</category>
+        <category>Function</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>使用CSS限制內容</title>
+    <url>/2020/12/07/%E4%BD%BF%E7%94%A8CSS%E9%99%90%E5%88%B6%E5%85%A7%E5%AE%B9/</url>
+    <content><![CDATA[<h3 id="目標-當文字超過限制時會自動顯示”…”的刪節號。"><a href="#目標-當文字超過限制時會自動顯示”…”的刪節號。" class="headerlink" title="目標 : 當文字超過限制時會自動顯示”…”的刪節號。"></a>目標 : 當文字超過限制時會自動顯示”…”的刪節號。</h3><p>HTML :</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;box&quot;&gt;</span><br><span class="line">        &lt;p&gt;臣亮言：先帝創業未半，而中道崩殂。今天下三分，益州疲弊，此誠危急存亡之秋也。然侍衛之臣，不懈於內；忠志之士，忘身於外者，蓋追先帝之殊遇，欲報之於陛下也。誠宜開張聖聽，以光先帝遺德，恢宏志士之氣；不宜妄自菲薄，引喻失義，以塞忠諫之路也。</span><br><span class="line">        &lt;&#x2F;p&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+<p>CSS :</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 50px;</span><br><span class="line">    padding: 10px;</span><br><span class="line">    border: 2px blueviolet solid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://drive.google.com/uc?export=view&id=1bDiwYKOQaE_j6Kn7U5Y8k1bE8oOM8cd1"></p>
+<h3 id="在文字的區塊使用-text-overflow-ellipsis"><a href="#在文字的區塊使用-text-overflow-ellipsis" class="headerlink" title="在文字的區塊使用 text-overflow: ellipsis;"></a>在文字的區塊使用 text-overflow: ellipsis;</h3><p>需一併設定 white-space: nowrap; 及 text-overflow: ellipsis; 才會有效果。</p>
+<p>CSS :</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 50px;</span><br><span class="line">    padding: 10px;</span><br><span class="line">    border: 2px blueviolet solid;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p &#123;</span><br><span class="line">    overflow: hidden;</span><br><span class="line">    white-space: nowrap;</span><br><span class="line">    text-overflow: ellipsis;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://drive.google.com/uc?export=view&id=16e0fP4BhD0smmyRLr-OQnpSKxaFt9FTW"></p>
+]]></content>
+      <categories>
+        <category>CSS</category>
+        <category>overflow</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Google - Cloud Firestore 數據的寫入讀取</title>
+    <url>/2020/12/17/%E6%95%B8%E6%93%9A%E7%9A%84%E5%AF%AB%E5%85%A5%E8%AE%80%E5%8F%96/</url>
+    <content><![CDATA[<h3 id="數據結構"><a href="#數據結構" class="headerlink" title="數據結構"></a>數據結構</h3><p>在 Cloud Firestore 中構建數據時，分為集合( collection ) 與文件 ( doc ) ，集合包含著文件，文件裡還可包含著子集合，而數據資料只能存在文件上。</p>
+<p><img src="https://drive.google.com/uc?export=view&id=1-3j0ax8fvr9K_8S1kHa4jm_Hahq6NvQ1"></p>
+<p><img src="https://drive.google.com/uc?export=view&id=1h3CNj_DRlg5wcGEdsvZ13hR8JcgwVsRI">  </p>
+<h3 id="寫入資料"><a href="#寫入資料" class="headerlink" title="寫入資料"></a>寫入資料</h3><h4 id="set-設定"><a href="#set-設定" class="headerlink" title="set (設定)"></a>set (設定)</h4><p> 可設定在指定集合裡添加文件並寫入資料。( 可指定 doc 名稱 )<br> 若沒有指定文件 doc 的名稱，會自動產生一個亂數代碼作為文件名稱。</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let db &#x3D; firebase.firestore();</span><br><span class="line">let ref &#x3D; db.collection(&quot;users&quot;).doc(&quot;frank&quot;);</span><br><span class="line"></span><br><span class="line">ref.set(&#123;</span><br><span class="line">    name: &quot;Frank&quot;,</span><br><span class="line">    favorites: &#123; food: &quot;Pizza&quot;, color: &quot;Blue&quot;, subject: &quot;recess&quot; &#125;,</span><br><span class="line">    age: 12</span><br><span class="line">&#125;).then(() &#x3D;&gt; &#123;</span><br><span class="line">    console.log(&#39;set data successful&#39;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>merge 方法 : 進行合併整理，而不會覆蓋資料。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ref.set(&#123;</span><br><span class="line">    sex : &#39;Male&#39;</span><br><span class="line">&#125;,&#123;merge:true&#125;).then(() &#x3D;&gt; &#123;</span><br><span class="line">    console.log(&#39;set data successful&#39;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><img src="https://drive.google.com/uc?export=view&id=1AI5akv8AmrwOGD0PLEag5TWlxLk5pvmP"></p>
+<h4 id="add-添加"><a href="#add-添加" class="headerlink" title="add (添加)"></a>add (添加)</h4><p>add 可以自動添加文件，文件名稱為系統自動產生的亂碼。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">db.collection(&quot;users&quot;).add(&#123;</span><br><span class="line">    first: &quot;Alan&quot;,</span><br><span class="line">    middle: &quot;Mathison&quot;,</span><br><span class="line">    last: &quot;Turing&quot;,</span><br><span class="line">    born: 1912</span><br><span class="line">&#125;).then(() &#x3D;&gt; &#123;</span><br><span class="line">    console.log(&#39;set data successful&#39;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><img src="https://drive.google.com/uc?export=view&id=1z7BIz2SioqvmoeVESFon7UT3psEMQVuM"></p>
+<h4 id="update-更新"><a href="#update-更新" class="headerlink" title="update (更新)"></a>update (更新)</h4><p> 對 doc 內某個屬性進行更新，避免覆寫整個文件內容。<br> 更新下階子屬性使用 . 來做更新。</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ref.update(&#123;</span><br><span class="line">    &quot;age&quot;: 13,</span><br><span class="line">    &quot;favorites.color&quot;: &quot;Red&quot;</span><br><span class="line">&#125;).then(() &#x3D;&gt; &#123;</span><br><span class="line">    console.log(&#39;set data successful&#39;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><img src="https://drive.google.com/uc?export=view&id=1MFUdvHJTUki8AGclbvCe9bhG7xMSm43x"></p>
+<h4 id="delete-刪除"><a href="#delete-刪除" class="headerlink" title="delete (刪除)"></a>delete (刪除)</h4><pre><code>用於刪除集合或是文件，但如果集合裡有文件，則無法刪除集合。
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">db.collection(&quot;users&quot;).doc(&#39;OS0t1rl9S9tpFtlve8H1&#39;).delete().then(() &#x3D;&gt; &#123;</span><br><span class="line">    console.log(&#39;delete data successful&#39;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+若想刪除文件內的某個屬性，則需要透過update的方式來實現。
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ref.update(&#123;</span><br><span class="line">    sex: firebase.firestore.FieldValue.delete()</span><br><span class="line">&#125;).then(() &#x3D;&gt; &#123;</span><br><span class="line">    console.log(&#39;set data successful&#39;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+![](https://drive.google.com/uc?export=view&amp;id=1YvOO7BlXUAngQkpR2cTxLywZtQ0SPlaQ)  </code></pre>
+<hr>
+<h3 id="讀取資料"><a href="#讀取資料" class="headerlink" title="讀取資料"></a>讀取資料</h3><p>有讀取 ( get ) 和即時監聽 ( onSnapshot ) 兩種方法，可以搭配篩選 ( where ) 和排序 ( orderBy ) 來進一步的篩選。</p>
+<p>以下為範例資料庫數據:<br><img src="https://drive.google.com/uc?export=view&id=1pVzro0oSzOjUtDrmze_1qk_dbtVaugBt"></p>
+<h4 id="get-取得資料"><a href="#get-取得資料" class="headerlink" title="get (取得資料)"></a>get (取得資料)</h4><p> 取得集合裡，所有文件的資料，並使用 forEach 個別取出文件內容。<br> <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"> let db &#x3D; firebase.firestore();</span><br><span class="line">let ref &#x3D; db.collection(&quot;users&quot;);</span><br><span class="line"></span><br><span class="line">ref.get().then(querySnapshot &#x3D;&gt; &#123;</span><br><span class="line">    querySnapshot.forEach(doc &#x3D;&gt; &#123;</span><br><span class="line">        console.log(doc.id, doc.data());</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><br><img src="https://drive.google.com/uc?export=view&id=1kfYsCwZQdw_F0sqV3y-44AOqPpUy0ti1"></p>
+<p>指定文件的名稱，則直接取得文件內容。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let ref &#x3D; db.collection(&quot;users&quot;).doc(&#39;ming&#39;);</span><br><span class="line"></span><br><span class="line">ref.get().then(doc &#x3D;&gt; &#123;</span><br><span class="line">    console.log(doc.id, doc.data());</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="onSnapshot-即時監聽"><a href="#onSnapshot-即時監聽" class="headerlink" title="onSnapshot (即時監聽)"></a>onSnapshot (即時監聽)</h4><p>可以即時監聽資料庫的變化。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let db &#x3D; firebase.firestore();</span><br><span class="line">let ref &#x3D; db.collection(&quot;users&quot;);</span><br><span class="line"></span><br><span class="line">ref.onSnapshot(querySnapshot &#x3D;&gt; &#123;</span><br><span class="line">    querySnapshot.forEach(doc &#x3D;&gt; &#123;</span><br><span class="line">        console.log(doc.id, doc.data());</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="where-篩選"><a href="#where-篩選" class="headerlink" title="where (篩選)"></a>where (篩選)</h4><p>進行資料篩選，包含三個參數，第一個是屬性名稱，第二個是邏輯運算子，第三個是屬性值。<br>邏輯運算子包含: &lt;、&lt;=、==、&gt;、&gt;=、!=、in ( 邏輯OR )、not-in ( 邏輯AND ) 。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let db &#x3D; firebase.firestore();</span><br><span class="line">let ref &#x3D; db.collection(&quot;users&quot;);</span><br><span class="line"></span><br><span class="line">ref.where(&#39;sex&#39;,&#39;&#x3D;&#x3D;&#39;,&#39;Male&#39;).get().then(querySnapshot &#x3D;&gt; &#123;</span><br><span class="line">    querySnapshot.forEach(doc &#x3D;&gt; &#123;</span><br><span class="line">        console.log(doc.id, doc.data());</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><img src="https://drive.google.com/uc?export=view&id=1i0lww2VBcZ7kQ5bThupAoJqticed5orw"></p>
+<h4 id="orderBy-排序"><a href="#orderBy-排序" class="headerlink" title="orderBy (排序)"></a>orderBy (排序)</h4><p>會和 limit (用於檢索文檔數量)搭配，作為排序後篩選特定數量的資料。<br>orderBy 有兩個參數，第一個是屬性名稱，第二個是遞增 ( asc ) 或遞減 ( desc ) 。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ref.orderBy(&#39;age&#39;,&#39;desc&#39;).limit(3).get().then(querySnapshot &#x3D;&gt; &#123;</span><br><span class="line">    querySnapshot.forEach(doc &#x3D;&gt; &#123;</span><br><span class="line">        console.log(doc.id, doc.data());</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><img src="https://drive.google.com/uc?export=view&id=14svXmLaMWWrg8GnNjSxuZ5VkMwHiHV1X"></p>
+]]></content>
+      <categories>
+        <category>Google</category>
+        <category>Cloud Firestore</category>
       </categories>
   </entry>
   <entry>
@@ -471,49 +493,28 @@
       </categories>
   </entry>
   <entry>
-    <title>Google - Cloud Firestore 數據的寫入讀取</title>
-    <url>/2020/12/17/%E6%95%B8%E6%93%9A%E7%9A%84%E5%AF%AB%E5%85%A5%E8%AE%80%E5%8F%96/</url>
-    <content><![CDATA[<h3 id="數據結構"><a href="#數據結構" class="headerlink" title="數據結構"></a>數據結構</h3><p>在 Cloud Firestore 中構建數據時，分為集合( collection ) 與文件 ( doc ) ，集合包含著文件，文件裡還可包含著子集合，而數據資料只能存在文件上。</p>
-<p><img src="https://drive.google.com/uc?export=view&id=1-3j0ax8fvr9K_8S1kHa4jm_Hahq6NvQ1"></p>
-<p><img src="https://drive.google.com/uc?export=view&id=1h3CNj_DRlg5wcGEdsvZ13hR8JcgwVsRI">  </p>
-<h3 id="寫入資料"><a href="#寫入資料" class="headerlink" title="寫入資料"></a>寫入資料</h3><h4 id="set-設定"><a href="#set-設定" class="headerlink" title="set (設定)"></a>set (設定)</h4><p> 可設定在指定集合裡添加文件並寫入資料。( 可指定 doc 名稱 )<br> 若沒有指定文件 doc 的名稱，會自動產生一個亂數代碼作為文件名稱。</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let db &#x3D; firebase.firestore();</span><br><span class="line">let ref &#x3D; db.collection(&quot;users&quot;).doc(&quot;frank&quot;);</span><br><span class="line"></span><br><span class="line">ref.set(&#123;</span><br><span class="line">    name: &quot;Frank&quot;,</span><br><span class="line">    favorites: &#123; food: &quot;Pizza&quot;, color: &quot;Blue&quot;, subject: &quot;recess&quot; &#125;,</span><br><span class="line">    age: 12</span><br><span class="line">&#125;).then(() &#x3D;&gt; &#123;</span><br><span class="line">    console.log(&#39;set data successful&#39;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>merge 方法 : 進行合併整理，而不會覆蓋資料。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ref.set(&#123;</span><br><span class="line">    sex : &#39;Male&#39;</span><br><span class="line">&#125;,&#123;merge:true&#125;).then(() &#x3D;&gt; &#123;</span><br><span class="line">    console.log(&#39;set data successful&#39;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p><img src="https://drive.google.com/uc?export=view&id=1AI5akv8AmrwOGD0PLEag5TWlxLk5pvmP"></p>
-<h4 id="add-添加"><a href="#add-添加" class="headerlink" title="add (添加)"></a>add (添加)</h4><p>add 可以自動添加文件，文件名稱為系統自動產生的亂碼。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">db.collection(&quot;users&quot;).add(&#123;</span><br><span class="line">    first: &quot;Alan&quot;,</span><br><span class="line">    middle: &quot;Mathison&quot;,</span><br><span class="line">    last: &quot;Turing&quot;,</span><br><span class="line">    born: 1912</span><br><span class="line">&#125;).then(() &#x3D;&gt; &#123;</span><br><span class="line">    console.log(&#39;set data successful&#39;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p><img src="https://drive.google.com/uc?export=view&id=1z7BIz2SioqvmoeVESFon7UT3psEMQVuM"></p>
-<h4 id="update-更新"><a href="#update-更新" class="headerlink" title="update (更新)"></a>update (更新)</h4><p> 對 doc 內某個屬性進行更新，避免覆寫整個文件內容。<br> 更新下階子屬性使用 . 來做更新。</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ref.update(&#123;</span><br><span class="line">    &quot;age&quot;: 13,</span><br><span class="line">    &quot;favorites.color&quot;: &quot;Red&quot;</span><br><span class="line">&#125;).then(() &#x3D;&gt; &#123;</span><br><span class="line">    console.log(&#39;set data successful&#39;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p><img src="https://drive.google.com/uc?export=view&id=1MFUdvHJTUki8AGclbvCe9bhG7xMSm43x"></p>
-<h4 id="delete-刪除"><a href="#delete-刪除" class="headerlink" title="delete (刪除)"></a>delete (刪除)</h4><pre><code>用於刪除集合或是文件，但如果集合裡有文件，則無法刪除集合。
+    <title>JavaScript – 物件屬性的調整</title>
+    <url>/2020/12/10/%E7%89%A9%E4%BB%B6%E5%B1%AC%E6%80%A7%E7%9A%84%E8%AA%BF%E6%95%B4/</url>
+    <content><![CDATA[<h3 id="Object-defineProperty-obj-prop-descriptor"><a href="#Object-defineProperty-obj-prop-descriptor" class="headerlink" title="Object.defineProperty(obj, prop, descriptor)"></a>Object.defineProperty(obj, prop, descriptor)</h3><p>調整物件屬性的特徵。</p>
+<p>obj: 要定義屬性的目標物件。</p>
+<p>prop: 要定義或修改的屬性的名稱。</p>
+<p>descriptor: 參數，有value、writable、configurable、enumerable。</p>
+<h3 id="value"><a href="#value" class="headerlink" title="value"></a>value</h3><p>修改屬性的值。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var list &#x3D; &#123;a: 1,b: 2,c: 3&#125;;</span><br><span class="line"></span><br><span class="line">Object.defineProperty(list,&#39;a&#39;, &#123;value :5&#125;);</span><br><span class="line"></span><br><span class="line">console.log(list);   &#x2F;&#x2F; &#123;a: 5, b: 2, c: 3&#125;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">db.collection(&quot;users&quot;).doc(&#39;OS0t1rl9S9tpFtlve8H1&#39;).delete().then(() &#x3D;&gt; &#123;</span><br><span class="line">    console.log(&#39;delete data successful&#39;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-若想刪除文件內的某個屬性，則需要透過update的方式來實現。
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ref.update(&#123;</span><br><span class="line">    sex: firebase.firestore.FieldValue.delete()</span><br><span class="line">&#125;).then(() &#x3D;&gt; &#123;</span><br><span class="line">    console.log(&#39;set data successful&#39;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-![](https://drive.google.com/uc?export=view&amp;id=1YvOO7BlXUAngQkpR2cTxLywZtQ0SPlaQ)  </code></pre>
-<hr>
-<h3 id="讀取資料"><a href="#讀取資料" class="headerlink" title="讀取資料"></a>讀取資料</h3><p>有讀取 ( get ) 和即時監聽 ( onSnapshot ) 兩種方法，可以搭配篩選 ( where ) 和排序 ( orderBy ) 來進一步的篩選。</p>
-<p>以下為範例資料庫數據:<br><img src="https://drive.google.com/uc?export=view&id=1pVzro0oSzOjUtDrmze_1qk_dbtVaugBt"></p>
-<h4 id="get-取得資料"><a href="#get-取得資料" class="headerlink" title="get (取得資料)"></a>get (取得資料)</h4><p> 取得集合裡，所有文件的資料，並使用 forEach 個別取出文件內容。<br> <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"> let db &#x3D; firebase.firestore();</span><br><span class="line">let ref &#x3D; db.collection(&quot;users&quot;);</span><br><span class="line"></span><br><span class="line">ref.get().then(querySnapshot &#x3D;&gt; &#123;</span><br><span class="line">    querySnapshot.forEach(doc &#x3D;&gt; &#123;</span><br><span class="line">        console.log(doc.id, doc.data());</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><br><img src="https://drive.google.com/uc?export=view&id=1kfYsCwZQdw_F0sqV3y-44AOqPpUy0ti1"></p>
-<p>指定文件的名稱，則直接取得文件內容。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let ref &#x3D; db.collection(&quot;users&quot;).doc(&#39;ming&#39;);</span><br><span class="line"></span><br><span class="line">ref.get().then(doc &#x3D;&gt; &#123;</span><br><span class="line">    console.log(doc.id, doc.data());</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="writable"><a href="#writable" class="headerlink" title="writable"></a>writable</h3><p>屬性可否重新賦值。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var list &#x3D; &#123;a: 1,b: 2,c: 3&#125;;</span><br><span class="line"></span><br><span class="line">list.a &#x3D; 7 ;</span><br><span class="line">console.log(list);   &#x2F;&#x2F; &#123;a: 7, b: 2, c: 3,&#125;</span><br><span class="line"></span><br><span class="line">Object.defineProperty(list, &#39;a&#39;, &#123;writable: false&#125;);</span><br><span class="line">list.a &#x3D; 5 </span><br><span class="line">console.log(list);   &#x2F;&#x2F; &#123;a: 7, b: 2, c: 3,&#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="configurable"><a href="#configurable" class="headerlink" title="configurable"></a>configurable</h3><p>屬性可否刪除。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var list &#x3D; &#123;a: 1,b: 2,c: 3&#125;;</span><br><span class="line"></span><br><span class="line">Object.defineProperty(list, &#39;a&#39;, &#123;configurable: false&#125;);</span><br><span class="line">delete list.a;</span><br><span class="line">console.log(list);  &#x2F;&#x2F; &#123;a: 1,b: 2,c: 3&#125;</span><br><span class="line"></span><br><span class="line">delete list.b;</span><br><span class="line">console.log(list);   &#x2F;&#x2F; &#123;a: 1,c: 3&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="onSnapshot-即時監聽"><a href="#onSnapshot-即時監聽" class="headerlink" title="onSnapshot (即時監聽)"></a>onSnapshot (即時監聽)</h4><p>可以即時監聽資料庫的變化。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let db &#x3D; firebase.firestore();</span><br><span class="line">let ref &#x3D; db.collection(&quot;users&quot;);</span><br><span class="line"></span><br><span class="line">ref.onSnapshot(querySnapshot &#x3D;&gt; &#123;</span><br><span class="line">    querySnapshot.forEach(doc &#x3D;&gt; &#123;</span><br><span class="line">        console.log(doc.id, doc.data());</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="enumerable"><a href="#enumerable" class="headerlink" title="enumerable"></a>enumerable</h3><p>屬性可否被列舉(遍歷顯示)。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var list &#x3D; &#123;a: 1,b: 2,c: 3&#125;;</span><br><span class="line"></span><br><span class="line">for (key in list)&#123;</span><br><span class="line">    console.log(key);   &#x2F;&#x2F; a, b, c</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Object.defineProperty(list, &#39;a&#39;, &#123;enumerable: false&#125;);</span><br><span class="line"></span><br><span class="line">for (key in list)&#123;</span><br><span class="line">    console.log(key);   &#x2F;&#x2F; b, c</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-
-<h4 id="where-篩選"><a href="#where-篩選" class="headerlink" title="where (篩選)"></a>where (篩選)</h4><p>進行資料篩選，包含三個參數，第一個是屬性名稱，第二個是邏輯運算子，第三個是屬性值。<br>邏輯運算子包含: &lt;、&lt;=、==、&gt;、&gt;=、!=、in ( 邏輯OR )、not-in ( 邏輯AND ) 。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let db &#x3D; firebase.firestore();</span><br><span class="line">let ref &#x3D; db.collection(&quot;users&quot;);</span><br><span class="line"></span><br><span class="line">ref.where(&#39;sex&#39;,&#39;&#x3D;&#x3D;&#39;,&#39;Male&#39;).get().then(querySnapshot &#x3D;&gt; &#123;</span><br><span class="line">    querySnapshot.forEach(doc &#x3D;&gt; &#123;</span><br><span class="line">        console.log(doc.id, doc.data());</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p><img src="https://drive.google.com/uc?export=view&id=1i0lww2VBcZ7kQ5bThupAoJqticed5orw"></p>
-<h4 id="orderBy-排序"><a href="#orderBy-排序" class="headerlink" title="orderBy (排序)"></a>orderBy (排序)</h4><p>會和 limit (用於檢索文檔數量)搭配，作為排序後篩選特定數量的資料。<br>orderBy 有兩個參數，第一個是屬性名稱，第二個是遞增 ( asc ) 或遞減 ( desc ) 。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ref.orderBy(&#39;age&#39;,&#39;desc&#39;).limit(3).get().then(querySnapshot &#x3D;&gt; &#123;</span><br><span class="line">    querySnapshot.forEach(doc &#x3D;&gt; &#123;</span><br><span class="line">        console.log(doc.id, doc.data());</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p><img src="https://drive.google.com/uc?export=view&id=14svXmLaMWWrg8GnNjSxuZ5VkMwHiHV1X"></p>
 ]]></content>
       <categories>
-        <category>google</category>
+        <category>Javascript</category>
+        <category>Object</category>
       </categories>
   </entry>
 </search>
