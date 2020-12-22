@@ -28,7 +28,7 @@
 <meta property="og:description" content="基於原有的DOM ，創建另一個可設定不同CSS 的DOM 屬性，偽元素使用兩個冒號 「::」 開頭，總共有五個，">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2020-12-20T07:19:52.000Z">
-<meta property="article:modified_time" content="2020-12-20T08:04:05.922Z">
+<meta property="article:modified_time" content="2020-12-22T01:30:53.070Z">
 <meta property="article:author" content="LeeU">
 <meta property="article:tag" content="JavaScript,HTML,CSS,部落格,網頁,程式,文學,閱讀,小說,散文,詩集,電影,戲劇,紀錄">
 <meta name="twitter:card" content="summary">
@@ -212,10 +212,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
-              
 
-              <time title="創建時間：2020-12-20 15:19:52 / 修改時間：16:04:05" itemprop="dateCreated datePublished" datetime="2020-12-20T15:19:52+08:00">2020-12-20</time>
+              <time title="創建時間：2020-12-20 15:19:52" itemprop="dateCreated datePublished" datetime="2020-12-20T15:19:52+08:00">2020-12-20</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2020-12-22 09:30:53" itemprop="dateModified" datetime="2020-12-22T09:30:53+08:00">2020-12-22</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -257,9 +263,6 @@
 
       
         <h3 id="偽元素"><a href="#偽元素" class="headerlink" title="偽元素"></a>偽元素</h3><p>使用偽元素能簡化頁面上 HTML 標籤，讓 HTML 的維護更加輕鬆。<br>在 W3C 的定義裡總共有五個偽元素（其他仍在測試階段），分別是 ::before、::after、::first-line、::first-letter 和 ::selection。</p>
-<br>
-
-<h3 id="content-屬性"><a href="#content-屬性" class="headerlink" title="content 屬性"></a>content 屬性</h3><p>content 屬性與 ::before 和 ::after 一起使用在文檔中生成內容，使用 ::before 和 ::after 一定要有 content 否則不會發生作用。</p>
 <p><strong>::before</strong>  插入在一個元素之前，以 display:inline-block 的屬性存在。</p>
 <p><strong>:: after</strong>  插入在一個元素之後，以 display:inline-block 的屬性存在。</p>
 <p><strong>::first-line</strong>  將文本的第一行添加樣式，不能作用於 display:inline 的元素。</p>
@@ -267,6 +270,7 @@
 <p><strong>::selection</strong>  選取段落文字的樣式屬性。</p>
 <br>
 
+<h3 id="content-屬性"><a href="#content-屬性" class="headerlink" title="content 屬性"></a>content 屬性</h3><p>content 屬性與 ::before 和 ::after 一起使用在文檔中生成內容，使用 ::before 和 ::after 一定要有 content 否則不會發生作用。</p>
 <p>content 的值:</p>
 <ul>
 <li>normal | none  (預設)</li>

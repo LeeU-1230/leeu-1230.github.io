@@ -454,9 +454,6 @@
     <title>CSS - 偽元素</title>
     <url>/2020/12/20/%E5%81%BD%E5%85%83%E7%B4%A0/</url>
     <content><![CDATA[<h3 id="偽元素"><a href="#偽元素" class="headerlink" title="偽元素"></a>偽元素</h3><p>使用偽元素能簡化頁面上 HTML 標籤，讓 HTML 的維護更加輕鬆。<br>在 W3C 的定義裡總共有五個偽元素（其他仍在測試階段），分別是 ::before、::after、::first-line、::first-letter 和 ::selection。</p>
-<br>
-
-<h3 id="content-屬性"><a href="#content-屬性" class="headerlink" title="content 屬性"></a>content 屬性</h3><p>content 屬性與 ::before 和 ::after 一起使用在文檔中生成內容，使用 ::before 和 ::after 一定要有 content 否則不會發生作用。</p>
 <p><strong>::before</strong>  插入在一個元素之前，以 display:inline-block 的屬性存在。</p>
 <p><strong>:: after</strong>  插入在一個元素之後，以 display:inline-block 的屬性存在。</p>
 <p><strong>::first-line</strong>  將文本的第一行添加樣式，不能作用於 display:inline 的元素。</p>
@@ -464,6 +461,7 @@
 <p><strong>::selection</strong>  選取段落文字的樣式屬性。</p>
 <br>
 
+<h3 id="content-屬性"><a href="#content-屬性" class="headerlink" title="content 屬性"></a>content 屬性</h3><p>content 屬性與 ::before 和 ::after 一起使用在文檔中生成內容，使用 ::before 和 ::after 一定要有 content 否則不會發生作用。</p>
 <p>content 的值:</p>
 <ul>
 <li>normal | none  (預設)</li>
