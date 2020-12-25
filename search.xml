@@ -108,39 +108,21 @@
       </categories>
   </entry>
   <entry>
-    <title>Javascript - Fetch</title>
-    <url>/2020/12/01/Fetch/</url>
-    <content><![CDATA[<h3 id="Fetch"><a href="#Fetch" class="headerlink" title="Fetch"></a>Fetch</h3><p>基於 Promise 語法結構，用來執行請求、獲取 Response (回應)物件。</p>
-<p><strong>注意</strong><br>Fetch在只要伺服器有回應的情況，都會回傳fulfilled(已實現)的Promise物件狀態，其中也包含錯誤碼(404…)的情況。<br>因此要以 response 的 status 的屬性值來判斷。可以使用 throw拋出例外，在 catch 區塊中引用。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fetch(url).then((response) &#x3D;&gt; &#123;</span><br><span class="line">    if (response.status !&#x3D;&#x3D; 200) throw new Error(response.status)</span><br><span class="line">&#125;).catch((error) &#x3D;&gt; &#123;</span><br><span class="line">     ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+    <title>JavaScript - Async function 和 Await</title>
+    <url>/2020/12/24/Await/</url>
+    <content><![CDATA[<h3 id="Sync-同步-Async-非同步"><a href="#Sync-同步-Async-非同步" class="headerlink" title="Sync (同步) / Async (非同步)"></a>Sync (同步) / Async (非同步)</h3><p>Sync (同步) : 依序等待執行，一次執行完一件事，才能繼續往下執行。<br>Async (非同步) : 可以一次處理不同需求，不須等待事件執行完畢才往下執行。</p>
+<h3 id="Async-function"><a href="#Async-function" class="headerlink" title="Async function"></a>Async function</h3><p>async function 用來定義一個非同步函式</p>
+<h3 id="await"><a href="#await" class="headerlink" title="await"></a>await</h3><p>運行在 async function 內，用來暫停非同步函式的運行，直到非同步進入 resolve (解決) 或 reject (出錯) 才會進入下一步。</p>
+<p>例:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function promiseFn(num, s) &#123;                           &#x2F;&#x2F;Promise 函式</span><br><span class="line">    return new Promise(function (resolve) &#123;            &#x2F;&#x2F; 回傳一個 promise</span><br><span class="line">        setTimeout(resolve(&#96;第 $&#123;num&#125; 輸出&#96;), s);      &#x2F;&#x2F; 等待多少秒之後 resolve()</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">promiseFn(1, 200)</span><br><span class="line">.then(resolve &#x3D;&gt; &#123;                &#x2F;&#x2F; 使用 then 來接收</span><br><span class="line">    console.log(resolve);</span><br><span class="line">    return promiseFn(2, 200);     &#x2F;&#x2F; 使用 return 來鏈接</span><br><span class="line">&#125;).then(resolve &#x3D;&gt; &#123;</span><br><span class="line">    console.log(resolve);</span><br><span class="line">    return promiseFn(3, 200);</span><br><span class="line">&#125;).then(resolve &#x3D;&gt; &#123;</span><br><span class="line">    console.log(resolve);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>也可以:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function promiseFn(num, s) &#123;</span><br><span class="line">    return new Promise(function (resolve) &#123;            &#x2F;&#x2F; 回傳一個 promise</span><br><span class="line">        setTimeout(resolve(&#96;第 $&#123;num&#125; 輸出&#96;), s);      &#x2F;&#x2F; 等待多少秒之後 resolve()</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">async function delayFn() &#123;                            &#x2F;&#x2F; 回傳後才會往下依序執行</span><br><span class="line">    const data1 &#x3D; await promiseFn(1, 200);</span><br><span class="line">    const data2 &#x3D; await promiseFn(2, 200);</span><br><span class="line">    const data3 &#x3D; await promiseFn(3, 200);</span><br><span class="line">    console.log(data1, data2, data3);</span><br><span class="line">&#125;;</span><br><span class="line">delayFn();</span><br></pre></td></tr></table></figure>
 
-<h3 id="Request-屬性"><a href="#Request-屬性" class="headerlink" title="Request 屬性"></a>Request 屬性</h3><ul>
-<li><strong>url</strong> : 第一個參數，必填項目。</li>
-<li><strong>method</strong> : GET(預設)、POST、PUT、DELETE、HEAD。</li>
-<li><strong>headers</strong> : 要求相關的 Headers 物件 ( 預設 {} )。</li>
-</ul>
-<h3 id="Response-屬性"><a href="#Response-屬性" class="headerlink" title="Response 屬性"></a>Response 屬性</h3><ul>
-<li><strong>response.ok</strong> : 成功 ( 狀態碼 200-299 ) 為 true，失敗為 false。</li>
-<li><strong>response.status</strong> : 狀態代碼。</li>
-<li><strong>response.statusText</strong> : 狀態文字。</li>
-<li><strong>response.headers</strong> : 相關的 Headers 物件。</li>
-<li><strong>response.type</strong> : 此 response 的類型(例如： basic, cors)。</li>
-<li><strong>response.url</strong> : response 的 url。</li>
-</ul>
-<h3 id="Response-方法"><a href="#Response-方法" class="headerlink" title="Response 方法"></a>Response 方法</h3><p>依照不同的資料類型使用對應的方法，才能真正取到資料物件。</p>
-<ul>
-<li><strong>json()</strong></li>
-<li><strong>text()</strong></li>
-<li><strong>blob()</strong></li>
-<li><strong>formData()</strong></li>
-<li><strong>arrayBuffer()</strong></li>
-</ul>
-<h3 id="GET用法"><a href="#GET用法" class="headerlink" title="GET用法"></a>GET用法</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fetch(&#39;https:&#x2F;&#x2F;randomuser.me&#x2F;api&#x2F;&#39;, &#123; method: &#39;GET&#39; &#125;)</span><br><span class="line">    .then((response) &#x3D;&gt; &#123;</span><br><span class="line">        if (response.status !&#x3D;&#x3D; 200) throw new Error(response.status)</span><br><span class="line">        console.log(response);</span><br><span class="line">        return response.json();</span><br><span class="line">    &#125;)</span><br><span class="line">    .then((jsonData) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(jsonData)</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch((error) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(&#39;錯誤&#39;, error);</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="POST用法"><a href="#POST用法" class="headerlink" title="POST用法"></a>POST用法</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fetch(url, &#123;method: &#39;POST&#39;,</span><br><span class="line">    &#x2F;&#x2F; headers 加入json格式</span><br><span class="line">    headers: &#123;</span><br><span class="line">        &#39;Content-Type&#39;: &#39;application&#x2F;json&#39;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#x2F;&#x2F; body 將字串轉為json格式送出</span><br><span class="line">    body: JSON.stringify(&#123;</span><br><span class="line">        email: &#39;lovef1232e@hexschool.com&#39;,</span><br><span class="line">        password: &#39;12345678&#39;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;).then((response) &#x3D;&gt; &#123;</span><br><span class="line">    return response.json();</span><br><span class="line">&#125;).then((jsonData) &#x3D;&gt; &#123;</span><br><span class="line">    console.log(jsonData);</span><br><span class="line">&#125;).catch((err) &#x3D;&gt; &#123;</span><br><span class="line">    console.log(&#39;錯誤:&#39;, err);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>]]></content>
+]]></content>
       <categories>
         <category>Javascript</category>
-        <category>Fetch</category>
+        <category>Promise</category>
+        <category>Async</category>
       </categories>
   </entry>
   <entry>
@@ -211,6 +193,90 @@
       </categories>
   </entry>
   <entry>
+    <title>Javascript - Fetch</title>
+    <url>/2020/12/01/Fetch/</url>
+    <content><![CDATA[<h3 id="Fetch"><a href="#Fetch" class="headerlink" title="Fetch"></a>Fetch</h3><p>基於 Promise 語法結構，用來執行請求、獲取 Response (回應)物件。</p>
+<p><strong>注意</strong><br>Fetch在只要伺服器有回應的情況，都會回傳fulfilled(已實現)的Promise物件狀態，其中也包含錯誤碼(404…)的情況。<br>因此要以 response 的 status 的屬性值來判斷。可以使用 throw拋出例外，在 catch 區塊中引用。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fetch(url).then((response) &#x3D;&gt; &#123;</span><br><span class="line">    if (response.status !&#x3D;&#x3D; 200) throw new Error(response.status)</span><br><span class="line">&#125;).catch((error) &#x3D;&gt; &#123;</span><br><span class="line">     ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Request-屬性"><a href="#Request-屬性" class="headerlink" title="Request 屬性"></a>Request 屬性</h3><ul>
+<li><strong>url</strong> : 第一個參數，必填項目。</li>
+<li><strong>method</strong> : GET(預設)、POST、PUT、DELETE、HEAD。</li>
+<li><strong>headers</strong> : 要求相關的 Headers 物件 ( 預設 {} )。</li>
+</ul>
+<h3 id="Response-屬性"><a href="#Response-屬性" class="headerlink" title="Response 屬性"></a>Response 屬性</h3><ul>
+<li><strong>response.ok</strong> : 成功 ( 狀態碼 200-299 ) 為 true，失敗為 false。</li>
+<li><strong>response.status</strong> : 狀態代碼。</li>
+<li><strong>response.statusText</strong> : 狀態文字。</li>
+<li><strong>response.headers</strong> : 相關的 Headers 物件。</li>
+<li><strong>response.type</strong> : 此 response 的類型(例如： basic, cors)。</li>
+<li><strong>response.url</strong> : response 的 url。</li>
+</ul>
+<h3 id="Response-方法"><a href="#Response-方法" class="headerlink" title="Response 方法"></a>Response 方法</h3><p>依照不同的資料類型使用對應的方法，才能真正取到資料物件。</p>
+<ul>
+<li><strong>json()</strong></li>
+<li><strong>text()</strong></li>
+<li><strong>blob()</strong></li>
+<li><strong>formData()</strong></li>
+<li><strong>arrayBuffer()</strong></li>
+</ul>
+<h3 id="GET用法"><a href="#GET用法" class="headerlink" title="GET用法"></a>GET用法</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fetch(&#39;https:&#x2F;&#x2F;randomuser.me&#x2F;api&#x2F;&#39;, &#123; method: &#39;GET&#39; &#125;)</span><br><span class="line">    .then((response) &#x3D;&gt; &#123;</span><br><span class="line">        if (response.status !&#x3D;&#x3D; 200) throw new Error(response.status)</span><br><span class="line">        console.log(response);</span><br><span class="line">        return response.json();</span><br><span class="line">    &#125;)</span><br><span class="line">    .then((jsonData) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(jsonData)</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch((error) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(&#39;錯誤&#39;, error);</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="POST用法"><a href="#POST用法" class="headerlink" title="POST用法"></a>POST用法</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fetch(url, &#123;method: &#39;POST&#39;,</span><br><span class="line">    &#x2F;&#x2F; headers 加入json格式</span><br><span class="line">    headers: &#123;</span><br><span class="line">        &#39;Content-Type&#39;: &#39;application&#x2F;json&#39;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#x2F;&#x2F; body 將字串轉為json格式送出</span><br><span class="line">    body: JSON.stringify(&#123;</span><br><span class="line">        email: &#39;lovef1232e@hexschool.com&#39;,</span><br><span class="line">        password: &#39;12345678&#39;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;).then((response) &#x3D;&gt; &#123;</span><br><span class="line">    return response.json();</span><br><span class="line">&#125;).then((jsonData) &#x3D;&gt; &#123;</span><br><span class="line">    console.log(jsonData);</span><br><span class="line">&#125;).catch((err) &#x3D;&gt; &#123;</span><br><span class="line">    console.log(&#39;錯誤:&#39;, err);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Javascript</category>
+        <category>Promise</category>
+        <category>Fetch</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaScript – Math</title>
+    <url>/2020/12/25/Math/</url>
+    <content><![CDATA[<h3 id="Math-abs"><a href="#Math-abs" class="headerlink" title="Math.abs()"></a>Math.abs()</h3><p>取得數字的絕對值。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; Math.abs(&#39;-1&#39;);   &#x2F;&#x2F; 1</span><br></pre></td></tr></table></figure>
+
+<h3 id="Math-ceil"><a href="#Math-ceil" class="headerlink" title="Math.ceil();"></a>Math.ceil();</h3><p>無條件進位。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; Math.ceil(&#39;5.11&#39;);   &#x2F;&#x2F; 6</span><br></pre></td></tr></table></figure>
+
+<h3 id="Math-floor"><a href="#Math-floor" class="headerlink" title="Math.floor();"></a>Math.floor();</h3><p>無條件捨去。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; Math.floor(&#39;5.11&#39;);   &#x2F;&#x2F; 5</span><br></pre></td></tr></table></figure>
+
+<h3 id="Math-round"><a href="#Math-round" class="headerlink" title="Math.round();"></a>Math.round();</h3><p>四捨五入。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; Math.round(&#39;5.6&#39;);   &#x2F;&#x2F; 6</span><br></pre></td></tr></table></figure>
+
+<h3 id="Math-random"><a href="#Math-random" class="headerlink" title="Math.random();"></a>Math.random();</h3><p>返回一個 0 (包含) ~ 1 (不包含) 之間的隨機數。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; Math.random();   &#x2F;&#x2F; 0.5653752873923776</span><br></pre></td></tr></table></figure>
+
+<h3 id="Math-max"><a href="#Math-max" class="headerlink" title="Math.max();"></a>Math.max();</h3><p>取得傳入所有傳入參數的最大值。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; Math.max(5,7,9,-3);   &#x2F;&#x2F; 9</span><br></pre></td></tr></table></figure>
+
+<h3 id="Math-min"><a href="#Math-min" class="headerlink" title="Math.min();"></a>Math.min();</h3><p>取得傳入所有傳入參數的最小值。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; Math.min(5,7,9,-3);   &#x2F;&#x2F; -3</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Javascript</category>
+        <category>Math</category>
+        <category>方法</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaScript – Object 資料複製</title>
+    <url>/2020/12/12/Object%E8%B3%87%E6%96%99%E8%A4%87%E8%A3%BD/</url>
+    <content><![CDATA[<h3 id="淺層複製方法-Object-assign"><a href="#淺層複製方法-Object-assign" class="headerlink" title="淺層複製方法: Object.assign"></a>淺層複製方法: Object.assign</h3><p>複製到第一層物件的屬性，若有第二層以上的資料會與舊物件一起共用同一塊記憶體。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var dog &#x3D; &#123;</span><br><span class="line">          name : &#39;舒跑&#39;,</span><br><span class="line">          like : &#123;</span><br><span class="line">              food : &#39;雞胸肉&#39;,</span><br><span class="line">              game : &#39;你丟我撿&#39;,</span><br><span class="line">              bed : &#39;主人的床&#39;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">var newDog &#x3D; Object.assign(&#123;&#125;, dog);</span><br><span class="line">newDog.name &#x3D; &#39;可爾必思&#39;;</span><br><span class="line">      </span><br><span class="line">console.log(dog.name);  &#x2F;&#x2F; 舒跑</span><br><span class="line">console.log(newDog.name);  &#x2F;&#x2F; 可爾必思</span><br><span class="line"></span><br><span class="line">newDog.like.bed &#x3D; &#39;地板&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.like.bed);  &#x2F;&#x2F; 地板</span><br><span class="line">console.log(newDog.like.bed);  &#x2F;&#x2F; 地板</span><br></pre></td></tr></table></figure>
+
+<h3 id="淺層複製方法-…其餘運算子"><a href="#淺層複製方法-…其餘運算子" class="headerlink" title="淺層複製方法: …其餘運算子"></a>淺層複製方法: …其餘運算子</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var dog &#x3D; &#123;</span><br><span class="line">    name : &#39;舒跑&#39;,</span><br><span class="line">    like : &#123;</span><br><span class="line">        food : &#39;雞胸肉&#39;,</span><br><span class="line">        game : &#39;你丟我撿&#39;,</span><br><span class="line">        bed : &#39;主人的床&#39;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var newDog &#x3D; &#123;...dog&#125;;</span><br><span class="line">newDog.name &#x3D; &#39;可爾必思&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.name);  &#x2F;&#x2F; 舒跑</span><br><span class="line">console.log(newDog.name);  &#x2F;&#x2F; 可爾必思</span><br><span class="line"></span><br><span class="line">newDog.like.bed &#x3D; &#39;地板&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.like.bed);  &#x2F;&#x2F; 地板</span><br><span class="line">console.log(newDog.like.bed);  &#x2F;&#x2F; 地板</span><br></pre></td></tr></table></figure>
+
+<h3 id="深層複製方法-JSON"><a href="#深層複製方法-JSON" class="headerlink" title="深層複製方法: JSON"></a>深層複製方法: JSON</h3><p>複製建立全新的物件。<br>JSON 方法限制:純資料的物件可行，有Function、Set、Map、undefined等型態會失效。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var dog &#x3D; &#123;</span><br><span class="line">    name : &#39;舒跑&#39;,</span><br><span class="line">    like : &#123;</span><br><span class="line">        food : &#39;雞胸肉&#39;,</span><br><span class="line">        game : &#39;你丟我撿&#39;,</span><br><span class="line">        bed : &#39;主人的床&#39;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var newDog &#x3D; JSON.parse(JSON.stringify(dog));</span><br><span class="line">newDog.name &#x3D; &#39;可爾必思&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.name);  &#x2F;&#x2F; 舒跑</span><br><span class="line">console.log(newDog.name);  &#x2F;&#x2F; 可爾必思</span><br><span class="line"></span><br><span class="line">newDog.like.bed &#x3D; &#39;地板&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.like.bed);  &#x2F;&#x2F; 主人的床</span><br><span class="line">console.log(newDog.like.bed);  &#x2F;&#x2F; 地板</span><br></pre></td></tr></table></figure>
+
+<h3 id="深層複製方法-extend"><a href="#深層複製方法-extend" class="headerlink" title="深層複製方法: $.extend"></a>深層複製方法: $.extend</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var newDog &#x3D; $.extend(true,&#123;&#125;,dog);</span><br><span class="line">newDog.name &#x3D; &#39;可爾必思&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.name);  &#x2F;&#x2F; 舒跑</span><br><span class="line">console.log(newDog.name);  &#x2F;&#x2F; 可爾必思</span><br><span class="line"></span><br><span class="line">newDog.like.bed &#x3D; &#39;地板&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.like.bed);  &#x2F;&#x2F; 主人的床</span><br><span class="line">console.log(newDog.like.bed);  &#x2F;&#x2F; 地板</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Javascript</category>
+        <category>Object</category>
+        <category>資料複製</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Javascript - Promise</title>
     <url>/2020/12/02/Promise/</url>
     <content><![CDATA[<h3 id="Promise-物件"><a href="#Promise-物件" class="headerlink" title="Promise 物件"></a>Promise 物件</h3><p>有三種狀態 :</p>
@@ -248,23 +314,24 @@
       <categories>
         <category>Javascript</category>
         <category>Promise</category>
+        <category>Promise</category>
       </categories>
   </entry>
   <entry>
-    <title>JavaScript – Object 資料複製</title>
-    <url>/2020/12/12/Object%E8%B3%87%E6%96%99%E8%A4%87%E8%A3%BD/</url>
-    <content><![CDATA[<h3 id="淺層複製方法-Object-assign"><a href="#淺層複製方法-Object-assign" class="headerlink" title="淺層複製方法: Object.assign"></a>淺層複製方法: Object.assign</h3><p>複製到第一層物件的屬性，若有第二層以上的資料會與舊物件一起共用同一塊記憶體。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var dog &#x3D; &#123;</span><br><span class="line">          name : &#39;舒跑&#39;,</span><br><span class="line">          like : &#123;</span><br><span class="line">              food : &#39;雞胸肉&#39;,</span><br><span class="line">              game : &#39;你丟我撿&#39;,</span><br><span class="line">              bed : &#39;主人的床&#39;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">var newDog &#x3D; Object.assign(&#123;&#125;, dog);</span><br><span class="line">newDog.name &#x3D; &#39;可爾必思&#39;;</span><br><span class="line">      </span><br><span class="line">console.log(dog.name);  &#x2F;&#x2F; 舒跑</span><br><span class="line">console.log(newDog.name);  &#x2F;&#x2F; 可爾必思</span><br><span class="line"></span><br><span class="line">newDog.like.bed &#x3D; &#39;地板&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.like.bed);  &#x2F;&#x2F; 地板</span><br><span class="line">console.log(newDog.like.bed);  &#x2F;&#x2F; 地板</span><br></pre></td></tr></table></figure>
+    <title>JavaScript – call,apply,bind</title>
+    <url>/2020/12/10/call-apply-bind%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h3 id="fn-call-this-obj-value1…"><a href="#fn-call-this-obj-value1…" class="headerlink" title="fn.call(this-obj, value1…)"></a>fn.call(this-obj, value1…)</h3><p>call() 方法，可以用來改變 this 指向的物件，this-obj是 this 要指向的物件，value1…是要傳進函數的參數。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function tagName(a, b) &#123;</span><br><span class="line">    console.log(this.myName, a, b);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var family &#x3D; &#123;</span><br><span class="line">    myName: &#39;Wei&#39;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">tagName(1, 2);  &#x2F;&#x2F; Louisa 1 2</span><br><span class="line">tagName.call(family, 1, 2);  &#x2F;&#x2F; Wei 1 2</span><br></pre></td></tr></table></figure>
 
-<h3 id="淺層複製方法-…其餘運算子"><a href="#淺層複製方法-…其餘運算子" class="headerlink" title="淺層複製方法: …其餘運算子"></a>淺層複製方法: …其餘運算子</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var dog &#x3D; &#123;</span><br><span class="line">    name : &#39;舒跑&#39;,</span><br><span class="line">    like : &#123;</span><br><span class="line">        food : &#39;雞胸肉&#39;,</span><br><span class="line">        game : &#39;你丟我撿&#39;,</span><br><span class="line">        bed : &#39;主人的床&#39;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var newDog &#x3D; &#123;...dog&#125;;</span><br><span class="line">newDog.name &#x3D; &#39;可爾必思&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.name);  &#x2F;&#x2F; 舒跑</span><br><span class="line">console.log(newDog.name);  &#x2F;&#x2F; 可爾必思</span><br><span class="line"></span><br><span class="line">newDog.like.bed &#x3D; &#39;地板&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.like.bed);  &#x2F;&#x2F; 地板</span><br><span class="line">console.log(newDog.like.bed);  &#x2F;&#x2F; 地板</span><br></pre></td></tr></table></figure>
+<h3 id="fn-apply-this-obj-value1…"><a href="#fn-apply-this-obj-value1…" class="headerlink" title="fn.apply(this-obj[, value1…])"></a>fn.apply(this-obj[, value1…])</h3><p>apply() 跟 call() 的用途是一樣的，只是第二個參數是一個陣列。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function tagName(a, b) &#123;</span><br><span class="line">    console.log(this.myName, a, b);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var family &#x3D; &#123;</span><br><span class="line">    myName: &#39;Wei&#39;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">tagName.apply(family, [5, 6, 7]);   &#x2F;&#x2F; Wei 5 6</span><br><span class="line"></span><br><span class="line">function re_tagName(a)&#123;</span><br><span class="line">    console.log(this.myName, a, arguments);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">re_tagName.apply(family, [5, 6, 7]);  &#x2F;&#x2F; Wei 5 Arguments(3) [5, 6, 7]</span><br></pre></td></tr></table></figure>
 
-<h3 id="深層複製方法-JSON"><a href="#深層複製方法-JSON" class="headerlink" title="深層複製方法: JSON"></a>深層複製方法: JSON</h3><p>複製建立全新的物件。<br>JSON 方法限制:純資料的物件可行，有Function、Set、Map、undefined等型態會失效。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var dog &#x3D; &#123;</span><br><span class="line">    name : &#39;舒跑&#39;,</span><br><span class="line">    like : &#123;</span><br><span class="line">        food : &#39;雞胸肉&#39;,</span><br><span class="line">        game : &#39;你丟我撿&#39;,</span><br><span class="line">        bed : &#39;主人的床&#39;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var newDog &#x3D; JSON.parse(JSON.stringify(dog));</span><br><span class="line">newDog.name &#x3D; &#39;可爾必思&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.name);  &#x2F;&#x2F; 舒跑</span><br><span class="line">console.log(newDog.name);  &#x2F;&#x2F; 可爾必思</span><br><span class="line"></span><br><span class="line">newDog.like.bed &#x3D; &#39;地板&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.like.bed);  &#x2F;&#x2F; 主人的床</span><br><span class="line">console.log(newDog.like.bed);  &#x2F;&#x2F; 地板</span><br></pre></td></tr></table></figure>
-
-<h3 id="深層複製方法-extend"><a href="#深層複製方法-extend" class="headerlink" title="深層複製方法: $.extend"></a>深層複製方法: $.extend</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var newDog &#x3D; $.extend(true,&#123;&#125;,dog);</span><br><span class="line">newDog.name &#x3D; &#39;可爾必思&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.name);  &#x2F;&#x2F; 舒跑</span><br><span class="line">console.log(newDog.name);  &#x2F;&#x2F; 可爾必思</span><br><span class="line"></span><br><span class="line">newDog.like.bed &#x3D; &#39;地板&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.like.bed);  &#x2F;&#x2F; 主人的床</span><br><span class="line">console.log(newDog.like.bed);  &#x2F;&#x2F; 地板</span><br></pre></td></tr></table></figure>]]></content>
+<h3 id="fn-bind-this-obj-value1…"><a href="#fn-bind-this-obj-value1…" class="headerlink" title="fn.bind(this-obj[, value1…])"></a>fn.bind(this-obj[, value1…])</h3><p>亦用來綁定 this 指向的方法，但call() 和 apply() 是直接執行function，bind() 是建立一個新的 function。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function tagName(a, b) &#123;</span><br><span class="line">    console.log(this.myName, a, b);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var family &#x3D; &#123;</span><br><span class="line">    myName: &#39;Wei&#39;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">function re_tagName(a)&#123;</span><br><span class="line">    console.log(this.myName, a, arguments);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var fn &#x3D; tagName.bind(family, 8, 9);</span><br><span class="line">fn();  &#x2F;&#x2F; Wei 8 9</span><br><span class="line"></span><br><span class="line">var fn2 &#x3D; re_tagName.bind(family, 8, 9, 10);</span><br><span class="line">fn2();  &#x2F;&#x2F;  Wei 8 Arguments(3) [8, 9, 10]</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Javascript</category>
-        <category>Object</category>
+        <category>this</category>
+        <category>方法</category>
       </categories>
   </entry>
   <entry>
@@ -323,22 +390,7 @@
       <categories>
         <category>Javascript</category>
         <category>String</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>JavaScript – call,apply,bind</title>
-    <url>/2020/12/10/call-apply-bind%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<h3 id="fn-call-this-obj-value1…"><a href="#fn-call-this-obj-value1…" class="headerlink" title="fn.call(this-obj, value1…)"></a>fn.call(this-obj, value1…)</h3><p>call() 方法，可以用來改變 this 指向的物件，this-obj是 this 要指向的物件，value1…是要傳進函數的參數。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function tagName(a, b) &#123;</span><br><span class="line">    console.log(this.myName, a, b);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var family &#x3D; &#123;</span><br><span class="line">    myName: &#39;Wei&#39;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">tagName(1, 2);  &#x2F;&#x2F; Louisa 1 2</span><br><span class="line">tagName.call(family, 1, 2);  &#x2F;&#x2F; Wei 1 2</span><br></pre></td></tr></table></figure>
-
-<h3 id="fn-apply-this-obj-value1…"><a href="#fn-apply-this-obj-value1…" class="headerlink" title="fn.apply(this-obj[, value1…])"></a>fn.apply(this-obj[, value1…])</h3><p>apply() 跟 call() 的用途是一樣的，只是第二個參數是一個陣列。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function tagName(a, b) &#123;</span><br><span class="line">    console.log(this.myName, a, b);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var family &#x3D; &#123;</span><br><span class="line">    myName: &#39;Wei&#39;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">tagName.apply(family, [5, 6, 7]);   &#x2F;&#x2F; Wei 5 6</span><br><span class="line"></span><br><span class="line">function re_tagName(a)&#123;</span><br><span class="line">    console.log(this.myName, a, arguments);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">re_tagName.apply(family, [5, 6, 7]);  &#x2F;&#x2F; Wei 5 Arguments(3) [5, 6, 7]</span><br></pre></td></tr></table></figure>
-
-<h3 id="fn-bind-this-obj-value1…"><a href="#fn-bind-this-obj-value1…" class="headerlink" title="fn.bind(this-obj[, value1…])"></a>fn.bind(this-obj[, value1…])</h3><p>亦用來綁定 this 指向的方法，但call() 和 apply() 是直接執行function，bind() 是建立一個新的 function。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function tagName(a, b) &#123;</span><br><span class="line">    console.log(this.myName, a, b);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var family &#x3D; &#123;</span><br><span class="line">    myName: &#39;Wei&#39;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">function re_tagName(a)&#123;</span><br><span class="line">    console.log(this.myName, a, arguments);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var fn &#x3D; tagName.bind(family, 8, 9);</span><br><span class="line">fn();  &#x2F;&#x2F; Wei 8 9</span><br><span class="line"></span><br><span class="line">var fn2 &#x3D; re_tagName.bind(family, 8, 9, 10);</span><br><span class="line">fn2();  &#x2F;&#x2F;  Wei 8 Arguments(3) [8, 9, 10]</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Javascript</category>
-        <category>this</category>
+        <category>方法</category>
       </categories>
   </entry>
   <entry>
@@ -370,18 +422,44 @@
 <li>範例一</li>
 <li>範例二</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 咖啡</span><br><span class="line">    * 拿鐵</span><br><span class="line">    * 美式</span><br><span class="line">* 奶茶</span><br><span class="line">    * 珍珠奶茶</span><br><span class="line">    * 鴛鴦奶茶</span><br></pre></td></tr></table></figure>
+<ul>
+<li>咖啡<ul>
+<li>拿鐵</li>
+<li>美式</li>
+</ul>
+</li>
+<li>奶茶<ul>
+<li>珍珠奶茶</li>
+<li>鴛鴦奶茶</li>
+</ul>
+</li>
+</ul>
 <h3 id="有序清單"><a href="#有序清單" class="headerlink" title="有序清單"></a>有序清單</h3><p>使用數字. (<code>1.</code>) 即可。</p>
 <ol>
 <li>範例一</li>
 <li>範例二</li>
 </ol>
+<h3 id="插入圖片"><a href="#插入圖片" class="headerlink" title="插入圖片"></a>插入圖片</h3><p>使用 <code>![連結名稱](連結網址)</code>。</p>
+<h3 id="小區塊片段"><a href="#小區塊片段" class="headerlink" title="小區塊片段"></a>小區塊片段</h3><p>使用反引號`前後包覆。</p>
+<h3 id="大區塊片段"><a href="#大區塊片段" class="headerlink" title="大區塊片段"></a>大區塊片段</h3><p>前方使用四個空白。</p>
+<h3 id="程式碼區塊"><a href="#程式碼區塊" class="headerlink" title="程式碼區塊"></a>程式碼區塊</h3><p>使用三個反引號```前後包覆。</p>
 <h3 id="引用標籤"><a href="#引用標籤" class="headerlink" title="引用標籤"></a>引用標籤</h3><p>使用<code>&gt;</code>，此標籤是區塊元素。</p>
 <blockquote>
 <p>引用範例</p>
 </blockquote>
-<h3 id="插入圖片"><a href="#插入圖片" class="headerlink" title="插入圖片"></a>插入圖片</h3><p>使用 <code>![連結名稱](連結網址)</code>。</p>
-<h3 id="程式碼片段"><a href="#程式碼片段" class="headerlink" title="程式碼片段"></a>程式碼片段</h3><p>使用反引號`前後包覆。</p>
-<h3 id="程式碼區塊"><a href="#程式碼區塊" class="headerlink" title="程式碼區塊"></a>程式碼區塊</h3><p>使用三個反引號```前後包覆。</p>
+<h3 id="階層式區塊"><a href="#階層式區塊" class="headerlink" title="階層式區塊"></a>階層式區塊</h3><p>使用 &gt; ，依數量來製作階層。</p>
+<p>例如:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 水果</span><br><span class="line">&gt;&gt; 番茄</span><br><span class="line">&gt;&gt;&gt; 大番茄</span><br><span class="line">&gt;&gt;&gt; 小番茄</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>水果</p>
+<blockquote>
+<p>番茄</p>
+<blockquote>
+<p>大番茄<br>小番茄</p>
+</blockquote>
+</blockquote>
+</blockquote>
 ]]></content>
       <categories>
         <category>markdown</category>
@@ -403,51 +481,6 @@
       <categories>
         <category>CSS</category>
         <category>overflow</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>CSS - max、min、clamp 數學函式</title>
-    <url>/2020/12/18/%E6%95%B8%E5%AD%B8%E5%87%BD%E5%BC%8F/</url>
-    <content><![CDATA[<h3 id="max"><a href="#max" class="headerlink" title="max()"></a>max()</h3><p>定義了運算最大值，作用在於限制最小值。</p>
-<p>例如: div 的寬度為50%，最小寬度為300px</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: max(50%, 300px);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>等同於</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 50%;</span><br><span class="line">    min-width: 300px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<br>
-
-<h3 id="min"><a href="#min" class="headerlink" title="min()"></a>min()</h3><p>定義了數學運算的最小值，作用在於限制最大值。</p>
-<p>例如: div 的寬度為50%，最大寬度為300px</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: min(50%, 300px); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>等同於</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 50%;</span><br><span class="line">    max-width: 300px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<br>
-
-<h3 id="clamp"><a href="#clamp" class="headerlink" title="clamp()"></a>clamp()</h3><p>clamp(最小值, 中間值, 最大值)<br>返回一個區間範圍的值。</p>
-<p>例如: div 的最小寬度為300px，最大寬度為500px，在範圍內則寬度為50%</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: clamp(300px, 50%, 500px); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>等同於</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 50%;</span><br><span class="line">    min-width: 300px;</span><br><span class="line">    max-width: 500px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>CSS</category>
-        <category>數學函式</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>JavaScript – ... 其餘 / 展開</title>
-    <url>/2020/12/10/%E5%B1%95%E9%96%8B/</url>
-    <content><![CDATA[<h3 id="其餘參數"><a href="#其餘參數" class="headerlink" title="其餘參數"></a>其餘參數</h3><p>表示函式所接受的參數數量不固定，而讓其餘參數合併成一個陣列。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function Fun(...arg) &#123; console.log(arg.length); &#125;</span><br><span class="line">Fun();   &#x2F;&#x2F; 0</span><br><span class="line">Fun(5);   &#x2F;&#x2F; 1</span><br><span class="line">Fun(5, 6, 7);   &#x2F;&#x2F; 3</span><br></pre></td></tr></table></figure>
-
-<h3 id="展開運算子"><a href="#展開運算子" class="headerlink" title="展開運算子"></a>展開運算子</h3><p>用在執行函式時的參數上，可將一個陣列展開成多個獨立參數。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const vau &#x3D; (...args) &#x3D;&gt; &#123;     </span><br><span class="line">return args.reduce((a, b) &#x3D;&gt; a + b, 0);    &#125;</span><br><span class="line"></span><br><span class="line">let arr &#x3D; [2, 3, 4];</span><br><span class="line">vau(...arr);   &#x2F;&#x2F; 9</span><br><span class="line">vau(1, ...arr, 5);   &#x2F;&#x2F; 15</span><br></pre></td></tr></table></figure>
-
-<p>也可用來合併及展開陣列。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let drink1 &#x3D; [&#39;milk&#39;, &#39;juice&#39;];</span><br><span class="line">let drink2 &#x3D; [&#39;coffee&#39;, &#39;water&#39;];</span><br><span class="line">let drink_menu &#x3D; [...drink1, ...drink2];   &#x2F;&#x2F;[&quot;milk&quot;, &quot;juice&quot;, &quot;coffee&quot;, &quot;water&quot;] </span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Javascript</category>
-        <category>Function</category>
       </categories>
   </entry>
   <entry>
@@ -489,6 +522,35 @@
       </categories>
   </entry>
   <entry>
+    <title>CSS - max、min、clamp 數學函式</title>
+    <url>/2020/12/18/%E6%95%B8%E5%AD%B8%E5%87%BD%E5%BC%8F/</url>
+    <content><![CDATA[<h3 id="max"><a href="#max" class="headerlink" title="max()"></a>max()</h3><p>定義了運算最大值，作用在於限制最小值。</p>
+<p>例如: div 的寬度為50%，最小寬度為300px</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: max(50%, 300px);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>等同於</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 50%;</span><br><span class="line">    min-width: 300px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="min"><a href="#min" class="headerlink" title="min()"></a>min()</h3><p>定義了數學運算的最小值，作用在於限制最大值。</p>
+<p>例如: div 的寬度為50%，最大寬度為300px</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: min(50%, 300px); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>等同於</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 50%;</span><br><span class="line">    max-width: 300px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="clamp"><a href="#clamp" class="headerlink" title="clamp()"></a>clamp()</h3><p>clamp(最小值, 中間值, 最大值)<br>返回一個區間範圍的值。</p>
+<p>例如: div 的最小寬度為300px，最大寬度為500px，在範圍內則寬度為50%</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: clamp(300px, 50%, 500px); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>等同於</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 50%;</span><br><span class="line">    min-width: 300px;</span><br><span class="line">    max-width: 500px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>CSS</category>
+        <category>數學函式</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Javascript - 函式閉包</title>
     <url>/2020/12/02/%E5%87%BD%E5%BC%8F%E9%96%89%E5%8C%85/</url>
     <content><![CDATA[<h3 id="函式閉包"><a href="#函式閉包" class="headerlink" title="函式閉包"></a>函式閉包</h3><p>保存了內部函式的執行環境，可以持續存取。<br>將變數指向外層函式，每一個變數都是獨立環境，可以反覆呼叫，重複持續存取內部函式環境。</p>
@@ -497,6 +559,24 @@
       <categories>
         <category>Javascript</category>
         <category>Function</category>
+        <category>函式閉包</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaScript – ... 其餘 / 展開</title>
+    <url>/2020/12/10/%E5%B1%95%E9%96%8B/</url>
+    <content><![CDATA[<h3 id="其餘參數"><a href="#其餘參數" class="headerlink" title="其餘參數"></a>其餘參數</h3><p>表示函式所接受的參數數量不固定，而讓其餘參數合併成一個陣列。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function Fun(...arg) &#123; console.log(arg.length); &#125;</span><br><span class="line">Fun();   &#x2F;&#x2F; 0</span><br><span class="line">Fun(5);   &#x2F;&#x2F; 1</span><br><span class="line">Fun(5, 6, 7);   &#x2F;&#x2F; 3</span><br></pre></td></tr></table></figure>
+
+<h3 id="展開運算子"><a href="#展開運算子" class="headerlink" title="展開運算子"></a>展開運算子</h3><p>用在執行函式時的參數上，可將一個陣列展開成多個獨立參數。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const vau &#x3D; (...args) &#x3D;&gt; &#123;     </span><br><span class="line">return args.reduce((a, b) &#x3D;&gt; a + b, 0);    &#125;</span><br><span class="line"></span><br><span class="line">let arr &#x3D; [2, 3, 4];</span><br><span class="line">vau(...arr);   &#x2F;&#x2F; 9</span><br><span class="line">vau(1, ...arr, 5);   &#x2F;&#x2F; 15</span><br></pre></td></tr></table></figure>
+
+<p>也可用來合併及展開陣列。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let drink1 &#x3D; [&#39;milk&#39;, &#39;juice&#39;];</span><br><span class="line">let drink2 &#x3D; [&#39;coffee&#39;, &#39;water&#39;];</span><br><span class="line">let drink_menu &#x3D; [...drink1, ...drink2];   &#x2F;&#x2F;[&quot;milk&quot;, &quot;juice&quot;, &quot;coffee&quot;, &quot;water&quot;] </span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Javascript</category>
+        <category>Function</category>
+        <category>其餘/展開運算子</category>
       </categories>
   </entry>
   <entry>
@@ -516,6 +596,60 @@
       <categories>
         <category>Javascript</category>
         <category>this</category>
+        <category>指向</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaScript – 物件屬性的調整</title>
+    <url>/2020/12/10/%E7%89%A9%E4%BB%B6%E5%B1%AC%E6%80%A7%E7%9A%84%E8%AA%BF%E6%95%B4/</url>
+    <content><![CDATA[<h3 id="Object-defineProperty-obj-prop-descriptor"><a href="#Object-defineProperty-obj-prop-descriptor" class="headerlink" title="Object.defineProperty(obj, prop, descriptor)"></a>Object.defineProperty(obj, prop, descriptor)</h3><p>調整物件屬性的特徵。</p>
+<p>obj: 要定義屬性的目標物件。</p>
+<p>prop: 要定義或修改的屬性的名稱。</p>
+<p>descriptor: 參數，有value、writable、configurable、enumerable。</p>
+<h3 id="value"><a href="#value" class="headerlink" title="value"></a>value</h3><p>修改屬性的值。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var list &#x3D; &#123;a: 1,b: 2,c: 3&#125;;</span><br><span class="line"></span><br><span class="line">Object.defineProperty(list,&#39;a&#39;, &#123;value :5&#125;);</span><br><span class="line"></span><br><span class="line">console.log(list);   &#x2F;&#x2F; &#123;a: 5, b: 2, c: 3&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="writable"><a href="#writable" class="headerlink" title="writable"></a>writable</h3><p>屬性可否重新賦值。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var list &#x3D; &#123;a: 1,b: 2,c: 3&#125;;</span><br><span class="line"></span><br><span class="line">list.a &#x3D; 7 ;</span><br><span class="line">console.log(list);   &#x2F;&#x2F; &#123;a: 7, b: 2, c: 3,&#125;</span><br><span class="line"></span><br><span class="line">Object.defineProperty(list, &#39;a&#39;, &#123;writable: false&#125;);</span><br><span class="line">list.a &#x3D; 5 </span><br><span class="line">console.log(list);   &#x2F;&#x2F; &#123;a: 7, b: 2, c: 3,&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="configurable"><a href="#configurable" class="headerlink" title="configurable"></a>configurable</h3><p>屬性可否刪除。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var list &#x3D; &#123;a: 1,b: 2,c: 3&#125;;</span><br><span class="line"></span><br><span class="line">Object.defineProperty(list, &#39;a&#39;, &#123;configurable: false&#125;);</span><br><span class="line">delete list.a;</span><br><span class="line">console.log(list);  &#x2F;&#x2F; &#123;a: 1,b: 2,c: 3&#125;</span><br><span class="line"></span><br><span class="line">delete list.b;</span><br><span class="line">console.log(list);   &#x2F;&#x2F; &#123;a: 1,c: 3&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="enumerable"><a href="#enumerable" class="headerlink" title="enumerable"></a>enumerable</h3><p>屬性可否被列舉(遍歷顯示)。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var list &#x3D; &#123;a: 1,b: 2,c: 3&#125;;</span><br><span class="line"></span><br><span class="line">for (key in list)&#123;</span><br><span class="line">    console.log(key);   &#x2F;&#x2F; a, b, c</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Object.defineProperty(list, &#39;a&#39;, &#123;enumerable: false&#125;);</span><br><span class="line"></span><br><span class="line">for (key in list)&#123;</span><br><span class="line">    console.log(key);   &#x2F;&#x2F; b, c</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Javascript</category>
+        <category>Object</category>
+        <category>物件屬性</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaScript – 物件原型、繼承</title>
+    <url>/2020/12/10/%E7%89%A9%E4%BB%B6%E5%8E%9F%E5%9E%8B%E3%80%81%E7%B9%BC%E6%89%BF/</url>
+    <content><![CDATA[<h3 id="物件建構式"><a href="#物件建構式" class="headerlink" title="物件建構式"></a>物件建構式</h3><p>在建立Object時被呼叫，透過物件的建構函式定義屬性、方法，來建立物件實例。</p>
+<ul>
+<li>宣告一個類別 (class)。</li>
+<li>this 定義屬性。</li>
+<li>prototype 定義方法。</li>
+<li>new 添加物件實例。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function Dog(name, color, weight) &#123;</span><br><span class="line">            this.name &#x3D; name;</span><br><span class="line">            this.color &#x3D; color;</span><br><span class="line">            this.weight &#x3D; weight;</span><br><span class="line">        &#125;</span><br><span class="line">Dog.prototype.bark &#x3D; function()&#123;</span><br><span class="line">            console.log(this.name + &#39;汪汪!&#39;);</span><br><span class="line">        &#125;</span><br><span class="line">let Fido &#x3D; new Dog(&#39;Fido&#39;,&#39;棕色&#39;,12);</span><br><span class="line"></span><br><span class="line">Fido.bark();  &#x2F;&#x2F; Fido汪汪!</span><br><span class="line">console.log(Fido);  </span><br><span class="line">&#x2F;&#x2F; Dog &#123;name: &quot;Fido&quot;, color: &quot;棕色&quot;, weight: 12&#125;</span><br><span class="line"></span><br><span class="line">Fido.size &#x3D; &quot;中型犬&quot;;  &#x2F;&#x2F; 添加新屬性</span><br><span class="line">delete Fido.size;  &#x2F;&#x2F; 刪除屬性</span><br><span class="line"></span><br><span class="line">Fido.game &#x3D; function()&#123;    &#x2F;&#x2F; 添加新方法</span><br><span class="line">      console.log(this.name + &#39;來玩你丟我撿&#39;);</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="原型繼承"><a href="#原型繼承" class="headerlink" title="原型繼承"></a>原型繼承</h3><p>一個類別 (class)可繼承其他類別的屬性和方法，然後再延伸增加自己的屬性和方法。</p>
+<ul>
+<li><strong>.prototype.constructor</strong> 屬性，指向物件的建構函式。</li>
+<li><strong>.prototype._proto__ 屬性</strong>，指向物件繼承的原型。</li>
+<li><strong>Object.create(目標物件原型[，屬性])</strong> 方法，使用目標物件作為新創建物件的原型來創建新物件。</li>
+<li><strong>Object.getPrototypeOf(obj)</strong> 方法，取得該物件的原型。</li>
+<li><strong>instanceof</strong> 運算子，判斷物件是否建立自指定的建構函式。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function Animal(family) &#123;</span><br><span class="line">    this.kingdom &#x3D; &#39;動物界&#39;;</span><br><span class="line">    this.family &#x3D; family;</span><br><span class="line">    &#125;</span><br><span class="line">Animal.prototype.move &#x3D; function() &#123;</span><br><span class="line">    console.log(this.name + &#39;奔跑&#39;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">function Dog(name, color, weight) &#123;</span><br><span class="line">    Animal.call(this, &#39;犬科&#39;);</span><br><span class="line">    this.name &#x3D; name;</span><br><span class="line">    this.color &#x3D; color;</span><br><span class="line">    this.weight &#x3D; weight;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">Dog.prototype &#x3D; Object.create(Animal.prototype);</span><br><span class="line">&#x2F;&#x2F;建立多層繼承，透過Object.create複製了Animal.prototype全部的屬性</span><br><span class="line"></span><br><span class="line">Dog.prototype.constructor &#x3D; Dog;</span><br><span class="line">&#x2F;&#x2F;需要再將constructor重新指定回物件的建構函式本身。</span><br><span class="line"></span><br><span class="line">Dog.prototype.bark &#x3D; function()&#123;</span><br><span class="line">     console.log(this.name + &#39;汪汪!&#39;);</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">let Fido &#x3D; new Dog(&#39;Fido&#39;,&#39;棕色&#39;,12);</span><br><span class="line"></span><br><span class="line">Fido.bark();  &#x2F;&#x2F; Fido汪汪!</span><br><span class="line">Fido.move();  &#x2F;&#x2F; Fido奔跑</span><br><span class="line"></span><br><span class="line">console.log(Fido);  </span><br><span class="line">&#x2F;&#x2F; Dog &#123;kingdom: &quot;動物界&quot;, family: &quot;犬科&quot;, name: &quot;Fido&quot;, color: &quot;棕色&quot;, weight: 12&#125;</span><br><span class="line"></span><br><span class="line">console.log(Object.getPrototypeOf(Fido));  </span><br><span class="line">&#x2F;&#x2F; Animal &#123;constructor: ƒ, bark: ƒ&#125;</span><br><span class="line"></span><br><span class="line">console.log(Fido instanceof Animal);     &#x2F;&#x2F; true</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Javascript</category>
+        <category>Object</category>
+        <category>物件原型、繼承</category>
       </categories>
   </entry>
   <entry>
@@ -566,57 +700,6 @@
       </categories>
   </entry>
   <entry>
-    <title>JavaScript – 物件原型、繼承</title>
-    <url>/2020/12/10/%E7%89%A9%E4%BB%B6%E5%8E%9F%E5%9E%8B%E3%80%81%E7%B9%BC%E6%89%BF/</url>
-    <content><![CDATA[<h3 id="物件建構式"><a href="#物件建構式" class="headerlink" title="物件建構式"></a>物件建構式</h3><p>在建立Object時被呼叫，透過物件的建構函式定義屬性、方法，來建立物件實例。</p>
-<ul>
-<li>宣告一個類別 (class)。</li>
-<li>this 定義屬性。</li>
-<li>prototype 定義方法。</li>
-<li>new 添加物件實例。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function Dog(name, color, weight) &#123;</span><br><span class="line">            this.name &#x3D; name;</span><br><span class="line">            this.color &#x3D; color;</span><br><span class="line">            this.weight &#x3D; weight;</span><br><span class="line">        &#125;</span><br><span class="line">Dog.prototype.bark &#x3D; function()&#123;</span><br><span class="line">            console.log(this.name + &#39;汪汪!&#39;);</span><br><span class="line">        &#125;</span><br><span class="line">let Fido &#x3D; new Dog(&#39;Fido&#39;,&#39;棕色&#39;,12);</span><br><span class="line"></span><br><span class="line">Fido.bark();  &#x2F;&#x2F; Fido汪汪!</span><br><span class="line">console.log(Fido);  </span><br><span class="line">&#x2F;&#x2F; Dog &#123;name: &quot;Fido&quot;, color: &quot;棕色&quot;, weight: 12&#125;</span><br><span class="line"></span><br><span class="line">Fido.size &#x3D; &quot;中型犬&quot;;  &#x2F;&#x2F; 添加新屬性</span><br><span class="line">delete Fido.size;  &#x2F;&#x2F; 刪除屬性</span><br><span class="line"></span><br><span class="line">Fido.game &#x3D; function()&#123;    &#x2F;&#x2F; 添加新方法</span><br><span class="line">      console.log(this.name + &#39;來玩你丟我撿&#39;);</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="原型繼承"><a href="#原型繼承" class="headerlink" title="原型繼承"></a>原型繼承</h3><p>一個類別 (class)可繼承其他類別的屬性和方法，然後再延伸增加自己的屬性和方法。</p>
-<ul>
-<li><strong>.prototype.constructor</strong> 屬性，指向物件的建構函式。</li>
-<li><strong>.prototype._proto__ 屬性</strong>，指向物件繼承的原型。</li>
-<li><strong>Object.create(目標物件原型[，屬性])</strong> 方法，使用目標物件作為新創建物件的原型來創建新物件。</li>
-<li><strong>Object.getPrototypeOf(obj)</strong> 方法，取得該物件的原型。</li>
-<li><strong>instanceof</strong> 運算子，判斷物件是否建立自指定的建構函式。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function Animal(family) &#123;</span><br><span class="line">    this.kingdom &#x3D; &#39;動物界&#39;;</span><br><span class="line">    this.family &#x3D; family;</span><br><span class="line">    &#125;</span><br><span class="line">Animal.prototype.move &#x3D; function() &#123;</span><br><span class="line">    console.log(this.name + &#39;奔跑&#39;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">function Dog(name, color, weight) &#123;</span><br><span class="line">    Animal.call(this, &#39;犬科&#39;);</span><br><span class="line">    this.name &#x3D; name;</span><br><span class="line">    this.color &#x3D; color;</span><br><span class="line">    this.weight &#x3D; weight;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">Dog.prototype &#x3D; Object.create(Animal.prototype);</span><br><span class="line">&#x2F;&#x2F;建立多層繼承，透過Object.create複製了Animal.prototype全部的屬性</span><br><span class="line"></span><br><span class="line">Dog.prototype.constructor &#x3D; Dog;</span><br><span class="line">&#x2F;&#x2F;需要再將constructor重新指定回物件的建構函式本身。</span><br><span class="line"></span><br><span class="line">Dog.prototype.bark &#x3D; function()&#123;</span><br><span class="line">     console.log(this.name + &#39;汪汪!&#39;);</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">let Fido &#x3D; new Dog(&#39;Fido&#39;,&#39;棕色&#39;,12);</span><br><span class="line"></span><br><span class="line">Fido.bark();  &#x2F;&#x2F; Fido汪汪!</span><br><span class="line">Fido.move();  &#x2F;&#x2F; Fido奔跑</span><br><span class="line"></span><br><span class="line">console.log(Fido);  </span><br><span class="line">&#x2F;&#x2F; Dog &#123;kingdom: &quot;動物界&quot;, family: &quot;犬科&quot;, name: &quot;Fido&quot;, color: &quot;棕色&quot;, weight: 12&#125;</span><br><span class="line"></span><br><span class="line">console.log(Object.getPrototypeOf(Fido));  </span><br><span class="line">&#x2F;&#x2F; Animal &#123;constructor: ƒ, bark: ƒ&#125;</span><br><span class="line"></span><br><span class="line">console.log(Fido instanceof Animal);     &#x2F;&#x2F; true</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Javascript</category>
-        <category>Object</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>JavaScript – 物件屬性的調整</title>
-    <url>/2020/12/10/%E7%89%A9%E4%BB%B6%E5%B1%AC%E6%80%A7%E7%9A%84%E8%AA%BF%E6%95%B4/</url>
-    <content><![CDATA[<h3 id="Object-defineProperty-obj-prop-descriptor"><a href="#Object-defineProperty-obj-prop-descriptor" class="headerlink" title="Object.defineProperty(obj, prop, descriptor)"></a>Object.defineProperty(obj, prop, descriptor)</h3><p>調整物件屬性的特徵。</p>
-<p>obj: 要定義屬性的目標物件。</p>
-<p>prop: 要定義或修改的屬性的名稱。</p>
-<p>descriptor: 參數，有value、writable、configurable、enumerable。</p>
-<h3 id="value"><a href="#value" class="headerlink" title="value"></a>value</h3><p>修改屬性的值。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var list &#x3D; &#123;a: 1,b: 2,c: 3&#125;;</span><br><span class="line"></span><br><span class="line">Object.defineProperty(list,&#39;a&#39;, &#123;value :5&#125;);</span><br><span class="line"></span><br><span class="line">console.log(list);   &#x2F;&#x2F; &#123;a: 5, b: 2, c: 3&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="writable"><a href="#writable" class="headerlink" title="writable"></a>writable</h3><p>屬性可否重新賦值。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var list &#x3D; &#123;a: 1,b: 2,c: 3&#125;;</span><br><span class="line"></span><br><span class="line">list.a &#x3D; 7 ;</span><br><span class="line">console.log(list);   &#x2F;&#x2F; &#123;a: 7, b: 2, c: 3,&#125;</span><br><span class="line"></span><br><span class="line">Object.defineProperty(list, &#39;a&#39;, &#123;writable: false&#125;);</span><br><span class="line">list.a &#x3D; 5 </span><br><span class="line">console.log(list);   &#x2F;&#x2F; &#123;a: 7, b: 2, c: 3,&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="configurable"><a href="#configurable" class="headerlink" title="configurable"></a>configurable</h3><p>屬性可否刪除。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var list &#x3D; &#123;a: 1,b: 2,c: 3&#125;;</span><br><span class="line"></span><br><span class="line">Object.defineProperty(list, &#39;a&#39;, &#123;configurable: false&#125;);</span><br><span class="line">delete list.a;</span><br><span class="line">console.log(list);  &#x2F;&#x2F; &#123;a: 1,b: 2,c: 3&#125;</span><br><span class="line"></span><br><span class="line">delete list.b;</span><br><span class="line">console.log(list);   &#x2F;&#x2F; &#123;a: 1,c: 3&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="enumerable"><a href="#enumerable" class="headerlink" title="enumerable"></a>enumerable</h3><p>屬性可否被列舉(遍歷顯示)。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var list &#x3D; &#123;a: 1,b: 2,c: 3&#125;;</span><br><span class="line"></span><br><span class="line">for (key in list)&#123;</span><br><span class="line">    console.log(key);   &#x2F;&#x2F; a, b, c</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Object.defineProperty(list, &#39;a&#39;, &#123;enumerable: false&#125;);</span><br><span class="line"></span><br><span class="line">for (key in list)&#123;</span><br><span class="line">    console.log(key);   &#x2F;&#x2F; b, c</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Javascript</category>
-        <category>Object</category>
-      </categories>
-  </entry>
-  <entry>
     <title>CSS - 變數</title>
     <url>/2020/12/18/%E8%AE%8A%E6%95%B8/</url>
     <content><![CDATA[<h3 id="基礎寫法"><a href="#基礎寫法" class="headerlink" title="基礎寫法"></a>基礎寫法</h3><p>基本上定義變數，會將變數寫在 :root 裡，讓網頁中所有元素的 CSS，都能使用這個變數。</p>
@@ -650,6 +733,248 @@
       <categories>
         <category>CSS</category>
         <category>變數</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>HTML - 表單標籤</title>
+    <url>/2020/12/25/%E8%A1%A8%E5%96%AE%E6%A8%99%E7%B1%A4/</url>
+    <content><![CDATA[<h3 id="lt-form-gt"><a href="#lt-form-gt" class="headerlink" title="&lt;form&gt;"></a>&lt;form&gt;</h3><p>建立一個 HTML 表單，&lt;form&gt; 做為表單的容器。</p>
+<p>屬性:</p>
+<ul>
+<li><strong>action</strong>    指定一個位址 (URL)，要將表格的內容傳送過去。</li>
+<li><strong>method</strong>    指定資料傳輸時用的 HTTP 協議。( GET / POST )<ul>
+<li>GET : 用在資料量較小或非敏感的資料，因為資料會被放在網址中直接傳出。</li>
+<li>POST : 用在表單資料量較大、有夾帶檔案上傳或隱私性考量的資料。</li>
+</ul>
+</li>
+<li><strong>target</strong>    指定瀏覽器要在何處顯示伺服器回應的結果。<ul>
+<li>_self : 顯示在表單所在的當前視窗。</li>
+<li>_blank : 顯示在新視窗。</li>
+<li>_parent : 顯示在上一層的視窗。</li>
+<li>_top : 顯示在最頂層的視窗。</li>
+</ul>
+</li>
+<li><strong>autocomplete</strong>  是否啟用瀏覽器自動完成機制。( on(預設) / off )</li>
+</ul>
+<br>
+
+<h3 id="lt-input-gt"><a href="#lt-input-gt" class="headerlink" title="&lt;input&gt;"></a>&lt;input&gt;</h3><p>建立不同用途的表單控制元件。</p>
+<p>屬性:</p>
+<ul>
+<li><strong>name</strong>    欄位名稱。</li>
+<li><strong>value</strong>    初始值。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;input value&#x3D;&quot;初始值&quot;&gt;</span><br></pre></td></tr></table></figure>
+<input value="初始值"></li>
+<li><strong>disabled</strong>    設為禁用狀態。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;input value&#x3D;&quot;此格禁用&quot; disabled&gt;</span><br></pre></td></tr></table></figure>
+<input value="此格禁用" disabled></li>
+<li><strong>readonly</strong>    設為唯獨，不可更改狀態。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;input value&#x3D;&quot;此格不可更改&quot; readonly&gt;</span><br></pre></td></tr></table></figure>
+<input value="此格不可更改" readonly></li>
+<li><strong>autocomplete</strong>    是否啟用瀏覽器自動完成功能( on / off )。</li>
+<li><strong>autofocus</strong>    頁面載入後，自動聚焦。</li>
+<li><strong>required</strong>    設為必填欄位。</li>
+<li><strong>pattern</strong>    表單欄位驗證。搭配正規表示法。&lt;input pattern=”正規表達式”&gt;<ul>
+<li>text, date, search, url, tel, email 和 password 等輸入欄位可以使用。</li>
+</ul>
+</li>
+<li><strong>type</strong>    建立不同的表單元件。</li>
+</ul>
+<h3 id="type-屬性"><a href="#type-屬性" class="headerlink" title="type 屬性"></a>type 屬性</h3><p>建立不同的表單元件。</p>
+<ul>
+<li><strong>type=’text’</strong>    文字輸入。<ul>
+<li>maxlength 屬性: 最多輸入字數。</li>
+<li>minlength 屬性: 最少輸入字數。</li>
+<li>size 屬性: 欄位顯示寬度。</li>
+<li>placeholder 屬性: 提示訊息。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;input placeholder&#x3D;&quot;請輸入使用者帳號&quot;&gt;</span><br></pre></td></tr></table></figure>
+<input placeholder="請輸入使用者帳號"></li>
+</ul>
+</li>
+<li><strong>type=’password</strong>    和 text 的差別是，輸入的內容不會被明碼顯示在畫面中。</li>
+<li><strong>type=’checkbox’</strong>    核取方塊，勾選某個選項是否成立，可多選。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;input type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;fast_food&quot; value&#x3D;&quot;McDonald&#39;s&quot;&gt; 喜歡麥當勞</span><br><span class="line">&lt;input type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;fast_food&quot; value&#x3D;&quot;KFC&quot;&gt; 喜歡肯德基</span><br></pre></td></tr></table></figure>
+<input type="checkbox" name="fast_food" value="McDonald's"> 喜歡麥當勞<br><input type="checkbox" name="fast_food" value="KFC"> 喜歡肯德基</li>
+<li><strong>type=’radio’</strong>    選項按鈕，多選一。同一組的選項，需要一樣的name。<ul>
+<li>checked 屬性: 可以將該 checkbox / radio 的初始狀態設定為已選取。 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">選擇你最喜歡的顏色：</span><br><span class="line">&lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;color&quot; value&#x3D;&quot;red&quot;&gt; red</span><br><span class="line">&lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;color&quot; value&#x3D;&quot;green&quot;&gt; green</span><br><span class="line">&lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;color&quot; value&#x3D;&quot;blue&quot;&gt; blue</span><br></pre></td></tr></table></figure>
+選擇你最喜歡的顏色：<br><input type="radio" name="color" value="red"> red<br><input type="radio" name="color" value="green"> green<br><input type="radio" name="color" value="blue"> blue</li>
+</ul>
+</li>
+<li><strong>type=’submit’</strong>    表單送出按鈕。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;input type&#x3D;&quot;submit&quot; value&#x3D;&quot;Send&quot;&gt;</span><br></pre></td></tr></table></figure>
+<input type="submit" value="Send"></li>
+<li><strong>type=’reset’</strong>    重設表單內容。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;input type&#x3D;&quot;reset&quot; value&#x3D;&quot;Reset&quot;&gt;</span><br></pre></td></tr></table></figure>
+<input type="reset" value="Reset"></li>
+<li><strong>type=’hidden’</strong>    隱藏資料欄位。</li>
+<li><strong>type=’image’</strong>    圖片送出按鈕，使用圖片表示的送出按鈕。<ul>
+<li>src 屬性: 圖片位址。</li>
+<li>alt 屬性: 當圖片下載失敗時的替代文字。</li>
+<li>width 屬性: 圖片寬度。</li>
+<li>height 屬性: 圖片高度。</li>
+</ul>
+</li>
+<li><strong>type=’file’</strong>    選擇上傳的檔案。<ul>
+<li>accept 屬性: 限制允許上傳的檔案類型。可用逗點分隔多種允許類型。值:<ul>
+<li>. 檔案類型: .jpg、.pdf、.png…等。</li>
+<li>指定檔案類型: image/png、image/jpg等。</li>
+<li>audio/*: 任意聲音檔。</li>
+<li>video/*: 任意影片檔。</li>
+<li>image/* : 任意圖片檔。</li>
+</ul>
+</li>
+<li>multiple 屬性: 可同時選多個檔案上傳。</li>
+<li>capture 屬性 : 可用來開啟使用手機的照相鏡頭。值:<ul>
+<li>user : 開啟前鏡頭。</li>
+<li>environment : 開啟後鏡頭。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>type=’button’</strong>    表單按鈕。</li>
+<li><strong>type=’search’</strong>    搜尋框。</li>
+<li><strong>type=’tel’</strong>    電話號碼輸入欄位。</li>
+<li><strong>type=’url’</strong>    網址輸入欄位。</li>
+<li><strong>type=’email’</strong>    電子郵件輸入欄位。</li>
+<li><strong>type=’number’</strong>    數字輸入欄位。<ul>
+<li>max 屬性: 可輸入的最大值。</li>
+<li>min 屬性: 可輸入的最小值。</li>
+<li>step 屬性: 控制數字一次跳動的幅度。</li>
+</ul>
+</li>
+<li><strong>type=’range’</strong>    使用滑動的方式在一個數字區間內選擇出一個值。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;input type&#x3D;&quot;range&quot; min&#x3D;&quot;1&quot; max&#x3D;&quot;10&quot;&gt;</span><br></pre></td></tr></table></figure>
+<input type="range" min="1" max="10"></li>
+<li><strong>type=’date’</strong>    日期輸入欄位。<ul>
+<li>max 屬性: 可輸入的最晚日期。</li>
+<li>min 屬性: 可輸入的最早日期。</li>
+<li>step 屬性: 控制日期一次跳動的幅度。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;input type&#x3D;&quot;date&quot;</span><br><span class="line">   value&#x3D;&quot;2020-12-25&quot;</span><br><span class="line">   min&#x3D;&quot;2020-12-01&quot;</span><br><span class="line">   max&#x3D;&quot;2022-12-31&quot;</span><br><span class="line">   step&#x3D;&quot;5&quot;&gt;</span><br></pre></td></tr></table></figure>
+  <input type="date"
+   value="2020-12-25"
+   min="2020-12-01"
+   max="2022-12-31"
+   step="5"></li>
+</ul>
+</li>
+<li><strong>type=’time’</strong>    時間輸入欄位。(同樣有max、min、step)</li>
+<li><strong>type=’color’</strong>    顏色選擇器。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;input type&#x3D;&quot;color&quot; value&#x3D;&quot;#00ff00&quot;&gt;</span><br></pre></td></tr></table></figure>
+<input type="color" value="#00ff00">
+
+</li>
+</ul>
+<br>
+
+<h3 id="lt-textarea-gt"><a href="#lt-textarea-gt" class="headerlink" title="&lt;textarea&gt;"></a>&lt;textarea&gt;</h3><p>建立一個可以輸入多行文字的輸入框。<br>內容文字的換行是使用一般的文字換行符號 \n。</p>
+<p>屬性:</p>
+<ul>
+<li><strong>name</strong>    欄位名稱。</li>
+<li><strong>rows</strong>    數字，設定欄高是幾行文字。</li>
+<li><strong>cols</strong>    數字，設定欄寬是幾行文字。</li>
+<li><strong>maxlength</strong></li>
+<li><strong>minlength</strong></li>
+<li><strong>placeholder</strong>    提示訊息。</li>
+<li><strong>disable</strong>    設定禁用。( 布林值 )</li>
+<li><strong>readonly</strong>    設定唯獨。( 布林值 )</li>
+<li><strong>required</strong>    設定必填。( 布林值 )<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;textarea name&#x3D;&quot;輸入框&quot;</span><br><span class="line">          placeholder&#x3D;&quot;說點什麼吧&quot;</span><br><span class="line">          rows&#x3D;&quot;8&quot;</span><br><span class="line">          cols&#x3D;&quot;16&quot;</span><br><span class="line">          required&gt;&lt;&#x2F;textarea&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><textarea name="輸入框"
+          placeholder="說點什麼吧"
+          rows="8"
+          cols="16"
+          required></textarea></p>
+<p>使用預設值則是將文字放在 &lt;textarea&gt; 標籤之間</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;textarea name&#x3D;&quot;輸入框&quot;</span><br><span class="line">          placeholder&#x3D;&quot;說點什麼吧&quot;</span><br><span class="line">          rows&#x3D;&quot;8&quot;</span><br><span class="line">          cols&#x3D;&quot;16&quot;</span><br><span class="line">          required&gt;12345&lt;&#x2F;textarea&gt;</span><br></pre></td></tr></table></figure>
+<p><textarea name="輸入框"
+          placeholder="說點什麼吧"
+          rows="8"
+          cols="16"
+          required>12345</textarea></p>
+<br>
+
+<h3 id="lt-select-gt-、-lt-option-gt-、-lt-optgroup-gt"><a href="#lt-select-gt-、-lt-option-gt-、-lt-optgroup-gt" class="headerlink" title="&lt;select&gt; 、 &lt;option&gt; 、 &lt;optgroup&gt;"></a>&lt;select&gt; 、 &lt;option&gt; 、 &lt;optgroup&gt;</h3><p>&lt;select&gt; 建立下拉式選單的容器標籤。<br>標籤上的屬性:</p>
+<ul>
+<li><strong>name</strong>    欄位名稱。</li>
+<li><strong>disable</strong>    設定禁用。( 布林值 )</li>
+<li><strong>required</strong>    設定必填。( 布林值 )</li>
+<li><strong>multiple</strong>    設定選單中的選項可被多選。</li>
+<li><strong>size</strong>    指定一次顯示幾個選項。</li>
+</ul>
+<p>在 &lt;select&gt; 裡面使用 &lt;option&gt; 標籤來建立個別選項。<br>標籤上的屬性：</p>
+<ul>
+<li><strong>value</strong>    設定的值。</li>
+<li><strong>selected</strong>    預先選取。( 布林值 )</li>
+<li><strong>label</strong>    用於說明選項。</li>
+<li><strong>disable</strong>    設定不可選。( 布林值 )</li>
+</ul>
+<p>&lt;option&gt; 則是將選項分區顯示。</p>
+<ul>
+<li><strong>label</strong>    設定該分區的名稱。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;select name&#x3D;&quot;menu&quot;&gt;</span><br><span class="line">&lt;optgroup label&#x3D;&quot;Coffee&quot;&gt;</span><br><span class="line">  &lt;option&gt;Americano&lt;&#x2F;option&gt;</span><br><span class="line">  &lt;option&gt;Coffee Latte&lt;&#x2F;option&gt;</span><br><span class="line">  &lt;option&gt;Cappuccino&lt;&#x2F;option&gt;</span><br><span class="line">  &lt;option&gt;Caramel Macchiato&lt;&#x2F;option&gt;</span><br><span class="line">&lt;&#x2F;optgroup&gt;</span><br><span class="line">&lt;optgroup label&#x3D;&quot;Dessert&quot;&gt;</span><br><span class="line">  &lt;option&gt;Bagel&lt;&#x2F;option&gt;</span><br><span class="line">  &lt;option&gt;Pizza&lt;&#x2F;option&gt;</span><br><span class="line">  &lt;option&gt;Sandwich&lt;&#x2F;option&gt;</span><br><span class="line">  &lt;option&gt;Cake&lt;&#x2F;option&gt;</span><br><span class="line">&lt;&#x2F;optgroup&gt;</span><br><span class="line">&lt;&#x2F;select&gt;</span><br></pre></td></tr></table></figure>
+<select name="menu">
+<optgroup label="Coffee">
+  <option>Americano</option>
+  <option>Coffee Latte</option>
+  <option>Cappuccino</option>
+  <option>Caramel Macchiato</option>
+</optgroup>
+<optgroup label="Dessert">
+  <option>Bagel</option>
+  <option>Pizza</option>
+  <option>Sandwich</option>
+  <option>Cake</option>
+</optgroup>
+</select>
+
+</li>
+</ul>
+<br>
+
+<h3 id="lt-lable-gt"><a href="#lt-lable-gt" class="headerlink" title="&lt;lable&gt;"></a>&lt;lable&gt;</h3><p>給表單的說明標題。<br>將表單元件包在<lable>裡面，可增加表單的點擊範圍。<br>使用 &lt;lable&gt; 的 for 屬性值，值設定為表單元件的id值，可增加表單的點擊範圍。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;label for&#x3D;&quot;email&quot;&gt;Email address: &lt;&#x2F;label&gt;</span><br><span class="line">&lt;input type&#x3D;&quot;email&quot; name&#x3D;&quot;user_email&quot; id&#x3D;&quot;email&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p><label for="email">Email :  </label><input type="email" name="user_email" id="email"></p>
+<br>
+
+<h3 id="lt-fieldest-gt-、-lt-legend-gt"><a href="#lt-fieldest-gt-、-lt-legend-gt" class="headerlink" title="&lt;fieldest&gt; 、 &lt;legend&gt;"></a>&lt;fieldest&gt; 、 &lt;legend&gt;</h3><p>&lt;fieldest&gt; 對表單做分組。<br>&lt;legend&gt; 則是作為分組標題。<br>屬性:</p>
+<ul>
+<li><p><strong>name</strong>    聲明 fieldset 名稱。</p>
+</li>
+<li><p><strong>disable</strong>    設定為禁用的狀態。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;form&gt;</span><br><span class="line">  &lt;fieldset&gt;</span><br><span class="line">    &lt;legend&gt;基本資料&lt;&#x2F;legend&gt;</span><br><span class="line">    &lt;label for&#x3D;&#39;user_name&#39;&gt;姓名:    &lt;&#x2F;label&gt; &lt;input name&#x3D;&quot;user_name&quot; id&#x3D;&#39;user_name&#39;&gt;</span><br><span class="line">    &lt;label for&#x3D;&#39;user_age&#39;&gt;年齡:    &lt;&#x2F;label&gt; &lt;input type&#x3D;&quot;number&quot; name&#x3D;&quot;user_age&quot; id&#x3D;&#39;user_age&#39;&gt;</span><br><span class="line">  &lt;&#x2F;fieldset&gt;</span><br><span class="line"></span><br><span class="line">  &lt;fieldset&gt;</span><br><span class="line">    &lt;legend&gt;聯絡資訊&lt;&#x2F;legend&gt;</span><br><span class="line">    &lt;label for&#x3D;&quot;user_email&quot;&gt;Email:   &lt;&#x2F;label&gt;&lt;input type&#x3D;&quot;email&quot; name&#x3D;&quot;user_email&quot; id&#x3D;&quot;user_email&quot;&gt;</span><br><span class="line">    &lt;label for&#x3D;&quot;user_phone&quot;&gt;電話:    &lt;&#x2F;label&gt; &lt;input type&#x3D;&quot;number&quot; name&#x3D;&quot;phone&quot; id&#x3D;&#39;user_phone&#39;&gt;</span><br><span class="line">  &lt;&#x2F;fieldset&gt;</span><br><span class="line">&lt;&#x2F;form&gt;</span><br></pre></td></tr></table></figure>
+<form>
+<fieldset>
+  <legend>基本資料</legend>
+  <label for='user_name'>姓名:    </label> <input name="user_name" id='user_name'>
+  <label for='user_age'>年齡:    </label> <input type="number" name="user_age" id='user_age'>
+</fieldset>
+
+<fieldset>
+  <legend>聯絡資訊</legend>
+  <label for="user_email">Email:   </label><input type="email" name="user_email" id="user_email">
+  <label for="user_phone">電話:    </label> <input type="number" name="phone" id='user_phone'>
+</fieldset>
+</form>
+
+</li>
+</ul>
+<br>
+
+<h3 id="lt-datalist-gt"><a href="#lt-datalist-gt" class="headerlink" title="&lt;datalist&gt;"></a>&lt;datalist&gt;</h3><p>和  &lt;input&gt; 欄位結合使用，建立一組資料清單，出現下拉式選單，提供給使用者可以直接選擇一個值。</p>
+<p>建立的方式：<br>1.在 &lt;input&gt; 標籤上設定一個 list屬性 = datalist 的 id<br>2.在 &lt;datalist&gt; 標籤上設定一個 id<br>3. 用 &lt;option&gt; 標籤在 &lt;datalist&gt; 裡面建立資料選項</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;label&gt;今天來點什麼咖啡:</span><br><span class="line">&lt;input list&#x3D;&quot;coffee&quot; name&#x3D;&quot;coffee&quot;&gt;&lt;&#x2F;label&gt;</span><br><span class="line">&lt;datalist id&#x3D;&quot;coffee&quot;&gt;</span><br><span class="line">  &lt;option value&#x3D;&quot;Americano&quot;&gt;</span><br><span class="line">  &lt;option value&#x3D;&quot;Coffee Latte&quot;&gt;</span><br><span class="line">  &lt;option value&#x3D;&quot;Cappuccino&quot;&gt;</span><br><span class="line">  &lt;option value&#x3D;&quot;Caramel Macchiato&quot;&gt;</span><br><span class="line">  &lt;option value&#x3D;&quot;Macchiato&quot;&gt;</span><br><span class="line">&lt;&#x2F;datalist&gt;</span><br></pre></td></tr></table></figure>
+<p><label>今天來點什麼咖啡:<br><input list="coffee" name="coffee"></label><br><datalist id="coffee"><br>  <option value="Americano"><br>  <option value="Coffee Latte"><br>  <option value="Cappuccino"><br>  <option value="Caramel Macchiato"><br>  <option value="Macchiato"><br></datalist></p>
+<br>
+
+<h3 id="lt-output-gt"><a href="#lt-output-gt" class="headerlink" title="&lt;output&gt;"></a>&lt;output&gt;</h3><p>用來顯示計算或操作表單的結果。<br>屬性:</p>
+<ul>
+<li><strong>for</strong>    值是關聯欄位的id，用空白分隔，指定此結果內容跟哪些欄位的值有關聯。</li>
+<li><strong>form</strong>    預設值是父層 form 元素的id。</li>
+<li><strong>name</strong>    表單欄位的名稱。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;form oninput&#x3D;&quot;x.value&#x3D;parseInt(a.value)+parseInt(b.value)&quot;&gt;</span><br><span class="line">  0</span><br><span class="line">  &lt;input type&#x3D;&quot;range&quot;  id&#x3D;&quot;a&quot; name&#x3D;&quot;a&quot; value&#x3D;&quot;50&quot;&gt;</span><br><span class="line">  100 +</span><br><span class="line">  &lt;input type&#x3D;&quot;number&quot; id&#x3D;&quot;b&quot; name&#x3D;&quot;b&quot; value&#x3D;&quot;50&quot;&gt;</span><br><span class="line">  &#x3D;</span><br><span class="line">  &lt;output name&#x3D;&quot;x&quot; for&#x3D;&quot;a b&quot;&gt;100&lt;&#x2F;output&gt;</span><br><span class="line">&lt;&#x2F;form&gt;</span><br></pre></td></tr></table></figure>
+<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+0
+<input type="range"  id="a" name="a" value="50">
+100 +
+<input type="number" id="b" name="b" value="50">
+=
+<output name="x" for="a b">100</output>
+</form></li>
+</ul>
+]]></content>
+      <categories>
+        <category>HTML</category>
+        <category>表單標籤</category>
       </categories>
   </entry>
 </search>
