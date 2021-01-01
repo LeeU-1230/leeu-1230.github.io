@@ -108,6 +108,53 @@
       </categories>
   </entry>
   <entry>
+    <title>CSS - 漸層</title>
+    <url>/2021/01/01/CSS-%E6%BC%B8%E5%B1%A4/</url>
+    <content><![CDATA[<h3 id="漸層"><a href="#漸層" class="headerlink" title="漸層"></a>漸層</h3><p>漸層效果需要設定至少兩種顏色在開頭和結尾，可以設定多種顏色，瀏覽器會自動計算中間漸變的顏色。</p>
+<ul>
+<li>使用對象: background、list-style-image</li>
+<li>漸層類型: linear-gradient、radial-gradient、conic-gradient</li>
+</ul>
+<br>
+
+<h3 id="linear-gradient-方向-顏色1-位置1-顏色2-位置1"><a href="#linear-gradient-方向-顏色1-位置1-顏色2-位置1" class="headerlink" title="linear-gradient(方向, 顏色1 位置1, 顏色2 位置1);"></a>linear-gradient(方向, 顏色1 位置1, 顏色2 位置1);</h3><p>線性漸層，依指定角度來直線產生對應的顏色。</p>
+<ul>
+<li>方向: 預設從上往下漸變(to bottom | 180deg)，可以使用角度(0~180deg)或方向屬性(to top | bottom | left | right)。</li>
+<li>位置: 0%~100%，沒有指定參數時，則會自動等比例分配。設定每個顏色的位置不要重疊，就可以出現漸層。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background-image: linear-gradient(blue, green);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<img src="https://drive.google.com/uc?export=view&id=1QiWf3CY6ZGteEcoOdrIgtdd1a0cnapBX"></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background-image: linear-gradient(blue 50%, green 50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  <img src="https://drive.google.com/uc?export=view&id=1ba1zjlJO8TXu5CZwx8PDeRVNvslgwEJP"></p>
+<p><strong>repeating-linear-gradient</strong><br>線性重複漸層，需要指定需要重複的顏色位置。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background-image: repeating-linear-gradient(blue 0%, blue 5%, pink 5%, pink 10%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  <img src="https://drive.google.com/uc?export=view&id=1i6pq3pkGQhHQJyB-8tHlVqpYixy5r7u1"></p>
+<br>
+
+<h3 id="radial-gradient-方式-尺寸-at-中心位置-顏色1-位置2-顏色2-位置2"><a href="#radial-gradient-方式-尺寸-at-中心位置-顏色1-位置2-顏色2-位置2" class="headerlink" title="radial-gradient(方式 尺寸 at 中心位置, 顏色1 位置2, 顏色2 位置2)"></a>radial-gradient(方式 尺寸 at 中心位置, 顏色1 位置2, 顏色2 位置2)</h3><p>放射漸層，從單點出發，以圓形或橢圓的方式向外放射。</p>
+<ul>
+<li>方式: circle (圓形) | ellipse (橢圓,預設)</li>
+<li>尺寸: farthest-corner (最遠角,預設) | closest-side (最近邊) | farthest-side (最遠邊) | closest-corner (最近角) | x軸 y軸(橢圓,例: 80% 20%) </li>
+<li>中心位置: center (預設)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background-image: radial-gradient(blue, pink)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  <img src="https://drive.google.com/uc?export=view&id=1Ew8MA31wP9E3iaXN-lid4djfm-hBPagF"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background-image: radial-gradient(blue 20%, pink 55%, orange 90%)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  <img src="https://drive.google.com/uc?export=view&id=1jlWAizpATrpoKU288k8sUe6JZXFrFJiW"></p>
+<p><strong>repeating-linear-gradient</strong><br>放射重複漸層</p>
+<br>
+
+<h3 id="conic-gradient-顏色1-位置2-顏色2-位置2"><a href="#conic-gradient-顏色1-位置2-顏色2-位置2" class="headerlink" title="conic-gradient(顏色1 位置2, 顏色2 位置2);"></a>conic-gradient(顏色1 位置2, 顏色2 位置2);</h3><p>錐形漸層。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background-image: conic-gradient(blue, pink)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  <img src="https://drive.google.com/uc?export=view&id=1m_FbgakzBtHFvKmbpimH10JWUjUBfFUz"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background-image: conic-gradient(blue 0, blue 180deg, pink 180deg, pink 360deg)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  <img src="https://drive.google.com/uc?export=view&id=1PrTh4PHUPqdWYUQZYWfdswIB8pGqV_ve"></p>
+]]></content>
+      <categories>
+        <category>CSS</category>
+        <category>漸層</category>
+      </categories>
+  </entry>
+  <entry>
     <title>JavaScript - Async function 和 Await</title>
     <url>/2020/12/24/Await/</url>
     <content><![CDATA[<h3 id="Sync-同步-Async-非同步"><a href="#Sync-同步-Async-非同步" class="headerlink" title="Sync (同步) / Async (非同步)"></a>Sync (同步) / Async (非同步)</h3><p>Sync (同步) : 依序等待執行，一次執行完一件事，才能繼續往下執行。<br>Async (非同步) : 可以一次處理不同需求，不須等待事件執行完畢才往下執行。</p>
@@ -123,6 +170,90 @@
         <category>Javascript</category>
         <category>Promise</category>
         <category>Async</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaScript - Date.parse()</title>
+    <url>/2020/12/30/Date-parse/</url>
+    <content><![CDATA[<h3 id="Date-parse-String"><a href="#Date-parse-String" class="headerlink" title="Date.parse(String)"></a>Date.parse(String)</h3><p>用來將日期時間字串轉成毫秒數。</p>
+<p>String 格式:</p>
+<ul>
+<li>YYYY-MM-DD<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Date.parse(&#39;2020-12-30&#39;);</span><br></pre></td></tr></table></figure></li>
+<li>YYYY-MM  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Date.parse(&#39;2020-12&#39;);</span><br></pre></td></tr></table></figure></li>
+<li>YYYY<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Date.parse(&#39;2020&#39;);</span><br></pre></td></tr></table></figure></li>
+<li>YYYY-MM-DDTHH:MM:SS<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Date.parse(&#39;2020-12-30T21:55:05&#39;);</span><br></pre></td></tr></table></figure></li>
+<li>MM/DD/YYYY<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Date.parse(&#39;12&#x2F;30&#x2F;2020&#39;);</span><br></pre></td></tr></table></figure></li>
+<li>MMM DD YYYY<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Date.parse(&#39;Dec 30 2020&#39;);</span><br></pre></td></tr></table></figure></li>
+<li>DD MMM YYYY<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Date.parse(&#39;30 Dec 2020&#39;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Javascript</category>
+        <category>Date</category>
+        <category>parse()</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Javascript - Fetch</title>
+    <url>/2020/12/01/Fetch/</url>
+    <content><![CDATA[<h3 id="Fetch"><a href="#Fetch" class="headerlink" title="Fetch"></a>Fetch</h3><p>基於 Promise 語法結構，用來執行請求、獲取 Response (回應)物件。</p>
+<p><strong>注意</strong><br>Fetch在只要伺服器有回應的情況，都會回傳fulfilled(已實現)的Promise物件狀態，其中也包含錯誤碼(404…)的情況。<br>因此要以 response 的 status 的屬性值來判斷。可以使用 throw拋出例外，在 catch 區塊中引用。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fetch(url).then((response) &#x3D;&gt; &#123;</span><br><span class="line">    if (response.status !&#x3D;&#x3D; 200) throw new Error(response.status)</span><br><span class="line">&#125;).catch((error) &#x3D;&gt; &#123;</span><br><span class="line">     ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Request-屬性"><a href="#Request-屬性" class="headerlink" title="Request 屬性"></a>Request 屬性</h3><ul>
+<li><strong>url</strong> : 第一個參數，必填項目。</li>
+<li><strong>method</strong> : GET(預設)、POST、PUT、DELETE、HEAD。</li>
+<li><strong>headers</strong> : 要求相關的 Headers 物件 ( 預設 {} )。</li>
+</ul>
+<h3 id="Response-屬性"><a href="#Response-屬性" class="headerlink" title="Response 屬性"></a>Response 屬性</h3><ul>
+<li><strong>response.ok</strong> : 成功 ( 狀態碼 200-299 ) 為 true，失敗為 false。</li>
+<li><strong>response.status</strong> : 狀態代碼。</li>
+<li><strong>response.statusText</strong> : 狀態文字。</li>
+<li><strong>response.headers</strong> : 相關的 Headers 物件。</li>
+<li><strong>response.type</strong> : 此 response 的類型(例如： basic, cors)。</li>
+<li><strong>response.url</strong> : response 的 url。</li>
+</ul>
+<h3 id="Response-方法"><a href="#Response-方法" class="headerlink" title="Response 方法"></a>Response 方法</h3><p>依照不同的資料類型使用對應的方法，才能真正取到資料物件。</p>
+<ul>
+<li><strong>json()</strong></li>
+<li><strong>text()</strong></li>
+<li><strong>blob()</strong></li>
+<li><strong>formData()</strong></li>
+<li><strong>arrayBuffer()</strong></li>
+</ul>
+<h3 id="GET用法"><a href="#GET用法" class="headerlink" title="GET用法"></a>GET用法</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fetch(&#39;https:&#x2F;&#x2F;randomuser.me&#x2F;api&#x2F;&#39;, &#123; method: &#39;GET&#39; &#125;)</span><br><span class="line">    .then((response) &#x3D;&gt; &#123;</span><br><span class="line">        if (response.status !&#x3D;&#x3D; 200) throw new Error(response.status)</span><br><span class="line">        console.log(response);</span><br><span class="line">        return response.json();</span><br><span class="line">    &#125;)</span><br><span class="line">    .then((jsonData) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(jsonData)</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch((error) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(&#39;錯誤&#39;, error);</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="POST用法"><a href="#POST用法" class="headerlink" title="POST用法"></a>POST用法</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fetch(url, &#123;method: &#39;POST&#39;,</span><br><span class="line">    &#x2F;&#x2F; headers 加入json格式</span><br><span class="line">    headers: &#123;</span><br><span class="line">        &#39;Content-Type&#39;: &#39;application&#x2F;json&#39;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#x2F;&#x2F; body 將字串轉為json格式送出</span><br><span class="line">    body: JSON.stringify(&#123;</span><br><span class="line">        email: &#39;lovef1232e@hexschool.com&#39;,</span><br><span class="line">        password: &#39;12345678&#39;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;).then((response) &#x3D;&gt; &#123;</span><br><span class="line">    return response.json();</span><br><span class="line">&#125;).then((jsonData) &#x3D;&gt; &#123;</span><br><span class="line">    console.log(jsonData);</span><br><span class="line">&#125;).catch((err) &#x3D;&gt; &#123;</span><br><span class="line">    console.log(&#39;錯誤:&#39;, err);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Javascript</category>
+        <category>Promise</category>
+        <category>Fetch</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaScript - Date物件</title>
+    <url>/2020/12/30/Date%E7%89%A9%E4%BB%B6/</url>
+    <content><![CDATA[<h3 id="new-Date"><a href="#new-Date" class="headerlink" title="new Date();"></a>new Date();</h3><p>建立一個表示現在時間的 Date 物件。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var today &#x3D; new Date();</span><br></pre></td></tr></table></figure>
+
+<h3 id="new-Date-value"><a href="#new-Date-value" class="headerlink" title="new Date(value);"></a>new Date(value);</h3><p>建立特定時間的 Date 物件，value 值單位是毫秒。</p>
+<p><strong>new Date(year,month[,date[,hours[,minutes[,seconds,[milliseconds]]]]]);</strong><br>建立特定時間的 Date 物件。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var 我家仙人掌生日 &#x3D; new Date(2019,10,11,11,11,11);</span><br></pre></td></tr></table></figure>
+<p>month    表示月份的整數。由 0 開始（一月）到 11 （十二月）。<br>hours    採 24 小時制。<br>參數數值超過它的範圍，相鄰的參數值會被調整。</p>
+<p><strong>可以用 &gt;, &lt;, &lt;=, &gt;=, &lt;== 或 &gt;== 運算子來比較兩個 Date 物件的時間</strong><br><strong>比較兩個日期是否相等，要將 Date 物件用 date.getTime() 轉換為數值型態才能比</strong></p>
+<br>
+
+<h3 id="取得日期和時間"><a href="#取得日期和時間" class="headerlink" title="取得日期和時間"></a>取得日期和時間</h3><p><strong>.getTime()</strong>    取得自 1970-01-01 00:00:00 UTC 累計的毫秒數<br><strong>.getFullYear()</strong>    取得年分。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var today &#x3D; new Date();</span><br><span class="line">var year &#x3D; today.getFullYear();</span><br></pre></td></tr></table></figure>
+<p><strong>.getMonth()</strong>    取得月分(0-11)。<br><strong>.getDate()</strong>    取得日期。<br><strong>.getDay()</strong>    取得星期(0-6)。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var weekday &#x3D; [&#39;星期日&#39;,&#39;星期一&#39;,&#39;星期二&#39;,&#39;星期三&#39;,&#39;星期四&#39;,&#39;星期五&#39;,&#39;星期六&#39;];</span><br><span class="line">var day &#x3D; today.getDay();</span><br><span class="line">weekday[day];</span><br></pre></td></tr></table></figure>
+<p><strong>.getHours()</strong><br><strong>.getMinutes()</strong><br><strong>.getSeconds()</strong><br><strong>.getMilliseconds()</strong></p>
+<h3 id="設定日期和時間"><a href="#設定日期和時間" class="headerlink" title="設定日期和時間"></a>設定日期和時間</h3><p><strong>.setTime()</strong><br><strong>.setFullYear()</strong><br><strong>.setMonth()</strong><br><strong>.setDate()</strong><br><strong>.setHours()</strong><br><strong>.setMinutes()</strong><br><strong>.setSeconds()</strong><br><strong>.setMilliseconds()</strong></p>
+]]></content>
+      <categories>
+        <category>Javascript</category>
+        <category>Date</category>
       </categories>
   </entry>
   <entry>
@@ -193,90 +324,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Javascript - Fetch</title>
-    <url>/2020/12/01/Fetch/</url>
-    <content><![CDATA[<h3 id="Fetch"><a href="#Fetch" class="headerlink" title="Fetch"></a>Fetch</h3><p>基於 Promise 語法結構，用來執行請求、獲取 Response (回應)物件。</p>
-<p><strong>注意</strong><br>Fetch在只要伺服器有回應的情況，都會回傳fulfilled(已實現)的Promise物件狀態，其中也包含錯誤碼(404…)的情況。<br>因此要以 response 的 status 的屬性值來判斷。可以使用 throw拋出例外，在 catch 區塊中引用。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fetch(url).then((response) &#x3D;&gt; &#123;</span><br><span class="line">    if (response.status !&#x3D;&#x3D; 200) throw new Error(response.status)</span><br><span class="line">&#125;).catch((error) &#x3D;&gt; &#123;</span><br><span class="line">     ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="Request-屬性"><a href="#Request-屬性" class="headerlink" title="Request 屬性"></a>Request 屬性</h3><ul>
-<li><strong>url</strong> : 第一個參數，必填項目。</li>
-<li><strong>method</strong> : GET(預設)、POST、PUT、DELETE、HEAD。</li>
-<li><strong>headers</strong> : 要求相關的 Headers 物件 ( 預設 {} )。</li>
-</ul>
-<h3 id="Response-屬性"><a href="#Response-屬性" class="headerlink" title="Response 屬性"></a>Response 屬性</h3><ul>
-<li><strong>response.ok</strong> : 成功 ( 狀態碼 200-299 ) 為 true，失敗為 false。</li>
-<li><strong>response.status</strong> : 狀態代碼。</li>
-<li><strong>response.statusText</strong> : 狀態文字。</li>
-<li><strong>response.headers</strong> : 相關的 Headers 物件。</li>
-<li><strong>response.type</strong> : 此 response 的類型(例如： basic, cors)。</li>
-<li><strong>response.url</strong> : response 的 url。</li>
-</ul>
-<h3 id="Response-方法"><a href="#Response-方法" class="headerlink" title="Response 方法"></a>Response 方法</h3><p>依照不同的資料類型使用對應的方法，才能真正取到資料物件。</p>
-<ul>
-<li><strong>json()</strong></li>
-<li><strong>text()</strong></li>
-<li><strong>blob()</strong></li>
-<li><strong>formData()</strong></li>
-<li><strong>arrayBuffer()</strong></li>
-</ul>
-<h3 id="GET用法"><a href="#GET用法" class="headerlink" title="GET用法"></a>GET用法</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fetch(&#39;https:&#x2F;&#x2F;randomuser.me&#x2F;api&#x2F;&#39;, &#123; method: &#39;GET&#39; &#125;)</span><br><span class="line">    .then((response) &#x3D;&gt; &#123;</span><br><span class="line">        if (response.status !&#x3D;&#x3D; 200) throw new Error(response.status)</span><br><span class="line">        console.log(response);</span><br><span class="line">        return response.json();</span><br><span class="line">    &#125;)</span><br><span class="line">    .then((jsonData) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(jsonData)</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch((error) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(&#39;錯誤&#39;, error);</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="POST用法"><a href="#POST用法" class="headerlink" title="POST用法"></a>POST用法</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fetch(url, &#123;method: &#39;POST&#39;,</span><br><span class="line">    &#x2F;&#x2F; headers 加入json格式</span><br><span class="line">    headers: &#123;</span><br><span class="line">        &#39;Content-Type&#39;: &#39;application&#x2F;json&#39;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#x2F;&#x2F; body 將字串轉為json格式送出</span><br><span class="line">    body: JSON.stringify(&#123;</span><br><span class="line">        email: &#39;lovef1232e@hexschool.com&#39;,</span><br><span class="line">        password: &#39;12345678&#39;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;).then((response) &#x3D;&gt; &#123;</span><br><span class="line">    return response.json();</span><br><span class="line">&#125;).then((jsonData) &#x3D;&gt; &#123;</span><br><span class="line">    console.log(jsonData);</span><br><span class="line">&#125;).catch((err) &#x3D;&gt; &#123;</span><br><span class="line">    console.log(&#39;錯誤:&#39;, err);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Javascript</category>
-        <category>Promise</category>
-        <category>Fetch</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>JavaScript – Math</title>
-    <url>/2020/12/25/Math/</url>
-    <content><![CDATA[<h3 id="Math-abs"><a href="#Math-abs" class="headerlink" title="Math.abs()"></a>Math.abs()</h3><p>取得數字的絕對值。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; Math.abs(&#39;-1&#39;);   &#x2F;&#x2F; 1</span><br></pre></td></tr></table></figure>
-
-<h3 id="Math-ceil"><a href="#Math-ceil" class="headerlink" title="Math.ceil();"></a>Math.ceil();</h3><p>無條件進位。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; Math.ceil(&#39;5.11&#39;);   &#x2F;&#x2F; 6</span><br></pre></td></tr></table></figure>
-
-<h3 id="Math-floor"><a href="#Math-floor" class="headerlink" title="Math.floor();"></a>Math.floor();</h3><p>無條件捨去。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; Math.floor(&#39;5.11&#39;);   &#x2F;&#x2F; 5</span><br></pre></td></tr></table></figure>
-
-<h3 id="Math-round"><a href="#Math-round" class="headerlink" title="Math.round();"></a>Math.round();</h3><p>四捨五入。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; Math.round(&#39;5.6&#39;);   &#x2F;&#x2F; 6</span><br></pre></td></tr></table></figure>
-
-<h3 id="Math-random"><a href="#Math-random" class="headerlink" title="Math.random();"></a>Math.random();</h3><p>返回一個 0 (包含) ~ 1 (不包含) 之間的隨機數。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; Math.random();   &#x2F;&#x2F; 0.5653752873923776</span><br></pre></td></tr></table></figure>
-
-<h3 id="Math-max"><a href="#Math-max" class="headerlink" title="Math.max();"></a>Math.max();</h3><p>取得傳入所有傳入參數的最大值。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; Math.max(5,7,9,-3);   &#x2F;&#x2F; 9</span><br></pre></td></tr></table></figure>
-
-<h3 id="Math-min"><a href="#Math-min" class="headerlink" title="Math.min();"></a>Math.min();</h3><p>取得傳入所有傳入參數的最小值。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; Math.min(5,7,9,-3);   &#x2F;&#x2F; -3</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Javascript</category>
-        <category>Math</category>
-        <category>方法</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>JavaScript – Object 資料複製</title>
-    <url>/2020/12/12/Object%E8%B3%87%E6%96%99%E8%A4%87%E8%A3%BD/</url>
-    <content><![CDATA[<h3 id="淺層複製方法-Object-assign"><a href="#淺層複製方法-Object-assign" class="headerlink" title="淺層複製方法: Object.assign"></a>淺層複製方法: Object.assign</h3><p>複製到第一層物件的屬性，若有第二層以上的資料會與舊物件一起共用同一塊記憶體。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var dog &#x3D; &#123;</span><br><span class="line">          name : &#39;舒跑&#39;,</span><br><span class="line">          like : &#123;</span><br><span class="line">              food : &#39;雞胸肉&#39;,</span><br><span class="line">              game : &#39;你丟我撿&#39;,</span><br><span class="line">              bed : &#39;主人的床&#39;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">var newDog &#x3D; Object.assign(&#123;&#125;, dog);</span><br><span class="line">newDog.name &#x3D; &#39;可爾必思&#39;;</span><br><span class="line">      </span><br><span class="line">console.log(dog.name);  &#x2F;&#x2F; 舒跑</span><br><span class="line">console.log(newDog.name);  &#x2F;&#x2F; 可爾必思</span><br><span class="line"></span><br><span class="line">newDog.like.bed &#x3D; &#39;地板&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.like.bed);  &#x2F;&#x2F; 地板</span><br><span class="line">console.log(newDog.like.bed);  &#x2F;&#x2F; 地板</span><br></pre></td></tr></table></figure>
-
-<h3 id="淺層複製方法-…其餘運算子"><a href="#淺層複製方法-…其餘運算子" class="headerlink" title="淺層複製方法: …其餘運算子"></a>淺層複製方法: …其餘運算子</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var dog &#x3D; &#123;</span><br><span class="line">    name : &#39;舒跑&#39;,</span><br><span class="line">    like : &#123;</span><br><span class="line">        food : &#39;雞胸肉&#39;,</span><br><span class="line">        game : &#39;你丟我撿&#39;,</span><br><span class="line">        bed : &#39;主人的床&#39;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var newDog &#x3D; &#123;...dog&#125;;</span><br><span class="line">newDog.name &#x3D; &#39;可爾必思&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.name);  &#x2F;&#x2F; 舒跑</span><br><span class="line">console.log(newDog.name);  &#x2F;&#x2F; 可爾必思</span><br><span class="line"></span><br><span class="line">newDog.like.bed &#x3D; &#39;地板&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.like.bed);  &#x2F;&#x2F; 地板</span><br><span class="line">console.log(newDog.like.bed);  &#x2F;&#x2F; 地板</span><br></pre></td></tr></table></figure>
-
-<h3 id="深層複製方法-JSON"><a href="#深層複製方法-JSON" class="headerlink" title="深層複製方法: JSON"></a>深層複製方法: JSON</h3><p>複製建立全新的物件。<br>JSON 方法限制:純資料的物件可行，有Function、Set、Map、undefined等型態會失效。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var dog &#x3D; &#123;</span><br><span class="line">    name : &#39;舒跑&#39;,</span><br><span class="line">    like : &#123;</span><br><span class="line">        food : &#39;雞胸肉&#39;,</span><br><span class="line">        game : &#39;你丟我撿&#39;,</span><br><span class="line">        bed : &#39;主人的床&#39;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var newDog &#x3D; JSON.parse(JSON.stringify(dog));</span><br><span class="line">newDog.name &#x3D; &#39;可爾必思&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.name);  &#x2F;&#x2F; 舒跑</span><br><span class="line">console.log(newDog.name);  &#x2F;&#x2F; 可爾必思</span><br><span class="line"></span><br><span class="line">newDog.like.bed &#x3D; &#39;地板&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.like.bed);  &#x2F;&#x2F; 主人的床</span><br><span class="line">console.log(newDog.like.bed);  &#x2F;&#x2F; 地板</span><br></pre></td></tr></table></figure>
-
-<h3 id="深層複製方法-extend"><a href="#深層複製方法-extend" class="headerlink" title="深層複製方法: $.extend"></a>深層複製方法: $.extend</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var newDog &#x3D; $.extend(true,&#123;&#125;,dog);</span><br><span class="line">newDog.name &#x3D; &#39;可爾必思&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.name);  &#x2F;&#x2F; 舒跑</span><br><span class="line">console.log(newDog.name);  &#x2F;&#x2F; 可爾必思</span><br><span class="line"></span><br><span class="line">newDog.like.bed &#x3D; &#39;地板&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.like.bed);  &#x2F;&#x2F; 主人的床</span><br><span class="line">console.log(newDog.like.bed);  &#x2F;&#x2F; 地板</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Javascript</category>
-        <category>Object</category>
-        <category>資料複製</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Javascript - Promise</title>
     <url>/2020/12/02/Promise/</url>
     <content><![CDATA[<h3 id="Promise-物件"><a href="#Promise-物件" class="headerlink" title="Promise 物件"></a>Promise 物件</h3><p>有三種狀態 :</p>
@@ -315,23 +362,6 @@
         <category>Javascript</category>
         <category>Promise</category>
         <category>Promise</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>JavaScript – call,apply,bind</title>
-    <url>/2020/12/10/call-apply-bind%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<h3 id="fn-call-this-obj-value1…"><a href="#fn-call-this-obj-value1…" class="headerlink" title="fn.call(this-obj, value1…)"></a>fn.call(this-obj, value1…)</h3><p>call() 方法，可以用來改變 this 指向的物件，this-obj是 this 要指向的物件，value1…是要傳進函數的參數。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function tagName(a, b) &#123;</span><br><span class="line">    console.log(this.myName, a, b);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var family &#x3D; &#123;</span><br><span class="line">    myName: &#39;Wei&#39;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">tagName(1, 2);  &#x2F;&#x2F; Louisa 1 2</span><br><span class="line">tagName.call(family, 1, 2);  &#x2F;&#x2F; Wei 1 2</span><br></pre></td></tr></table></figure>
-
-<h3 id="fn-apply-this-obj-value1…"><a href="#fn-apply-this-obj-value1…" class="headerlink" title="fn.apply(this-obj[, value1…])"></a>fn.apply(this-obj[, value1…])</h3><p>apply() 跟 call() 的用途是一樣的，只是第二個參數是一個陣列。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function tagName(a, b) &#123;</span><br><span class="line">    console.log(this.myName, a, b);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var family &#x3D; &#123;</span><br><span class="line">    myName: &#39;Wei&#39;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">tagName.apply(family, [5, 6, 7]);   &#x2F;&#x2F; Wei 5 6</span><br><span class="line"></span><br><span class="line">function re_tagName(a)&#123;</span><br><span class="line">    console.log(this.myName, a, arguments);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">re_tagName.apply(family, [5, 6, 7]);  &#x2F;&#x2F; Wei 5 Arguments(3) [5, 6, 7]</span><br></pre></td></tr></table></figure>
-
-<h3 id="fn-bind-this-obj-value1…"><a href="#fn-bind-this-obj-value1…" class="headerlink" title="fn.bind(this-obj[, value1…])"></a>fn.bind(this-obj[, value1…])</h3><p>亦用來綁定 this 指向的方法，但call() 和 apply() 是直接執行function，bind() 是建立一個新的 function。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function tagName(a, b) &#123;</span><br><span class="line">    console.log(this.myName, a, b);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var family &#x3D; &#123;</span><br><span class="line">    myName: &#39;Wei&#39;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">function re_tagName(a)&#123;</span><br><span class="line">    console.log(this.myName, a, arguments);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var fn &#x3D; tagName.bind(family, 8, 9);</span><br><span class="line">fn();  &#x2F;&#x2F; Wei 8 9</span><br><span class="line"></span><br><span class="line">var fn2 &#x3D; re_tagName.bind(family, 8, 9, 10);</span><br><span class="line">fn2();  &#x2F;&#x2F;  Wei 8 Arguments(3) [8, 9, 10]</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Javascript</category>
-        <category>this</category>
-        <category>方法</category>
       </categories>
   </entry>
   <entry>
@@ -394,6 +424,53 @@
       </categories>
   </entry>
   <entry>
+    <title>JavaScript – Object 資料複製</title>
+    <url>/2020/12/12/Object%E8%B3%87%E6%96%99%E8%A4%87%E8%A3%BD/</url>
+    <content><![CDATA[<h3 id="淺層複製方法-Object-assign"><a href="#淺層複製方法-Object-assign" class="headerlink" title="淺層複製方法: Object.assign"></a>淺層複製方法: Object.assign</h3><p>複製到第一層物件的屬性，若有第二層以上的資料會與舊物件一起共用同一塊記憶體。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var dog &#x3D; &#123;</span><br><span class="line">          name : &#39;舒跑&#39;,</span><br><span class="line">          like : &#123;</span><br><span class="line">              food : &#39;雞胸肉&#39;,</span><br><span class="line">              game : &#39;你丟我撿&#39;,</span><br><span class="line">              bed : &#39;主人的床&#39;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">var newDog &#x3D; Object.assign(&#123;&#125;, dog);</span><br><span class="line">newDog.name &#x3D; &#39;可爾必思&#39;;</span><br><span class="line">      </span><br><span class="line">console.log(dog.name);  &#x2F;&#x2F; 舒跑</span><br><span class="line">console.log(newDog.name);  &#x2F;&#x2F; 可爾必思</span><br><span class="line"></span><br><span class="line">newDog.like.bed &#x3D; &#39;地板&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.like.bed);  &#x2F;&#x2F; 地板</span><br><span class="line">console.log(newDog.like.bed);  &#x2F;&#x2F; 地板</span><br></pre></td></tr></table></figure>
+
+<h3 id="淺層複製方法-…其餘運算子"><a href="#淺層複製方法-…其餘運算子" class="headerlink" title="淺層複製方法: …其餘運算子"></a>淺層複製方法: …其餘運算子</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var dog &#x3D; &#123;</span><br><span class="line">    name : &#39;舒跑&#39;,</span><br><span class="line">    like : &#123;</span><br><span class="line">        food : &#39;雞胸肉&#39;,</span><br><span class="line">        game : &#39;你丟我撿&#39;,</span><br><span class="line">        bed : &#39;主人的床&#39;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var newDog &#x3D; &#123;...dog&#125;;</span><br><span class="line">newDog.name &#x3D; &#39;可爾必思&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.name);  &#x2F;&#x2F; 舒跑</span><br><span class="line">console.log(newDog.name);  &#x2F;&#x2F; 可爾必思</span><br><span class="line"></span><br><span class="line">newDog.like.bed &#x3D; &#39;地板&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.like.bed);  &#x2F;&#x2F; 地板</span><br><span class="line">console.log(newDog.like.bed);  &#x2F;&#x2F; 地板</span><br></pre></td></tr></table></figure>
+
+<h3 id="深層複製方法-JSON"><a href="#深層複製方法-JSON" class="headerlink" title="深層複製方法: JSON"></a>深層複製方法: JSON</h3><p>複製建立全新的物件。<br>JSON 方法限制:純資料的物件可行，有Function、Set、Map、undefined等型態會失效。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var dog &#x3D; &#123;</span><br><span class="line">    name : &#39;舒跑&#39;,</span><br><span class="line">    like : &#123;</span><br><span class="line">        food : &#39;雞胸肉&#39;,</span><br><span class="line">        game : &#39;你丟我撿&#39;,</span><br><span class="line">        bed : &#39;主人的床&#39;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var newDog &#x3D; JSON.parse(JSON.stringify(dog));</span><br><span class="line">newDog.name &#x3D; &#39;可爾必思&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.name);  &#x2F;&#x2F; 舒跑</span><br><span class="line">console.log(newDog.name);  &#x2F;&#x2F; 可爾必思</span><br><span class="line"></span><br><span class="line">newDog.like.bed &#x3D; &#39;地板&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.like.bed);  &#x2F;&#x2F; 主人的床</span><br><span class="line">console.log(newDog.like.bed);  &#x2F;&#x2F; 地板</span><br></pre></td></tr></table></figure>
+
+<h3 id="深層複製方法-extend"><a href="#深層複製方法-extend" class="headerlink" title="深層複製方法: $.extend"></a>深層複製方法: $.extend</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var newDog &#x3D; $.extend(true,&#123;&#125;,dog);</span><br><span class="line">newDog.name &#x3D; &#39;可爾必思&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.name);  &#x2F;&#x2F; 舒跑</span><br><span class="line">console.log(newDog.name);  &#x2F;&#x2F; 可爾必思</span><br><span class="line"></span><br><span class="line">newDog.like.bed &#x3D; &#39;地板&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.like.bed);  &#x2F;&#x2F; 主人的床</span><br><span class="line">console.log(newDog.like.bed);  &#x2F;&#x2F; 地板</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Javascript</category>
+        <category>Object</category>
+        <category>資料複製</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaScript – Math</title>
+    <url>/2020/12/25/Math/</url>
+    <content><![CDATA[<h3 id="Math-abs"><a href="#Math-abs" class="headerlink" title="Math.abs()"></a>Math.abs()</h3><p>取得數字的絕對值。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; Math.abs(&#39;-1&#39;);   &#x2F;&#x2F; 1</span><br></pre></td></tr></table></figure>
+
+<h3 id="Math-ceil"><a href="#Math-ceil" class="headerlink" title="Math.ceil();"></a>Math.ceil();</h3><p>無條件進位。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; Math.ceil(&#39;5.11&#39;);   &#x2F;&#x2F; 6</span><br></pre></td></tr></table></figure>
+
+<h3 id="Math-floor"><a href="#Math-floor" class="headerlink" title="Math.floor();"></a>Math.floor();</h3><p>無條件捨去。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; Math.floor(&#39;5.11&#39;);   &#x2F;&#x2F; 5</span><br></pre></td></tr></table></figure>
+
+<h3 id="Math-round"><a href="#Math-round" class="headerlink" title="Math.round();"></a>Math.round();</h3><p>四捨五入。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; Math.round(&#39;5.6&#39;);   &#x2F;&#x2F; 6</span><br></pre></td></tr></table></figure>
+
+<h3 id="Math-random"><a href="#Math-random" class="headerlink" title="Math.random();"></a>Math.random();</h3><p>返回一個 0 (包含) ~ 1 (不包含) 之間的隨機數。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; Math.random();   &#x2F;&#x2F; 0.5653752873923776</span><br></pre></td></tr></table></figure>
+
+<h3 id="Math-max"><a href="#Math-max" class="headerlink" title="Math.max();"></a>Math.max();</h3><p>取得傳入所有傳入參數的最大值。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; Math.max(5,7,9,-3);   &#x2F;&#x2F; 9</span><br></pre></td></tr></table></figure>
+
+<h3 id="Math-min"><a href="#Math-min" class="headerlink" title="Math.min();"></a>Math.min();</h3><p>取得傳入所有傳入參數的最小值。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; Math.min(5,7,9,-3);   &#x2F;&#x2F; -3</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Javascript</category>
+        <category>Math</category>
+        <category>方法</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Google Drive建立圖床</title>
     <url>/2020/11/25/google%20Drive%E5%BB%BA%E7%AB%8B%E5%9C%96%E5%BA%8A/</url>
     <content><![CDATA[<h2 id="步驟"><a href="#步驟" class="headerlink" title="步驟"></a>步驟</h2><h5 id="1-圖片需開啟共用連結的權限。"><a href="#1-圖片需開啟共用連結的權限。" class="headerlink" title="1.圖片需開啟共用連結的權限。"></a>1.圖片需開啟共用連結的權限。</h5><br>
@@ -406,6 +483,23 @@
       <categories>
         <category>Google</category>
         <category>Google Drive</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaScript – call,apply,bind</title>
+    <url>/2020/12/10/call-apply-bind%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h3 id="fn-call-this-obj-value1…"><a href="#fn-call-this-obj-value1…" class="headerlink" title="fn.call(this-obj, value1…)"></a>fn.call(this-obj, value1…)</h3><p>call() 方法，可以用來改變 this 指向的物件，this-obj是 this 要指向的物件，value1…是要傳進函數的參數。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function tagName(a, b) &#123;</span><br><span class="line">    console.log(this.myName, a, b);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var family &#x3D; &#123;</span><br><span class="line">    myName: &#39;Wei&#39;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">tagName(1, 2);  &#x2F;&#x2F; Louisa 1 2</span><br><span class="line">tagName.call(family, 1, 2);  &#x2F;&#x2F; Wei 1 2</span><br></pre></td></tr></table></figure>
+
+<h3 id="fn-apply-this-obj-value1…"><a href="#fn-apply-this-obj-value1…" class="headerlink" title="fn.apply(this-obj[, value1…])"></a>fn.apply(this-obj[, value1…])</h3><p>apply() 跟 call() 的用途是一樣的，只是第二個參數是一個陣列。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function tagName(a, b) &#123;</span><br><span class="line">    console.log(this.myName, a, b);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var family &#x3D; &#123;</span><br><span class="line">    myName: &#39;Wei&#39;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">tagName.apply(family, [5, 6, 7]);   &#x2F;&#x2F; Wei 5 6</span><br><span class="line"></span><br><span class="line">function re_tagName(a)&#123;</span><br><span class="line">    console.log(this.myName, a, arguments);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">re_tagName.apply(family, [5, 6, 7]);  &#x2F;&#x2F; Wei 5 Arguments(3) [5, 6, 7]</span><br></pre></td></tr></table></figure>
+
+<h3 id="fn-bind-this-obj-value1…"><a href="#fn-bind-this-obj-value1…" class="headerlink" title="fn.bind(this-obj[, value1…])"></a>fn.bind(this-obj[, value1…])</h3><p>亦用來綁定 this 指向的方法，但call() 和 apply() 是直接執行function，bind() 是建立一個新的 function。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function tagName(a, b) &#123;</span><br><span class="line">    console.log(this.myName, a, b);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var family &#x3D; &#123;</span><br><span class="line">    myName: &#39;Wei&#39;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">function re_tagName(a)&#123;</span><br><span class="line">    console.log(this.myName, a, arguments);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var fn &#x3D; tagName.bind(family, 8, 9);</span><br><span class="line">fn();  &#x2F;&#x2F; Wei 8 9</span><br><span class="line"></span><br><span class="line">var fn2 &#x3D; re_tagName.bind(family, 8, 9, 10);</span><br><span class="line">fn2();  &#x2F;&#x2F;  Wei 8 Arguments(3) [8, 9, 10]</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Javascript</category>
+        <category>this</category>
+        <category>方法</category>
       </categories>
   </entry>
   <entry>
@@ -466,24 +560,6 @@
       </categories>
   </entry>
   <entry>
-    <title>使用CSS限制內容</title>
-    <url>/2020/12/07/%E4%BD%BF%E7%94%A8CSS%E9%99%90%E5%88%B6%E5%85%A7%E5%AE%B9/</url>
-    <content><![CDATA[<h3 id="目標-當文字超過限制時會自動顯示”…”的刪節號。"><a href="#目標-當文字超過限制時會自動顯示”…”的刪節號。" class="headerlink" title="目標 : 當文字超過限制時會自動顯示”…”的刪節號。"></a>目標 : 當文字超過限制時會自動顯示”…”的刪節號。</h3><p>HTML :</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;box&quot;&gt;</span><br><span class="line">        &lt;p&gt;臣亮言：先帝創業未半，而中道崩殂。今天下三分，益州疲弊，此誠危急存亡之秋也。然侍衛之臣，不懈於內；忠志之士，忘身於外者，蓋追先帝之殊遇，欲報之於陛下也。誠宜開張聖聽，以光先帝遺德，恢宏志士之氣；不宜妄自菲薄，引喻失義，以塞忠諫之路也。</span><br><span class="line">        &lt;&#x2F;p&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
-<p>CSS :</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 50px;</span><br><span class="line">    padding: 10px;</span><br><span class="line">    border: 2px blueviolet solid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://drive.google.com/uc?export=view&id=1bDiwYKOQaE_j6Kn7U5Y8k1bE8oOM8cd1"></p>
-<h3 id="在文字的區塊使用-text-overflow-ellipsis"><a href="#在文字的區塊使用-text-overflow-ellipsis" class="headerlink" title="在文字的區塊使用 text-overflow: ellipsis;"></a>在文字的區塊使用 text-overflow: ellipsis;</h3><p>需一併設定 white-space: nowrap; 及 text-overflow: ellipsis; 才會有效果。</p>
-<p>CSS :</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 50px;</span><br><span class="line">    padding: 10px;</span><br><span class="line">    border: 2px blueviolet solid;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p &#123;</span><br><span class="line">    overflow: hidden;</span><br><span class="line">    white-space: nowrap;</span><br><span class="line">    text-overflow: ellipsis;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://drive.google.com/uc?export=view&id=16e0fP4BhD0smmyRLr-OQnpSKxaFt9FTW"></p>
-]]></content>
-      <categories>
-        <category>CSS</category>
-        <category>overflow</category>
-      </categories>
-  </entry>
-  <entry>
     <title>CSS - 偽元素</title>
     <url>/2020/12/20/%E5%81%BD%E5%85%83%E7%B4%A0/</url>
     <content><![CDATA[<h3 id="偽元素"><a href="#偽元素" class="headerlink" title="偽元素"></a>偽元素</h3><p>使用偽元素能簡化頁面上 HTML 標籤，讓 HTML 的維護更加輕鬆。<br>在 W3C 的定義裡總共有五個偽元素（其他仍在測試階段），分別是 ::before、::after、::first-line、::first-letter 和 ::selection。</p>
@@ -522,35 +598,6 @@
       </categories>
   </entry>
   <entry>
-    <title>CSS - max、min、clamp 數學函式</title>
-    <url>/2020/12/18/%E6%95%B8%E5%AD%B8%E5%87%BD%E5%BC%8F/</url>
-    <content><![CDATA[<h3 id="max"><a href="#max" class="headerlink" title="max()"></a>max()</h3><p>定義了運算最大值，作用在於限制最小值。</p>
-<p>例如: div 的寬度為50%，最小寬度為300px</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: max(50%, 300px);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>等同於</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 50%;</span><br><span class="line">    min-width: 300px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<br>
-
-<h3 id="min"><a href="#min" class="headerlink" title="min()"></a>min()</h3><p>定義了數學運算的最小值，作用在於限制最大值。</p>
-<p>例如: div 的寬度為50%，最大寬度為300px</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: min(50%, 300px); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>等同於</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 50%;</span><br><span class="line">    max-width: 300px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<br>
-
-<h3 id="clamp"><a href="#clamp" class="headerlink" title="clamp()"></a>clamp()</h3><p>clamp(最小值, 中間值, 最大值)<br>返回一個區間範圍的值。</p>
-<p>例如: div 的最小寬度為300px，最大寬度為500px，在範圍內則寬度為50%</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: clamp(300px, 50%, 500px); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>等同於</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 50%;</span><br><span class="line">    min-width: 300px;</span><br><span class="line">    max-width: 500px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>CSS</category>
-        <category>數學函式</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Javascript - 函式閉包</title>
     <url>/2020/12/02/%E5%87%BD%E5%BC%8F%E9%96%89%E5%8C%85/</url>
     <content><![CDATA[<h3 id="函式閉包"><a href="#函式閉包" class="headerlink" title="函式閉包"></a>函式閉包</h3><p>保存了內部函式的執行環境，可以持續存取。<br>將變數指向外層函式，每一個變數都是獨立環境，可以反覆呼叫，重複持續存取內部函式環境。</p>
@@ -560,6 +607,37 @@
         <category>Javascript</category>
         <category>Function</category>
         <category>函式閉包</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>使用CSS限制文本內容</title>
+    <url>/2020/12/07/%E4%BD%BF%E7%94%A8CSS%E9%99%90%E5%88%B6%E5%85%A7%E5%AE%B9/</url>
+    <content><![CDATA[<h3 id="目標-當文字超過限制時會自動顯示”…”的省略號。"><a href="#目標-當文字超過限制時會自動顯示”…”的省略號。" class="headerlink" title="目標 : 當文字超過限制時會自動顯示”…”的省略號。"></a>目標 : 當文字超過限制時會自動顯示”…”的省略號。</h3><p>HTML :</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;box&quot;&gt;</span><br><span class="line">        &lt;p&gt;臣亮言：先帝創業未半，而中道崩殂。今天下三分，益州疲弊，此誠危急存亡之秋也。然侍衛之臣，不懈於內；忠志之士，忘身於外者，蓋追先帝之殊遇，欲報之於陛下也。誠宜開張聖聽，以光先帝遺德，恢宏志士之氣；不宜妄自菲薄，引喻失義，以塞忠諫之路也。</span><br><span class="line">        &lt;&#x2F;p&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+<p>CSS :</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 50px;</span><br><span class="line">    padding: 10px;</span><br><span class="line">    border: 2px blueviolet solid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://drive.google.com/uc?export=view&id=1bDiwYKOQaE_j6Kn7U5Y8k1bE8oOM8cd1"></p>
+<h3 id="在文字的區塊使用-text-overflow-ellipsis"><a href="#在文字的區塊使用-text-overflow-ellipsis" class="headerlink" title="在文字的區塊使用 text-overflow: ellipsis;"></a>在文字的區塊使用 text-overflow: ellipsis;</h3><p>需一併設定 white-space: nowrap; 及 text-overflow: ellipsis; 才會有效果。</p>
+<p>CSS :</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 50px;</span><br><span class="line">    padding: 10px;</span><br><span class="line">    border: 2px blueviolet solid;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p &#123;</span><br><span class="line">    overflow: hidden;</span><br><span class="line">    white-space: nowrap;</span><br><span class="line">    text-overflow: ellipsis;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://drive.google.com/uc?export=view&id=16e0fP4BhD0smmyRLr-OQnpSKxaFt9FTW"></p>
+<br>
+
+<h3 id="text-overflow-clip"><a href="#text-overflow-clip" class="headerlink" title="text-overflow: clip;"></a>text-overflow: clip;</h3><p>裁剪文字內容。</p>
+<br>
+
+<h3 id="word-wrap-break-word"><a href="#word-wrap-break-word" class="headerlink" title="word-wrap: break-word;"></a>word-wrap: break-word;</h3><p>依據空白來換行。</p>
+<h3 id="word-break-keep-all"><a href="#word-break-keep-all" class="headerlink" title="word-break: keep-all;"></a>word-break: keep-all;</h3><p>依據空白來換行。</p>
+<h3 id="word-break-break-all"><a href="#word-break-break-all" class="headerlink" title="word-break: break-all;"></a>word-break: break-all;</h3><p>到邊界立即斷行。</p>
+<br>
+
+<h3 id="writing-mode-horizontal-tb"><a href="#writing-mode-horizontal-tb" class="headerlink" title="writing-mode: horizontal-tb;"></a>writing-mode: horizontal-tb;</h3><p>水平顯示文本。</p>
+<h3 id="writing-mode-vertical-rl"><a href="#writing-mode-vertical-rl" class="headerlink" title="writing-mode: vertical-rl;"></a>writing-mode: vertical-rl;</h3><p>由右到左垂直顯示文本。</p>
+<h3 id="writing-mode-vertical-lr"><a href="#writing-mode-vertical-lr" class="headerlink" title="writing-mode: vertical-lr;"></a>writing-mode: vertical-lr;</h3><p>由左到右垂直顯示文本。</p>
+]]></content>
+      <categories>
+        <category>CSS</category>
+        <category>text-overflow</category>
       </categories>
   </entry>
   <entry>
@@ -600,56 +678,32 @@
       </categories>
   </entry>
   <entry>
-    <title>JavaScript – 物件屬性的調整</title>
-    <url>/2020/12/10/%E7%89%A9%E4%BB%B6%E5%B1%AC%E6%80%A7%E7%9A%84%E8%AA%BF%E6%95%B4/</url>
-    <content><![CDATA[<h3 id="Object-defineProperty-obj-prop-descriptor"><a href="#Object-defineProperty-obj-prop-descriptor" class="headerlink" title="Object.defineProperty(obj, prop, descriptor)"></a>Object.defineProperty(obj, prop, descriptor)</h3><p>調整物件屬性的特徵。</p>
-<p>obj: 要定義屬性的目標物件。</p>
-<p>prop: 要定義或修改的屬性的名稱。</p>
-<p>descriptor: 參數，有value、writable、configurable、enumerable。</p>
-<h3 id="value"><a href="#value" class="headerlink" title="value"></a>value</h3><p>修改屬性的值。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var list &#x3D; &#123;a: 1,b: 2,c: 3&#125;;</span><br><span class="line"></span><br><span class="line">Object.defineProperty(list,&#39;a&#39;, &#123;value :5&#125;);</span><br><span class="line"></span><br><span class="line">console.log(list);   &#x2F;&#x2F; &#123;a: 5, b: 2, c: 3&#125;</span><br></pre></td></tr></table></figure>
+    <title>CSS - max、min、clamp 數學函式</title>
+    <url>/2020/12/18/%E6%95%B8%E5%AD%B8%E5%87%BD%E5%BC%8F/</url>
+    <content><![CDATA[<h3 id="max"><a href="#max" class="headerlink" title="max()"></a>max()</h3><p>定義了運算最大值，作用在於限制最小值。</p>
+<p>例如: div 的寬度為50%，最小寬度為300px</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: max(50%, 300px);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>等同於</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 50%;</span><br><span class="line">    min-width: 300px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="writable"><a href="#writable" class="headerlink" title="writable"></a>writable</h3><p>屬性可否重新賦值。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var list &#x3D; &#123;a: 1,b: 2,c: 3&#125;;</span><br><span class="line"></span><br><span class="line">list.a &#x3D; 7 ;</span><br><span class="line">console.log(list);   &#x2F;&#x2F; &#123;a: 7, b: 2, c: 3,&#125;</span><br><span class="line"></span><br><span class="line">Object.defineProperty(list, &#39;a&#39;, &#123;writable: false&#125;);</span><br><span class="line">list.a &#x3D; 5 </span><br><span class="line">console.log(list);   &#x2F;&#x2F; &#123;a: 7, b: 2, c: 3,&#125;</span><br></pre></td></tr></table></figure>
+<br>
 
-<h3 id="configurable"><a href="#configurable" class="headerlink" title="configurable"></a>configurable</h3><p>屬性可否刪除。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var list &#x3D; &#123;a: 1,b: 2,c: 3&#125;;</span><br><span class="line"></span><br><span class="line">Object.defineProperty(list, &#39;a&#39;, &#123;configurable: false&#125;);</span><br><span class="line">delete list.a;</span><br><span class="line">console.log(list);  &#x2F;&#x2F; &#123;a: 1,b: 2,c: 3&#125;</span><br><span class="line"></span><br><span class="line">delete list.b;</span><br><span class="line">console.log(list);   &#x2F;&#x2F; &#123;a: 1,c: 3&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="min"><a href="#min" class="headerlink" title="min()"></a>min()</h3><p>定義了數學運算的最小值，作用在於限制最大值。</p>
+<p>例如: div 的寬度為50%，最大寬度為300px</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: min(50%, 300px); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>等同於</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 50%;</span><br><span class="line">    max-width: 300px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="enumerable"><a href="#enumerable" class="headerlink" title="enumerable"></a>enumerable</h3><p>屬性可否被列舉(遍歷顯示)。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var list &#x3D; &#123;a: 1,b: 2,c: 3&#125;;</span><br><span class="line"></span><br><span class="line">for (key in list)&#123;</span><br><span class="line">    console.log(key);   &#x2F;&#x2F; a, b, c</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Object.defineProperty(list, &#39;a&#39;, &#123;enumerable: false&#125;);</span><br><span class="line"></span><br><span class="line">for (key in list)&#123;</span><br><span class="line">    console.log(key);   &#x2F;&#x2F; b, c</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<br>
 
-]]></content>
+<h3 id="clamp"><a href="#clamp" class="headerlink" title="clamp()"></a>clamp()</h3><p>clamp(最小值, 中間值, 最大值)<br>返回一個區間範圍的值。</p>
+<p>例如: div 的最小寬度為300px，最大寬度為500px，在範圍內則寬度為50%</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: clamp(300px, 50%, 500px); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>等同於</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 50%;</span><br><span class="line">    min-width: 300px;</span><br><span class="line">    max-width: 500px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>Javascript</category>
-        <category>Object</category>
-        <category>物件屬性</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>JavaScript – 物件原型、繼承</title>
-    <url>/2020/12/10/%E7%89%A9%E4%BB%B6%E5%8E%9F%E5%9E%8B%E3%80%81%E7%B9%BC%E6%89%BF/</url>
-    <content><![CDATA[<h3 id="物件建構式"><a href="#物件建構式" class="headerlink" title="物件建構式"></a>物件建構式</h3><p>在建立Object時被呼叫，透過物件的建構函式定義屬性、方法，來建立物件實例。</p>
-<ul>
-<li>宣告一個類別 (class)。</li>
-<li>this 定義屬性。</li>
-<li>prototype 定義方法。</li>
-<li>new 添加物件實例。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function Dog(name, color, weight) &#123;</span><br><span class="line">            this.name &#x3D; name;</span><br><span class="line">            this.color &#x3D; color;</span><br><span class="line">            this.weight &#x3D; weight;</span><br><span class="line">        &#125;</span><br><span class="line">Dog.prototype.bark &#x3D; function()&#123;</span><br><span class="line">            console.log(this.name + &#39;汪汪!&#39;);</span><br><span class="line">        &#125;</span><br><span class="line">let Fido &#x3D; new Dog(&#39;Fido&#39;,&#39;棕色&#39;,12);</span><br><span class="line"></span><br><span class="line">Fido.bark();  &#x2F;&#x2F; Fido汪汪!</span><br><span class="line">console.log(Fido);  </span><br><span class="line">&#x2F;&#x2F; Dog &#123;name: &quot;Fido&quot;, color: &quot;棕色&quot;, weight: 12&#125;</span><br><span class="line"></span><br><span class="line">Fido.size &#x3D; &quot;中型犬&quot;;  &#x2F;&#x2F; 添加新屬性</span><br><span class="line">delete Fido.size;  &#x2F;&#x2F; 刪除屬性</span><br><span class="line"></span><br><span class="line">Fido.game &#x3D; function()&#123;    &#x2F;&#x2F; 添加新方法</span><br><span class="line">      console.log(this.name + &#39;來玩你丟我撿&#39;);</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="原型繼承"><a href="#原型繼承" class="headerlink" title="原型繼承"></a>原型繼承</h3><p>一個類別 (class)可繼承其他類別的屬性和方法，然後再延伸增加自己的屬性和方法。</p>
-<ul>
-<li><strong>.prototype.constructor</strong> 屬性，指向物件的建構函式。</li>
-<li><strong>.prototype._proto__ 屬性</strong>，指向物件繼承的原型。</li>
-<li><strong>Object.create(目標物件原型[，屬性])</strong> 方法，使用目標物件作為新創建物件的原型來創建新物件。</li>
-<li><strong>Object.getPrototypeOf(obj)</strong> 方法，取得該物件的原型。</li>
-<li><strong>instanceof</strong> 運算子，判斷物件是否建立自指定的建構函式。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function Animal(family) &#123;</span><br><span class="line">    this.kingdom &#x3D; &#39;動物界&#39;;</span><br><span class="line">    this.family &#x3D; family;</span><br><span class="line">    &#125;</span><br><span class="line">Animal.prototype.move &#x3D; function() &#123;</span><br><span class="line">    console.log(this.name + &#39;奔跑&#39;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">function Dog(name, color, weight) &#123;</span><br><span class="line">    Animal.call(this, &#39;犬科&#39;);</span><br><span class="line">    this.name &#x3D; name;</span><br><span class="line">    this.color &#x3D; color;</span><br><span class="line">    this.weight &#x3D; weight;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">Dog.prototype &#x3D; Object.create(Animal.prototype);</span><br><span class="line">&#x2F;&#x2F;建立多層繼承，透過Object.create複製了Animal.prototype全部的屬性</span><br><span class="line"></span><br><span class="line">Dog.prototype.constructor &#x3D; Dog;</span><br><span class="line">&#x2F;&#x2F;需要再將constructor重新指定回物件的建構函式本身。</span><br><span class="line"></span><br><span class="line">Dog.prototype.bark &#x3D; function()&#123;</span><br><span class="line">     console.log(this.name + &#39;汪汪!&#39;);</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">let Fido &#x3D; new Dog(&#39;Fido&#39;,&#39;棕色&#39;,12);</span><br><span class="line"></span><br><span class="line">Fido.bark();  &#x2F;&#x2F; Fido汪汪!</span><br><span class="line">Fido.move();  &#x2F;&#x2F; Fido奔跑</span><br><span class="line"></span><br><span class="line">console.log(Fido);  </span><br><span class="line">&#x2F;&#x2F; Dog &#123;kingdom: &quot;動物界&quot;, family: &quot;犬科&quot;, name: &quot;Fido&quot;, color: &quot;棕色&quot;, weight: 12&#125;</span><br><span class="line"></span><br><span class="line">console.log(Object.getPrototypeOf(Fido));  </span><br><span class="line">&#x2F;&#x2F; Animal &#123;constructor: ƒ, bark: ƒ&#125;</span><br><span class="line"></span><br><span class="line">console.log(Fido instanceof Animal);     &#x2F;&#x2F; true</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Javascript</category>
-        <category>Object</category>
-        <category>物件原型、繼承</category>
+        <category>CSS</category>
+        <category>數學函式</category>
       </categories>
   </entry>
   <entry>
@@ -700,39 +754,56 @@
       </categories>
   </entry>
   <entry>
-    <title>CSS - 變數</title>
-    <url>/2020/12/18/%E8%AE%8A%E6%95%B8/</url>
-    <content><![CDATA[<h3 id="基礎寫法"><a href="#基礎寫法" class="headerlink" title="基礎寫法"></a>基礎寫法</h3><p>基本上定義變數，會將變數寫在 :root 裡，讓網頁中所有元素的 CSS，都能使用這個變數。</p>
+    <title>JavaScript – 物件原型、繼承</title>
+    <url>/2020/12/10/%E7%89%A9%E4%BB%B6%E5%8E%9F%E5%9E%8B%E3%80%81%E7%B9%BC%E6%89%BF/</url>
+    <content><![CDATA[<h3 id="物件建構式"><a href="#物件建構式" class="headerlink" title="物件建構式"></a>物件建構式</h3><p>在建立Object時被呼叫，透過物件的建構函式定義屬性、方法，來建立物件實例。</p>
 <ul>
-<li>宣告(以兩個破折號 – 作為開頭)： <strong>–名稱: 值;</strong></li>
-<li>使用(以 var 作為開頭)： <strong>屬性：var(–名稱[, 預設值]);</strong></li>
+<li>宣告一個類別 (class)。</li>
+<li>this 定義屬性。</li>
+<li>prototype 定義方法。</li>
+<li>new 添加物件實例。</li>
 </ul>
-<p>預設值(非必要)可以在無法讀取變數名稱時自動套用。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:root &#123;     &#x2F;* 宣告變數 *&#x2F;</span><br><span class="line">    --bg_color: lightblue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.box1 &#123;     &#x2F;* 使用變數 *&#x2F;</span><br><span class="line">    background-color: var(--bg_color);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.box2 &#123;     &#x2F;* box2讀取不到 color 變數，所以使用 green  *&#x2F;</span><br><span class="line">    background-color: var(--color, green);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function Dog(name, color, weight) &#123;</span><br><span class="line">            this.name &#x3D; name;</span><br><span class="line">            this.color &#x3D; color;</span><br><span class="line">            this.weight &#x3D; weight;</span><br><span class="line">        &#125;</span><br><span class="line">Dog.prototype.bark &#x3D; function()&#123;</span><br><span class="line">            console.log(this.name + &#39;汪汪!&#39;);</span><br><span class="line">        &#125;</span><br><span class="line">let Fido &#x3D; new Dog(&#39;Fido&#39;,&#39;棕色&#39;,12);</span><br><span class="line"></span><br><span class="line">Fido.bark();  &#x2F;&#x2F; Fido汪汪!</span><br><span class="line">console.log(Fido);  </span><br><span class="line">&#x2F;&#x2F; Dog &#123;name: &quot;Fido&quot;, color: &quot;棕色&quot;, weight: 12&#125;</span><br><span class="line"></span><br><span class="line">Fido.size &#x3D; &quot;中型犬&quot;;  &#x2F;&#x2F; 添加新屬性</span><br><span class="line">delete Fido.size;  &#x2F;&#x2F; 刪除屬性</span><br><span class="line"></span><br><span class="line">Fido.game &#x3D; function()&#123;    &#x2F;&#x2F; 添加新方法</span><br><span class="line">      console.log(this.name + &#39;來玩你丟我撿&#39;);</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
 
-<br>
-
-<h3 id="全域變數"><a href="#全域變數" class="headerlink" title="全域變數"></a>全域變數</h3><p>將變數寫在 :root 裡，或寫在 html 與 body 裡，讓網頁的元素也都可以使用這個變數。</p>
-<h3 id="區域變數"><a href="#區域變數" class="headerlink" title="區域變數"></a>區域變數</h3><ul>
-<li>寫在不同網頁元素內</li>
-<li>若變數名與父元素相同，而在父元素重新賦值，則會套用父元素的變數數值<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:root &#123;</span><br><span class="line">    --bg_color: lightblue;</span><br><span class="line">    --color: yellow;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.box1 &#123;</span><br><span class="line">    background-color: var(--bg_color);</span><br><span class="line">    --color: orange;   &#x2F;* 在 box1 裡面覆寫 --color 的值*&#x2F;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">h1 &#123;   &#x2F;* box1 裡面的 h1 的顏色會是 orange *&#x2F;</span><br><span class="line">    color: var(--color);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
+<h3 id="原型繼承"><a href="#原型繼承" class="headerlink" title="原型繼承"></a>原型繼承</h3><p>一個類別 (class)可繼承其他類別的屬性和方法，然後再延伸增加自己的屬性和方法。</p>
+<ul>
+<li><strong>.prototype.constructor</strong> 屬性，指向物件的建構函式。</li>
+<li><strong>.prototype._proto__ 屬性</strong>，指向物件繼承的原型。</li>
+<li><strong>Object.create(目標物件原型[，屬性])</strong> 方法，使用目標物件作為新創建物件的原型來創建新物件。</li>
+<li><strong>Object.getPrototypeOf(obj)</strong> 方法，取得該物件的原型。</li>
+<li><strong>instanceof</strong> 運算子，判斷物件是否建立自指定的建構函式。</li>
 </ul>
-<br>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function Animal(family) &#123;</span><br><span class="line">    this.kingdom &#x3D; &#39;動物界&#39;;</span><br><span class="line">    this.family &#x3D; family;</span><br><span class="line">    &#125;</span><br><span class="line">Animal.prototype.move &#x3D; function() &#123;</span><br><span class="line">    console.log(this.name + &#39;奔跑&#39;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">function Dog(name, color, weight) &#123;</span><br><span class="line">    Animal.call(this, &#39;犬科&#39;);</span><br><span class="line">    this.name &#x3D; name;</span><br><span class="line">    this.color &#x3D; color;</span><br><span class="line">    this.weight &#x3D; weight;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">Dog.prototype &#x3D; Object.create(Animal.prototype);</span><br><span class="line">&#x2F;&#x2F;建立多層繼承，透過Object.create複製了Animal.prototype全部的屬性</span><br><span class="line"></span><br><span class="line">Dog.prototype.constructor &#x3D; Dog;</span><br><span class="line">&#x2F;&#x2F;需要再將constructor重新指定回物件的建構函式本身。</span><br><span class="line"></span><br><span class="line">Dog.prototype.bark &#x3D; function()&#123;</span><br><span class="line">     console.log(this.name + &#39;汪汪!&#39;);</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">let Fido &#x3D; new Dog(&#39;Fido&#39;,&#39;棕色&#39;,12);</span><br><span class="line"></span><br><span class="line">Fido.bark();  &#x2F;&#x2F; Fido汪汪!</span><br><span class="line">Fido.move();  &#x2F;&#x2F; Fido奔跑</span><br><span class="line"></span><br><span class="line">console.log(Fido);  </span><br><span class="line">&#x2F;&#x2F; Dog &#123;kingdom: &quot;動物界&quot;, family: &quot;犬科&quot;, name: &quot;Fido&quot;, color: &quot;棕色&quot;, weight: 12&#125;</span><br><span class="line"></span><br><span class="line">console.log(Object.getPrototypeOf(Fido));  </span><br><span class="line">&#x2F;&#x2F; Animal &#123;constructor: ƒ, bark: ƒ&#125;</span><br><span class="line"></span><br><span class="line">console.log(Fido instanceof Animal);     &#x2F;&#x2F; true</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Javascript</category>
+        <category>Object</category>
+        <category>物件原型、繼承</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaScript – 物件屬性的調整</title>
+    <url>/2020/12/10/%E7%89%A9%E4%BB%B6%E5%B1%AC%E6%80%A7%E7%9A%84%E8%AA%BF%E6%95%B4/</url>
+    <content><![CDATA[<h3 id="Object-defineProperty-obj-prop-descriptor"><a href="#Object-defineProperty-obj-prop-descriptor" class="headerlink" title="Object.defineProperty(obj, prop, descriptor)"></a>Object.defineProperty(obj, prop, descriptor)</h3><p>調整物件屬性的特徵。</p>
+<p>obj: 要定義屬性的目標物件。</p>
+<p>prop: 要定義或修改的屬性的名稱。</p>
+<p>descriptor: 參數，有value、writable、configurable、enumerable。</p>
+<h3 id="value"><a href="#value" class="headerlink" title="value"></a>value</h3><p>修改屬性的值。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var list &#x3D; &#123;a: 1,b: 2,c: 3&#125;;</span><br><span class="line"></span><br><span class="line">Object.defineProperty(list,&#39;a&#39;, &#123;value :5&#125;);</span><br><span class="line"></span><br><span class="line">console.log(list);   &#x2F;&#x2F; &#123;a: 5, b: 2, c: 3&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="搭配-calc-數學運算"><a href="#搭配-calc-數學運算" class="headerlink" title="搭配 calc 數學運算"></a>搭配 calc 數學運算</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:root &#123;</span><br><span class="line">    --w: 20%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">div &#123;</span><br><span class="line">    width: calc(50% + var(--w));  &#x2F;* 寬度為 50% + 20% *&#x2F;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="writable"><a href="#writable" class="headerlink" title="writable"></a>writable</h3><p>屬性可否重新賦值。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var list &#x3D; &#123;a: 1,b: 2,c: 3&#125;;</span><br><span class="line"></span><br><span class="line">list.a &#x3D; 7 ;</span><br><span class="line">console.log(list);   &#x2F;&#x2F; &#123;a: 7, b: 2, c: 3,&#125;</span><br><span class="line"></span><br><span class="line">Object.defineProperty(list, &#39;a&#39;, &#123;writable: false&#125;);</span><br><span class="line">list.a &#x3D; 5 </span><br><span class="line">console.log(list);   &#x2F;&#x2F; &#123;a: 7, b: 2, c: 3,&#125;</span><br></pre></td></tr></table></figure>
 
-<br>
+<h3 id="configurable"><a href="#configurable" class="headerlink" title="configurable"></a>configurable</h3><p>屬性可否刪除。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var list &#x3D; &#123;a: 1,b: 2,c: 3&#125;;</span><br><span class="line"></span><br><span class="line">Object.defineProperty(list, &#39;a&#39;, &#123;configurable: false&#125;);</span><br><span class="line">delete list.a;</span><br><span class="line">console.log(list);  &#x2F;&#x2F; &#123;a: 1,b: 2,c: 3&#125;</span><br><span class="line"></span><br><span class="line">delete list.b;</span><br><span class="line">console.log(list);   &#x2F;&#x2F; &#123;a: 1,c: 3&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="JavaScript-操作"><a href="#JavaScript-操作" class="headerlink" title="JavaScript 操作"></a>JavaScript 操作</h3><ul>
-<li><strong>.style.setProperty</strong><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const root &#x3D; document.documentElement;</span><br><span class="line">root.style.setProperty(&#39;--color&#39;, &#39;red&#39;);</span><br></pre></td></tr></table></figure></li>
-<li><strong>.style.cssText</strong><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const root &#x3D; document.documentElement;</span><br><span class="line">root.style.cssText &#x3D; &#39;--color: red&#39;;</span><br></pre></td></tr></table></figure></li>
-</ul>
+<h3 id="enumerable"><a href="#enumerable" class="headerlink" title="enumerable"></a>enumerable</h3><p>屬性可否被列舉(遍歷顯示)。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var list &#x3D; &#123;a: 1,b: 2,c: 3&#125;;</span><br><span class="line"></span><br><span class="line">for (key in list)&#123;</span><br><span class="line">    console.log(key);   &#x2F;&#x2F; a, b, c</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Object.defineProperty(list, &#39;a&#39;, &#123;enumerable: false&#125;);</span><br><span class="line"></span><br><span class="line">for (key in list)&#123;</span><br><span class="line">    console.log(key);   &#x2F;&#x2F; b, c</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
-        <category>CSS</category>
-        <category>變數</category>
+        <category>Javascript</category>
+        <category>Object</category>
+        <category>物件屬性</category>
       </categories>
   </entry>
   <entry>
@@ -975,6 +1046,42 @@
       <categories>
         <category>HTML</category>
         <category>表單標籤</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>CSS - 變數</title>
+    <url>/2020/12/18/%E8%AE%8A%E6%95%B8/</url>
+    <content><![CDATA[<h3 id="基礎寫法"><a href="#基礎寫法" class="headerlink" title="基礎寫法"></a>基礎寫法</h3><p>基本上定義變數，會將變數寫在 :root 裡，讓網頁中所有元素的 CSS，都能使用這個變數。</p>
+<ul>
+<li>宣告(以兩個破折號 – 作為開頭)： <strong>–名稱: 值;</strong></li>
+<li>使用(以 var 作為開頭)： <strong>屬性：var(–名稱[, 預設值]);</strong></li>
+</ul>
+<p>預設值(非必要)可以在無法讀取變數名稱時自動套用。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:root &#123;     &#x2F;* 宣告變數 *&#x2F;</span><br><span class="line">    --bg_color: lightblue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.box1 &#123;     &#x2F;* 使用變數 *&#x2F;</span><br><span class="line">    background-color: var(--bg_color);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.box2 &#123;     &#x2F;* box2讀取不到 color 變數，所以使用 green  *&#x2F;</span><br><span class="line">    background-color: var(--color, green);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="全域變數"><a href="#全域變數" class="headerlink" title="全域變數"></a>全域變數</h3><p>將變數寫在 :root 裡，或寫在 html 與 body 裡，讓網頁的元素也都可以使用這個變數。</p>
+<h3 id="區域變數"><a href="#區域變數" class="headerlink" title="區域變數"></a>區域變數</h3><ul>
+<li>寫在不同網頁元素內</li>
+<li>若變數名與父元素相同，而在父元素重新賦值，則會套用父元素的變數數值<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:root &#123;</span><br><span class="line">    --bg_color: lightblue;</span><br><span class="line">    --color: yellow;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.box1 &#123;</span><br><span class="line">    background-color: var(--bg_color);</span><br><span class="line">    --color: orange;   &#x2F;* 在 box1 裡面覆寫 --color 的值*&#x2F;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">h1 &#123;   &#x2F;* box1 裡面的 h1 的顏色會是 orange *&#x2F;</span><br><span class="line">    color: var(--color);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<br>
+
+<h3 id="搭配-calc-數學運算"><a href="#搭配-calc-數學運算" class="headerlink" title="搭配 calc 數學運算"></a>搭配 calc 數學運算</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:root &#123;</span><br><span class="line">    --w: 20%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">div &#123;</span><br><span class="line">    width: calc(50% + var(--w));  &#x2F;* 寬度為 50% + 20% *&#x2F;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="JavaScript-操作"><a href="#JavaScript-操作" class="headerlink" title="JavaScript 操作"></a>JavaScript 操作</h3><ul>
+<li><strong>.style.setProperty</strong><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const root &#x3D; document.documentElement;</span><br><span class="line">root.style.setProperty(&#39;--color&#39;, &#39;red&#39;);</span><br></pre></td></tr></table></figure></li>
+<li><strong>.style.cssText</strong><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const root &#x3D; document.documentElement;</span><br><span class="line">root.style.cssText &#x3D; &#39;--color: red&#39;;</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>CSS</category>
+        <category>變數</category>
       </categories>
   </entry>
 </search>
