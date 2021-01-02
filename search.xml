@@ -433,10 +433,13 @@
 
 <br>
 
-<h3 id="toLowerCase"><a href="#toLowerCase" class="headerlink" title="toLowerCase()"></a>toLowerCase()</h3><p>將字串中的英文字母都轉成小寫。</p>
+<h3 id="toLowerCase"><a href="#toLowerCase" class="headerlink" title=".toLowerCase()"></a>.toLowerCase()</h3><p>將字串中的英文字母都轉成小寫。</p>
 <br>
 
-<h3 id="toUpperCase"><a href="#toUpperCase" class="headerlink" title="toUpperCase()"></a>toUpperCase()</h3><p>將字串中的英文字母都轉成大寫。</p>
+<h3 id="toUpperCase"><a href="#toUpperCase" class="headerlink" title=".toUpperCase()"></a>.toUpperCase()</h3><p>將字串中的英文字母都轉成大寫。</p>
+<br>
+
+<h3 id="trim"><a href="#trim" class="headerlink" title=".trim()"></a>.trim()</h3><p>刪除字串兩側空格。</p>
 ]]></content>
       <tags>
         <tag>Javascript</tag>
