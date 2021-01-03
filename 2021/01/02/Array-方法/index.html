@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Array 物件內建的方法。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript – Array方法">
+<meta property="og:url" content="https://github.com/LeeU-1230/leeu-1230.github.io.git/2021/01/02/Array-%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:site_name" content="默刻">
+<meta property="og:description" content="Array 物件內建的方法。">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2021-01-02T12:50:35.000Z">
+<meta property="article:modified_time" content="2021-01-03T04:31:00.585Z">
+<meta property="article:author" content="LeeU">
+<meta property="article:tag" content="Javascript">
+<meta property="article:tag" content="Array">
+<meta property="article:tag" content="Array方法">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://github.com/LeeU-1230/leeu-1230.github.io.git/2021/01/02/Array-%E6%96%B9%E6%B3%95/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>JavaScript – Array方法 | 默刻</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">默刻</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">記錄日常</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://github.com/LeeU-1230/leeu-1230.github.io.git/2021/01/02/Array-%E6%96%B9%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="LeeU">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="默刻">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JavaScript – Array方法
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2021-01-02 20:50:35" itemprop="dateCreated datePublished" datetime="2021-01-02T20:50:35+08:00">2021-01-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-01-03 12:31:00" itemprop="dateModified" datetime="2021-01-03T12:31:00+08:00">2021-01-03</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2021/01/02/Array-%E6%96%B9%E6%B3%95/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/01/02/Array-方法/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <div class="post-description">Array 物件內建的方法。</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="push-新增值"><a href="#push-新增值" class="headerlink" title="push()    新增值"></a>push()    新增值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let Drink &#x3D; [&#39;water&#39;, &#39;coffee&#39;];</span><br><span class="line">Drink.push(&#39;milk&#39;);   &#x2F;&#x2F; [&quot;water&quot;, &quot;coffee&quot;, &quot;milk&quot;]</span><br></pre></td></tr></table></figure>
+
+<h3 id="array-array-length-新增值"><a href="#array-array-length-新增值" class="headerlink" title="array[array.length]    新增值"></a>array[array.length]    新增值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let Drink &#x3D; [&#39;water&#39;, &#39;coffee&#39;];</span><br><span class="line">Drink[Drink.length]&#x3D;&#39;milk&#39;;   &#x2F;&#x2F; [&quot;water&quot;, &quot;coffee&quot;, &quot;milk&quot;]</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="pop-移除最後一個值，回傳移除的值"><a href="#pop-移除最後一個值，回傳移除的值" class="headerlink" title="pop()    移除最後一個值，回傳移除的值"></a>pop()    移除最後一個值，回傳移除的值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let Drink &#x3D; [&#39;water&#39;, &#39;coffee&#39;,&#39;milk&#39;];</span><br><span class="line">let newMenu &#x3D; Drink.pop();</span><br><span class="line"></span><br><span class="line">console.log(Drink);   &#x2F;&#x2F; [&quot;water&quot;, &quot;coffee&quot;]</span><br><span class="line">console.log(newMenu);   &#x2F;&#x2F; milk</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="shift-移除第一個值，回傳移除的值"><a href="#shift-移除第一個值，回傳移除的值" class="headerlink" title="shift()    移除第一個值，回傳移除的值"></a>shift()    移除第一個值，回傳移除的值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let Drink &#x3D; [&#39;water&#39;, &#39;coffee&#39;,&#39;milk&#39;];</span><br><span class="line">let newMenu &#x3D; Drink.shift();</span><br><span class="line"></span><br><span class="line">console.log(Drink);   &#x2F;&#x2F; [&quot;coffee&quot;, &quot;milk&quot;]</span><br><span class="line">console.log(newMenu);   &#x2F;&#x2F; water</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="concat-合併陣列，回傳新陣列"><a href="#concat-合併陣列，回傳新陣列" class="headerlink" title="concat()    合併陣列，回傳新陣列"></a>concat()    合併陣列，回傳新陣列</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let Drink1 &#x3D; [&#39;water&#39;, &#39;coffee&#39;];</span><br><span class="line">let Drink2 &#x3D; [&#39;juice&#39;,&#39;milk&#39;];</span><br><span class="line">let newMenu &#x3D; Drink1.concat(Drink2);   &#x2F;&#x2F; [&quot;water&quot;, &quot;coffee&quot;, &quot;juice&quot;, &quot;milk&quot;]</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="join-將陣列依分隔符號合併成字串，預設是逗點，回傳字串。"><a href="#join-將陣列依分隔符號合併成字串，預設是逗點，回傳字串。" class="headerlink" title="join()    將陣列依分隔符號合併成字串，預設是逗點，回傳字串。"></a>join()    將陣列依分隔符號合併成字串，預設是逗點，回傳字串。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let Drink &#x3D; [&#39;water&#39;, &#39;coffee&#39;,];</span><br><span class="line">Drink.join(&#39;+&#39;);   &#x2F;&#x2F; water+coffee</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="every-檢查陣列是否全部都符合條件，回傳true-false。"><a href="#every-檢查陣列是否全部都符合條件，回傳true-false。" class="headerlink" title="every()    檢查陣列是否全部都符合條件，回傳true / false。"></a>every()    檢查陣列是否全部都符合條件，回傳true / false。</h3><p><strong>every(function(value, index){…});</strong></p>
+<ul>
+<li>value : 目前處理到的值。</li>
+<li>index : 值的索引位置。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.every(function (value) &#123;</span><br><span class="line">    return value &gt; 10;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; false</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h3 id="some-檢查陣列是否部分符合條件，回傳true-false。"><a href="#some-檢查陣列是否部分符合條件，回傳true-false。" class="headerlink" title="some()    檢查陣列是否部分符合條件，回傳true / false。"></a>some()    檢查陣列是否部分符合條件，回傳true / false。</h3><p><strong>some(function(value, index){…});</strong></p>
+<ul>
+<li>value : 目前處理到的值。</li>
+<li>index : 值的索引位置。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.some(function (value) &#123;</span><br><span class="line">    return value &gt; 10;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; true</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<br>
+
+<h3 id="filter-篩選符合條件的值，回傳新陣列。"><a href="#filter-篩選符合條件的值，回傳新陣列。" class="headerlink" title="filter()    篩選符合條件的值，回傳新陣列。"></a>filter()    篩選符合條件的值，回傳新陣列。</h3><p><strong>filter(function(value, index){…});</strong></p>
+<ul>
+<li>value : 目前處理到的值。</li>
+<li>index : 值的索引位置。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.filter(function (value) &#123;</span><br><span class="line">    return value &gt; 10;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; [21, 28]</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<br>
+
+<h3 id="forEach-遍歷陣列，回傳undefined。"><a href="#forEach-遍歷陣列，回傳undefined。" class="headerlink" title="forEach()    遍歷陣列，回傳undefined。"></a>forEach()    遍歷陣列，回傳undefined。</h3><p><strong>forEach(function(value, index){…});</strong></p>
+<ul>
+<li>value : 目前處理到的值。</li>
+<li>index : 值的索引位置。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let all &#x3D; 0;</span><br><span class="line">let test &#x3D; num.forEach(function (value) &#123;</span><br><span class="line">    all +&#x3D; value;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">console.log(all);   &#x2F;&#x2F; 60</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h3 id="map-遍歷陣列，回傳新陣列。"><a href="#map-遍歷陣列，回傳新陣列。" class="headerlink" title="map()    遍歷陣列，回傳新陣列。"></a>map()    遍歷陣列，回傳新陣列。</h3><p><strong>map(function(value, index){…});</strong></p>
+<ul>
+<li>value : 目前處理到的值。</li>
+<li>index : 值的索引位置。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.map(function (value) &#123;</span><br><span class="line">    return value * 2;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; [4, 0, 42, 18, 56]</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<br>
+
+<h3 id="indexOf-找出值出現在陣列中的位置，回傳索引位置，沒找到則返回-1。"><a href="#indexOf-找出值出現在陣列中的位置，回傳索引位置，沒找到則返回-1。" class="headerlink" title="indexOf()    找出值出現在陣列中的位置，回傳索引位置，沒找到則返回 -1。"></a>indexOf()    找出值出現在陣列中的位置，回傳索引位置，沒找到則返回 -1。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.indexOf(9)</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; 3</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="reverse-倒轉陣列，回傳新陣列。"><a href="#reverse-倒轉陣列，回傳新陣列。" class="headerlink" title="reverse()    倒轉陣列，回傳新陣列。"></a>reverse()    倒轉陣列，回傳新陣列。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.reverse()</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; [28, 9, 21, 0, 2]</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="sort-重新排序陣列，回傳新陣列。"><a href="#sort-重新排序陣列，回傳新陣列。" class="headerlink" title="sort()    重新排序陣列，回傳新陣列。"></a>sort()    重新排序陣列，回傳新陣列。</h3><p>預設將值轉型成字串再比對每個字元的 Unicode code point 大小。<br><strong>sort(function(a, b){…});</strong></p>
+<ul>
+<li>a, b : 分別表示兩個比較的值，傳回一個數字。</li>
+<li>回傳 : 數字小於 0 則 a 排序在 b 前面;大於 0 則 a 排序在 b 後面。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.sort();</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; [0, 2, 21, 28, 9]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.sort(function (a, b) &#123;</span><br><span class="line">    return a - b;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; [0, 2, 9, 21, 28]</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<br>
+
+<h3 id="unshift-新增一個值到陣列最前面，回傳陣列長度。"><a href="#unshift-新增一個值到陣列最前面，回傳陣列長度。" class="headerlink" title="unshift()    新增一個值到陣列最前面，回傳陣列長度。"></a>unshift()    新增一個值到陣列最前面，回傳陣列長度。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.unshift(6);</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; 6</span><br><span class="line">console.log(num);   &#x2F;&#x2F; [6, 2, 0, 21, 9, 28]</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="reduce-遍歷陣列，由左至右傳入函式運算，回傳累加值。"><a href="#reduce-遍歷陣列，由左至右傳入函式運算，回傳累加值。" class="headerlink" title="reduce()    遍歷陣列，由左至右傳入函式運算，回傳累加值。"></a>reduce()    遍歷陣列，由左至右傳入函式運算，回傳累加值。</h3><p><strong>reduce(function(allValue ,value, index){…});</strong></p>
+<ul>
+<li>allValue : 目前累加的值。</li>
+<li>value : 目前處理到的值。</li>
+<li>index : 值的索引位置。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.reduce(function(a,b)&#123;</span><br><span class="line">    return a+ b;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; 60</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<h3 id="reduceRight-遍歷陣列，由右至左傳入函式運算，回傳累加值。"><a href="#reduceRight-遍歷陣列，由右至左傳入函式運算，回傳累加值。" class="headerlink" title="reduceRight()    遍歷陣列，由右至左傳入函式運算，回傳累加值。"></a>reduceRight()    遍歷陣列，由右至左傳入函式運算，回傳累加值。</h3><p><strong>reduceRight(function(allValue ,value, index){…});</strong></p>
+<ul>
+<li>allValue : 目前累加的值。</li>
+<li>value : 目前處理到的值。</li>
+<li>index : 值的索引位置。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.reduceRight(function(a,b)&#123;</span><br><span class="line">    return a+ b;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; 60</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<br>
+
+<h3 id="splice-刪除、插入值到陣列中，回傳新陣列。"><a href="#splice-刪除、插入值到陣列中，回傳新陣列。" class="headerlink" title="splice()    刪除、插入值到陣列中，回傳新陣列。"></a>splice()    刪除、插入值到陣列中，回傳新陣列。</h3><p><strong>splice(索引位置, 刪除個數, 新值1, 新值2…)</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.splice(3,2);</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; [9, 28]</span><br><span class="line">console.log(num);   &#x2F;&#x2F; [2, 0, 21]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.splice(3,2,12,30);</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; [9, 28]</span><br><span class="line">console.log(num);   &#x2F;&#x2F; [2, 0, 21, 12, 30]</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Javascript/" rel="tag"># Javascript</a>
+              <a href="/tags/Array/" rel="tag"># Array</a>
+              <a href="/tags/Array%E6%96%B9%E6%B3%95/" rel="tag"># Array方法</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/01/01/Transform-2D%E8%AE%8A%E5%BD%A2/" rel="prev" title="CSS - Transform">
+      <i class="fa fa-chevron-left"></i> CSS - Transform
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#push-%E6%96%B0%E5%A2%9E%E5%80%BC"><span class="nav-number">1.</span> <span class="nav-text">push()    新增值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#array-array-length-%E6%96%B0%E5%A2%9E%E5%80%BC"><span class="nav-number">2.</span> <span class="nav-text">array[array.length]    新增值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pop-%E7%A7%BB%E9%99%A4%E6%9C%80%E5%BE%8C%E4%B8%80%E5%80%8B%E5%80%BC%EF%BC%8C%E5%9B%9E%E5%82%B3%E7%A7%BB%E9%99%A4%E7%9A%84%E5%80%BC"><span class="nav-number">3.</span> <span class="nav-text">pop()    移除最後一個值，回傳移除的值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shift-%E7%A7%BB%E9%99%A4%E7%AC%AC%E4%B8%80%E5%80%8B%E5%80%BC%EF%BC%8C%E5%9B%9E%E5%82%B3%E7%A7%BB%E9%99%A4%E7%9A%84%E5%80%BC"><span class="nav-number">4.</span> <span class="nav-text">shift()    移除第一個值，回傳移除的值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#concat-%E5%90%88%E4%BD%B5%E9%99%A3%E5%88%97%EF%BC%8C%E5%9B%9E%E5%82%B3%E6%96%B0%E9%99%A3%E5%88%97"><span class="nav-number">5.</span> <span class="nav-text">concat()    合併陣列，回傳新陣列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#join-%E5%B0%87%E9%99%A3%E5%88%97%E4%BE%9D%E5%88%86%E9%9A%94%E7%AC%A6%E8%99%9F%E5%90%88%E4%BD%B5%E6%88%90%E5%AD%97%E4%B8%B2%EF%BC%8C%E9%A0%90%E8%A8%AD%E6%98%AF%E9%80%97%E9%BB%9E%EF%BC%8C%E5%9B%9E%E5%82%B3%E5%AD%97%E4%B8%B2%E3%80%82"><span class="nav-number">6.</span> <span class="nav-text">join()    將陣列依分隔符號合併成字串，預設是逗點，回傳字串。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#every-%E6%AA%A2%E6%9F%A5%E9%99%A3%E5%88%97%E6%98%AF%E5%90%A6%E5%85%A8%E9%83%A8%E9%83%BD%E7%AC%A6%E5%90%88%E6%A2%9D%E4%BB%B6%EF%BC%8C%E5%9B%9E%E5%82%B3true-false%E3%80%82"><span class="nav-number">7.</span> <span class="nav-text">every()    檢查陣列是否全部都符合條件，回傳true &#x2F; false。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#some-%E6%AA%A2%E6%9F%A5%E9%99%A3%E5%88%97%E6%98%AF%E5%90%A6%E9%83%A8%E5%88%86%E7%AC%A6%E5%90%88%E6%A2%9D%E4%BB%B6%EF%BC%8C%E5%9B%9E%E5%82%B3true-false%E3%80%82"><span class="nav-number">8.</span> <span class="nav-text">some()    檢查陣列是否部分符合條件，回傳true &#x2F; false。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filter-%E7%AF%A9%E9%81%B8%E7%AC%A6%E5%90%88%E6%A2%9D%E4%BB%B6%E7%9A%84%E5%80%BC%EF%BC%8C%E5%9B%9E%E5%82%B3%E6%96%B0%E9%99%A3%E5%88%97%E3%80%82"><span class="nav-number">9.</span> <span class="nav-text">filter()    篩選符合條件的值，回傳新陣列。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#forEach-%E9%81%8D%E6%AD%B7%E9%99%A3%E5%88%97%EF%BC%8C%E5%9B%9E%E5%82%B3undefined%E3%80%82"><span class="nav-number">10.</span> <span class="nav-text">forEach()    遍歷陣列，回傳undefined。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#map-%E9%81%8D%E6%AD%B7%E9%99%A3%E5%88%97%EF%BC%8C%E5%9B%9E%E5%82%B3%E6%96%B0%E9%99%A3%E5%88%97%E3%80%82"><span class="nav-number">11.</span> <span class="nav-text">map()    遍歷陣列，回傳新陣列。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#indexOf-%E6%89%BE%E5%87%BA%E5%80%BC%E5%87%BA%E7%8F%BE%E5%9C%A8%E9%99%A3%E5%88%97%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE%EF%BC%8C%E5%9B%9E%E5%82%B3%E7%B4%A2%E5%BC%95%E4%BD%8D%E7%BD%AE%EF%BC%8C%E6%B2%92%E6%89%BE%E5%88%B0%E5%89%87%E8%BF%94%E5%9B%9E-1%E3%80%82"><span class="nav-number">12.</span> <span class="nav-text">indexOf()    找出值出現在陣列中的位置，回傳索引位置，沒找到則返回 -1。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reverse-%E5%80%92%E8%BD%89%E9%99%A3%E5%88%97%EF%BC%8C%E5%9B%9E%E5%82%B3%E6%96%B0%E9%99%A3%E5%88%97%E3%80%82"><span class="nav-number">13.</span> <span class="nav-text">reverse()    倒轉陣列，回傳新陣列。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sort-%E9%87%8D%E6%96%B0%E6%8E%92%E5%BA%8F%E9%99%A3%E5%88%97%EF%BC%8C%E5%9B%9E%E5%82%B3%E6%96%B0%E9%99%A3%E5%88%97%E3%80%82"><span class="nav-number">14.</span> <span class="nav-text">sort()    重新排序陣列，回傳新陣列。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#unshift-%E6%96%B0%E5%A2%9E%E4%B8%80%E5%80%8B%E5%80%BC%E5%88%B0%E9%99%A3%E5%88%97%E6%9C%80%E5%89%8D%E9%9D%A2%EF%BC%8C%E5%9B%9E%E5%82%B3%E9%99%A3%E5%88%97%E9%95%B7%E5%BA%A6%E3%80%82"><span class="nav-number">15.</span> <span class="nav-text">unshift()    新增一個值到陣列最前面，回傳陣列長度。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reduce-%E9%81%8D%E6%AD%B7%E9%99%A3%E5%88%97%EF%BC%8C%E7%94%B1%E5%B7%A6%E8%87%B3%E5%8F%B3%E5%82%B3%E5%85%A5%E5%87%BD%E5%BC%8F%E9%81%8B%E7%AE%97%EF%BC%8C%E5%9B%9E%E5%82%B3%E7%B4%AF%E5%8A%A0%E5%80%BC%E3%80%82"><span class="nav-number">16.</span> <span class="nav-text">reduce()    遍歷陣列，由左至右傳入函式運算，回傳累加值。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reduceRight-%E9%81%8D%E6%AD%B7%E9%99%A3%E5%88%97%EF%BC%8C%E7%94%B1%E5%8F%B3%E8%87%B3%E5%B7%A6%E5%82%B3%E5%85%A5%E5%87%BD%E5%BC%8F%E9%81%8B%E7%AE%97%EF%BC%8C%E5%9B%9E%E5%82%B3%E7%B4%AF%E5%8A%A0%E5%80%BC%E3%80%82"><span class="nav-number">17.</span> <span class="nav-text">reduceRight()    遍歷陣列，由右至左傳入函式運算，回傳累加值。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#splice-%E5%88%AA%E9%99%A4%E3%80%81%E6%8F%92%E5%85%A5%E5%80%BC%E5%88%B0%E9%99%A3%E5%88%97%E4%B8%AD%EF%BC%8C%E5%9B%9E%E5%82%B3%E6%96%B0%E9%99%A3%E5%88%97%E3%80%82"><span class="nav-number">18.</span> <span class="nav-text">splice()    刪除、插入值到陣列中，回傳新陣列。</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">LeeU</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LeeU</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://LeeU.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://github.com/LeeU-1230/leeu-1230.github.io.git/2021/01/02/Array-%E6%96%B9%E6%B3%95/";
+    this.page.identifier = "2021/01/02/Array-方法/";
+    this.page.title = "JavaScript – Array方法";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://LeeU.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

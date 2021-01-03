@@ -128,28 +128,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JavaScript - Date.parse()</title>
-    <url>/2020/12/30/Date-parse/</url>
-    <content><![CDATA[<h3 id="Date-parse-String"><a href="#Date-parse-String" class="headerlink" title="Date.parse(String)"></a>Date.parse(String)</h3><p>用來將日期時間字串轉成毫秒數。</p>
-<p>String 格式:</p>
-<ul>
-<li>YYYY-MM-DD<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Date.parse(&#39;2020-12-30&#39;);</span><br></pre></td></tr></table></figure></li>
-<li>YYYY-MM  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Date.parse(&#39;2020-12&#39;);</span><br></pre></td></tr></table></figure></li>
-<li>YYYY<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Date.parse(&#39;2020&#39;);</span><br></pre></td></tr></table></figure></li>
-<li>YYYY-MM-DDTHH:MM:SS<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Date.parse(&#39;2020-12-30T21:55:05&#39;);</span><br></pre></td></tr></table></figure></li>
-<li>MM/DD/YYYY<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Date.parse(&#39;12&#x2F;30&#x2F;2020&#39;);</span><br></pre></td></tr></table></figure></li>
-<li>MMM DD YYYY<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Date.parse(&#39;Dec 30 2020&#39;);</span><br></pre></td></tr></table></figure></li>
-<li>DD MMM YYYY<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Date.parse(&#39;30 Dec 2020&#39;);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>Javascript</tag>
-        <tag>Date</tag>
-        <tag>parse()</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CSS - 漸層</title>
     <url>/2021/01/01/CSS-%E6%BC%B8%E5%B1%A4/</url>
     <content><![CDATA[<h3 id="漸層"><a href="#漸層" class="headerlink" title="漸層"></a>漸層</h3><p>漸層效果需要設定至少兩種顏色在開頭和結尾，可以設定多種顏色，瀏覽器會自動計算中間漸變的顏色。</p>
@@ -194,6 +172,146 @@
       <tags>
         <tag>CSS</tag>
         <tag>CSS 漸層</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaScript – Array方法</title>
+    <url>/2021/01/02/Array-%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h3 id="push-新增值"><a href="#push-新增值" class="headerlink" title="push()    新增值"></a>push()    新增值</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let Drink &#x3D; [&#39;water&#39;, &#39;coffee&#39;];</span><br><span class="line">Drink.push(&#39;milk&#39;);   &#x2F;&#x2F; [&quot;water&quot;, &quot;coffee&quot;, &quot;milk&quot;]</span><br></pre></td></tr></table></figure>
+
+<h3 id="array-array-length-新增值"><a href="#array-array-length-新增值" class="headerlink" title="array[array.length]    新增值"></a>array[array.length]    新增值</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let Drink &#x3D; [&#39;water&#39;, &#39;coffee&#39;];</span><br><span class="line">Drink[Drink.length]&#x3D;&#39;milk&#39;;   &#x2F;&#x2F; [&quot;water&quot;, &quot;coffee&quot;, &quot;milk&quot;]</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="pop-移除最後一個值，回傳移除的值"><a href="#pop-移除最後一個值，回傳移除的值" class="headerlink" title="pop()    移除最後一個值，回傳移除的值"></a>pop()    移除最後一個值，回傳移除的值</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let Drink &#x3D; [&#39;water&#39;, &#39;coffee&#39;,&#39;milk&#39;];</span><br><span class="line">let newMenu &#x3D; Drink.pop();</span><br><span class="line"></span><br><span class="line">console.log(Drink);   &#x2F;&#x2F; [&quot;water&quot;, &quot;coffee&quot;]</span><br><span class="line">console.log(newMenu);   &#x2F;&#x2F; milk</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="shift-移除第一個值，回傳移除的值"><a href="#shift-移除第一個值，回傳移除的值" class="headerlink" title="shift()    移除第一個值，回傳移除的值"></a>shift()    移除第一個值，回傳移除的值</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let Drink &#x3D; [&#39;water&#39;, &#39;coffee&#39;,&#39;milk&#39;];</span><br><span class="line">let newMenu &#x3D; Drink.shift();</span><br><span class="line"></span><br><span class="line">console.log(Drink);   &#x2F;&#x2F; [&quot;coffee&quot;, &quot;milk&quot;]</span><br><span class="line">console.log(newMenu);   &#x2F;&#x2F; water</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="concat-合併陣列，回傳新陣列"><a href="#concat-合併陣列，回傳新陣列" class="headerlink" title="concat()    合併陣列，回傳新陣列"></a>concat()    合併陣列，回傳新陣列</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let Drink1 &#x3D; [&#39;water&#39;, &#39;coffee&#39;];</span><br><span class="line">let Drink2 &#x3D; [&#39;juice&#39;,&#39;milk&#39;];</span><br><span class="line">let newMenu &#x3D; Drink1.concat(Drink2);   &#x2F;&#x2F; [&quot;water&quot;, &quot;coffee&quot;, &quot;juice&quot;, &quot;milk&quot;]</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="join-將陣列依分隔符號合併成字串，預設是逗點，回傳字串。"><a href="#join-將陣列依分隔符號合併成字串，預設是逗點，回傳字串。" class="headerlink" title="join()    將陣列依分隔符號合併成字串，預設是逗點，回傳字串。"></a>join()    將陣列依分隔符號合併成字串，預設是逗點，回傳字串。</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let Drink &#x3D; [&#39;water&#39;, &#39;coffee&#39;,];</span><br><span class="line">Drink.join(&#39;+&#39;);   &#x2F;&#x2F; water+coffee</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="every-檢查陣列是否全部都符合條件，回傳true-false。"><a href="#every-檢查陣列是否全部都符合條件，回傳true-false。" class="headerlink" title="every()    檢查陣列是否全部都符合條件，回傳true / false。"></a>every()    檢查陣列是否全部都符合條件，回傳true / false。</h3><p><strong>every(function(value, index){…});</strong></p>
+<ul>
+<li>value : 目前處理到的值。</li>
+<li>index : 值的索引位置。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.every(function (value) &#123;</span><br><span class="line">    return value &gt; 10;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; false</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h3 id="some-檢查陣列是否部分符合條件，回傳true-false。"><a href="#some-檢查陣列是否部分符合條件，回傳true-false。" class="headerlink" title="some()    檢查陣列是否部分符合條件，回傳true / false。"></a>some()    檢查陣列是否部分符合條件，回傳true / false。</h3><p><strong>some(function(value, index){…});</strong></p>
+<ul>
+<li>value : 目前處理到的值。</li>
+<li>index : 值的索引位置。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.some(function (value) &#123;</span><br><span class="line">    return value &gt; 10;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; true</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<br>
+
+<h3 id="filter-篩選符合條件的值，回傳新陣列。"><a href="#filter-篩選符合條件的值，回傳新陣列。" class="headerlink" title="filter()    篩選符合條件的值，回傳新陣列。"></a>filter()    篩選符合條件的值，回傳新陣列。</h3><p><strong>filter(function(value, index){…});</strong></p>
+<ul>
+<li>value : 目前處理到的值。</li>
+<li>index : 值的索引位置。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.filter(function (value) &#123;</span><br><span class="line">    return value &gt; 10;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; [21, 28]</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<br>
+
+<h3 id="forEach-遍歷陣列，回傳undefined。"><a href="#forEach-遍歷陣列，回傳undefined。" class="headerlink" title="forEach()    遍歷陣列，回傳undefined。"></a>forEach()    遍歷陣列，回傳undefined。</h3><p><strong>forEach(function(value, index){…});</strong></p>
+<ul>
+<li>value : 目前處理到的值。</li>
+<li>index : 值的索引位置。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let all &#x3D; 0;</span><br><span class="line">let test &#x3D; num.forEach(function (value) &#123;</span><br><span class="line">    all +&#x3D; value;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">console.log(all);   &#x2F;&#x2F; 60</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h3 id="map-遍歷陣列，回傳新陣列。"><a href="#map-遍歷陣列，回傳新陣列。" class="headerlink" title="map()    遍歷陣列，回傳新陣列。"></a>map()    遍歷陣列，回傳新陣列。</h3><p><strong>map(function(value, index){…});</strong></p>
+<ul>
+<li>value : 目前處理到的值。</li>
+<li>index : 值的索引位置。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.map(function (value) &#123;</span><br><span class="line">    return value * 2;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; [4, 0, 42, 18, 56]</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<br>
+
+<h3 id="indexOf-找出值出現在陣列中的位置，回傳索引位置，沒找到則返回-1。"><a href="#indexOf-找出值出現在陣列中的位置，回傳索引位置，沒找到則返回-1。" class="headerlink" title="indexOf()    找出值出現在陣列中的位置，回傳索引位置，沒找到則返回 -1。"></a>indexOf()    找出值出現在陣列中的位置，回傳索引位置，沒找到則返回 -1。</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.indexOf(9)</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; 3</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="reverse-倒轉陣列，回傳新陣列。"><a href="#reverse-倒轉陣列，回傳新陣列。" class="headerlink" title="reverse()    倒轉陣列，回傳新陣列。"></a>reverse()    倒轉陣列，回傳新陣列。</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.reverse()</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; [28, 9, 21, 0, 2]</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="sort-重新排序陣列，回傳新陣列。"><a href="#sort-重新排序陣列，回傳新陣列。" class="headerlink" title="sort()    重新排序陣列，回傳新陣列。"></a>sort()    重新排序陣列，回傳新陣列。</h3><p>預設將值轉型成字串再比對每個字元的 Unicode code point 大小。<br><strong>sort(function(a, b){…});</strong></p>
+<ul>
+<li>a, b : 分別表示兩個比較的值，傳回一個數字。</li>
+<li>回傳 : 數字小於 0 則 a 排序在 b 前面;大於 0 則 a 排序在 b 後面。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.sort();</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; [0, 2, 21, 28, 9]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.sort(function (a, b) &#123;</span><br><span class="line">    return a - b;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; [0, 2, 9, 21, 28]</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<br>
+
+<h3 id="unshift-新增一個值到陣列最前面，回傳陣列長度。"><a href="#unshift-新增一個值到陣列最前面，回傳陣列長度。" class="headerlink" title="unshift()    新增一個值到陣列最前面，回傳陣列長度。"></a>unshift()    新增一個值到陣列最前面，回傳陣列長度。</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.unshift(6);</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; 6</span><br><span class="line">console.log(num);   &#x2F;&#x2F; [6, 2, 0, 21, 9, 28]</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="reduce-遍歷陣列，由左至右傳入函式運算，回傳累加值。"><a href="#reduce-遍歷陣列，由左至右傳入函式運算，回傳累加值。" class="headerlink" title="reduce()    遍歷陣列，由左至右傳入函式運算，回傳累加值。"></a>reduce()    遍歷陣列，由左至右傳入函式運算，回傳累加值。</h3><p><strong>reduce(function(allValue ,value, index){…});</strong></p>
+<ul>
+<li>allValue : 目前累加的值。</li>
+<li>value : 目前處理到的值。</li>
+<li>index : 值的索引位置。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.reduce(function(a,b)&#123;</span><br><span class="line">    return a+ b;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; 60</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<h3 id="reduceRight-遍歷陣列，由右至左傳入函式運算，回傳累加值。"><a href="#reduceRight-遍歷陣列，由右至左傳入函式運算，回傳累加值。" class="headerlink" title="reduceRight()    遍歷陣列，由右至左傳入函式運算，回傳累加值。"></a>reduceRight()    遍歷陣列，由右至左傳入函式運算，回傳累加值。</h3><p><strong>reduceRight(function(allValue ,value, index){…});</strong></p>
+<ul>
+<li>allValue : 目前累加的值。</li>
+<li>value : 目前處理到的值。</li>
+<li>index : 值的索引位置。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.reduceRight(function(a,b)&#123;</span><br><span class="line">    return a+ b;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; 60</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<br>
+
+<h3 id="splice-刪除、插入值到陣列中，回傳新陣列。"><a href="#splice-刪除、插入值到陣列中，回傳新陣列。" class="headerlink" title="splice()    刪除、插入值到陣列中，回傳新陣列。"></a>splice()    刪除、插入值到陣列中，回傳新陣列。</h3><p><strong>splice(索引位置, 刪除個數, 新值1, 新值2…)</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.splice(3,2);</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; [9, 28]</span><br><span class="line">console.log(num);   &#x2F;&#x2F; [2, 0, 21]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.splice(3,2,12,30);</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; [9, 28]</span><br><span class="line">console.log(num);   &#x2F;&#x2F; [2, 0, 21, 12, 30]</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>Array</tag>
+        <tag>Array方法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaScript - Date.parse()</title>
+    <url>/2020/12/30/Date-parse/</url>
+    <content><![CDATA[<h3 id="Date-parse-String"><a href="#Date-parse-String" class="headerlink" title="Date.parse(String)"></a>Date.parse(String)</h3><p>用來將日期時間字串轉成毫秒數。</p>
+<p>String 格式:</p>
+<ul>
+<li>YYYY-MM-DD<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Date.parse(&#39;2020-12-30&#39;);</span><br></pre></td></tr></table></figure></li>
+<li>YYYY-MM  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Date.parse(&#39;2020-12&#39;);</span><br></pre></td></tr></table></figure></li>
+<li>YYYY<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Date.parse(&#39;2020&#39;);</span><br></pre></td></tr></table></figure></li>
+<li>YYYY-MM-DDTHH:MM:SS<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Date.parse(&#39;2020-12-30T21:55:05&#39;);</span><br></pre></td></tr></table></figure></li>
+<li>MM/DD/YYYY<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Date.parse(&#39;12&#x2F;30&#x2F;2020&#39;);</span><br></pre></td></tr></table></figure></li>
+<li>MMM DD YYYY<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Date.parse(&#39;Dec 30 2020&#39;);</span><br></pre></td></tr></table></figure></li>
+<li>DD MMM YYYY<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Date.parse(&#39;30 Dec 2020&#39;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>Date</tag>
+        <tag>parse()</tag>
       </tags>
   </entry>
   <entry>
@@ -257,6 +375,35 @@
         <tag>AJAX</tag>
         <tag>Promise</tag>
         <tag>Fetch</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaScript – Math</title>
+    <url>/2020/12/25/Math/</url>
+    <content><![CDATA[<h3 id="Math-abs"><a href="#Math-abs" class="headerlink" title="Math.abs()"></a>Math.abs()</h3><p>取得數字的絕對值。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; Math.abs(&#39;-1&#39;);   &#x2F;&#x2F; 1</span><br></pre></td></tr></table></figure>
+
+<h3 id="Math-ceil"><a href="#Math-ceil" class="headerlink" title="Math.ceil();"></a>Math.ceil();</h3><p>無條件進位。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; Math.ceil(&#39;5.11&#39;);   &#x2F;&#x2F; 6</span><br></pre></td></tr></table></figure>
+
+<h3 id="Math-floor"><a href="#Math-floor" class="headerlink" title="Math.floor();"></a>Math.floor();</h3><p>無條件捨去。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; Math.floor(&#39;5.11&#39;);   &#x2F;&#x2F; 5</span><br></pre></td></tr></table></figure>
+
+<h3 id="Math-round"><a href="#Math-round" class="headerlink" title="Math.round();"></a>Math.round();</h3><p>四捨五入。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; Math.round(&#39;5.6&#39;);   &#x2F;&#x2F; 6</span><br></pre></td></tr></table></figure>
+
+<h3 id="Math-random"><a href="#Math-random" class="headerlink" title="Math.random();"></a>Math.random();</h3><p>返回一個 0 (包含) ~ 1 (不包含) 之間的隨機數。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; Math.random();   &#x2F;&#x2F; 0.5653752873923776</span><br></pre></td></tr></table></figure>
+
+<h3 id="Math-max"><a href="#Math-max" class="headerlink" title="Math.max();"></a>Math.max();</h3><p>取得傳入所有傳入參數的最大值。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; Math.max(5,7,9,-3);   &#x2F;&#x2F; 9</span><br></pre></td></tr></table></figure>
+
+<h3 id="Math-min"><a href="#Math-min" class="headerlink" title="Math.min();"></a>Math.min();</h3><p>取得傳入所有傳入參數的最小值。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; Math.min(5,7,9,-3);   &#x2F;&#x2F; -3</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>Math</tag>
+        <tag>Math方法</tag>
       </tags>
   </entry>
   <entry>
@@ -500,35 +647,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JavaScript – Math</title>
-    <url>/2020/12/25/Math/</url>
-    <content><![CDATA[<h3 id="Math-abs"><a href="#Math-abs" class="headerlink" title="Math.abs()"></a>Math.abs()</h3><p>取得數字的絕對值。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; Math.abs(&#39;-1&#39;);   &#x2F;&#x2F; 1</span><br></pre></td></tr></table></figure>
-
-<h3 id="Math-ceil"><a href="#Math-ceil" class="headerlink" title="Math.ceil();"></a>Math.ceil();</h3><p>無條件進位。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; Math.ceil(&#39;5.11&#39;);   &#x2F;&#x2F; 6</span><br></pre></td></tr></table></figure>
-
-<h3 id="Math-floor"><a href="#Math-floor" class="headerlink" title="Math.floor();"></a>Math.floor();</h3><p>無條件捨去。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; Math.floor(&#39;5.11&#39;);   &#x2F;&#x2F; 5</span><br></pre></td></tr></table></figure>
-
-<h3 id="Math-round"><a href="#Math-round" class="headerlink" title="Math.round();"></a>Math.round();</h3><p>四捨五入。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; Math.round(&#39;5.6&#39;);   &#x2F;&#x2F; 6</span><br></pre></td></tr></table></figure>
-
-<h3 id="Math-random"><a href="#Math-random" class="headerlink" title="Math.random();"></a>Math.random();</h3><p>返回一個 0 (包含) ~ 1 (不包含) 之間的隨機數。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; Math.random();   &#x2F;&#x2F; 0.5653752873923776</span><br></pre></td></tr></table></figure>
-
-<h3 id="Math-max"><a href="#Math-max" class="headerlink" title="Math.max();"></a>Math.max();</h3><p>取得傳入所有傳入參數的最大值。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; Math.max(5,7,9,-3);   &#x2F;&#x2F; 9</span><br></pre></td></tr></table></figure>
-
-<h3 id="Math-min"><a href="#Math-min" class="headerlink" title="Math.min();"></a>Math.min();</h3><p>取得傳入所有傳入參數的最小值。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; Math.min(5,7,9,-3);   &#x2F;&#x2F; -3</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>Javascript</tag>
-        <tag>Math</tag>
-        <tag>Math方法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Google Drive建立圖床</title>
     <url>/2020/11/25/google%20Drive%E5%BB%BA%E7%AB%8B%E5%9C%96%E5%BA%8A/</url>
     <content><![CDATA[<h2 id="步驟"><a href="#步驟" class="headerlink" title="步驟"></a>步驟</h2><h5 id="1-圖片需開啟共用連結的權限。"><a href="#1-圖片需開啟共用連結的權限。" class="headerlink" title="1.圖片需開啟共用連結的權限。"></a>1.圖片需開啟共用連結的權限。</h5><br>
@@ -541,76 +659,6 @@
       <tags>
         <tag>Google</tag>
         <tag>Google Drive</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用CSS限制文本內容</title>
-    <url>/2020/12/07/%E4%BD%BF%E7%94%A8CSS%E9%99%90%E5%88%B6%E5%85%A7%E5%AE%B9/</url>
-    <content><![CDATA[<h3 id="目標-當文字超過限制時會自動顯示”…”的省略號。"><a href="#目標-當文字超過限制時會自動顯示”…”的省略號。" class="headerlink" title="目標 : 當文字超過限制時會自動顯示”…”的省略號。"></a>目標 : 當文字超過限制時會自動顯示”…”的省略號。</h3><p>HTML :</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;box&quot;&gt;</span><br><span class="line">        &lt;p&gt;臣亮言：先帝創業未半，而中道崩殂。今天下三分，益州疲弊，此誠危急存亡之秋也。然侍衛之臣，不懈於內；忠志之士，忘身於外者，蓋追先帝之殊遇，欲報之於陛下也。誠宜開張聖聽，以光先帝遺德，恢宏志士之氣；不宜妄自菲薄，引喻失義，以塞忠諫之路也。</span><br><span class="line">        &lt;&#x2F;p&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
-<p>CSS :</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 50px;</span><br><span class="line">    padding: 10px;</span><br><span class="line">    border: 2px blueviolet solid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://drive.google.com/uc?export=view&id=1bDiwYKOQaE_j6Kn7U5Y8k1bE8oOM8cd1"></p>
-<h3 id="在文字的區塊使用-text-overflow-ellipsis"><a href="#在文字的區塊使用-text-overflow-ellipsis" class="headerlink" title="在文字的區塊使用 text-overflow: ellipsis;"></a>在文字的區塊使用 text-overflow: ellipsis;</h3><p>需一併設定 white-space: nowrap; 及 text-overflow: ellipsis; 才會有效果。</p>
-<p>CSS :</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 50px;</span><br><span class="line">    padding: 10px;</span><br><span class="line">    border: 2px blueviolet solid;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p &#123;</span><br><span class="line">    overflow: hidden;</span><br><span class="line">    white-space: nowrap;</span><br><span class="line">    text-overflow: ellipsis;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://drive.google.com/uc?export=view&id=16e0fP4BhD0smmyRLr-OQnpSKxaFt9FTW"></p>
-<br>
-
-<h3 id="text-overflow-clip"><a href="#text-overflow-clip" class="headerlink" title="text-overflow: clip;"></a>text-overflow: clip;</h3><p>裁剪文字內容。</p>
-<br>
-
-<h3 id="word-wrap-break-word"><a href="#word-wrap-break-word" class="headerlink" title="word-wrap: break-word;"></a>word-wrap: break-word;</h3><p>依據空白來換行。</p>
-<h3 id="word-break-keep-all"><a href="#word-break-keep-all" class="headerlink" title="word-break: keep-all;"></a>word-break: keep-all;</h3><p>依據空白來換行。</p>
-<h3 id="word-break-break-all"><a href="#word-break-break-all" class="headerlink" title="word-break: break-all;"></a>word-break: break-all;</h3><p>到邊界立即斷行。</p>
-<br>
-
-<h3 id="writing-mode-horizontal-tb"><a href="#writing-mode-horizontal-tb" class="headerlink" title="writing-mode: horizontal-tb;"></a>writing-mode: horizontal-tb;</h3><p>水平顯示文本。</p>
-<h3 id="writing-mode-vertical-rl"><a href="#writing-mode-vertical-rl" class="headerlink" title="writing-mode: vertical-rl;"></a>writing-mode: vertical-rl;</h3><p>由右到左垂直顯示文本。</p>
-<h3 id="writing-mode-vertical-lr"><a href="#writing-mode-vertical-lr" class="headerlink" title="writing-mode: vertical-lr;"></a>writing-mode: vertical-lr;</h3><p>由左到右垂直顯示文本。</p>
-]]></content>
-      <tags>
-        <tag>CSS</tag>
-        <tag>CSS text-overflow</tag>
-        <tag>CSS 限制文本內容</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSS - 偽元素</title>
-    <url>/2020/12/20/%E5%81%BD%E5%85%83%E7%B4%A0/</url>
-    <content><![CDATA[<h3 id="偽元素"><a href="#偽元素" class="headerlink" title="偽元素"></a>偽元素</h3><p>使用偽元素能簡化頁面上 HTML 標籤，讓 HTML 的維護更加輕鬆。<br>在 W3C 的定義裡總共有五個偽元素（其他仍在測試階段），分別是 ::before、::after、::first-line、::first-letter 和 ::selection。</p>
-<p><strong>::before</strong>  插入在一個元素之前，以 display:inline-block 的屬性存在。</p>
-<p><strong>:: after</strong>  插入在一個元素之後，以 display:inline-block 的屬性存在。</p>
-<p><strong>::first-line</strong>  將文本的第一行添加樣式，不能作用於 display:inline 的元素。</p>
-<p><strong>::first-letter</strong>  將文本的第一個字母添加樣式。</p>
-<p><strong>::selection</strong>  選取段落文字的樣式屬性。</p>
-<br>
-
-<h3 id="content-屬性"><a href="#content-屬性" class="headerlink" title="content 屬性"></a>content 屬性</h3><p>content 屬性與 ::before 和 ::after 一起使用在文檔中生成內容，使用 ::before 和 ::after 一定要有 content 否則不會發生作用。</p>
-<p>content 的值:</p>
-<ul>
-<li>normal | none  (預設)</li>
-<li>string  會在之前或之後加入字串，可以針對字串作樣式的變換。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div::before &#123;</span><br><span class="line">    content: &#39;&lt;&#39;;</span><br><span class="line">    color: blue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">div::after &#123;</span><br><span class="line">    content: &#39;&gt;&#39;;</span><br><span class="line">    color: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>url  插入圖片、聲音或影像。</li>
-<li>attr(屬性)  插入指定屬性的值。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">a::before &#123;</span><br><span class="line">    content: attr(href);</span><br><span class="line">    color: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>open-quote | close-quote  給予開始、結束的引號。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">p:before &#123;</span><br><span class="line">    content: open-quote;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p:after &#123;</span><br><span class="line">    content: close-quote;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p:before,</span><br><span class="line">p:after &#123;</span><br><span class="line">    font-size: 3em;</span><br><span class="line">    color: gray;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>no-open-quote | no-close-quote  取消開始、結束的引號。</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>使用<strong>空白</strong>可以相加 content 的內容。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">a::before &#123;</span><br><span class="line">    content: &#39;&#39;attr(href)&#39; &lt;&#39;;</span><br><span class="line">    color: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<br>
-
-<h3 id="搭配-quotes-屬性"><a href="#搭配-quotes-屬性" class="headerlink" title="搭配 quotes 屬性"></a>搭配 quotes 屬性</h3><p>在元素上設定自定義的括號。<br>quotes 支援巢狀的結構，前後括號使用空白區隔，兩組為一個單位，前後可以不同符號。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">    quotes: &#39;*&#39; &#39;*&#39;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p:before &#123;</span><br><span class="line">    content: open-quote;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p:after &#123;</span><br><span class="line">    content: close-quote;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p:before,</span><br><span class="line">p:after &#123;</span><br><span class="line">    font-size: 3em;</span><br><span class="line">    color: gray;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>CSS</tag>
-        <tag>CSS 偽元素</tag>
       </tags>
   </entry>
   <entry>
@@ -671,6 +719,38 @@
       </tags>
   </entry>
   <entry>
+    <title>使用CSS限制文本內容</title>
+    <url>/2020/12/07/%E4%BD%BF%E7%94%A8CSS%E9%99%90%E5%88%B6%E5%85%A7%E5%AE%B9/</url>
+    <content><![CDATA[<h3 id="目標-當文字超過限制時會自動顯示”…”的省略號。"><a href="#目標-當文字超過限制時會自動顯示”…”的省略號。" class="headerlink" title="目標 : 當文字超過限制時會自動顯示”…”的省略號。"></a>目標 : 當文字超過限制時會自動顯示”…”的省略號。</h3><p>HTML :</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;box&quot;&gt;</span><br><span class="line">        &lt;p&gt;臣亮言：先帝創業未半，而中道崩殂。今天下三分，益州疲弊，此誠危急存亡之秋也。然侍衛之臣，不懈於內；忠志之士，忘身於外者，蓋追先帝之殊遇，欲報之於陛下也。誠宜開張聖聽，以光先帝遺德，恢宏志士之氣；不宜妄自菲薄，引喻失義，以塞忠諫之路也。</span><br><span class="line">        &lt;&#x2F;p&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+<p>CSS :</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 50px;</span><br><span class="line">    padding: 10px;</span><br><span class="line">    border: 2px blueviolet solid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://drive.google.com/uc?export=view&id=1bDiwYKOQaE_j6Kn7U5Y8k1bE8oOM8cd1"></p>
+<h3 id="在文字的區塊使用-text-overflow-ellipsis"><a href="#在文字的區塊使用-text-overflow-ellipsis" class="headerlink" title="在文字的區塊使用 text-overflow: ellipsis;"></a>在文字的區塊使用 text-overflow: ellipsis;</h3><p>需一併設定 white-space: nowrap; 及 text-overflow: ellipsis; 才會有效果。</p>
+<p>CSS :</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 50px;</span><br><span class="line">    padding: 10px;</span><br><span class="line">    border: 2px blueviolet solid;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p &#123;</span><br><span class="line">    overflow: hidden;</span><br><span class="line">    white-space: nowrap;</span><br><span class="line">    text-overflow: ellipsis;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://drive.google.com/uc?export=view&id=16e0fP4BhD0smmyRLr-OQnpSKxaFt9FTW"></p>
+<br>
+
+<h3 id="text-overflow-clip"><a href="#text-overflow-clip" class="headerlink" title="text-overflow: clip;"></a>text-overflow: clip;</h3><p>裁剪文字內容。</p>
+<br>
+
+<h3 id="word-wrap-break-word"><a href="#word-wrap-break-word" class="headerlink" title="word-wrap: break-word;"></a>word-wrap: break-word;</h3><p>依據空白來換行。</p>
+<h3 id="word-break-keep-all"><a href="#word-break-keep-all" class="headerlink" title="word-break: keep-all;"></a>word-break: keep-all;</h3><p>依據空白來換行。</p>
+<h3 id="word-break-break-all"><a href="#word-break-break-all" class="headerlink" title="word-break: break-all;"></a>word-break: break-all;</h3><p>到邊界立即斷行。</p>
+<br>
+
+<h3 id="writing-mode-horizontal-tb"><a href="#writing-mode-horizontal-tb" class="headerlink" title="writing-mode: horizontal-tb;"></a>writing-mode: horizontal-tb;</h3><p>水平顯示文本。</p>
+<h3 id="writing-mode-vertical-rl"><a href="#writing-mode-vertical-rl" class="headerlink" title="writing-mode: vertical-rl;"></a>writing-mode: vertical-rl;</h3><p>由右到左垂直顯示文本。</p>
+<h3 id="writing-mode-vertical-lr"><a href="#writing-mode-vertical-lr" class="headerlink" title="writing-mode: vertical-lr;"></a>writing-mode: vertical-lr;</h3><p>由左到右垂直顯示文本。</p>
+]]></content>
+      <tags>
+        <tag>CSS</tag>
+        <tag>CSS text-overflow</tag>
+        <tag>CSS 限制文本內容</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Javascript - 函式閉包</title>
     <url>/2020/12/02/%E5%87%BD%E5%BC%8F%E9%96%89%E5%8C%85/</url>
     <content><![CDATA[<h3 id="函式閉包"><a href="#函式閉包" class="headerlink" title="函式閉包"></a>函式閉包</h3><p>保存了內部函式的執行環境，可以持續存取。<br>將變數指向外層函式，每一個變數都是獨立環境，可以反覆呼叫，重複持續存取內部函式環境。</p>
@@ -680,6 +760,44 @@
         <tag>Javascript</tag>
         <tag>Function</tag>
         <tag>函式閉包</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS - 偽元素</title>
+    <url>/2020/12/20/%E5%81%BD%E5%85%83%E7%B4%A0/</url>
+    <content><![CDATA[<h3 id="偽元素"><a href="#偽元素" class="headerlink" title="偽元素"></a>偽元素</h3><p>使用偽元素能簡化頁面上 HTML 標籤，讓 HTML 的維護更加輕鬆。<br>在 W3C 的定義裡總共有五個偽元素（其他仍在測試階段），分別是 ::before、::after、::first-line、::first-letter 和 ::selection。</p>
+<p><strong>::before</strong>  插入在一個元素之前，以 display:inline-block 的屬性存在。</p>
+<p><strong>:: after</strong>  插入在一個元素之後，以 display:inline-block 的屬性存在。</p>
+<p><strong>::first-line</strong>  將文本的第一行添加樣式，不能作用於 display:inline 的元素。</p>
+<p><strong>::first-letter</strong>  將文本的第一個字母添加樣式。</p>
+<p><strong>::selection</strong>  選取段落文字的樣式屬性。</p>
+<br>
+
+<h3 id="content-屬性"><a href="#content-屬性" class="headerlink" title="content 屬性"></a>content 屬性</h3><p>content 屬性與 ::before 和 ::after 一起使用在文檔中生成內容，使用 ::before 和 ::after 一定要有 content 否則不會發生作用。</p>
+<p>content 的值:</p>
+<ul>
+<li>normal | none  (預設)</li>
+<li>string  會在之前或之後加入字串，可以針對字串作樣式的變換。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div::before &#123;</span><br><span class="line">    content: &#39;&lt;&#39;;</span><br><span class="line">    color: blue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">div::after &#123;</span><br><span class="line">    content: &#39;&gt;&#39;;</span><br><span class="line">    color: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>url  插入圖片、聲音或影像。</li>
+<li>attr(屬性)  插入指定屬性的值。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">a::before &#123;</span><br><span class="line">    content: attr(href);</span><br><span class="line">    color: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>open-quote | close-quote  給予開始、結束的引號。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">p:before &#123;</span><br><span class="line">    content: open-quote;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p:after &#123;</span><br><span class="line">    content: close-quote;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p:before,</span><br><span class="line">p:after &#123;</span><br><span class="line">    font-size: 3em;</span><br><span class="line">    color: gray;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>no-open-quote | no-close-quote  取消開始、結束的引號。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>使用<strong>空白</strong>可以相加 content 的內容。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">a::before &#123;</span><br><span class="line">    content: &#39;&#39;attr(href)&#39; &lt;&#39;;</span><br><span class="line">    color: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<br>
+
+<h3 id="搭配-quotes-屬性"><a href="#搭配-quotes-屬性" class="headerlink" title="搭配 quotes 屬性"></a>搭配 quotes 屬性</h3><p>在元素上設定自定義的括號。<br>quotes 支援巢狀的結構，前後括號使用空白區隔，兩組為一個單位，前後可以不同符號。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">    quotes: &#39;*&#39; &#39;*&#39;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p:before &#123;</span><br><span class="line">    content: open-quote;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p:after &#123;</span><br><span class="line">    content: close-quote;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p:before,</span><br><span class="line">p:after &#123;</span><br><span class="line">    font-size: 3em;</span><br><span class="line">    color: gray;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>CSS</tag>
+        <tag>CSS 偽元素</tag>
       </tags>
   </entry>
   <entry>
