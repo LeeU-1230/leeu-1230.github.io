@@ -101,7 +101,12 @@
 <li><strong>deleteRule()</strong>: 刪除。</li>
 </ul>
 <p>以下為點擊按鈕後會更換動畫的內容。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;box1&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;button id&#x3D;&quot;btn&quot;&gt;更換&lt;&#x2F;button&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">    .box1 &#123;</span><br><span class="line">        position: absolute;</span><br><span class="line">        left: 0;</span><br><span class="line">        top: 50px;</span><br><span class="line">        width: 50px;</span><br><span class="line">        height: 50px;</span><br><span class="line">        background-color: red;</span><br><span class="line">        animation-name: mov;</span><br><span class="line">        animation-duration: 5s;</span><br><span class="line">        animation-iteration-count: 5;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @keyframes mov &#123;</span><br><span class="line">        0% &#123;</span><br><span class="line">            left: 0px;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        50% &#123;</span><br><span class="line">            left: 200px;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        100% &#123;</span><br><span class="line">            left: 0px;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var btn &#x3D; document.getElementById(&#39;btn&#39;);</span><br><span class="line">    var keyframes &#x3D; document.styleSheets[0].cssRules[1];</span><br><span class="line">    console.log(keyframes);</span><br><span class="line"></span><br><span class="line">    btn.addEventListener(&#39;click&#39;, function () &#123;</span><br><span class="line">        console.log(keyframes.findRule(&#39;50%&#39;));</span><br><span class="line"></span><br><span class="line">        keyframes.appendRule(&#39;50% &#123;left:300px; background:blue;&#125;&#39;);</span><br><span class="line">        &#x2F;&#x2F; 向右移300px，背景色轉為藍色</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>]]></content>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;box1&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;button id&#x3D;&quot;btn&quot;&gt;更換&lt;&#x2F;button&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">    .box1 &#123;</span><br><span class="line">        position: absolute;</span><br><span class="line">        left: 0;</span><br><span class="line">        top: 50px;</span><br><span class="line">        width: 50px;</span><br><span class="line">        height: 50px;</span><br><span class="line">        background-color: red;</span><br><span class="line">        animation-name: mov;</span><br><span class="line">        animation-duration: 5s;</span><br><span class="line">        animation-iteration-count: 5;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @keyframes mov &#123;</span><br><span class="line">        0% &#123;</span><br><span class="line">            left: 0px;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        50% &#123;</span><br><span class="line">            left: 200px;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        100% &#123;</span><br><span class="line">            left: 0px;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var btn &#x3D; document.getElementById(&#39;btn&#39;);</span><br><span class="line">    var keyframes &#x3D; document.styleSheets[0].cssRules[1];</span><br><span class="line">    console.log(keyframes);</span><br><span class="line"></span><br><span class="line">    btn.addEventListener(&#39;click&#39;, function () &#123;</span><br><span class="line">        console.log(keyframes.findRule(&#39;50%&#39;));</span><br><span class="line"></span><br><span class="line">        keyframes.appendRule(&#39;50% &#123;left:300px; background:blue;&#125;&#39;);</span><br><span class="line">        &#x2F;&#x2F; 向右移300px，背景色轉為藍色</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>參考資料 :<br><a href="https://www.oxxostudio.tw/articles/201803/css-animation.html">oxxostudio</a></p>
+]]></content>
       <tags>
         <tag>CSS</tag>
         <tag>CSS animation</tag>
@@ -286,6 +291,9 @@
 <p>  <img src="https://drive.google.com/uc?export=view&id=1m_FbgakzBtHFvKmbpimH10JWUjUBfFUz"></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background-image: conic-gradient(blue 0, blue 180deg, pink 180deg, pink 360deg)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>  <img src="https://drive.google.com/uc?export=view&id=1PrTh4PHUPqdWYUQZYWfdswIB8pGqV_ve"></p>
+<br>
+
+<p>參考資料 :<br><a href="https://www.oxxostudio.tw/articles/202008/css-gradient.html">oxxostudio</a></p>
 ]]></content>
       <tags>
         <tag>CSS</tag>
@@ -360,31 +368,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JavaScript - Date物件</title>
-    <url>/2020/12/30/Date%E7%89%A9%E4%BB%B6/</url>
-    <content><![CDATA[<h3 id="new-Date"><a href="#new-Date" class="headerlink" title="new Date();"></a>new Date();</h3><p>建立一個表示現在時間的 Date 物件。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var today &#x3D; new Date();</span><br></pre></td></tr></table></figure>
-
-<h3 id="new-Date-value"><a href="#new-Date-value" class="headerlink" title="new Date(value);"></a>new Date(value);</h3><p>建立特定時間的 Date 物件，value 值單位是毫秒。</p>
-<p><strong>new Date(year,month[,date[,hours[,minutes[,seconds,[milliseconds]]]]]);</strong><br>建立特定時間的 Date 物件。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var 我家仙人掌生日 &#x3D; new Date(2019,10,11,11,11,11);</span><br></pre></td></tr></table></figure>
-<p>month    表示月份的整數。由 0 開始（一月）到 11 （十二月）。<br>hours    採 24 小時制。<br>參數數值超過它的範圍，相鄰的參數值會被調整。</p>
-<p><strong>可以用 &gt;, &lt;, &lt;=, &gt;=, &lt;== 或 &gt;== 運算子來比較兩個 Date 物件的時間</strong><br><strong>比較兩個日期是否相等，要將 Date 物件用 date.getTime() 轉換為數值型態才能比</strong></p>
-<br>
-
-<h3 id="取得日期和時間"><a href="#取得日期和時間" class="headerlink" title="取得日期和時間"></a>取得日期和時間</h3><p><strong>.getTime()</strong>    取得自 1970-01-01 00:00:00 UTC 累計的毫秒數<br><strong>.getFullYear()</strong>    取得年分。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var today &#x3D; new Date();</span><br><span class="line">var year &#x3D; today.getFullYear();</span><br></pre></td></tr></table></figure>
-<p><strong>.getMonth()</strong>    取得月分(0-11)。<br><strong>.getDate()</strong>    取得日期。<br><strong>.getDay()</strong>    取得星期(0-6)。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var weekday &#x3D; [&#39;星期日&#39;,&#39;星期一&#39;,&#39;星期二&#39;,&#39;星期三&#39;,&#39;星期四&#39;,&#39;星期五&#39;,&#39;星期六&#39;];</span><br><span class="line">var day &#x3D; today.getDay();</span><br><span class="line">weekday[day];</span><br></pre></td></tr></table></figure>
-<p><strong>.getHours()</strong><br><strong>.getMinutes()</strong><br><strong>.getSeconds()</strong><br><strong>.getMilliseconds()</strong></p>
-<h3 id="設定日期和時間"><a href="#設定日期和時間" class="headerlink" title="設定日期和時間"></a>設定日期和時間</h3><p><strong>.setTime()</strong><br><strong>.setFullYear()</strong><br><strong>.setMonth()</strong><br><strong>.setDate()</strong><br><strong>.setHours()</strong><br><strong>.setMinutes()</strong><br><strong>.setSeconds()</strong><br><strong>.setMilliseconds()</strong></p>
-]]></content>
-      <tags>
-        <tag>Javascript</tag>
-        <tag>Date</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JavaScript - Date.parse()</title>
     <url>/2020/12/30/Date-parse/</url>
     <content><![CDATA[<h3 id="Date-parse-String"><a href="#Date-parse-String" class="headerlink" title="Date.parse(String)"></a>Date.parse(String)</h3><p>用來將日期時間字串轉成毫秒數。</p>
@@ -404,6 +387,39 @@
         <tag>Javascript</tag>
         <tag>Date</tag>
         <tag>parse()</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaScript – DOM 節點屬性</title>
+    <url>/2021/01/06/DOM-%E7%AF%80%E9%BB%9E%E5%B1%AC%E6%80%A7/</url>
+    <content><![CDATA[<h3 id="Node-nodeName"><a href="#Node-nodeName" class="headerlink" title="Node.nodeName"></a>Node.nodeName</h3><p>取得節點名稱。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;user&quot;&gt;</span><br><span class="line">    &lt;span id&#x3D;&quot;user1&quot;&gt;user123&lt;&#x2F;span&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    let user &#x3D; document.getElementById(&#39;user&#39;);</span><br><span class="line">    console.log(user.nodeName);   &#x2F;&#x2F; DIV</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Node-nodeValue"><a href="#Node-nodeValue" class="headerlink" title="Node.nodeValue"></a>Node.nodeValue</h3><p>用來取得 text, comment 和 CDATA 節點的內容。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;user&quot;&gt;</span><br><span class="line">    &lt;span id&#x3D;&quot;user1&quot;&gt;user123&lt;&#x2F;span&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    let user1 &#x3D; document.getElementById(&#39;user1&#39;);</span><br><span class="line">    console.log(user1.firstChild.nodeValue);   &#x2F;&#x2F; user123</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Element-innerHTML"><a href="#Element-innerHTML" class="headerlink" title="Element.innerHTML"></a>Element.innerHTML</h3><p>修改/取得 一個元素節點中的 HTML 內容。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;user&quot;&gt;</span><br><span class="line">    &lt;span id&#x3D;&quot;user1&quot;&gt;user123&lt;&#x2F;span&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    let user &#x3D; document.getElementById(&#39;user&#39;);</span><br><span class="line">    console.log(user.innerHTML);   &#x2F;&#x2F; &lt;span id&#x3D;&quot;user1&quot;&gt;user123&lt;&#x2F;span&gt;</span><br><span class="line"></span><br><span class="line">    let user1 &#x3D; document.getElementById(&#39;user1&#39;);</span><br><span class="line">    console.log(user1.innerHTML);   &#x2F;&#x2F; user123</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;user&quot;&gt;</span><br><span class="line">    &lt;span id&#x3D;&quot;user1&quot;&gt;user123&lt;&#x2F;span&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    let user &#x3D; document.getElementById(&#39;user&#39;);</span><br><span class="line">    user.innerHTML &#x3D; &#96;&lt;span id&#x3D;&quot;user2&quot;&gt;user456&lt;&#x2F;span&gt;&#96;;</span><br><span class="line">    console.log(user.innerHTML);   &#x2F;&#x2F; &lt;span id&#x3D;&quot;user2&quot;&gt;user456&lt;&#x2F;span&gt;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Node-textContent"><a href="#Node-textContent" class="headerlink" title="Node.textContent"></a>Node.textContent</h3><p>和 innerHTML 用法類似，修改/取得 一個元素節點中的 HTML 內容。<br>不過 textContent 會將 HTML 標籤去除，將 HTML 特殊符號自動轉成字元實體。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;user&quot;&gt;</span><br><span class="line">    &lt;span id&#x3D;&quot;user1&quot;&gt;user123&lt;&#x2F;span&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    let user &#x3D; document.getElementById(&#39;user&#39;);</span><br><span class="line">    console.log(user.textContent);   &#x2F;&#x2F; user123</span><br><span class="line"></span><br><span class="line">    let user1 &#x3D; document.getElementById(&#39;user1&#39;);</span><br><span class="line">    console.log(user1.textContent);   &#x2F;&#x2F; user123</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Element-outerHTML"><a href="#Element-outerHTML" class="headerlink" title="Element.outerHTML"></a>Element.outerHTML</h3><p>修改/取得 一個元素節點中的 HTML 內容，會返回包括節點本身的 HTML 內容。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;user&quot;&gt;</span><br><span class="line">    &lt;span id&#x3D;&quot;user1&quot;&gt;user123&lt;&#x2F;span&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    let user &#x3D; document.getElementById(&#39;user&#39;);</span><br><span class="line"></span><br><span class="line">    console.log(user.outerHTML);   </span><br><span class="line">    &#x2F;&#x2F; &lt;div id&#x3D;&quot;user&quot;&gt;&lt;span id&#x3D;&quot;user1&quot;&gt;user123&lt;&#x2F;span&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;user&quot;&gt;</span><br><span class="line">    &lt;span id&#x3D;&quot;user1&quot;&gt;user123&lt;&#x2F;span&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    let user &#x3D; document.getElementById(&#39;user&#39;);</span><br><span class="line">    let user1 &#x3D; document.getElementById(&#39;user1&#39;);</span><br><span class="line"></span><br><span class="line">    user1.outerHTML &#x3D; &#96;&lt;span id&#x3D;&quot;user2&quot;&gt;user456&lt;&#x2F;span&gt;&#96;;</span><br><span class="line"></span><br><span class="line">    console.log(user.outerHTML);   &#x2F;&#x2F; &lt;div id&#x3D;&quot;user&quot;&gt;&lt;span id&#x3D;&quot;user2&quot;&gt;user456&lt;&#x2F;span&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>DOM</tag>
+        <tag>DOM 節點屬性</tag>
       </tags>
   </entry>
   <entry>
@@ -512,6 +528,59 @@
       </tags>
   </entry>
   <entry>
+    <title>JavaScript - Date物件</title>
+    <url>/2020/12/30/Date%E7%89%A9%E4%BB%B6/</url>
+    <content><![CDATA[<h3 id="new-Date"><a href="#new-Date" class="headerlink" title="new Date();"></a>new Date();</h3><p>建立一個表示現在時間的 Date 物件。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var today &#x3D; new Date();</span><br></pre></td></tr></table></figure>
+
+<h3 id="new-Date-value"><a href="#new-Date-value" class="headerlink" title="new Date(value);"></a>new Date(value);</h3><p>建立特定時間的 Date 物件，value 值單位是毫秒。</p>
+<p><strong>new Date(year,month[,date[,hours[,minutes[,seconds,[milliseconds]]]]]);</strong><br>建立特定時間的 Date 物件。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var 我家仙人掌生日 &#x3D; new Date(2019,10,11,11,11,11);</span><br></pre></td></tr></table></figure>
+<p>month    表示月份的整數。由 0 開始（一月）到 11 （十二月）。<br>hours    採 24 小時制。<br>參數數值超過它的範圍，相鄰的參數值會被調整。</p>
+<p><strong>可以用 &gt;, &lt;, &lt;=, &gt;=, &lt;== 或 &gt;== 運算子來比較兩個 Date 物件的時間</strong><br><strong>比較兩個日期是否相等，要將 Date 物件用 date.getTime() 轉換為數值型態才能比</strong></p>
+<br>
+
+<h3 id="取得日期和時間"><a href="#取得日期和時間" class="headerlink" title="取得日期和時間"></a>取得日期和時間</h3><p><strong>.getTime()</strong>    取得自 1970-01-01 00:00:00 UTC 累計的毫秒數<br><strong>.getFullYear()</strong>    取得年分。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var today &#x3D; new Date();</span><br><span class="line">var year &#x3D; today.getFullYear();</span><br></pre></td></tr></table></figure>
+<p><strong>.getMonth()</strong>    取得月分(0-11)。<br><strong>.getDate()</strong>    取得日期。<br><strong>.getDay()</strong>    取得星期(0-6)。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var weekday &#x3D; [&#39;星期日&#39;,&#39;星期一&#39;,&#39;星期二&#39;,&#39;星期三&#39;,&#39;星期四&#39;,&#39;星期五&#39;,&#39;星期六&#39;];</span><br><span class="line">var day &#x3D; today.getDay();</span><br><span class="line">weekday[day];</span><br></pre></td></tr></table></figure>
+<p><strong>.getHours()</strong><br><strong>.getMinutes()</strong><br><strong>.getSeconds()</strong><br><strong>.getMilliseconds()</strong></p>
+<h3 id="設定日期和時間"><a href="#設定日期和時間" class="headerlink" title="設定日期和時間"></a>設定日期和時間</h3><p><strong>.setTime()</strong><br><strong>.setFullYear()</strong><br><strong>.setMonth()</strong><br><strong>.setDate()</strong><br><strong>.setHours()</strong><br><strong>.setMinutes()</strong><br><strong>.setSeconds()</strong><br><strong>.setMilliseconds()</strong></p>
+]]></content>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>Date</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTML - &amp;lt;picture&amp;gt; 標籤</title>
+    <url>/2021/01/06/HTML-picture-%E6%A8%99%E7%B1%A4/</url>
+    <content><![CDATA[<h3 id="lt-picture-gt-標籤用途"><a href="#lt-picture-gt-標籤用途" class="headerlink" title="&lt;picture&gt; 標籤用途"></a>&lt;picture&gt; 標籤用途</h3><ul>
+<li>多用在響應式網頁設計</li>
+<li>可根據不同螢幕尺寸載入圖片</li>
+<li>可根據瀏覽器支援的格式來載入不同格式的圖片</li>
+</ul>
+<br>
+
+<h3 id="lt-picture-gt-語法範例"><a href="#lt-picture-gt-語法範例" class="headerlink" title="&lt;picture&gt; 語法範例"></a>&lt;picture&gt; 語法範例</h3><p>&lt;picture&gt; 容器裡面使用多個 &lt;source&gt; 和一個 &lt;img&gt; 來設定。<br>先從 &lt;source&gt; 去找有沒有匹配的圖片，沒有的話則使用 &lt;img&gt; 設定的圖片。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;picture&gt;</span><br><span class="line">  &lt;source srcset&#x3D;&quot;&#x2F;photo&#x2F;dog-600.jpg&quot;</span><br><span class="line">          media&#x3D;&quot;(min-width: 600px)&quot;&gt;</span><br><span class="line">  &lt;img src&#x3D;&quot;&#x2F;photo&#x2F;dog.jpg&quot;&gt;</span><br><span class="line">&lt;&#x2F;picture&gt;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="lt-source-gt-標籤屬性"><a href="#lt-source-gt-標籤屬性" class="headerlink" title="&lt;source&gt; 標籤屬性"></a>&lt;source&gt; 標籤屬性</h3><ul>
+<li>media : 用來設定 media query 條件。</li>
+<li>srcset : 設定一張或多張(逗點分隔)不同尺寸的圖片。尺寸可以使用圖片像素寬度(單位 w)或螢幕解析度(單位 x)。</li>
+<li>type : 指定圖片的檔案格式，當瀏覽器不支援此格式時會忽略這張圖片。  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;picture&gt;</span><br><span class="line">  &lt;source srcset&#x3D;&quot;&#x2F;photo&#x2F;dog-600.jpg 600w, &#x2F;photo&#x2F;dog-600-2.jpg 2x&quot;</span><br><span class="line">          srcset&#x3D;&quot;&#x2F;photo&#x2F;dog-300.jpg 300w, &#x2F;photo&#x2F;dog-600-1.5.jpg 1.5x&quot;</span><br><span class="line">          media&#x3D;&quot;(min-width: 600px)&quot;</span><br><span class="line">          type&#x3D;&quot;image&#x2F;jpeg&quot;&gt;</span><br><span class="line">  &lt;img src&#x3D;&quot;&#x2F;photo&#x2F;dog.png&quot;&gt;</span><br><span class="line">&lt;&#x2F;picture&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>HTML</tag>
+        <tag>標籤</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JavaScript – Math</title>
     <url>/2020/12/25/Math/</url>
     <content><![CDATA[<h3 id="Math-abs"><a href="#Math-abs" class="headerlink" title="Math.abs()"></a>Math.abs()</h3><p>取得數字的絕對值。</p>
@@ -556,6 +625,47 @@
         <tag>Javascript</tag>
         <tag>Object</tag>
         <tag>Object資料複製</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Javascript - Promise</title>
+    <url>/2020/12/02/Promise/</url>
+    <content><![CDATA[<h3 id="Promise-物件"><a href="#Promise-物件" class="headerlink" title="Promise 物件"></a>Promise 物件</h3><p>有三種狀態 :</p>
+<ul>
+<li>pending – 未確認(初始狀態)</li>
+<li>fulfilled – 事件實現</li>
+<li>rejected – 事件失敗</li>
+</ul>
+<p>而在建立 Promise 物件時，會有兩個參數 :</p>
+<ul>
+<li>resolve – 在Promise 物件的狀態變為 fulfilled，操作成功時調用。</li>
+<li>reject – 在Promise 物件的狀態變為 rejected，操作失敗時調用。</li>
+</ul>
+<h3 id="建立Promise-物件"><a href="#建立Promise-物件" class="headerlink" title="建立Promise 物件"></a>建立Promise 物件</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var promiseFn &#x3D; new Promise(function (resolve, reject) &#123;</span><br><span class="line">    if (操作成功) &#123;</span><br><span class="line">        resolve();</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        reject();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="Promise-物件原型方法"><a href="#Promise-物件原型方法" class="headerlink" title="Promise 物件原型方法"></a>Promise 物件原型方法</h3><p><strong>Promise.prototype.then()</strong><br>then() 方法接受兩個分別要執行的參數 :</p>
+<ul>
+<li>第一個參數是當 Promise 狀態變為fulfilled時調用。</li>
+<li>第二個函數是當 Promise 狀態變為rejected時調用(選擇性)。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">promiseFn.then(</span><br><span class="line">    (resolve) &#x3D;&gt;&#123;...&#125;,</span><br><span class="line">    (reject) &#x3D;&gt; &#123;...&#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p><strong>Promise.prototype.catch()</strong><br>catch() 方法用來綁定當Promise 狀態變為rejected 狀態時，要執行的參數。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">promiseFn.then(</span><br><span class="line">    (resolve) &#x3D;&gt;&#123;...&#125;</span><br><span class="line">).catch(</span><br><span class="line">    (reject) &#x3D;&gt; &#123;...&#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用-return-來串接"><a href="#使用-return-來串接" class="headerlink" title="使用 return 來串接"></a>使用 return 來串接</h3><p>後面的 then() 會接收前一個 then() 的 return value 當作參數。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let text &#x3D; document.getElementById(&#39;text&#39;);</span><br><span class="line"></span><br><span class="line">function promiseFn(num) &#123;</span><br><span class="line">    return new Promise(function (resolve, reject) &#123;</span><br><span class="line">        if (num &gt;&#x3D; 10) &#123;</span><br><span class="line">            resolve(&#96;成功投幣 $&#123;num&#125; 元&#96;);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            reject(&#96;投幣 $&#123;num&#125; 元，金額不足&#96;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">promiseFn(5).then(</span><br><span class="line">    (res) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(res);</span><br><span class="line">        return res</span><br><span class="line">    &#125;,</span><br><span class="line">    (rej) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(rej);   &#x2F;&#x2F; 投幣 5 元，金額不足</span><br><span class="line">        return rej</span><br><span class="line">    &#125;</span><br><span class="line">).then(</span><br><span class="line">    (res) &#x3D;&gt; &#123;</span><br><span class="line">        text.textContent &#x3D; res;</span><br><span class="line">    &#125;,</span><br><span class="line">    (rej) &#x3D;&gt; &#123;</span><br><span class="line">        text.textContent &#x3D; rej;   &#x2F;&#x2F; 投幣 5 元，金額不足</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Promise-all"><a href="#Promise-all" class="headerlink" title="Promise.all"></a>Promise.all</h3><p>透過陣列形式傳入多個promise物件。<br>所有 Promise 物件個別的返回值，會被組成一個陣列。<br>若其中一個 Promise 物件狀態變為 rejected，則回傳reject 的值。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Promise.all([promiseFn(15),promiseFn(20),promiseFn(35)]).then(</span><br><span class="line">    (res) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(res);   &#x2F;&#x2F; [&quot;成功投幣 15 元&quot;, &quot;成功投幣 20 元&quot;, &quot;成功投幣 35 元&quot;]</span><br><span class="line">        return res</span><br><span class="line">    &#125;,</span><br><span class="line">    (rej) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(rej);</span><br><span class="line">        return rej</span><br><span class="line">    &#125;</span><br><span class="line">).then(</span><br><span class="line">    (res) &#x3D;&gt; &#123;</span><br><span class="line">        text.textContent &#x3D; res;   &#x2F;&#x2F; 成功投幣 15 元,成功投幣 20 元,成功投幣 35 元</span><br><span class="line">    &#125;,</span><br><span class="line">    (rej) &#x3D;&gt; &#123;</span><br><span class="line">        text.textContent &#x3D; rej;</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Promise.all([promiseFn(15),promiseFn(5),promiseFn(35)]).then(</span><br><span class="line">    (res) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(res);</span><br><span class="line">        return res</span><br><span class="line">    &#125;,</span><br><span class="line">    (rej) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(rej);   &#x2F;&#x2F; 投幣 5 元，金額不足</span><br><span class="line">        return rej</span><br><span class="line">    &#125;</span><br><span class="line">).then(</span><br><span class="line">    (res) &#x3D;&gt; &#123;</span><br><span class="line">        text.textContent &#x3D; res;</span><br><span class="line">    &#125;,</span><br><span class="line">    (rej) &#x3D;&gt; &#123;</span><br><span class="line">        text.textContent &#x3D; rej;   &#x2F;&#x2F; 投幣 5 元，金額不足</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Promise-race"><a href="#Promise-race" class="headerlink" title="Promise.race"></a>Promise.race</h3><p>Promise.race() 一樣透過陣列形式傳入多個promise物件，不同的是取回第一個改變狀態promise物件的值。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Promise.race([promiseFn(15),promiseFn(5),promiseFn(35)]).then(</span><br><span class="line">    (res) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(res);</span><br><span class="line">        return res</span><br><span class="line">    &#125;,</span><br><span class="line">    (rej) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(rej);   &#x2F;&#x2F; 成功投幣 15 元</span><br><span class="line">        return rej</span><br><span class="line">    &#125;</span><br><span class="line">).then(</span><br><span class="line">    (res) &#x3D;&gt; &#123;</span><br><span class="line">        text.textContent &#x3D; res;</span><br><span class="line">    &#125;,</span><br><span class="line">    (rej) &#x3D;&gt; &#123;</span><br><span class="line">        text.textContent &#x3D; rej;   &#x2F;&#x2F; 成功投幣 15 元</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>AJAX</tag>
+        <tag>Promise</tag>
       </tags>
   </entry>
   <entry>
@@ -618,47 +728,6 @@
         <tag>Javascript</tag>
         <tag>String</tag>
         <tag>String方法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Javascript - Promise</title>
-    <url>/2020/12/02/Promise/</url>
-    <content><![CDATA[<h3 id="Promise-物件"><a href="#Promise-物件" class="headerlink" title="Promise 物件"></a>Promise 物件</h3><p>有三種狀態 :</p>
-<ul>
-<li>pending – 未確認(初始狀態)</li>
-<li>fulfilled – 事件實現</li>
-<li>rejected – 事件失敗</li>
-</ul>
-<p>而在建立 Promise 物件時，會有兩個參數 :</p>
-<ul>
-<li>resolve – 在Promise 物件的狀態變為 fulfilled，操作成功時調用。</li>
-<li>reject – 在Promise 物件的狀態變為 rejected，操作失敗時調用。</li>
-</ul>
-<h3 id="建立Promise-物件"><a href="#建立Promise-物件" class="headerlink" title="建立Promise 物件"></a>建立Promise 物件</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var promiseFn &#x3D; new Promise(function (resolve, reject) &#123;</span><br><span class="line">    if (操作成功) &#123;</span><br><span class="line">        resolve();</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        reject();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h3 id="Promise-物件原型方法"><a href="#Promise-物件原型方法" class="headerlink" title="Promise 物件原型方法"></a>Promise 物件原型方法</h3><p><strong>Promise.prototype.then()</strong><br>then() 方法接受兩個分別要執行的參數 :</p>
-<ul>
-<li>第一個參數是當 Promise 狀態變為fulfilled時調用。</li>
-<li>第二個函數是當 Promise 狀態變為rejected時調用(選擇性)。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">promiseFn.then(</span><br><span class="line">    (resolve) &#x3D;&gt;&#123;...&#125;,</span><br><span class="line">    (reject) &#x3D;&gt; &#123;...&#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<p><strong>Promise.prototype.catch()</strong><br>catch() 方法用來綁定當Promise 狀態變為rejected 狀態時，要執行的參數。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">promiseFn.then(</span><br><span class="line">    (resolve) &#x3D;&gt;&#123;...&#125;</span><br><span class="line">).catch(</span><br><span class="line">    (reject) &#x3D;&gt; &#123;...&#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<h3 id="使用-return-來串接"><a href="#使用-return-來串接" class="headerlink" title="使用 return 來串接"></a>使用 return 來串接</h3><p>後面的 then() 會接收前一個 then() 的 return value 當作參數。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let text &#x3D; document.getElementById(&#39;text&#39;);</span><br><span class="line"></span><br><span class="line">function promiseFn(num) &#123;</span><br><span class="line">    return new Promise(function (resolve, reject) &#123;</span><br><span class="line">        if (num &gt;&#x3D; 10) &#123;</span><br><span class="line">            resolve(&#96;成功投幣 $&#123;num&#125; 元&#96;);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            reject(&#96;投幣 $&#123;num&#125; 元，金額不足&#96;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">promiseFn(5).then(</span><br><span class="line">    (res) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(res);</span><br><span class="line">        return res</span><br><span class="line">    &#125;,</span><br><span class="line">    (rej) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(rej);   &#x2F;&#x2F; 投幣 5 元，金額不足</span><br><span class="line">        return rej</span><br><span class="line">    &#125;</span><br><span class="line">).then(</span><br><span class="line">    (res) &#x3D;&gt; &#123;</span><br><span class="line">        text.textContent &#x3D; res;</span><br><span class="line">    &#125;,</span><br><span class="line">    (rej) &#x3D;&gt; &#123;</span><br><span class="line">        text.textContent &#x3D; rej;   &#x2F;&#x2F; 投幣 5 元，金額不足</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<h3 id="Promise-all"><a href="#Promise-all" class="headerlink" title="Promise.all"></a>Promise.all</h3><p>透過陣列形式傳入多個promise物件。<br>所有 Promise 物件個別的返回值，會被組成一個陣列。<br>若其中一個 Promise 物件狀態變為 rejected，則回傳reject 的值。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Promise.all([promiseFn(15),promiseFn(20),promiseFn(35)]).then(</span><br><span class="line">    (res) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(res);   &#x2F;&#x2F; [&quot;成功投幣 15 元&quot;, &quot;成功投幣 20 元&quot;, &quot;成功投幣 35 元&quot;]</span><br><span class="line">        return res</span><br><span class="line">    &#125;,</span><br><span class="line">    (rej) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(rej);</span><br><span class="line">        return rej</span><br><span class="line">    &#125;</span><br><span class="line">).then(</span><br><span class="line">    (res) &#x3D;&gt; &#123;</span><br><span class="line">        text.textContent &#x3D; res;   &#x2F;&#x2F; 成功投幣 15 元,成功投幣 20 元,成功投幣 35 元</span><br><span class="line">    &#125;,</span><br><span class="line">    (rej) &#x3D;&gt; &#123;</span><br><span class="line">        text.textContent &#x3D; rej;</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Promise.all([promiseFn(15),promiseFn(5),promiseFn(35)]).then(</span><br><span class="line">    (res) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(res);</span><br><span class="line">        return res</span><br><span class="line">    &#125;,</span><br><span class="line">    (rej) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(rej);   &#x2F;&#x2F; 投幣 5 元，金額不足</span><br><span class="line">        return rej</span><br><span class="line">    &#125;</span><br><span class="line">).then(</span><br><span class="line">    (res) &#x3D;&gt; &#123;</span><br><span class="line">        text.textContent &#x3D; res;</span><br><span class="line">    &#125;,</span><br><span class="line">    (rej) &#x3D;&gt; &#123;</span><br><span class="line">        text.textContent &#x3D; rej;   &#x2F;&#x2F; 投幣 5 元，金額不足</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<h3 id="Promise-race"><a href="#Promise-race" class="headerlink" title="Promise.race"></a>Promise.race</h3><p>Promise.race() 一樣透過陣列形式傳入多個promise物件，不同的是取回第一個改變狀態promise物件的值。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Promise.race([promiseFn(15),promiseFn(5),promiseFn(35)]).then(</span><br><span class="line">    (res) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(res);</span><br><span class="line">        return res</span><br><span class="line">    &#125;,</span><br><span class="line">    (rej) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(rej);   &#x2F;&#x2F; 成功投幣 15 元</span><br><span class="line">        return rej</span><br><span class="line">    &#125;</span><br><span class="line">).then(</span><br><span class="line">    (res) &#x3D;&gt; &#123;</span><br><span class="line">        text.textContent &#x3D; res;</span><br><span class="line">    &#125;,</span><br><span class="line">    (rej) &#x3D;&gt; &#123;</span><br><span class="line">        text.textContent &#x3D; rej;   &#x2F;&#x2F; 成功投幣 15 元</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>Javascript</tag>
-        <tag>AJAX</tag>
-        <tag>Promise</tag>
       </tags>
   </entry>
   <entry>
@@ -786,7 +855,24 @@
       </tags>
   </entry>
   <entry>
-    <title>使用CSS限制文本內容</title>
+    <title>CSS - 一些 CSS 紀錄</title>
+    <url>/2021/01/09/%E4%B8%80%E4%BA%9BCSS%E7%B4%80%E9%8C%84/</url>
+    <content><![CDATA[<h3 id="使搜索欄-input-type-”search”-具有取消按鈕"><a href="#使搜索欄-input-type-”search”-具有取消按鈕" class="headerlink" title="使搜索欄 input[type=”search”] 具有取消按鈕"></a>使搜索欄 input[type=”search”] 具有取消按鈕</h3><p>參考連結 : <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/appearance">MDN</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">input[type&#x3D;search] &#123;</span><br><span class="line">    -webkit-appearance: search_btn;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">input[type&#x3D;&quot;search&quot;]::-webkit-search-cancel-button&#123;</span><br><span class="line">    -webkit-appearance: search_btn-cancel-button;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="cursor-改變滑鼠形狀"><a href="#cursor-改變滑鼠形狀" class="headerlink" title="cursor 改變滑鼠形狀"></a>cursor 改變滑鼠形狀</h3><p>屬性值: default (預設) | none | pointer | wait | crosshair | text | vertical-text | move | …</p>
+<br>
+
+<p>參考資料 :<br><a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/cursor">MDN</a></p>
+]]></content>
+      <tags>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用 CSS 限制文本內容</title>
     <url>/2020/12/07/%E4%BD%BF%E7%94%A8CSS%E9%99%90%E5%88%B6%E5%85%A7%E5%AE%B9/</url>
     <content><![CDATA[<h3 id="目標-當文字超過限制時會自動顯示”…”的省略號。"><a href="#目標-當文字超過限制時會自動顯示”…”的省略號。" class="headerlink" title="目標 : 當文字超過限制時會自動顯示”…”的省略號。"></a>目標 : 當文字超過限制時會自動顯示”…”的省略號。</h3><p>HTML :</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;box&quot;&gt;</span><br><span class="line">        &lt;p&gt;臣亮言：先帝創業未半，而中道崩殂。今天下三分，益州疲弊，此誠危急存亡之秋也。然侍衛之臣，不懈於內；忠志之士，忘身於外者，蓋追先帝之殊遇，欲報之於陛下也。誠宜開張聖聽，以光先帝遺德，恢宏志士之氣；不宜妄自菲薄，引喻失義，以塞忠諫之路也。</span><br><span class="line">        &lt;&#x2F;p&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
@@ -815,6 +901,48 @@
         <tag>CSS</tag>
         <tag>CSS text-overflow</tag>
         <tag>CSS 限制文本內容</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS - 偽class</title>
+    <url>/2021/01/10/%E5%81%BDclass/</url>
+    <content><![CDATA[<h3 id="用來設定連結的樣式"><a href="#用來設定連結的樣式" class="headerlink" title="用來設定連結的樣式"></a>用來設定連結的樣式</h3><ul>
+<li><strong>:link</strong>    未訪問過的連結。</li>
+<li><strong>:visited</strong>    已訪問過的連結。</li>
+</ul>
+<br>
+
+<h3 id="對於使用者的操作做出樣式改變。"><a href="#對於使用者的操作做出樣式改變。" class="headerlink" title="對於使用者的操作做出樣式改變。"></a>對於使用者的操作做出樣式改變。</h3><ul>
+<li><strong>:hover</strong>    當鼠標滑入。</li>
+<li><strong>:active</strong>    使用滑鼠點擊。</li>
+<li><strong>:focus</strong>    當元素有焦點。</li>
+</ul>
+<br>
+
+<h3 id="target"><a href="#target" class="headerlink" title=":target"></a>:target</h3><p>使用於連結與連結的錨點相符的 id 其目標元素。<br>例如：點擊 Open example 顯示 id=”example” 的元素，點擊 Close 則將其隱藏。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;a href&#x3D;&quot;#example&quot;&gt;Open example&lt;&#x2F;a&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;div id&#x3D;&quot;example&quot; class&#x3D;&quot;box&quot;&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    123456789</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;a href&#x3D;&quot;#&quot;&gt;Close&lt;&#x2F;a&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">  .box &#123;</span><br><span class="line">    display: none;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  .box:target &#123;</span><br><span class="line">    display: block;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="套用在-input-上使用"><a href="#套用在-input-上使用" class="headerlink" title="套用在 input 上使用"></a>套用在 input 上使用</h3><ul>
+<li><strong>:checked</strong>    選取時( radio、checkbox 使用 )。<br>例如：切換顯示與否。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;input type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;my-box&quot; id&#x3D;&quot;op&quot;&gt;</span><br><span class="line">  &lt;p&gt;123&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;p class&#x3D;&quot;text&quot;&gt;456&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;p class&#x3D;&quot;text&quot;&gt;789&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;label for&#x3D;&quot;op&quot; id&#x3D;&quot;btn&quot;&gt;點點我!&lt;&#x2F;label&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">  #op &#123;</span><br><span class="line">    display: none;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  .text &#123;</span><br><span class="line">    display: none;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  #btn &#123;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    background-color: #ff7;</span><br><span class="line">    border: 1px solid;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  #op:checked~ .text &#123;</span><br><span class="line">    display: block;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  #op:checked~ #btn&#123;</span><br><span class="line">    background-color: #ccc;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure></li>
+<li><strong>:disabled</strong>    禁用狀態。</li>
+<li><strong>:enabled</strong>    啟用狀態。</li>
+</ul>
+<br>
+
+<h3 id="排除選擇相符的元素"><a href="#排除選擇相符的元素" class="headerlink" title="排除選擇相符的元素"></a>排除選擇相符的元素</h3><ul>
+<li><strong>:not(選擇器參數)</strong>    排除選擇相符的元素。<br>例如：選取 input 中所有不是 type=”checkbox” 的元素。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">input:not[type&#x3D;&quot;checkbox&quot;]</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<br>
+
+<p>參考資料 :<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:checked">MDN</a><br><a href="https://ithelp.ithome.com.tw/articles/10217730">重新認識 CSS - Pseudo-class (偽類) (1)</a></p>
+]]></content>
+      <tags>
+        <tag>CSS</tag>
+        <tag>CSS class</tag>
       </tags>
   </entry>
   <entry>
@@ -849,7 +977,12 @@
 <br>
 
 <h3 id="搭配-quotes-屬性"><a href="#搭配-quotes-屬性" class="headerlink" title="搭配 quotes 屬性"></a>搭配 quotes 屬性</h3><p>在元素上設定自定義的括號。<br>quotes 支援巢狀的結構，前後括號使用空白區隔，兩組為一個單位，前後可以不同符號。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">    quotes: &#39;*&#39; &#39;*&#39;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p:before &#123;</span><br><span class="line">    content: open-quote;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p:after &#123;</span><br><span class="line">    content: close-quote;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p:before,</span><br><span class="line">p:after &#123;</span><br><span class="line">    font-size: 3em;</span><br><span class="line">    color: gray;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">    quotes: &#39;*&#39; &#39;*&#39;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p:before &#123;</span><br><span class="line">    content: open-quote;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p:after &#123;</span><br><span class="line">    content: close-quote;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p:before,</span><br><span class="line">p:after &#123;</span><br><span class="line">    font-size: 3em;</span><br><span class="line">    color: gray;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>參考資料 :<br><a href="https://www.oxxostudio.tw/articles/201706/pseudo-element-1.html">MDN</a></p>
+]]></content>
       <tags>
         <tag>CSS</tag>
         <tag>CSS 偽元素</tag>
@@ -927,7 +1060,12 @@
 <p>例如: div 的最小寬度為300px，最大寬度為500px，在範圍內則寬度為50%</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: clamp(300px, 50%, 500px); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>等同於</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 50%;</span><br><span class="line">    min-width: 300px;</span><br><span class="line">    max-width: 500px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 50%;</span><br><span class="line">    min-width: 300px;</span><br><span class="line">    max-width: 500px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>參考資料 :<br><a href="https://www.oxxostudio.tw/articles/202011/css-max-min-clamp-calc.html">oxxostudio</a></p>
+]]></content>
       <tags>
         <tag>CSS</tag>
         <tag>CSS 數學函式</tag>
@@ -1272,6 +1410,7 @@
 ]]></content>
       <tags>
         <tag>HTML</tag>
+        <tag>標籤</tag>
         <tag>表單標籤</tag>
       </tags>
   </entry>
@@ -1303,8 +1442,13 @@
 
 <h3 id="JavaScript-操作"><a href="#JavaScript-操作" class="headerlink" title="JavaScript 操作"></a>JavaScript 操作</h3><ul>
 <li><strong>.style.setProperty</strong><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const root &#x3D; document.documentElement;</span><br><span class="line">root.style.setProperty(&#39;--color&#39;, &#39;red&#39;);</span><br></pre></td></tr></table></figure></li>
-<li><strong>.style.cssText</strong><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const root &#x3D; document.documentElement;</span><br><span class="line">root.style.cssText &#x3D; &#39;--color: red&#39;;</span><br></pre></td></tr></table></figure></li>
+<li><strong>.style.cssText</strong><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const root &#x3D; document.documentElement;</span><br><span class="line">root.style.cssText &#x3D; &#39;--color: red&#39;;</span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
+<br>
+
+<p>參考資料 :<br><a href="https://www.oxxostudio.tw/articles/202011/css-variables.html">oxxostudio</a></p>
 ]]></content>
       <tags>
         <tag>CSS</tag>
