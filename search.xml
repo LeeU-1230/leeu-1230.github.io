@@ -1482,4 +1482,41 @@
         <tag>input</tag>
       </tags>
   </entry>
+  <entry>
+    <title>搞懂影片檔案類型</title>
+    <url>/2022/08/03/%E6%90%9E%E6%87%82%E5%BD%B1%E7%89%87%E6%AA%94%E6%A1%88%E9%A1%9E%E5%9E%8B/</url>
+    <content><![CDATA[<h3 id="檔案類型"><a href="#檔案類型" class="headerlink" title="檔案類型"></a>檔案類型</h3><h4 id="mov（QuickTime）"><a href="#mov（QuickTime）" class="headerlink" title=".mov（QuickTime）"></a>.mov（QuickTime）</h4><p>由 Apple 公司開發。<br>與 MP4 檔一樣，MOV 視訊使用 MPEG-4 轉碼器進行編碼。</p>
+<h4 id="mp4（MPEG-4-Part-14）"><a href="#mp4（MPEG-4-Part-14）" class="headerlink" title=".mp4（MPEG-4 Part 14）"></a>.mp4（MPEG-4 Part 14）</h4><p>被廣泛支援，並且與 H.264 編解碼器相容。<br>適合用來製作高畫質影片，擁有相對較小的檔案大小。</p>
+<ul>
+<li>擁有音訊視訊的MPEG-4檔案通常使用標準擴展名 .mp4</li>
+<li>僅有音訊的MPEG-4檔案會使用 .m4a</li>
+<li>視訊格式：高效率視訊編碼（H.265 / HEVC）、進階視訊編碼（H.264 / AVC）</li>
+<li>音訊格式：進階音訊編碼（AAC）</li>
+</ul>
+<h4 id="avi（AVI）"><a href="#avi（AVI）" class="headerlink" title=".avi（AVI）"></a>.avi（AVI）</h4><p>雖然仍然被廣泛運用，但是年歲已久，這個容器無法搭配許多現代編解碼器。</p>
+<h4 id="wmv（WMV）"><a href="#wmv（WMV）" class="headerlink" title=".wmv（WMV）"></a>.wmv（WMV）</h4><p>限制眾多，它是舊版的微軟格式，只適用特定編解碼器。</p>
+<h4 id="mkv（Matroska）和-oog（Oog）"><a href="#mkv（Matroska）和-oog（Oog）" class="headerlink" title=".mkv（Matroska）和 .oog（Oog）"></a>.mkv（Matroska）和 .oog（Oog）</h4><p>這些是開放格式，，但是他們並未被廣泛支援。</p>
+<h4 id="AVCHD"><a href="#AVCHD" class="headerlink" title="AVCHD"></a>AVCHD</h4><p>是索尼與松下電器聯合發表的高畫質光碟壓縮技術。<br>AVCHD 標準基於 H.264 / MPEG-4 AVC 視訊編碼，支援480i、720p、1080i、1080p等格式，同時支援杜比數位5.1聲道或線性PCM 7.1聲道音訊壓縮。</p>
+<h3 id="編解碼器"><a href="#編解碼器" class="headerlink" title="編解碼器"></a>編解碼器</h3><h4 id="ProRes-422-和-ProRes-4444"><a href="#ProRes-422-和-ProRes-4444" class="headerlink" title="ProRes 422 和 ProRes 4444"></a>ProRes 422 和 ProRes 4444</h4><p>是蘋果公司開發的高品質的有損影片壓縮格式，可用於高達8K的後期製作。<br>若使用 .mov 檔案，那麼 Apple ProRes 編解碼器會是個好選擇。<br>ProRes能夠大量減少影片的檔案大小，同時保留許多畫質。</p>
+<h4 id="H-264-MPEG-4-AVC"><a href="#H-264-MPEG-4-AVC" class="headerlink" title="H.264/MPEG-4 AVC"></a>H.264/MPEG-4 AVC</h4><p>是線上分享高畫質影片的最佳選擇之一。<br>雖然已經推出更新版本的H.265/HEVC編解碼器，但是H.264/AVC依然擁有廣泛支援。</p>
+<h4 id="H-265-HEVC"><a href="#H-265-HEVC" class="headerlink" title="H.265/HEVC"></a>H.265/HEVC</h4><p>被視為是 H.264/MPEG-4 AVC 標準的繼任者。<br>不僅提昇影像品質，同時也能達到H.264/MPEG-4 AVC兩倍之壓縮率。<br>最高解析度可達到8192×4320（8K解析度）。</p>
+<h3 id="社群媒體的最佳規格"><a href="#社群媒體的最佳規格" class="headerlink" title="社群媒體的最佳規格"></a>社群媒體的最佳規格</h3><ul>
+<li>.mp4最適合分享，因為它有廣泛支援，而且相對具備高畫質。</li>
+<li>H.264是將影片上傳到Facebook、Instagram和Twitter的好選擇。它具備高畫質、廣泛支援，並且提供很棒的壓縮檔案大小。</li>
+<li>如果有硬體設備，H.265非常適合超高畫質的直播影片。</li>
+<li>YouTube接受許多不同的檔案類型。如果要追求畫質，最好能夠堅持使用ProRes編碼的 .mov或是H.264編碼的 .mp4檔案。</li>
+</ul>
+<hr>
+
+<p>參考資料</p>
+<ul>
+<li><a href="https://www.shutterstock.com/zh-Hant/blog/video-file-types-and-codecs?amp=1">shutterstock</a></li>
+<li><a href="https://zh.m.wikipedia.org/wiki/%E7%B7%A8%E8%A7%A3%E7%A2%BC%E5%99%A8%E5%88%97%E8%A1%A8">維基百科</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>影片格式</tag>
+        <tag>影片製作 偽class</tag>
+      </tags>
+  </entry>
 </search>
