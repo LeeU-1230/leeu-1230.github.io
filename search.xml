@@ -1,6 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Javascript - AJAX</title>
+    <url>/2020/12/01/AJAX/</url>
+    <content><![CDATA[<h3 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h3><p>利用 JavaScript 的 XMLHttpRequest 物件與遠端server 進行非同步的資料交換。<br>特性是無須重載整個頁面，便能對遠端server 發送請求。<br><br></p>
+<h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><p><strong>new XMLHttpRequest()</strong><br>建立 HTTP 請求。</p>
+<p><strong>.open(method, url[, async])</strong><br>open 方法指定請求。</p>
+<ul>
+<li>method : 指定 HTTP method (GET, POST, PUT, DELETE…)。</li>
+<li>url : 目標網址。</li>
+<li>async : true(非同步，預設) / false (同步) 。</li>
+</ul>
+<p><strong>.send(null | formData)</strong><br>如果method是用POST，第一個參數是 Form data 格式。</p>
+<p><strong>.setRequestHeader(header, value)</strong><br>如果method是用POST，需要設定 HTTP header，要在open()後、send()前呼叫。</p>
+<ul>
+<li>header : Content-Type</li>
+<li>value-HTML表單類型資料 : application/x-www-form-urlencoded</li>
+<li>value-JSON格式資料 : application/json</li>
+<li>value-XML格式資料 : text/xml</li>
+</ul>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><p><strong>.onreadystatechange</strong><br>當 XMLHttpRequest 物件狀態改變時，透過 onreadystatechange 綁定的函數就會被執行。<br><br></p>
+<h3 id="屬性"><a href="#屬性" class="headerlink" title="屬性"></a>屬性</h3><p><strong>.readyState</strong><br>當前 XMLHttpRequest 物件狀態。值:</p>
+<ul>
+<li>0 : 未連結(沒open)</li>
+<li>1 : 未傳送(有open，沒send)</li>
+<li>2 : 請求(有send)</li>
+<li>3 : 回應資料中</li>
+<li>4 : 回應完成</li>
+</ul>
+<p><strong>.statusText</strong><br>返回的回應狀態。值:</p>
+<ul>
+<li>1xx : 參考的資訊。</li>
+<li>2xx : 成功。 例如: 200 – ok</li>
+<li>3xx : 重新導向。</li>
+<li>4xx : 錯誤。 例如: 404 – not found</li>
+<li>5xx : server錯誤。</li>
+</ul>
+<p><strong>.responseText</strong><br>請求返回的資料字串。<br><br></p>
+<h3 id="GET請求範例"><a href="#GET請求範例" class="headerlink" title="GET請求範例"></a>GET請求範例</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"> var xhr &#x3D; new XMLHttpRequest();</span><br><span class="line"></span><br><span class="line"> xhr.open(&#39;get&#39;, url);</span><br><span class="line"></span><br><span class="line"> xhr.send(null);</span><br><span class="line"></span><br><span class="line"> xhr.onreadystatechange &#x3D; function () &#123;</span><br><span class="line">    if (httpRequest.readyState &#x3D;&#x3D;&#x3D; 4) &#123;</span><br><span class="line">        if (httpRequest.status &#x3D;&#x3D; 200) &#123;</span><br><span class="line">            console.log(xhr.responseText)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<br>
+
+<h3 id="POST請求範例"><a href="#POST請求範例" class="headerlink" title="POST請求範例"></a>POST請求範例</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"> var xhr &#x3D; new XMLHttpRequest();</span><br><span class="line"></span><br><span class="line"> xhr.open(&#39;post&#39;, url);</span><br><span class="line"></span><br><span class="line"> xhr.setRequestHeader(&#39;Content-Type&#39;, &#39;application&#x2F;x-www-form-urlencoded&#39;);</span><br><span class="line"></span><br><span class="line"> xhr.send(&#39;email &#x3D; abcde123@gmail.com &amp; password &#x3D; 1234&#39;);</span><br><span class="line"></span><br><span class="line"> xhr.onreadystatechange &#x3D; function () &#123;</span><br><span class="line">    if (httpRequest.readyState &#x3D;&#x3D;&#x3D; 4) &#123;</span><br><span class="line">        if (httpRequest.status &#x3D;&#x3D; 200) &#123;</span><br><span class="line">            console.log(xhr.responseText)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>AJAX</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CSS - Animation(動畫)</title>
     <url>/2020/12/18/Animation-%E5%8B%95%E7%95%AB/</url>
     <content><![CDATA[<h3 id="keyframes"><a href="#keyframes" class="headerlink" title="@keyframes"></a>@keyframes</h3><p>在@keyframes 規則內指定CSS樣式。<br>0% 表示起始，100% 表示結束。</p>
@@ -64,53 +111,6 @@
         <tag>CSS</tag>
         <tag>CSS animation</tag>
         <tag>CSS 動畫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Javascript - AJAX</title>
-    <url>/2020/12/01/AJAX/</url>
-    <content><![CDATA[<h3 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h3><p>利用 JavaScript 的 XMLHttpRequest 物件與遠端server 進行非同步的資料交換。<br>特性是無須重載整個頁面，便能對遠端server 發送請求。<br><br></p>
-<h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><p><strong>new XMLHttpRequest()</strong><br>建立 HTTP 請求。</p>
-<p><strong>.open(method, url[, async])</strong><br>open 方法指定請求。</p>
-<ul>
-<li>method : 指定 HTTP method (GET, POST, PUT, DELETE…)。</li>
-<li>url : 目標網址。</li>
-<li>async : true(非同步，預設) / false (同步) 。</li>
-</ul>
-<p><strong>.send(null | formData)</strong><br>如果method是用POST，第一個參數是 Form data 格式。</p>
-<p><strong>.setRequestHeader(header, value)</strong><br>如果method是用POST，需要設定 HTTP header，要在open()後、send()前呼叫。</p>
-<ul>
-<li>header : Content-Type</li>
-<li>value-HTML表單類型資料 : application/x-www-form-urlencoded</li>
-<li>value-JSON格式資料 : application/json</li>
-<li>value-XML格式資料 : text/xml</li>
-</ul>
-<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><p><strong>.onreadystatechange</strong><br>當 XMLHttpRequest 物件狀態改變時，透過 onreadystatechange 綁定的函數就會被執行。<br><br></p>
-<h3 id="屬性"><a href="#屬性" class="headerlink" title="屬性"></a>屬性</h3><p><strong>.readyState</strong><br>當前 XMLHttpRequest 物件狀態。值:</p>
-<ul>
-<li>0 : 未連結(沒open)</li>
-<li>1 : 未傳送(有open，沒send)</li>
-<li>2 : 請求(有send)</li>
-<li>3 : 回應資料中</li>
-<li>4 : 回應完成</li>
-</ul>
-<p><strong>.statusText</strong><br>返回的回應狀態。值:</p>
-<ul>
-<li>1xx : 參考的資訊。</li>
-<li>2xx : 成功。 例如: 200 – ok</li>
-<li>3xx : 重新導向。</li>
-<li>4xx : 錯誤。 例如: 404 – not found</li>
-<li>5xx : server錯誤。</li>
-</ul>
-<p><strong>.responseText</strong><br>請求返回的資料字串。<br><br></p>
-<h3 id="GET請求範例"><a href="#GET請求範例" class="headerlink" title="GET請求範例"></a>GET請求範例</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"> var xhr &#x3D; new XMLHttpRequest();</span><br><span class="line"></span><br><span class="line"> xhr.open(&#39;get&#39;, url);</span><br><span class="line"></span><br><span class="line"> xhr.send(null);</span><br><span class="line"></span><br><span class="line"> xhr.onreadystatechange &#x3D; function () &#123;</span><br><span class="line">    if (httpRequest.readyState &#x3D;&#x3D;&#x3D; 4) &#123;</span><br><span class="line">        if (httpRequest.status &#x3D;&#x3D; 200) &#123;</span><br><span class="line">            console.log(xhr.responseText)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<br>
-
-<h3 id="POST請求範例"><a href="#POST請求範例" class="headerlink" title="POST請求範例"></a>POST請求範例</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"> var xhr &#x3D; new XMLHttpRequest();</span><br><span class="line"></span><br><span class="line"> xhr.open(&#39;post&#39;, url);</span><br><span class="line"></span><br><span class="line"> xhr.setRequestHeader(&#39;Content-Type&#39;, &#39;application&#x2F;x-www-form-urlencoded&#39;);</span><br><span class="line"></span><br><span class="line"> xhr.send(&#39;email &#x3D; abcde123@gmail.com &amp; password &#x3D; 1234&#39;);</span><br><span class="line"></span><br><span class="line"> xhr.onreadystatechange &#x3D; function () &#123;</span><br><span class="line">    if (httpRequest.readyState &#x3D;&#x3D;&#x3D; 4) &#123;</span><br><span class="line">        if (httpRequest.status &#x3D;&#x3D; 200) &#123;</span><br><span class="line">            console.log(xhr.responseText)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>Javascript</tag>
-        <tag>AJAX</tag>
       </tags>
   </entry>
   <entry>
@@ -232,6 +232,56 @@
       </tags>
   </entry>
   <entry>
+    <title>CSS - 漸層</title>
+    <url>/2021/01/01/CSS-%E6%BC%B8%E5%B1%A4/</url>
+    <content><![CDATA[<h3 id="漸層"><a href="#漸層" class="headerlink" title="漸層"></a>漸層</h3><p>漸層效果需要設定至少兩種顏色在開頭和結尾，可以設定多種顏色，瀏覽器會自動計算中間漸變的顏色。</p>
+<ul>
+<li>使用對象: background、list-style-image</li>
+<li>漸層類型: linear-gradient、radial-gradient、conic-gradient</li>
+</ul>
+<br>
+
+<h3 id="linear-gradient-方向-顏色1-位置1-顏色2-位置2"><a href="#linear-gradient-方向-顏色1-位置1-顏色2-位置2" class="headerlink" title="linear-gradient(方向, 顏色1 位置1, 顏色2 位置2);"></a>linear-gradient(方向, 顏色1 位置1, 顏色2 位置2);</h3><p>線性漸層，依指定角度來直線產生對應的顏色。</p>
+<ul>
+<li>方向: 預設從上往下漸變(to bottom | 180deg)，可以使用角度(0~180deg)或方向屬性(to top | bottom | left | right)。</li>
+<li>位置: 0%~100%，沒有指定參數時，則會自動等比例分配。設定每個顏色的位置不要重疊，就可以出現漸層。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background-image: linear-gradient(blue, green);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<img src="https://drive.google.com/uc?export=view&id=1QiWf3CY6ZGteEcoOdrIgtdd1a0cnapBX"></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background-image: linear-gradient(blue 50%, green 50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  <img src="https://drive.google.com/uc?export=view&id=1ba1zjlJO8TXu5CZwx8PDeRVNvslgwEJP"></p>
+<p><strong>repeating-linear-gradient</strong><br>線性重複漸層，需要指定需要重複的顏色位置。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background-image: repeating-linear-gradient(blue 0%, blue 5%, pink 5%, pink 10%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  <img src="https://drive.google.com/uc?export=view&id=1i6pq3pkGQhHQJyB-8tHlVqpYixy5r7u1"></p>
+<br>
+
+<h3 id="radial-gradient-方式-尺寸-at-中心位置-顏色1-位置1-顏色2-位置2"><a href="#radial-gradient-方式-尺寸-at-中心位置-顏色1-位置1-顏色2-位置2" class="headerlink" title="radial-gradient(方式 尺寸 at 中心位置, 顏色1 位置1, 顏色2 位置2)"></a>radial-gradient(方式 尺寸 at 中心位置, 顏色1 位置1, 顏色2 位置2)</h3><p>放射漸層，從單點出發，以圓形或橢圓的方式向外放射。</p>
+<ul>
+<li>方式: circle (圓形) | ellipse (橢圓,預設)</li>
+<li>尺寸: farthest-corner (最遠角,預設) | closest-side (最近邊) | farthest-side (最遠邊) | closest-corner (最近角) | x軸 y軸(橢圓,例: 80% 20%) </li>
+<li>中心位置: center (預設)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background-image: radial-gradient(blue, pink)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  <img src="https://drive.google.com/uc?export=view&id=1Ew8MA31wP9E3iaXN-lid4djfm-hBPagF"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background-image: radial-gradient(blue 20%, pink 55%, orange 90%)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  <img src="https://drive.google.com/uc?export=view&id=1jlWAizpATrpoKU288k8sUe6JZXFrFJiW"></p>
+<p><strong>repeating-linear-gradient</strong><br>放射重複漸層</p>
+<br>
+
+<h3 id="conic-gradient-顏色1-位置1-顏色2-位置2"><a href="#conic-gradient-顏色1-位置1-顏色2-位置2" class="headerlink" title="conic-gradient(顏色1 位置1, 顏色2 位置2);"></a>conic-gradient(顏色1 位置1, 顏色2 位置2);</h3><p>錐形漸層。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background-image: conic-gradient(blue, pink)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  <img src="https://drive.google.com/uc?export=view&id=1m_FbgakzBtHFvKmbpimH10JWUjUBfFUz"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background-image: conic-gradient(blue 0, blue 180deg, pink 180deg, pink 360deg)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  <img src="https://drive.google.com/uc?export=view&id=1PrTh4PHUPqdWYUQZYWfdswIB8pGqV_ve"></p>
+<br>
+
+<p>參考資料 :<br><a href="https://www.oxxostudio.tw/articles/202008/css-gradient.html">oxxostudio</a></p>
+]]></content>
+      <tags>
+        <tag>CSS</tag>
+        <tag>CSS 漸層</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JavaScript - Async function 和 Await</title>
     <url>/2020/12/24/Await/</url>
     <content><![CDATA[<h3 id="Sync-同步-Async-非同步"><a href="#Sync-同步-Async-非同步" class="headerlink" title="Sync (同步) / Async (非同步)"></a>Sync (同步) / Async (非同步)</h3><p>Sync (同步) : 依序等待執行，一次執行完一件事，才能繼續往下執行。<br>Async (非同步) : 可以一次處理不同需求，不須等待事件執行完畢才往下執行。</p>
@@ -318,6 +368,28 @@
       </tags>
   </entry>
   <entry>
+    <title>JavaScript - Date.parse()</title>
+    <url>/2020/12/30/Date-parse/</url>
+    <content><![CDATA[<h3 id="Date-parse-String"><a href="#Date-parse-String" class="headerlink" title="Date.parse(String)"></a>Date.parse(String)</h3><p>用來將日期時間字串轉成毫秒數。</p>
+<p>String 格式:</p>
+<ul>
+<li>YYYY-MM-DD<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Date.parse(&#39;2020-12-30&#39;);</span><br></pre></td></tr></table></figure></li>
+<li>YYYY-MM  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Date.parse(&#39;2020-12&#39;);</span><br></pre></td></tr></table></figure></li>
+<li>YYYY<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Date.parse(&#39;2020&#39;);</span><br></pre></td></tr></table></figure></li>
+<li>YYYY-MM-DDTHH:MM:SS<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Date.parse(&#39;2020-12-30T21:55:05&#39;);</span><br></pre></td></tr></table></figure></li>
+<li>MM/DD/YYYY<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Date.parse(&#39;12&#x2F;30&#x2F;2020&#39;);</span><br></pre></td></tr></table></figure></li>
+<li>MMM DD YYYY<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Date.parse(&#39;Dec 30 2020&#39;);</span><br></pre></td></tr></table></figure></li>
+<li>DD MMM YYYY<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Date.parse(&#39;30 Dec 2020&#39;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>Date</tag>
+        <tag>parse()</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JavaScript – DOM 節點屬性</title>
     <url>/2021/01/06/DOM-%E7%AF%80%E9%BB%9E%E5%B1%AC%E6%80%A7/</url>
     <content><![CDATA[<h3 id="Node-nodeName"><a href="#Node-nodeName" class="headerlink" title="Node.nodeName"></a>Node.nodeName</h3><p>取得節點名稱。</p>
@@ -348,78 +420,6 @@
         <tag>JavaScript</tag>
         <tag>DOM</tag>
         <tag>DOM 節點屬性</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSS - 漸層</title>
-    <url>/2021/01/01/CSS-%E6%BC%B8%E5%B1%A4/</url>
-    <content><![CDATA[<h3 id="漸層"><a href="#漸層" class="headerlink" title="漸層"></a>漸層</h3><p>漸層效果需要設定至少兩種顏色在開頭和結尾，可以設定多種顏色，瀏覽器會自動計算中間漸變的顏色。</p>
-<ul>
-<li>使用對象: background、list-style-image</li>
-<li>漸層類型: linear-gradient、radial-gradient、conic-gradient</li>
-</ul>
-<br>
-
-<h3 id="linear-gradient-方向-顏色1-位置1-顏色2-位置2"><a href="#linear-gradient-方向-顏色1-位置1-顏色2-位置2" class="headerlink" title="linear-gradient(方向, 顏色1 位置1, 顏色2 位置2);"></a>linear-gradient(方向, 顏色1 位置1, 顏色2 位置2);</h3><p>線性漸層，依指定角度來直線產生對應的顏色。</p>
-<ul>
-<li>方向: 預設從上往下漸變(to bottom | 180deg)，可以使用角度(0~180deg)或方向屬性(to top | bottom | left | right)。</li>
-<li>位置: 0%~100%，沒有指定參數時，則會自動等比例分配。設定每個顏色的位置不要重疊，就可以出現漸層。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background-image: linear-gradient(blue, green);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<img src="https://drive.google.com/uc?export=view&id=1QiWf3CY6ZGteEcoOdrIgtdd1a0cnapBX"></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background-image: linear-gradient(blue 50%, green 50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  <img src="https://drive.google.com/uc?export=view&id=1ba1zjlJO8TXu5CZwx8PDeRVNvslgwEJP"></p>
-<p><strong>repeating-linear-gradient</strong><br>線性重複漸層，需要指定需要重複的顏色位置。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background-image: repeating-linear-gradient(blue 0%, blue 5%, pink 5%, pink 10%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  <img src="https://drive.google.com/uc?export=view&id=1i6pq3pkGQhHQJyB-8tHlVqpYixy5r7u1"></p>
-<br>
-
-<h3 id="radial-gradient-方式-尺寸-at-中心位置-顏色1-位置1-顏色2-位置2"><a href="#radial-gradient-方式-尺寸-at-中心位置-顏色1-位置1-顏色2-位置2" class="headerlink" title="radial-gradient(方式 尺寸 at 中心位置, 顏色1 位置1, 顏色2 位置2)"></a>radial-gradient(方式 尺寸 at 中心位置, 顏色1 位置1, 顏色2 位置2)</h3><p>放射漸層，從單點出發，以圓形或橢圓的方式向外放射。</p>
-<ul>
-<li>方式: circle (圓形) | ellipse (橢圓,預設)</li>
-<li>尺寸: farthest-corner (最遠角,預設) | closest-side (最近邊) | farthest-side (最遠邊) | closest-corner (最近角) | x軸 y軸(橢圓,例: 80% 20%) </li>
-<li>中心位置: center (預設)</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background-image: radial-gradient(blue, pink)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  <img src="https://drive.google.com/uc?export=view&id=1Ew8MA31wP9E3iaXN-lid4djfm-hBPagF"></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background-image: radial-gradient(blue 20%, pink 55%, orange 90%)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  <img src="https://drive.google.com/uc?export=view&id=1jlWAizpATrpoKU288k8sUe6JZXFrFJiW"></p>
-<p><strong>repeating-linear-gradient</strong><br>放射重複漸層</p>
-<br>
-
-<h3 id="conic-gradient-顏色1-位置1-顏色2-位置2"><a href="#conic-gradient-顏色1-位置1-顏色2-位置2" class="headerlink" title="conic-gradient(顏色1 位置1, 顏色2 位置2);"></a>conic-gradient(顏色1 位置1, 顏色2 位置2);</h3><p>錐形漸層。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background-image: conic-gradient(blue, pink)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  <img src="https://drive.google.com/uc?export=view&id=1m_FbgakzBtHFvKmbpimH10JWUjUBfFUz"></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background-image: conic-gradient(blue 0, blue 180deg, pink 180deg, pink 360deg)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  <img src="https://drive.google.com/uc?export=view&id=1PrTh4PHUPqdWYUQZYWfdswIB8pGqV_ve"></p>
-<br>
-
-<p>參考資料 :<br><a href="https://www.oxxostudio.tw/articles/202008/css-gradient.html">oxxostudio</a></p>
-]]></content>
-      <tags>
-        <tag>CSS</tag>
-        <tag>CSS 漸層</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JavaScript - Date.parse()</title>
-    <url>/2020/12/30/Date-parse/</url>
-    <content><![CDATA[<h3 id="Date-parse-String"><a href="#Date-parse-String" class="headerlink" title="Date.parse(String)"></a>Date.parse(String)</h3><p>用來將日期時間字串轉成毫秒數。</p>
-<p>String 格式:</p>
-<ul>
-<li>YYYY-MM-DD<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Date.parse(&#39;2020-12-30&#39;);</span><br></pre></td></tr></table></figure></li>
-<li>YYYY-MM  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Date.parse(&#39;2020-12&#39;);</span><br></pre></td></tr></table></figure></li>
-<li>YYYY<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Date.parse(&#39;2020&#39;);</span><br></pre></td></tr></table></figure></li>
-<li>YYYY-MM-DDTHH:MM:SS<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Date.parse(&#39;2020-12-30T21:55:05&#39;);</span><br></pre></td></tr></table></figure></li>
-<li>MM/DD/YYYY<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Date.parse(&#39;12&#x2F;30&#x2F;2020&#39;);</span><br></pre></td></tr></table></figure></li>
-<li>MMM DD YYYY<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Date.parse(&#39;Dec 30 2020&#39;);</span><br></pre></td></tr></table></figure></li>
-<li>DD MMM YYYY<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Date.parse(&#39;30 Dec 2020&#39;);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>Javascript</tag>
-        <tag>Date</tag>
-        <tag>parse()</tag>
       </tags>
   </entry>
   <entry>
@@ -483,34 +483,6 @@
         <tag>AJAX</tag>
         <tag>Promise</tag>
         <tag>Fetch</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HTML - &amp;lt;picture&amp;gt; 標籤</title>
-    <url>/2021/01/06/HTML-picture-%E6%A8%99%E7%B1%A4/</url>
-    <content><![CDATA[<h3 id="lt-picture-gt-標籤用途"><a href="#lt-picture-gt-標籤用途" class="headerlink" title="&lt;picture&gt; 標籤用途"></a>&lt;picture&gt; 標籤用途</h3><ul>
-<li>多用在響應式網頁設計</li>
-<li>可根據不同螢幕尺寸載入圖片</li>
-<li>可根據瀏覽器支援的格式來載入不同格式的圖片</li>
-</ul>
-<br>
-
-<h3 id="lt-picture-gt-語法範例"><a href="#lt-picture-gt-語法範例" class="headerlink" title="&lt;picture&gt; 語法範例"></a>&lt;picture&gt; 語法範例</h3><p>&lt;picture&gt; 容器裡面使用多個 &lt;source&gt; 和一個 &lt;img&gt; 來設定。<br>先從 &lt;source&gt; 去找有沒有匹配的圖片，沒有的話則使用 &lt;img&gt; 設定的圖片。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;picture&gt;</span><br><span class="line">  &lt;source srcset&#x3D;&quot;&#x2F;photo&#x2F;dog-600.jpg&quot;</span><br><span class="line">          media&#x3D;&quot;(min-width: 600px)&quot;&gt;</span><br><span class="line">  &lt;img src&#x3D;&quot;&#x2F;photo&#x2F;dog.jpg&quot;&gt;</span><br><span class="line">&lt;&#x2F;picture&gt;</span><br></pre></td></tr></table></figure>
-
-<br>
-
-<h3 id="lt-source-gt-標籤屬性"><a href="#lt-source-gt-標籤屬性" class="headerlink" title="&lt;source&gt; 標籤屬性"></a>&lt;source&gt; 標籤屬性</h3><ul>
-<li>media : 用來設定 media query 條件。</li>
-<li>srcset : 設定一張或多張(逗點分隔)不同尺寸的圖片。尺寸可以使用圖片像素寬度(單位 w)或螢幕解析度(單位 x)。</li>
-<li>type : 指定圖片的檔案格式，當瀏覽器不支援此格式時會忽略這張圖片。  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;picture&gt;</span><br><span class="line">  &lt;source srcset&#x3D;&quot;&#x2F;photo&#x2F;dog-600.jpg 600w, &#x2F;photo&#x2F;dog-600-2.jpg 2x&quot;</span><br><span class="line">          srcset&#x3D;&quot;&#x2F;photo&#x2F;dog-300.jpg 300w, &#x2F;photo&#x2F;dog-600-1.5.jpg 1.5x&quot;</span><br><span class="line">          media&#x3D;&quot;(min-width: 600px)&quot;</span><br><span class="line">          type&#x3D;&quot;image&#x2F;jpeg&quot;&gt;</span><br><span class="line">  &lt;img src&#x3D;&quot;&#x2F;photo&#x2F;dog.png&quot;&gt;</span><br><span class="line">&lt;&#x2F;picture&gt;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>HTML</tag>
-        <tag>標籤</tag>
       </tags>
   </entry>
   <entry>
@@ -581,6 +553,115 @@
       </tags>
   </entry>
   <entry>
+    <title>HTML - &amp;lt;picture&amp;gt; 標籤</title>
+    <url>/2021/01/06/HTML-picture-%E6%A8%99%E7%B1%A4/</url>
+    <content><![CDATA[<h3 id="lt-picture-gt-標籤用途"><a href="#lt-picture-gt-標籤用途" class="headerlink" title="&lt;picture&gt; 標籤用途"></a>&lt;picture&gt; 標籤用途</h3><ul>
+<li>多用在響應式網頁設計</li>
+<li>可根據不同螢幕尺寸載入圖片</li>
+<li>可根據瀏覽器支援的格式來載入不同格式的圖片</li>
+</ul>
+<br>
+
+<h3 id="lt-picture-gt-語法範例"><a href="#lt-picture-gt-語法範例" class="headerlink" title="&lt;picture&gt; 語法範例"></a>&lt;picture&gt; 語法範例</h3><p>&lt;picture&gt; 容器裡面使用多個 &lt;source&gt; 和一個 &lt;img&gt; 來設定。<br>先從 &lt;source&gt; 去找有沒有匹配的圖片，沒有的話則使用 &lt;img&gt; 設定的圖片。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;picture&gt;</span><br><span class="line">  &lt;source srcset&#x3D;&quot;&#x2F;photo&#x2F;dog-600.jpg&quot;</span><br><span class="line">          media&#x3D;&quot;(min-width: 600px)&quot;&gt;</span><br><span class="line">  &lt;img src&#x3D;&quot;&#x2F;photo&#x2F;dog.jpg&quot;&gt;</span><br><span class="line">&lt;&#x2F;picture&gt;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="lt-source-gt-標籤屬性"><a href="#lt-source-gt-標籤屬性" class="headerlink" title="&lt;source&gt; 標籤屬性"></a>&lt;source&gt; 標籤屬性</h3><ul>
+<li>media : 用來設定 media query 條件。</li>
+<li>srcset : 設定一張或多張(逗點分隔)不同尺寸的圖片。尺寸可以使用圖片像素寬度(單位 w)或螢幕解析度(單位 x)。</li>
+<li>type : 指定圖片的檔案格式，當瀏覽器不支援此格式時會忽略這張圖片。  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;picture&gt;</span><br><span class="line">  &lt;source srcset&#x3D;&quot;&#x2F;photo&#x2F;dog-600.jpg 600w, &#x2F;photo&#x2F;dog-600-2.jpg 2x&quot;</span><br><span class="line">          srcset&#x3D;&quot;&#x2F;photo&#x2F;dog-300.jpg 300w, &#x2F;photo&#x2F;dog-600-1.5.jpg 1.5x&quot;</span><br><span class="line">          media&#x3D;&quot;(min-width: 600px)&quot;</span><br><span class="line">          type&#x3D;&quot;image&#x2F;jpeg&quot;&gt;</span><br><span class="line">  &lt;img src&#x3D;&quot;&#x2F;photo&#x2F;dog.png&quot;&gt;</span><br><span class="line">&lt;&#x2F;picture&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>HTML</tag>
+        <tag>標籤</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>什麼是HTML?</title>
+    <url>/2023/03/14/HTML%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%B4%B9/</url>
+    <content><![CDATA[<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><p>HTML（HyperText Markup Language，超文本標記語言）是打造網頁的基石。<br>它表述並定義網頁的內容，包含了一系列的元素（elements），而元素包含了標籤（tags）與內容（content），我們用標籤來控制內容的呈現樣貌，例如字體大小、斜體粗體、在文字或圖片設置超連結等。<br>伴隨 HTML 而來的技術還有描述網頁外觀（CSS）及功能性的程式語言（JavaScript）。</p>
+<h3 id="HTML的元素組成"><a href="#HTML的元素組成" class="headerlink" title="HTML的元素組成"></a>HTML的元素組成</h3><p><img src="https://drive.google.com/uc?export=view&id=1VMVNnto9orKoK_Lm-oikJYMa8nj5djaB" alt="HTML組成"><br>基本的架構：</p>
+<ol>
+<li>起始標籤 （The opening tag）：**先打大於、小於的符號「&lt; &gt;」，裡面再放入元素名稱，如上面的例子「<code>&lt;p&gt;</code>」。起始標籤代表這個元素從這裡開始。</li>
+<li>結束標籤 （The closing tag）： 與起始標籤一樣，只是在元素名稱前面多了個前置斜線「/」。</li>
+<li>內容（The content）： 這個元素的內容，以上面的例子來說，內容就是這句文字。</li>
+<li>元素（The element）： 由起始標籤、結束標籤、內容所組成。</li>
+</ol>
+<p>元素還可以有「屬性（Attribute）」：</p>
+<p><img src="https://drive.google.com/uc?export=view&id=1DB_3kEYJFrSWpOj8yPtRbcCMUclxAM43" alt="元素的屬性"></p>
+<p>屬性能提供更多的資訊（當然，這個資訊是幫助我們更有效及方便編輯，不會呈現在網頁上），屬性包含了屬性名稱與值，你可以利用屬性設定這個元素的色彩、對齊方式、圖表的格線等等。</p>
+<h3 id="巢狀元素"><a href="#巢狀元素" class="headerlink" title="巢狀元素"></a>巢狀元素</h3><p>元素裡面可以在放進元素，我們稱之為「巢狀元素（nesting element）」。<br>例如這個句子：「My cat is very grumpy.」，若想強調「very」，就可以把「very」顯示為粗體的元素。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;p&gt;My cat is &lt;strong&gt;very&lt;&#x2F;strong&gt; grumpy.&lt;&#x2F;p&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="空元素"><a href="#空元素" class="headerlink" title="空元素"></a>空元素</h3><p>有些元素沒有內容，稱為「空元素（empty elements）」。 以圖片元素 <img>為例：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;images&#x2F;firefox-icon.png&quot; alt&#x3D;&quot;My test image&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="HTML文件架構"><a href="#HTML文件架構" class="headerlink" title="HTML文件架構"></a>HTML文件架構</h3><p>一個完整的 HTML 頁面它所包含的要素：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;utf-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;My test page&lt;&#x2F;title&gt;</span><br><span class="line">  &lt;&#x2F;head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;img src&#x3D;&quot;images&#x2F;firefox-icon.png&quot; alt&#x3D;&quot;My test image&quot;&gt;</span><br><span class="line">  &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>&lt;!DOCTYPE html&gt;</code> — 文件類型（doctype）,表示這是一份標準的HTML5 文件。</li>
+<li><code>&lt;html&gt;</code> 元素，又被視為根元素（root element），包含了所有顯示在這個頁面上的內容。</li>
+<li><code>&lt;head&gt;</code> 元素，裡面放的是你想涵括的重要資訊，但不會顯示於網頁瀏覽者眼前的。例如，顯示於搜尋結果的關鍵字、頁面說明<em>、</em>CSS、字元實體集…等。</li>
+<li><code>&lt;body&gt;</code> 元素，包含了所有會顯示於網頁瀏覽者眼前的內容。 無論是文字、圖片、影面、互動遊戲…等。</li>
+<li><code>&lt;meta charset=&quot;utf-8&quot;&gt;</code> — 這個元素指定了你的文件使用 utf-8 這種字元編碼， 建議大家都要使用這個元素，它會幫助你免去許多文字無法正確呈現的煩惱。</li>
+<li><code>&lt;title&gt;</code> — 呈現於網頁瀏覽者眼前的網頁標題。</li>
+</ul>
+<h3 id="加入圖片"><a href="#加入圖片" class="headerlink" title="加入圖片"></a>加入圖片</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;images&#x2F;firefox-icon.png&quot; alt&#x3D;&quot;My test image&quot;&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>透過圖片來源（src ，source）這個屬性，提供了連到圖片檔案的路徑。</li>
+<li>加上alt (alternative) 這個屬性。在網頁瀏覽者無法正確看到圖片時，你希望對他們呈現什麼樣的說明文字。</li>
+</ul>
+<h3 id="文章標題-heading"><a href="#文章標題-heading" class="headerlink" title="文章標題(heading)"></a>文章標題(heading)</h3><p>HTML 最多可以有六層的 heading， <code>&lt;h1&gt; ~ &lt;h6&gt;</code>。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;h1&gt;My title&lt;&#x2F;h1&gt;</span><br></pre></td></tr></table></figure>
+<h1 style="background: #F7F7F7;">My title</h1>
+
+<h3 id="段落-paragraph"><a href="#段落-paragraph" class="headerlink" title="段落 (paragraph)"></a>段落 (paragraph)</h3><p>呈現一般文字。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;p&gt;This is a single paragraph&lt;&#x2F;p&gt;</span><br></pre></td></tr></table></figure>
+<p style="background: #F7F7F7;">This is a single paragraph</p>
+
+<h3 id="清單-list"><a href="#清單-list" class="headerlink" title="清單(list)"></a>清單(list)</h3><p>清單包含無順序性與有順序性的：</p>
+<ol>
+<li>無順序性清單（Unordered lists）<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line"> &lt;li&gt;國文&lt;&#x2F;li&gt;</span><br><span class="line"> &lt;li&gt;英文&lt;&#x2F;li&gt;</span><br><span class="line"> &lt;li&gt;數學&lt;&#x2F;li&gt;</span><br><span class="line">&lt;&#x2F;ul&gt;</span><br></pre></td></tr></table></figure>
+<ul style="background: #F7F7F7;">
+<li>國文</li>
+<li>英文</li>
+<li>數學</li>
+</ul>
+<br></li>
+<li>有順序性清單（Ordered lists）<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;ol&gt;</span><br><span class="line">&lt;li&gt;第一天&lt;&#x2F;li&gt;</span><br><span class="line">&lt;li&gt;第二天&lt;&#x2F;li&gt;</span><br><span class="line">&lt;li&gt;第三天&lt;&#x2F;li&gt;</span><br><span class="line">&lt;&#x2F;ol&gt;</span><br></pre></td></tr></table></figure>
+<ol style="background: #F7F7F7;">
+<li>第一天</li>
+<li>第二天</li>
+<li>第三天</li>
+</ol>
+
+</li>
+</ol>
+<h3 id="連結-link"><a href="#連結-link" class="headerlink" title="連結 (link)"></a>連結 (link)</h3><p>讓文字變成連結</p>
+<ol>
+<li>例如「GOOGLE」，包在<code>&lt;a&gt;</code>元素裡：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;a&gt;GOOGLE&lt;&#x2F;a&gt;</span><br></pre></td></tr></table></figure></li>
+<li>在<code>&lt;a&gt;</code>中加上 href，屬性屬性值就是你要連結網址：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.google.com.tw&#x2F;&quot;&gt;GOOGLE&lt;&#x2F;a&gt;</span><br></pre></td></tr></table></figure>
+<a  style="background: #F7F7F7;" href="https://www.google.com.tw/">GOOGLE</a></li>
+</ol>
+<hr>
+
+<p>參考資料</p>
+<ul>
+<li><a href="https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web/HTML_basics">MDN</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>HTML</category>
+      </categories>
+      <tags>
+        <tag>HTML</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JavaScript – Math</title>
     <url>/2020/12/25/Math/</url>
     <content><![CDATA[<h3 id="Math-abs"><a href="#Math-abs" class="headerlink" title="Math.abs()"></a>Math.abs()</h3><p>取得數字的絕對值。</p>
@@ -625,47 +706,6 @@
         <tag>Javascript</tag>
         <tag>Object</tag>
         <tag>Object資料複製</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Javascript - Promise</title>
-    <url>/2020/12/02/Promise/</url>
-    <content><![CDATA[<h3 id="Promise-物件"><a href="#Promise-物件" class="headerlink" title="Promise 物件"></a>Promise 物件</h3><p>有三種狀態 :</p>
-<ul>
-<li>pending – 未確認(初始狀態)</li>
-<li>fulfilled – 事件實現</li>
-<li>rejected – 事件失敗</li>
-</ul>
-<p>而在建立 Promise 物件時，會有兩個參數 :</p>
-<ul>
-<li>resolve – 在Promise 物件的狀態變為 fulfilled，操作成功時調用。</li>
-<li>reject – 在Promise 物件的狀態變為 rejected，操作失敗時調用。</li>
-</ul>
-<h3 id="建立Promise-物件"><a href="#建立Promise-物件" class="headerlink" title="建立Promise 物件"></a>建立Promise 物件</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var promiseFn &#x3D; new Promise(function (resolve, reject) &#123;</span><br><span class="line">    if (操作成功) &#123;</span><br><span class="line">        resolve();</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        reject();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h3 id="Promise-物件原型方法"><a href="#Promise-物件原型方法" class="headerlink" title="Promise 物件原型方法"></a>Promise 物件原型方法</h3><p><strong>Promise.prototype.then()</strong><br>then() 方法接受兩個分別要執行的參數 :</p>
-<ul>
-<li>第一個參數是當 Promise 狀態變為fulfilled時調用。</li>
-<li>第二個函數是當 Promise 狀態變為rejected時調用(選擇性)。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">promiseFn.then(</span><br><span class="line">    (resolve) &#x3D;&gt;&#123;...&#125;,</span><br><span class="line">    (reject) &#x3D;&gt; &#123;...&#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<p><strong>Promise.prototype.catch()</strong><br>catch() 方法用來綁定當Promise 狀態變為rejected 狀態時，要執行的參數。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">promiseFn.then(</span><br><span class="line">    (resolve) &#x3D;&gt;&#123;...&#125;</span><br><span class="line">).catch(</span><br><span class="line">    (reject) &#x3D;&gt; &#123;...&#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<h3 id="使用-return-來串接"><a href="#使用-return-來串接" class="headerlink" title="使用 return 來串接"></a>使用 return 來串接</h3><p>後面的 then() 會接收前一個 then() 的 return value 當作參數。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let text &#x3D; document.getElementById(&#39;text&#39;);</span><br><span class="line"></span><br><span class="line">function promiseFn(num) &#123;</span><br><span class="line">    return new Promise(function (resolve, reject) &#123;</span><br><span class="line">        if (num &gt;&#x3D; 10) &#123;</span><br><span class="line">            resolve(&#96;成功投幣 $&#123;num&#125; 元&#96;);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            reject(&#96;投幣 $&#123;num&#125; 元，金額不足&#96;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">promiseFn(5).then(</span><br><span class="line">    (res) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(res);</span><br><span class="line">        return res</span><br><span class="line">    &#125;,</span><br><span class="line">    (rej) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(rej);   &#x2F;&#x2F; 投幣 5 元，金額不足</span><br><span class="line">        return rej</span><br><span class="line">    &#125;</span><br><span class="line">).then(</span><br><span class="line">    (res) &#x3D;&gt; &#123;</span><br><span class="line">        text.textContent &#x3D; res;</span><br><span class="line">    &#125;,</span><br><span class="line">    (rej) &#x3D;&gt; &#123;</span><br><span class="line">        text.textContent &#x3D; rej;   &#x2F;&#x2F; 投幣 5 元，金額不足</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<h3 id="Promise-all"><a href="#Promise-all" class="headerlink" title="Promise.all"></a>Promise.all</h3><p>透過陣列形式傳入多個promise物件。<br>所有 Promise 物件個別的返回值，會被組成一個陣列。<br>若其中一個 Promise 物件狀態變為 rejected，則回傳reject 的值。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Promise.all([promiseFn(15),promiseFn(20),promiseFn(35)]).then(</span><br><span class="line">    (res) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(res);   &#x2F;&#x2F; [&quot;成功投幣 15 元&quot;, &quot;成功投幣 20 元&quot;, &quot;成功投幣 35 元&quot;]</span><br><span class="line">        return res</span><br><span class="line">    &#125;,</span><br><span class="line">    (rej) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(rej);</span><br><span class="line">        return rej</span><br><span class="line">    &#125;</span><br><span class="line">).then(</span><br><span class="line">    (res) &#x3D;&gt; &#123;</span><br><span class="line">        text.textContent &#x3D; res;   &#x2F;&#x2F; 成功投幣 15 元,成功投幣 20 元,成功投幣 35 元</span><br><span class="line">    &#125;,</span><br><span class="line">    (rej) &#x3D;&gt; &#123;</span><br><span class="line">        text.textContent &#x3D; rej;</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Promise.all([promiseFn(15),promiseFn(5),promiseFn(35)]).then(</span><br><span class="line">    (res) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(res);</span><br><span class="line">        return res</span><br><span class="line">    &#125;,</span><br><span class="line">    (rej) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(rej);   &#x2F;&#x2F; 投幣 5 元，金額不足</span><br><span class="line">        return rej</span><br><span class="line">    &#125;</span><br><span class="line">).then(</span><br><span class="line">    (res) &#x3D;&gt; &#123;</span><br><span class="line">        text.textContent &#x3D; res;</span><br><span class="line">    &#125;,</span><br><span class="line">    (rej) &#x3D;&gt; &#123;</span><br><span class="line">        text.textContent &#x3D; rej;   &#x2F;&#x2F; 投幣 5 元，金額不足</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<h3 id="Promise-race"><a href="#Promise-race" class="headerlink" title="Promise.race"></a>Promise.race</h3><p>Promise.race() 一樣透過陣列形式傳入多個promise物件，不同的是取回第一個改變狀態promise物件的值。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Promise.race([promiseFn(15),promiseFn(5),promiseFn(35)]).then(</span><br><span class="line">    (res) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(res);</span><br><span class="line">        return res</span><br><span class="line">    &#125;,</span><br><span class="line">    (rej) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(rej);   &#x2F;&#x2F; 成功投幣 15 元</span><br><span class="line">        return rej</span><br><span class="line">    &#125;</span><br><span class="line">).then(</span><br><span class="line">    (res) &#x3D;&gt; &#123;</span><br><span class="line">        text.textContent &#x3D; res;</span><br><span class="line">    &#125;,</span><br><span class="line">    (rej) &#x3D;&gt; &#123;</span><br><span class="line">        text.textContent &#x3D; rej;   &#x2F;&#x2F; 成功投幣 15 元</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>Javascript</tag>
-        <tag>AJAX</tag>
-        <tag>Promise</tag>
       </tags>
   </entry>
   <entry>
@@ -731,6 +771,47 @@
       </tags>
   </entry>
   <entry>
+    <title>Javascript - Promise</title>
+    <url>/2020/12/02/Promise/</url>
+    <content><![CDATA[<h3 id="Promise-物件"><a href="#Promise-物件" class="headerlink" title="Promise 物件"></a>Promise 物件</h3><p>有三種狀態 :</p>
+<ul>
+<li>pending – 未確認(初始狀態)</li>
+<li>fulfilled – 事件實現</li>
+<li>rejected – 事件失敗</li>
+</ul>
+<p>而在建立 Promise 物件時，會有兩個參數 :</p>
+<ul>
+<li>resolve – 在Promise 物件的狀態變為 fulfilled，操作成功時調用。</li>
+<li>reject – 在Promise 物件的狀態變為 rejected，操作失敗時調用。</li>
+</ul>
+<h3 id="建立Promise-物件"><a href="#建立Promise-物件" class="headerlink" title="建立Promise 物件"></a>建立Promise 物件</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var promiseFn &#x3D; new Promise(function (resolve, reject) &#123;</span><br><span class="line">    if (操作成功) &#123;</span><br><span class="line">        resolve();</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        reject();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="Promise-物件原型方法"><a href="#Promise-物件原型方法" class="headerlink" title="Promise 物件原型方法"></a>Promise 物件原型方法</h3><p><strong>Promise.prototype.then()</strong><br>then() 方法接受兩個分別要執行的參數 :</p>
+<ul>
+<li>第一個參數是當 Promise 狀態變為fulfilled時調用。</li>
+<li>第二個函數是當 Promise 狀態變為rejected時調用(選擇性)。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">promiseFn.then(</span><br><span class="line">    (resolve) &#x3D;&gt;&#123;...&#125;,</span><br><span class="line">    (reject) &#x3D;&gt; &#123;...&#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p><strong>Promise.prototype.catch()</strong><br>catch() 方法用來綁定當Promise 狀態變為rejected 狀態時，要執行的參數。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">promiseFn.then(</span><br><span class="line">    (resolve) &#x3D;&gt;&#123;...&#125;</span><br><span class="line">).catch(</span><br><span class="line">    (reject) &#x3D;&gt; &#123;...&#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用-return-來串接"><a href="#使用-return-來串接" class="headerlink" title="使用 return 來串接"></a>使用 return 來串接</h3><p>後面的 then() 會接收前一個 then() 的 return value 當作參數。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let text &#x3D; document.getElementById(&#39;text&#39;);</span><br><span class="line"></span><br><span class="line">function promiseFn(num) &#123;</span><br><span class="line">    return new Promise(function (resolve, reject) &#123;</span><br><span class="line">        if (num &gt;&#x3D; 10) &#123;</span><br><span class="line">            resolve(&#96;成功投幣 $&#123;num&#125; 元&#96;);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            reject(&#96;投幣 $&#123;num&#125; 元，金額不足&#96;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">promiseFn(5).then(</span><br><span class="line">    (res) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(res);</span><br><span class="line">        return res</span><br><span class="line">    &#125;,</span><br><span class="line">    (rej) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(rej);   &#x2F;&#x2F; 投幣 5 元，金額不足</span><br><span class="line">        return rej</span><br><span class="line">    &#125;</span><br><span class="line">).then(</span><br><span class="line">    (res) &#x3D;&gt; &#123;</span><br><span class="line">        text.textContent &#x3D; res;</span><br><span class="line">    &#125;,</span><br><span class="line">    (rej) &#x3D;&gt; &#123;</span><br><span class="line">        text.textContent &#x3D; rej;   &#x2F;&#x2F; 投幣 5 元，金額不足</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Promise-all"><a href="#Promise-all" class="headerlink" title="Promise.all"></a>Promise.all</h3><p>透過陣列形式傳入多個promise物件。<br>所有 Promise 物件個別的返回值，會被組成一個陣列。<br>若其中一個 Promise 物件狀態變為 rejected，則回傳reject 的值。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Promise.all([promiseFn(15),promiseFn(20),promiseFn(35)]).then(</span><br><span class="line">    (res) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(res);   &#x2F;&#x2F; [&quot;成功投幣 15 元&quot;, &quot;成功投幣 20 元&quot;, &quot;成功投幣 35 元&quot;]</span><br><span class="line">        return res</span><br><span class="line">    &#125;,</span><br><span class="line">    (rej) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(rej);</span><br><span class="line">        return rej</span><br><span class="line">    &#125;</span><br><span class="line">).then(</span><br><span class="line">    (res) &#x3D;&gt; &#123;</span><br><span class="line">        text.textContent &#x3D; res;   &#x2F;&#x2F; 成功投幣 15 元,成功投幣 20 元,成功投幣 35 元</span><br><span class="line">    &#125;,</span><br><span class="line">    (rej) &#x3D;&gt; &#123;</span><br><span class="line">        text.textContent &#x3D; rej;</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Promise.all([promiseFn(15),promiseFn(5),promiseFn(35)]).then(</span><br><span class="line">    (res) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(res);</span><br><span class="line">        return res</span><br><span class="line">    &#125;,</span><br><span class="line">    (rej) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(rej);   &#x2F;&#x2F; 投幣 5 元，金額不足</span><br><span class="line">        return rej</span><br><span class="line">    &#125;</span><br><span class="line">).then(</span><br><span class="line">    (res) &#x3D;&gt; &#123;</span><br><span class="line">        text.textContent &#x3D; res;</span><br><span class="line">    &#125;,</span><br><span class="line">    (rej) &#x3D;&gt; &#123;</span><br><span class="line">        text.textContent &#x3D; rej;   &#x2F;&#x2F; 投幣 5 元，金額不足</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Promise-race"><a href="#Promise-race" class="headerlink" title="Promise.race"></a>Promise.race</h3><p>Promise.race() 一樣透過陣列形式傳入多個promise物件，不同的是取回第一個改變狀態promise物件的值。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Promise.race([promiseFn(15),promiseFn(5),promiseFn(35)]).then(</span><br><span class="line">    (res) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(res);</span><br><span class="line">        return res</span><br><span class="line">    &#125;,</span><br><span class="line">    (rej) &#x3D;&gt; &#123;</span><br><span class="line">        console.log(rej);   &#x2F;&#x2F; 成功投幣 15 元</span><br><span class="line">        return rej</span><br><span class="line">    &#125;</span><br><span class="line">).then(</span><br><span class="line">    (res) &#x3D;&gt; &#123;</span><br><span class="line">        text.textContent &#x3D; res;</span><br><span class="line">    &#125;,</span><br><span class="line">    (rej) &#x3D;&gt; &#123;</span><br><span class="line">        text.textContent &#x3D; rej;   &#x2F;&#x2F; 成功投幣 15 元</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>AJAX</tag>
+        <tag>Promise</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CSS - Transform(變形)</title>
     <url>/2021/01/01/Transform-2D%E8%AE%8A%E5%BD%A2/</url>
     <content><![CDATA[<h3 id="translate（）-移動"><a href="#translate（）-移動" class="headerlink" title="translate（）    移動"></a>translate（）    移動</h3><p>從當前位置移動元素。<br>數值: 包含單位的數值(例: 50px)。</p>
@@ -780,33 +861,6 @@
         <tag>Javascript</tag>
         <tag>this</tag>
         <tag>this方法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Google Drive建立圖床</title>
-    <url>/2020/11/25/google%20Drive%E5%BB%BA%E7%AB%8B%E5%9C%96%E5%BA%8A/</url>
-    <content><![CDATA[<h2 id="步驟"><a href="#步驟" class="headerlink" title="步驟"></a>步驟</h2><h5 id="1-圖片需開啟共用連結的權限。"><a href="#1-圖片需開啟共用連結的權限。" class="headerlink" title="1.圖片需開啟共用連結的權限。"></a>1.圖片需開啟共用連結的權限。</h5><br>
-
-<h5 id="2-點圖呈現預覽畫面後，在右上方的更多動作中選擇在新視窗開啟。"><a href="#2-點圖呈現預覽畫面後，在右上方的更多動作中選擇在新視窗開啟。" class="headerlink" title="2.點圖呈現預覽畫面後，在右上方的更多動作中選擇在新視窗開啟。"></a>2.點圖呈現預覽畫面後，在右上方的更多動作中選擇在新視窗開啟。</h5><br>
-
-<h5 id="3-複製網址列中的圖片id字串"><a href="#3-複製網址列中的圖片id字串" class="headerlink" title="3.複製網址列中的圖片id字串"></a>3.複製網址列中的圖片id字串</h5><h5 id="https-drive-google-com-file-d-id字串-view"><a href="#https-drive-google-com-file-d-id字串-view" class="headerlink" title="https://drive.google.com/file/d/id字串/view"></a><code>https://drive.google.com/file/d/id字串/view</code></h5><br>
-
-<h5 id="4-以https-drive-google-com-uc-export-view-amp-id-加上id字串就是連結顯示的網址。"><a href="#4-以https-drive-google-com-uc-export-view-amp-id-加上id字串就是連結顯示的網址。" class="headerlink" title="4.以https://drive.google.com/uc?export=view&amp;id=加上id字串就是連結顯示的網址。"></a>4.以<code>https://drive.google.com/uc?export=view&amp;id=加上id字串就是連結顯示的網址</code>。</h5><h5 id="例-https-drive-google-com-uc-export-view-amp-id-id字串"><a href="#例-https-drive-google-com-uc-export-view-amp-id-id字串" class="headerlink" title="例: https://drive.google.com/uc?export=view&amp;id=id字串"></a>例: <code>https://drive.google.com/uc?export=view&amp;id=id字串</code></h5>]]></content>
-      <tags>
-        <tag>Google</tag>
-        <tag>Google Drive</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSS - 使滑鼠指標改變形狀</title>
-    <url>/2021/02/26/%E4%BD%BF%E6%BB%91%E9%BC%A0%E6%8C%87%E6%A8%99%E6%94%B9%E8%AE%8A%E5%BD%A2%E7%8B%80/</url>
-    <content><![CDATA[<h3 id="cursor-改變滑鼠形狀"><a href="#cursor-改變滑鼠形狀" class="headerlink" title="cursor 改變滑鼠形狀"></a>cursor 改變滑鼠形狀</h3><p>屬性值: default (預設) | none | pointer | wait | crosshair | text | vertical-text | move | …</p>
-<p>範例 : <strong><a href="https://codepen.io/leeu-1230/full/mdOXOyJ">cursor</a></strong></p>
-<p>參考連結 : <a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/cursor">MDN</a></p>
-]]></content>
-      <tags>
-        <tag>CSS</tag>
-        <tag>cursor</tag>
       </tags>
   </entry>
   <entry>
@@ -867,15 +921,50 @@
       </tags>
   </entry>
   <entry>
-    <title>Javascript - 函式閉包</title>
-    <url>/2020/12/02/%E5%87%BD%E5%BC%8F%E9%96%89%E5%8C%85/</url>
-    <content><![CDATA[<h3 id="函式閉包"><a href="#函式閉包" class="headerlink" title="函式閉包"></a>函式閉包</h3><p>保存了內部函式的執行環境，可以持續存取。<br>將變數指向外層函式，每一個變數都是獨立環境，可以反覆呼叫，重複持續存取內部函式環境。</p>
-<h3 id="建立"><a href="#建立" class="headerlink" title="建立"></a>建立</h3><p>在一個function函式中，return 另一個內部function函式。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function wallet() &#123;</span><br><span class="line">    let money &#x3D; 1000;</span><br><span class="line">    return function (cash) &#123;</span><br><span class="line">        money &#x3D; cash + money;</span><br><span class="line">        return money;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let personA &#x3D; wallet();</span><br><span class="line">console.log(personA(100));   &#x2F;&#x2F; 1100</span><br><span class="line">console.log(personA(100));   &#x2F;&#x2F; 1200</span><br><span class="line">console.log(personA(300));   &#x2F;&#x2F; 1500</span><br><span class="line"></span><br><span class="line">let personB &#x3D; wallet();</span><br><span class="line">console.log(personB(200));   &#x2F;&#x2F; 1200</span><br><span class="line">console.log(personB(500));   &#x2F;&#x2F; 1700</span><br><span class="line">console.log(personB(-800));   &#x2F;&#x2F; 900</span><br></pre></td></tr></table></figure>]]></content>
+    <title>Google Drive建立圖床</title>
+    <url>/2020/11/25/google%20Drive%E5%BB%BA%E7%AB%8B%E5%9C%96%E5%BA%8A/</url>
+    <content><![CDATA[<h2 id="步驟"><a href="#步驟" class="headerlink" title="步驟"></a>步驟</h2><h5 id="1-圖片需開啟共用連結的權限。"><a href="#1-圖片需開啟共用連結的權限。" class="headerlink" title="1.圖片需開啟共用連結的權限。"></a>1.圖片需開啟共用連結的權限。</h5><br>
+
+<h5 id="2-點圖呈現預覽畫面後，在右上方的更多動作中選擇在新視窗開啟。"><a href="#2-點圖呈現預覽畫面後，在右上方的更多動作中選擇在新視窗開啟。" class="headerlink" title="2.點圖呈現預覽畫面後，在右上方的更多動作中選擇在新視窗開啟。"></a>2.點圖呈現預覽畫面後，在右上方的更多動作中選擇在新視窗開啟。</h5><br>
+
+<h5 id="3-複製網址列中的圖片id字串"><a href="#3-複製網址列中的圖片id字串" class="headerlink" title="3.複製網址列中的圖片id字串"></a>3.複製網址列中的圖片id字串</h5><h5 id="https-drive-google-com-file-d-id字串-view"><a href="#https-drive-google-com-file-d-id字串-view" class="headerlink" title="https://drive.google.com/file/d/id字串/view"></a><code>https://drive.google.com/file/d/id字串/view</code></h5><br>
+
+<h5 id="4-以https-drive-google-com-uc-export-view-amp-id-加上id字串就是連結顯示的網址。"><a href="#4-以https-drive-google-com-uc-export-view-amp-id-加上id字串就是連結顯示的網址。" class="headerlink" title="4.以https://drive.google.com/uc?export=view&amp;id=加上id字串就是連結顯示的網址。"></a>4.以<code>https://drive.google.com/uc?export=view&amp;id=加上id字串就是連結顯示的網址</code>。</h5><h5 id="例-https-drive-google-com-uc-export-view-amp-id-id字串"><a href="#例-https-drive-google-com-uc-export-view-amp-id-id字串" class="headerlink" title="例: https://drive.google.com/uc?export=view&amp;id=id字串"></a>例: <code>https://drive.google.com/uc?export=view&amp;id=id字串</code></h5>]]></content>
       <tags>
-        <tag>Javascript</tag>
-        <tag>Function</tag>
-        <tag>函式閉包</tag>
+        <tag>Google</tag>
+        <tag>Google Drive</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用 CSS 限制文本內容</title>
+    <url>/2020/12/07/%E4%BD%BF%E7%94%A8CSS%E9%99%90%E5%88%B6%E5%85%A7%E5%AE%B9/</url>
+    <content><![CDATA[<h3 id="目標-當文字超過限制時會自動顯示”…”的省略號。"><a href="#目標-當文字超過限制時會自動顯示”…”的省略號。" class="headerlink" title="目標 : 當文字超過限制時會自動顯示”…”的省略號。"></a>目標 : 當文字超過限制時會自動顯示”…”的省略號。</h3><p>HTML :</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;box&quot;&gt;</span><br><span class="line">        &lt;p&gt;臣亮言：先帝創業未半，而中道崩殂。今天下三分，益州疲弊，此誠危急存亡之秋也。然侍衛之臣，不懈於內；忠志之士，忘身於外者，蓋追先帝之殊遇，欲報之於陛下也。誠宜開張聖聽，以光先帝遺德，恢宏志士之氣；不宜妄自菲薄，引喻失義，以塞忠諫之路也。</span><br><span class="line">        &lt;&#x2F;p&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+<p>CSS :</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 50px;</span><br><span class="line">    padding: 10px;</span><br><span class="line">    border: 2px blueviolet solid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://drive.google.com/uc?export=view&id=1bDiwYKOQaE_j6Kn7U5Y8k1bE8oOM8cd1"></p>
+<h3 id="在文字的區塊使用-text-overflow-ellipsis"><a href="#在文字的區塊使用-text-overflow-ellipsis" class="headerlink" title="在文字的區塊使用 text-overflow: ellipsis;"></a>在文字的區塊使用 text-overflow: ellipsis;</h3><p>需一併設定 white-space: nowrap; 及 text-overflow: ellipsis; 才會有效果。</p>
+<p>CSS :</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 50px;</span><br><span class="line">    padding: 10px;</span><br><span class="line">    border: 2px blueviolet solid;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p &#123;</span><br><span class="line">    overflow: hidden;</span><br><span class="line">    white-space: nowrap;</span><br><span class="line">    text-overflow: ellipsis;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://drive.google.com/uc?export=view&id=16e0fP4BhD0smmyRLr-OQnpSKxaFt9FTW"></p>
+<br>
+
+<h3 id="text-overflow-clip"><a href="#text-overflow-clip" class="headerlink" title="text-overflow: clip;"></a>text-overflow: clip;</h3><p>裁剪文字內容。</p>
+<br>
+
+<h3 id="word-wrap-break-word"><a href="#word-wrap-break-word" class="headerlink" title="word-wrap: break-word;"></a>word-wrap: break-word;</h3><p>依據空白來換行。</p>
+<h3 id="word-break-keep-all"><a href="#word-break-keep-all" class="headerlink" title="word-break: keep-all;"></a>word-break: keep-all;</h3><p>依據空白來換行。</p>
+<h3 id="word-break-break-all"><a href="#word-break-break-all" class="headerlink" title="word-break: break-all;"></a>word-break: break-all;</h3><p>到邊界立即斷行。</p>
+<br>
+
+<h3 id="writing-mode-horizontal-tb"><a href="#writing-mode-horizontal-tb" class="headerlink" title="writing-mode: horizontal-tb;"></a>writing-mode: horizontal-tb;</h3><p>水平顯示文本。</p>
+<h3 id="writing-mode-vertical-rl"><a href="#writing-mode-vertical-rl" class="headerlink" title="writing-mode: vertical-rl;"></a>writing-mode: vertical-rl;</h3><p>由右到左垂直顯示文本。</p>
+<h3 id="writing-mode-vertical-lr"><a href="#writing-mode-vertical-lr" class="headerlink" title="writing-mode: vertical-lr;"></a>writing-mode: vertical-lr;</h3><p>由左到右垂直顯示文本。</p>
+]]></content>
+      <tags>
+        <tag>CSS</tag>
+        <tag>CSS text-overflow</tag>
+        <tag>CSS 限制文本內容</tag>
       </tags>
   </entry>
   <entry>
@@ -928,52 +1017,15 @@
       </tags>
   </entry>
   <entry>
-    <title>使用 CSS 限制文本內容</title>
-    <url>/2020/12/07/%E4%BD%BF%E7%94%A8CSS%E9%99%90%E5%88%B6%E5%85%A7%E5%AE%B9/</url>
-    <content><![CDATA[<h3 id="目標-當文字超過限制時會自動顯示”…”的省略號。"><a href="#目標-當文字超過限制時會自動顯示”…”的省略號。" class="headerlink" title="目標 : 當文字超過限制時會自動顯示”…”的省略號。"></a>目標 : 當文字超過限制時會自動顯示”…”的省略號。</h3><p>HTML :</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;box&quot;&gt;</span><br><span class="line">        &lt;p&gt;臣亮言：先帝創業未半，而中道崩殂。今天下三分，益州疲弊，此誠危急存亡之秋也。然侍衛之臣，不懈於內；忠志之士，忘身於外者，蓋追先帝之殊遇，欲報之於陛下也。誠宜開張聖聽，以光先帝遺德，恢宏志士之氣；不宜妄自菲薄，引喻失義，以塞忠諫之路也。</span><br><span class="line">        &lt;&#x2F;p&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
-<p>CSS :</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 50px;</span><br><span class="line">    padding: 10px;</span><br><span class="line">    border: 2px blueviolet solid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://drive.google.com/uc?export=view&id=1bDiwYKOQaE_j6Kn7U5Y8k1bE8oOM8cd1"></p>
-<h3 id="在文字的區塊使用-text-overflow-ellipsis"><a href="#在文字的區塊使用-text-overflow-ellipsis" class="headerlink" title="在文字的區塊使用 text-overflow: ellipsis;"></a>在文字的區塊使用 text-overflow: ellipsis;</h3><p>需一併設定 white-space: nowrap; 及 text-overflow: ellipsis; 才會有效果。</p>
-<p>CSS :</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 50px;</span><br><span class="line">    padding: 10px;</span><br><span class="line">    border: 2px blueviolet solid;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p &#123;</span><br><span class="line">    overflow: hidden;</span><br><span class="line">    white-space: nowrap;</span><br><span class="line">    text-overflow: ellipsis;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://drive.google.com/uc?export=view&id=16e0fP4BhD0smmyRLr-OQnpSKxaFt9FTW"></p>
-<br>
-
-<h3 id="text-overflow-clip"><a href="#text-overflow-clip" class="headerlink" title="text-overflow: clip;"></a>text-overflow: clip;</h3><p>裁剪文字內容。</p>
-<br>
-
-<h3 id="word-wrap-break-word"><a href="#word-wrap-break-word" class="headerlink" title="word-wrap: break-word;"></a>word-wrap: break-word;</h3><p>依據空白來換行。</p>
-<h3 id="word-break-keep-all"><a href="#word-break-keep-all" class="headerlink" title="word-break: keep-all;"></a>word-break: keep-all;</h3><p>依據空白來換行。</p>
-<h3 id="word-break-break-all"><a href="#word-break-break-all" class="headerlink" title="word-break: break-all;"></a>word-break: break-all;</h3><p>到邊界立即斷行。</p>
-<br>
-
-<h3 id="writing-mode-horizontal-tb"><a href="#writing-mode-horizontal-tb" class="headerlink" title="writing-mode: horizontal-tb;"></a>writing-mode: horizontal-tb;</h3><p>水平顯示文本。</p>
-<h3 id="writing-mode-vertical-rl"><a href="#writing-mode-vertical-rl" class="headerlink" title="writing-mode: vertical-rl;"></a>writing-mode: vertical-rl;</h3><p>由右到左垂直顯示文本。</p>
-<h3 id="writing-mode-vertical-lr"><a href="#writing-mode-vertical-lr" class="headerlink" title="writing-mode: vertical-lr;"></a>writing-mode: vertical-lr;</h3><p>由左到右垂直顯示文本。</p>
+    <title>CSS - 使滑鼠指標改變形狀</title>
+    <url>/2021/02/26/%E4%BD%BF%E6%BB%91%E9%BC%A0%E6%8C%87%E6%A8%99%E6%94%B9%E8%AE%8A%E5%BD%A2%E7%8B%80/</url>
+    <content><![CDATA[<h3 id="cursor-改變滑鼠形狀"><a href="#cursor-改變滑鼠形狀" class="headerlink" title="cursor 改變滑鼠形狀"></a>cursor 改變滑鼠形狀</h3><p>屬性值: default (預設) | none | pointer | wait | crosshair | text | vertical-text | move | …</p>
+<p>範例 : <strong><a href="https://codepen.io/leeu-1230/full/mdOXOyJ">cursor</a></strong></p>
+<p>參考連結 : <a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/cursor">MDN</a></p>
 ]]></content>
       <tags>
         <tag>CSS</tag>
-        <tag>CSS text-overflow</tag>
-        <tag>CSS 限制文本內容</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JavaScript – ... 其餘 / 展開</title>
-    <url>/2020/12/10/%E5%B1%95%E9%96%8B/</url>
-    <content><![CDATA[<h3 id="其餘參數"><a href="#其餘參數" class="headerlink" title="其餘參數"></a>其餘參數</h3><p>表示函式所接受的參數數量不固定，而讓其餘參數合併成一個陣列。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function Fun(...arg) &#123; console.log(arg.length); &#125;</span><br><span class="line">Fun();   &#x2F;&#x2F; 0</span><br><span class="line">Fun(5);   &#x2F;&#x2F; 1</span><br><span class="line">Fun(5, 6, 7);   &#x2F;&#x2F; 3</span><br></pre></td></tr></table></figure>
-
-<h3 id="展開運算子"><a href="#展開運算子" class="headerlink" title="展開運算子"></a>展開運算子</h3><p>用在執行函式時的參數上，可將一個陣列展開成多個獨立參數。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const vau &#x3D; (...args) &#x3D;&gt; &#123;     </span><br><span class="line">return args.reduce((a, b) &#x3D;&gt; a + b, 0);    &#125;</span><br><span class="line"></span><br><span class="line">let arr &#x3D; [2, 3, 4];</span><br><span class="line">vau(...arr);   &#x2F;&#x2F; 9</span><br><span class="line">vau(1, ...arr, 5);   &#x2F;&#x2F; 15</span><br></pre></td></tr></table></figure>
-
-<p>也可用來合併及展開陣列。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let drink1 &#x3D; [&#39;milk&#39;, &#39;juice&#39;];</span><br><span class="line">let drink2 &#x3D; [&#39;coffee&#39;, &#39;water&#39;];</span><br><span class="line">let drink_menu &#x3D; [...drink1, ...drink2];   &#x2F;&#x2F;[&quot;milk&quot;, &quot;juice&quot;, &quot;coffee&quot;, &quot;water&quot;] </span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>Javascript</tag>
-        <tag>Function</tag>
-        <tag>其餘/展開運算子</tag>
+        <tag>cursor</tag>
       </tags>
   </entry>
   <entry>
@@ -1020,23 +1072,66 @@
       </tags>
   </entry>
   <entry>
-    <title>JavaScript – this 指向</title>
-    <url>/2020/12/10/%E6%8C%87%E5%90%91/</url>
-    <content><![CDATA[<h3 id="函式this的指向-全域物件window"><a href="#函式this的指向-全域物件window" class="headerlink" title="函式this的指向: 全域物件window"></a>函式this的指向: 全域物件window</h3><p>直接調用函式，函式的 this 會指向 window。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function callName() &#123;</span><br><span class="line">    var myName &#x3D; &quot;John&quot;;</span><br><span class="line">    console.log(this.myName);</span><br><span class="line">&#125;</span><br><span class="line">callName();  &#x2F;&#x2F; Louisa</span><br></pre></td></tr></table></figure>
-
-<h3 id="函式this的指向-物件本身"><a href="#函式this的指向-物件本身" class="headerlink" title="函式this的指向: 物件本身"></a>函式this的指向: 物件本身</h3><p>作為物件方法來調用函式this，則會指向此物件。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function callName() &#123;</span><br><span class="line">    var myName &#x3D; &quot;John&quot;;</span><br><span class="line">    console.log(this.myName);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var family &#x3D; &#123;</span><br><span class="line">    myName: &#39;Lee&#39;,</span><br><span class="line">    callname: callName,</span><br><span class="line">    Ming: &#123;</span><br><span class="line">        myName: &#39; Ming&#39;,</span><br><span class="line">        callname: callName</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> family.callname();   &#x2F;&#x2F; Lee</span><br><span class="line"> family.Ming.callname();   &#x2F;&#x2F; Ming</span><br></pre></td></tr></table></figure>
-
-<h3 id="間接執行函式，this的指向-全域物件window"><a href="#間接執行函式，this的指向-全域物件window" class="headerlink" title="間接執行函式，this的指向 : 全域物件window"></a>間接執行函式，this的指向 : 全域物件window</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function callName() &#123;</span><br><span class="line">    var myName &#x3D; &quot;John&quot;;</span><br><span class="line">    console.log(this.myName);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var family &#x3D; &#123;</span><br><span class="line">    myName: &#39;Lee&#39;,</span><br><span class="line">    callname: callName,</span><br><span class="line">    Ming: &#123;</span><br><span class="line">        myName: &#39; Ming&#39;,</span><br><span class="line">        callname: callName</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">var call_name &#x3D; family.callname;</span><br><span class="line">call_name();   &#x2F;&#x2F; Louisa</span><br></pre></td></tr></table></figure>
-
-<h3 id="函式中的函式的this指向-全域物件window"><a href="#函式中的函式的this指向-全域物件window" class="headerlink" title="函式中的函式的this指向: 全域物件window"></a>函式中的函式的this指向: 全域物件window</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function callName() &#123;</span><br><span class="line">    var myName &#x3D; &quot;John&quot;;</span><br><span class="line">    console.log(this.myName);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var family &#x3D; &#123;</span><br><span class="line">    myName: &#39;Fido&#39;,</span><br><span class="line">    rename: function () &#123;</span><br><span class="line">        setTimeout(function () &#123;</span><br><span class="line">            console.log(this.myName);</span><br><span class="line">        &#125;, 1000);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">family.rename();   &#x2F;&#x2F; Louisa</span><br></pre></td></tr></table></figure>
-
-<h3 id="函式中的函式的this指向-指回物件本身的方法"><a href="#函式中的函式的this指向-指回物件本身的方法" class="headerlink" title="函式中的函式的this指向 : 指回物件本身的方法"></a>函式中的函式的this指向 : 指回物件本身的方法</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function callName() &#123;</span><br><span class="line">    var myName &#x3D; &quot;John&quot;;</span><br><span class="line">    console.log(this.myName);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var family &#x3D; &#123;</span><br><span class="line">    myName: &#39;Fido&#39;,</span><br><span class="line">    rename: function () &#123;</span><br><span class="line">        var self &#x3D; this;</span><br><span class="line">        setTimeout(function () &#123;</span><br><span class="line">            console.log(self.myName);</span><br><span class="line">        &#125;, 1000);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">family.rename();   &#x2F;&#x2F; Fido</span><br></pre></td></tr></table></figure>]]></content>
+    <title>Javascript - 函式閉包</title>
+    <url>/2020/12/02/%E5%87%BD%E5%BC%8F%E9%96%89%E5%8C%85/</url>
+    <content><![CDATA[<h3 id="函式閉包"><a href="#函式閉包" class="headerlink" title="函式閉包"></a>函式閉包</h3><p>保存了內部函式的執行環境，可以持續存取。<br>將變數指向外層函式，每一個變數都是獨立環境，可以反覆呼叫，重複持續存取內部函式環境。</p>
+<h3 id="建立"><a href="#建立" class="headerlink" title="建立"></a>建立</h3><p>在一個function函式中，return 另一個內部function函式。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function wallet() &#123;</span><br><span class="line">    let money &#x3D; 1000;</span><br><span class="line">    return function (cash) &#123;</span><br><span class="line">        money &#x3D; cash + money;</span><br><span class="line">        return money;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let personA &#x3D; wallet();</span><br><span class="line">console.log(personA(100));   &#x2F;&#x2F; 1100</span><br><span class="line">console.log(personA(100));   &#x2F;&#x2F; 1200</span><br><span class="line">console.log(personA(300));   &#x2F;&#x2F; 1500</span><br><span class="line"></span><br><span class="line">let personB &#x3D; wallet();</span><br><span class="line">console.log(personB(200));   &#x2F;&#x2F; 1200</span><br><span class="line">console.log(personB(500));   &#x2F;&#x2F; 1700</span><br><span class="line">console.log(personB(-800));   &#x2F;&#x2F; 900</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>Javascript</tag>
-        <tag>this</tag>
-        <tag>this指向</tag>
+        <tag>Function</tag>
+        <tag>函式閉包</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaScript – ... 其餘 / 展開</title>
+    <url>/2020/12/10/%E5%B1%95%E9%96%8B/</url>
+    <content><![CDATA[<h3 id="其餘參數"><a href="#其餘參數" class="headerlink" title="其餘參數"></a>其餘參數</h3><p>表示函式所接受的參數數量不固定，而讓其餘參數合併成一個陣列。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function Fun(...arg) &#123; console.log(arg.length); &#125;</span><br><span class="line">Fun();   &#x2F;&#x2F; 0</span><br><span class="line">Fun(5);   &#x2F;&#x2F; 1</span><br><span class="line">Fun(5, 6, 7);   &#x2F;&#x2F; 3</span><br></pre></td></tr></table></figure>
+
+<h3 id="展開運算子"><a href="#展開運算子" class="headerlink" title="展開運算子"></a>展開運算子</h3><p>用在執行函式時的參數上，可將一個陣列展開成多個獨立參數。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const vau &#x3D; (...args) &#x3D;&gt; &#123;     </span><br><span class="line">return args.reduce((a, b) &#x3D;&gt; a + b, 0);    &#125;</span><br><span class="line"></span><br><span class="line">let arr &#x3D; [2, 3, 4];</span><br><span class="line">vau(...arr);   &#x2F;&#x2F; 9</span><br><span class="line">vau(1, ...arr, 5);   &#x2F;&#x2F; 15</span><br></pre></td></tr></table></figure>
+
+<p>也可用來合併及展開陣列。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let drink1 &#x3D; [&#39;milk&#39;, &#39;juice&#39;];</span><br><span class="line">let drink2 &#x3D; [&#39;coffee&#39;, &#39;water&#39;];</span><br><span class="line">let drink_menu &#x3D; [...drink1, ...drink2];   &#x2F;&#x2F;[&quot;milk&quot;, &quot;juice&quot;, &quot;coffee&quot;, &quot;water&quot;] </span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>Function</tag>
+        <tag>其餘/展開運算子</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS - max、min、clamp 數學函式</title>
+    <url>/2020/12/18/%E6%95%B8%E5%AD%B8%E5%87%BD%E5%BC%8F/</url>
+    <content><![CDATA[<h3 id="max"><a href="#max" class="headerlink" title="max()"></a>max()</h3><p>定義了運算最大值，作用在於限制最小值。</p>
+<p>例如: div 的寬度為50%，最小寬度為300px</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: max(50%, 300px);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>等同於</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 50%;</span><br><span class="line">    min-width: 300px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="min"><a href="#min" class="headerlink" title="min()"></a>min()</h3><p>定義了數學運算的最小值，作用在於限制最大值。</p>
+<p>例如: div 的寬度為50%，最大寬度為300px</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: min(50%, 300px); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>等同於</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 50%;</span><br><span class="line">    max-width: 300px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="clamp"><a href="#clamp" class="headerlink" title="clamp()"></a>clamp()</h3><p>clamp(最小值, 中間值, 最大值)<br>返回一個區間範圍的值。</p>
+<p>例如: div 的最小寬度為300px，最大寬度為500px，在範圍內則寬度為50%</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: clamp(300px, 50%, 500px); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>等同於</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 50%;</span><br><span class="line">    min-width: 300px;</span><br><span class="line">    max-width: 500px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>參考資料 :<br><a href="https://www.oxxostudio.tw/articles/202011/css-max-min-clamp-calc.html">oxxostudio</a></p>
+]]></content>
+      <tags>
+        <tag>CSS</tag>
+        <tag>CSS 數學函式</tag>
       </tags>
   </entry>
   <entry>
@@ -1073,41 +1168,7 @@
 ]]></content>
       <tags>
         <tag>影片格式</tag>
-        <tag>影片製作 偽class</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSS - max、min、clamp 數學函式</title>
-    <url>/2020/12/18/%E6%95%B8%E5%AD%B8%E5%87%BD%E5%BC%8F/</url>
-    <content><![CDATA[<h3 id="max"><a href="#max" class="headerlink" title="max()"></a>max()</h3><p>定義了運算最大值，作用在於限制最小值。</p>
-<p>例如: div 的寬度為50%，最小寬度為300px</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: max(50%, 300px);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>等同於</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 50%;</span><br><span class="line">    min-width: 300px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<br>
-
-<h3 id="min"><a href="#min" class="headerlink" title="min()"></a>min()</h3><p>定義了數學運算的最小值，作用在於限制最大值。</p>
-<p>例如: div 的寬度為50%，最大寬度為300px</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: min(50%, 300px); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>等同於</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 50%;</span><br><span class="line">    max-width: 300px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<br>
-
-<h3 id="clamp"><a href="#clamp" class="headerlink" title="clamp()"></a>clamp()</h3><p>clamp(最小值, 中間值, 最大值)<br>返回一個區間範圍的值。</p>
-<p>例如: div 的最小寬度為300px，最大寬度為500px，在範圍內則寬度為50%</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: clamp(300px, 50%, 500px); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>等同於</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 50%;</span><br><span class="line">    min-width: 300px;</span><br><span class="line">    max-width: 500px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<br>
-
-<p>參考資料 :<br><a href="https://www.oxxostudio.tw/articles/202011/css-max-min-clamp-calc.html">oxxostudio</a></p>
-]]></content>
-      <tags>
-        <tag>CSS</tag>
-        <tag>CSS 數學函式</tag>
+        <tag>影片製作</tag>
       </tags>
   </entry>
   <entry>
@@ -1158,6 +1219,26 @@
       </tags>
   </entry>
   <entry>
+    <title>JavaScript – this 指向</title>
+    <url>/2020/12/10/%E6%8C%87%E5%90%91/</url>
+    <content><![CDATA[<h3 id="函式this的指向-全域物件window"><a href="#函式this的指向-全域物件window" class="headerlink" title="函式this的指向: 全域物件window"></a>函式this的指向: 全域物件window</h3><p>直接調用函式，函式的 this 會指向 window。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function callName() &#123;</span><br><span class="line">    var myName &#x3D; &quot;John&quot;;</span><br><span class="line">    console.log(this.myName);</span><br><span class="line">&#125;</span><br><span class="line">callName();  &#x2F;&#x2F; Louisa</span><br></pre></td></tr></table></figure>
+
+<h3 id="函式this的指向-物件本身"><a href="#函式this的指向-物件本身" class="headerlink" title="函式this的指向: 物件本身"></a>函式this的指向: 物件本身</h3><p>作為物件方法來調用函式this，則會指向此物件。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function callName() &#123;</span><br><span class="line">    var myName &#x3D; &quot;John&quot;;</span><br><span class="line">    console.log(this.myName);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var family &#x3D; &#123;</span><br><span class="line">    myName: &#39;Lee&#39;,</span><br><span class="line">    callname: callName,</span><br><span class="line">    Ming: &#123;</span><br><span class="line">        myName: &#39; Ming&#39;,</span><br><span class="line">        callname: callName</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> family.callname();   &#x2F;&#x2F; Lee</span><br><span class="line"> family.Ming.callname();   &#x2F;&#x2F; Ming</span><br></pre></td></tr></table></figure>
+
+<h3 id="間接執行函式，this的指向-全域物件window"><a href="#間接執行函式，this的指向-全域物件window" class="headerlink" title="間接執行函式，this的指向 : 全域物件window"></a>間接執行函式，this的指向 : 全域物件window</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function callName() &#123;</span><br><span class="line">    var myName &#x3D; &quot;John&quot;;</span><br><span class="line">    console.log(this.myName);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var family &#x3D; &#123;</span><br><span class="line">    myName: &#39;Lee&#39;,</span><br><span class="line">    callname: callName,</span><br><span class="line">    Ming: &#123;</span><br><span class="line">        myName: &#39; Ming&#39;,</span><br><span class="line">        callname: callName</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">var call_name &#x3D; family.callname;</span><br><span class="line">call_name();   &#x2F;&#x2F; Louisa</span><br></pre></td></tr></table></figure>
+
+<h3 id="函式中的函式的this指向-全域物件window"><a href="#函式中的函式的this指向-全域物件window" class="headerlink" title="函式中的函式的this指向: 全域物件window"></a>函式中的函式的this指向: 全域物件window</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function callName() &#123;</span><br><span class="line">    var myName &#x3D; &quot;John&quot;;</span><br><span class="line">    console.log(this.myName);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var family &#x3D; &#123;</span><br><span class="line">    myName: &#39;Fido&#39;,</span><br><span class="line">    rename: function () &#123;</span><br><span class="line">        setTimeout(function () &#123;</span><br><span class="line">            console.log(this.myName);</span><br><span class="line">        &#125;, 1000);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">family.rename();   &#x2F;&#x2F; Louisa</span><br></pre></td></tr></table></figure>
+
+<h3 id="函式中的函式的this指向-指回物件本身的方法"><a href="#函式中的函式的this指向-指回物件本身的方法" class="headerlink" title="函式中的函式的this指向 : 指回物件本身的方法"></a>函式中的函式的this指向 : 指回物件本身的方法</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var myName &#x3D; &#39;Louisa&#39;;</span><br><span class="line"></span><br><span class="line">function callName() &#123;</span><br><span class="line">    var myName &#x3D; &quot;John&quot;;</span><br><span class="line">    console.log(this.myName);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var family &#x3D; &#123;</span><br><span class="line">    myName: &#39;Fido&#39;,</span><br><span class="line">    rename: function () &#123;</span><br><span class="line">        var self &#x3D; this;</span><br><span class="line">        setTimeout(function () &#123;</span><br><span class="line">            console.log(self.myName);</span><br><span class="line">        &#125;, 1000);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">family.rename();   &#x2F;&#x2F; Fido</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>this</tag>
+        <tag>this指向</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JavaScript – 物件原型、繼承</title>
     <url>/2020/12/10/%E7%89%A9%E4%BB%B6%E5%8E%9F%E5%9E%8B%E3%80%81%E7%B9%BC%E6%89%BF/</url>
     <content><![CDATA[<h3 id="物件建構式"><a href="#物件建構式" class="headerlink" title="物件建構式"></a>物件建構式</h3><p>在建立Object時被呼叫，透過物件的建構函式定義屬性、方法，來建立物件實例。</p>
@@ -1182,20 +1263,6 @@
         <tag>Javascript</tag>
         <tag>Object</tag>
         <tag>物件原型、繼承</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSS - 製作計數器 / 有序列表</title>
-    <url>/2021/01/09/%E8%A3%BD%E4%BD%9C%E8%A8%88%E6%95%B8%E5%99%A8/</url>
-    <content><![CDATA[<h3 id="counter-計數器"><a href="#counter-計數器" class="headerlink" title="counter 計數器"></a>counter 計數器</h3><p>範例 : <strong><a href="https://codepen.io/leeu-1230/full/poEOJza">counter</a></strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>ABC<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>DEF<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>GHI<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>JKL<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">counter-reset</span>: num;   <span class="comment">/* 創建計數器 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">  <span class="attribute">counter-increment</span>: num;   <span class="comment">/* 累加值 */</span></span><br><span class="line">  <span class="attribute">content</span>: <span class="string">&quot;選項 &quot;</span> <span class="built_in">counter</span>(num) <span class="string">&quot;. &quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>參考資料 :<br><a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/cursor">MDN</a></p>
-]]></content>
-      <tags>
-        <tag>CSS</tag>
-        <tag>counter</tag>
       </tags>
   </entry>
   <entry>
@@ -1468,17 +1535,6 @@
       </tags>
   </entry>
   <entry>
-    <title>CSS - 讓搜索欄具備取消按鈕吧!</title>
-    <url>/2021/02/26/%E8%AE%93%E6%90%9C%E7%B4%A2%E6%AC%84%E5%85%B7%E5%82%99%E5%8F%96%E6%B6%88%E6%8C%89%E9%88%95%E5%90%A7/</url>
-    <content><![CDATA[<h3 id="使搜索欄-input-type-”search”-具有取消按鈕"><a href="#使搜索欄-input-type-”search”-具有取消按鈕" class="headerlink" title="使搜索欄 input[type=”search”] 具有取消按鈕"></a>使搜索欄 input[type=”search”] 具有取消按鈕</h3><p>範例 : <strong><a href="https://codepen.io/leeu-1230/full/oNzPXbN">search-cancel-button</a></strong></p>
-<p>參考連結 : <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/appearance">MDN</a></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">input[type&#x3D;search] &#123;</span><br><span class="line">    -webkit-appearance: search_btn;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">input[type&#x3D;&quot;search&quot;]::-webkit-search-cancel-button&#123;</span><br><span class="line">    -webkit-appearance: search_btn-cancel-button;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>CSS</tag>
-        <tag>input</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CSS - 變數</title>
     <url>/2020/12/18/%E8%AE%8A%E6%95%B8/</url>
     <content><![CDATA[<h3 id="基礎寫法"><a href="#基礎寫法" class="headerlink" title="基礎寫法"></a>基礎寫法</h3><p>基本上定義變數，會將變數寫在 :root 裡，讓網頁中所有元素的 CSS，都能使用這個變數。</p>
@@ -1517,6 +1573,31 @@
       <tags>
         <tag>CSS</tag>
         <tag>CSS 變數</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS - 製作計數器 / 有序列表</title>
+    <url>/2021/01/09/%E8%A3%BD%E4%BD%9C%E8%A8%88%E6%95%B8%E5%99%A8/</url>
+    <content><![CDATA[<h3 id="counter-計數器"><a href="#counter-計數器" class="headerlink" title="counter 計數器"></a>counter 計數器</h3><p>範例 : <strong><a href="https://codepen.io/leeu-1230/full/poEOJza">counter</a></strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>ABC<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>DEF<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>GHI<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>JKL<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">counter-reset</span>: num;   <span class="comment">/* 創建計數器 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">  <span class="attribute">counter-increment</span>: num;   <span class="comment">/* 累加值 */</span></span><br><span class="line">  <span class="attribute">content</span>: <span class="string">&quot;選項 &quot;</span> <span class="built_in">counter</span>(num) <span class="string">&quot;. &quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>參考資料 :<br><a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/cursor">MDN</a></p>
+]]></content>
+      <tags>
+        <tag>CSS</tag>
+        <tag>counter</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS - 讓搜索欄具備取消按鈕吧!</title>
+    <url>/2021/02/26/%E8%AE%93%E6%90%9C%E7%B4%A2%E6%AC%84%E5%85%B7%E5%82%99%E5%8F%96%E6%B6%88%E6%8C%89%E9%88%95%E5%90%A7/</url>
+    <content><![CDATA[<h3 id="使搜索欄-input-type-”search”-具有取消按鈕"><a href="#使搜索欄-input-type-”search”-具有取消按鈕" class="headerlink" title="使搜索欄 input[type=”search”] 具有取消按鈕"></a>使搜索欄 input[type=”search”] 具有取消按鈕</h3><p>範例 : <strong><a href="https://codepen.io/leeu-1230/full/oNzPXbN">search-cancel-button</a></strong></p>
+<p>參考連結 : <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/appearance">MDN</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">input[type&#x3D;search] &#123;</span><br><span class="line">    -webkit-appearance: search_btn;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">input[type&#x3D;&quot;search&quot;]::-webkit-search-cancel-button&#123;</span><br><span class="line">    -webkit-appearance: search_btn-cancel-button;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>CSS</tag>
+        <tag>input</tag>
       </tags>
   </entry>
 </search>
