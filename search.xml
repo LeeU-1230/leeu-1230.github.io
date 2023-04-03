@@ -278,8 +278,8 @@
   <entry>
     <title>使用 CSS 語法改變滑鼠游標的形狀</title>
     <url>/2021/02/26/CSS/%E4%BD%BF%E6%BB%91%E9%BC%A0%E6%8C%87%E6%A8%99%E6%94%B9%E8%AE%8A%E5%BD%A2%E7%8B%80/</url>
-    <content><![CDATA[<h3 id="透過-cursor-屬性改變滑鼠形狀"><a href="#透過-cursor-屬性改變滑鼠形狀" class="headerlink" title="透過 cursor 屬性改變滑鼠形狀"></a>透過 cursor 屬性改變滑鼠形狀</h3><a id="more"></a>
-<p>屬性值: default (預設) | none | pointer | wait | crosshair | text | vertical-text | move | …</p>
+    <content><![CDATA[<h3 id="透過-cursor-屬性改變滑鼠形狀"><a href="#透過-cursor-屬性改變滑鼠形狀" class="headerlink" title="透過 cursor 屬性改變滑鼠形狀"></a>透過 cursor 屬性改變滑鼠形狀</h3><p>屬性值: default (預設) | none | pointer | wait | crosshair | text | vertical-text | move | …</p>
+<a id="more"></a>
 <p>範例 : <strong><a href="https://codepen.io/leeu-1230/full/mdOXOyJ">cursor</a></strong></p>
 <p>參考連結 : <a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/cursor">MDN</a></p>
 ]]></content>
@@ -483,7 +483,8 @@
   <entry>
     <title>使用 CSS 語法讓搜索欄具備取消按鈕吧!</title>
     <url>/2021/02/26/CSS/%E8%AE%93%E6%90%9C%E7%B4%A2%E6%AC%84%E5%85%B7%E5%82%99%E5%8F%96%E6%B6%88%E6%8C%89%E9%88%95%E5%90%A7/</url>
-    <content><![CDATA[<h3 id="使搜索欄-input-type-”search”-具有取消按鈕"><a href="#使搜索欄-input-type-”search”-具有取消按鈕" class="headerlink" title="使搜索欄 input[type=”search”] 具有取消按鈕"></a>使搜索欄 input[type=”search”] 具有取消按鈕</h3><a id="more"></a>
+    <content><![CDATA[<p>使搜索欄 input[type=”search”] 具有取消按鈕。</p>
+<a id="more"></a>
 <p>範例 : <strong><a href="https://codepen.io/leeu-1230/full/oNzPXbN">search-cancel-button</a></strong></p>
 <p>參考連結 : <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/appearance">MDN</a></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">input[type&#x3D;search] &#123;</span><br><span class="line">    -webkit-appearance: search_btn;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">input[type&#x3D;&quot;search&quot;]::-webkit-search-cancel-button&#123;</span><br><span class="line">    -webkit-appearance: search_btn-cancel-button;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
@@ -1677,7 +1678,9 @@
   <entry>
     <title>markdown 基本標籤使用</title>
     <url>/2020/11/25/MARKDOWN/markdown%20%E5%9F%BA%E6%9C%AC%E6%A8%99%E7%B1%A4%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h3 id="標題"><a href="#標題" class="headerlink" title="標題"></a>標題</h3><p>使用井字號為開頭。<br><code>#</code> 產生&lt;h1&gt;樣式，<code>##</code> 產生&lt;h2&gt;樣式。</p>
+    <content><![CDATA[<p>markdown基本標籤的使用方法。</p>
+<a id="more"></a>
+<h3 id="標題"><a href="#標題" class="headerlink" title="標題"></a>標題</h3><p>使用井字號為開頭。<br><code>#</code> 產生&lt;h1&gt;樣式，<code>##</code> 產生&lt;h2&gt;樣式。</p>
 <h3 id="粗體"><a href="#粗體" class="headerlink" title="粗體"></a>粗體</h3><p>使用兩個 <code>**</code> 前後包覆。<br>例如 <strong>這句</strong> 範例</p>
 <h3 id="斜體"><a href="#斜體" class="headerlink" title="斜體"></a>斜體</h3><p>使用一個 <code>**</code> 前後包覆。<br>例如 <em>這句</em> 範例</p>
 <h3 id="刪除線"><a href="#刪除線" class="headerlink" title="刪除線"></a>刪除線</h3><p>使用兩個波浪符前後包覆。<br>例如 <del>這句</del> 範例</p>
