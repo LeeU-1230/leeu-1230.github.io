@@ -1,593 +1,386 @@
-<!DOCTYPE html>
-<html lang="zh-TW">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.2.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
-  </script>
-
-  <meta property="og:type" content="website">
-<meta property="og:title" content="默刻">
-<meta property="og:url" content="https://github.com/LeeU-1230/leeu-1230.github.io.git/categories/Javascript/index.html">
-<meta property="og:site_name" content="默刻">
-<meta property="og:locale" content="zh_TW">
-<meta property="article:author" content="LeeU">
-<meta property="article:tag" content="JavaScript,HTML,CSS,部落格,網頁,程式,文學,閱讀,小說,散文,詩集,電影,戲劇,紀錄">
-<meta name="twitter:card" content="summary">
-
-<link rel="canonical" href="https://github.com/LeeU-1230/leeu-1230.github.io.git/categories/Javascript/">
-
-
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : false,
-    lang   : 'zh-TW'
-  };
-</script>
-
-  <title>分類: Javascript | 默刻</title>
-  
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切換導航欄">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">默刻</h1>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-      <p class="site-subtitle" itemprop="description">記錄日常</p>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
-  </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
-
-  </li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
-        </a>
-      </li>
-  </ul>
-</nav>
-
-
-
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
-           placeholder="搜尋..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-  </div>
-</div>
-
-    </div>
-  </div>
-
-</div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content category">
-            
-
-  
-  
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">Javascript
-          <small>分類</small>
-        </h2>
-      </div>
-
-      
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-01-06T20:42:35+08:00"
-              content="2021-01-06">
-          01-06
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/01/06/JS/DOM-%E7%AF%80%E9%BB%9E%E5%B1%AC%E6%80%A7/" itemprop="url">
-            <span itemprop="name">JavaScript – DOM 節點屬性</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-01-03T15:45:22+08:00"
-              content="2021-01-03">
-          01-03
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/01/03/JS/DOM-%E6%9F%A5%E6%89%BE%E7%AF%80%E9%BB%9E/" itemprop="url">
-            <span itemprop="name">JavaScript – DOM 查找節點</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-01-02T20:50:35+08:00"
-              content="2021-01-02">
-          01-02
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/01/02/JS/Array-%E6%96%B9%E6%B3%95/" itemprop="url">
-            <span itemprop="name">JavaScript – Array方法</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-12-30T21:31:33+08:00"
-              content="2020-12-30">
-          12-30
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/12/30/JS/Date-parse/" itemprop="url">
-            <span itemprop="name">JavaScript - Date.parse()</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-12-30T17:38:13+08:00"
-              content="2020-12-30">
-          12-30
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/12/30/JS/Date%E7%89%A9%E4%BB%B6/" itemprop="url">
-            <span itemprop="name">JavaScript - Date物件</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-12-25T10:05:23+08:00"
-              content="2020-12-25">
-          12-25
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/12/25/JS/Math/" itemprop="url">
-            <span itemprop="name">JavaScript – Math</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-12-24T20:45:49+08:00"
-              content="2020-12-24">
-          12-24
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/12/24/JS/Await/" itemprop="url">
-            <span itemprop="name">JavaScript - Async function 和 Await</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-12-12T15:31:59+08:00"
-              content="2020-12-12">
-          12-12
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/12/12/JS/Object%E8%B3%87%E6%96%99%E8%A4%87%E8%A3%BD/" itemprop="url">
-            <span itemprop="name">JavaScript – Object 資料複製</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-12-12T15:02:06+08:00"
-              content="2020-12-12">
-          12-12
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/12/12/JS/String-%E5%AD%97%E4%B8%B2/" itemprop="url">
-            <span itemprop="name">JavaScript – String(字串)</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-12-10T21:25:05+08:00"
-              content="2020-12-10">
-          12-10
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/12/10/JS/%E5%B1%95%E9%96%8B/" itemprop="url">
-            <span itemprop="name">JavaScript – ... 其餘 / 展開</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-    </div>
-  </div>
-  
-  
-  
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/categories/Javascript/page/2/">2</a><a class="extend next" rel="next" href="/categories/Javascript/page/2/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
-  </nav>
-
-
-
-          </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="robots" content="noindex"><meta><title>分類: Javascript - 默刻</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="默刻"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="默刻"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="默刻"><meta property="og:url" content="https://github.com/LeeU-1230/leeu-1230.github.io.git"><meta property="og:site_name" content="默刻"><meta property="og:locale" content="zh_TW"><meta property="og:image" content="https://github.com/img/og_image.png"><meta property="article:author" content="LeeU"><meta property="article:tag" content="JavaScript,HTML,CSS,部落格,網頁,程式,文學,閱讀,小說,散文,詩集,電影,戲劇,紀錄"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://github.com/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://github.com/LeeU-1230/leeu-1230.github.io.git"},"headline":"默刻","image":["https://github.com/img/og_image.png"],"author":{"@type":"Person","name":"LeeU"},"publisher":{"@type":"Organization","name":"默刻","logo":{"@type":"ImageObject","url":"https://github.com/img/logo.svg"}},"description":""}</script><link rel="alternate" href="/path/to/atom.xml" title="默刻" type="application/atom+xml"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;600&amp;family=Roboto+Mono"><link rel="stylesheet" href="/css/cyberpunk.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
       }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="默刻" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首頁</a><a class="navbar-item" href="/archives">檔案時間軸</a><a class="navbar-item" href="/categories">分類</a><a class="navbar-item" href="/tags">標籤</a><a class="navbar-item" href="/about">關於我</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜尋" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/categories">分類</a></li><li class="is-active"><a href="#" aria-current="page">Javascript</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-01-06T12:42:35.000Z" title="2021-1-6 8:42:35 ├F10: PM┤">2021-01-06</time>發表</span><span class="level-item"><time dateTime="2023-03-14T15:21:31.434Z" title="2023-3-14 11:21:31 ├F10: PM┤">2023-03-14</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/Javascript/">Javascript</a></span><span class="level-item">2 分鐘讀完 (大約235個字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/01/06/JS/DOM-%E7%AF%80%E9%BB%9E%E5%B1%AC%E6%80%A7/">JavaScript – DOM 節點屬性</a></p><div class="content"><h3 id="Node-nodeName"><a href="#Node-nodeName" class="headerlink" title="Node.nodeName"></a>Node.nodeName</h3><p>取得節點名稱。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;user&quot;&gt;</span><br><span class="line">    &lt;span id&#x3D;&quot;user1&quot;&gt;user123&lt;&#x2F;span&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    let user &#x3D; document.getElementById(&#39;user&#39;);</span><br><span class="line">    console.log(user.nodeName);   &#x2F;&#x2F; DIV</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
 
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
+<br>
 
-  <aside class="sidebar">
-    <div class="sidebar-inner">
+<h3 id="Node-nodeValue"><a href="#Node-nodeValue" class="headerlink" title="Node.nodeValue"></a>Node.nodeValue</h3><p>用來取得 text, comment 和 CDATA 節點的內容。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;user&quot;&gt;</span><br><span class="line">    &lt;span id&#x3D;&quot;user1&quot;&gt;user123&lt;&#x2F;span&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    let user1 &#x3D; document.getElementById(&#39;user1&#39;);</span><br><span class="line">    console.log(user1.firstChild.nodeValue);   &#x2F;&#x2F; user123</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
 
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目錄
-        </li>
-        <li class="sidebar-nav-overview">
-          本站概要
-        </li>
-      </ul>
+<br>
 
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
+<h3 id="Element-innerHTML"><a href="#Element-innerHTML" class="headerlink" title="Element.innerHTML"></a>Element.innerHTML</h3><p>修改/取得 一個元素節點中的 HTML 內容。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;user&quot;&gt;</span><br><span class="line">    &lt;span id&#x3D;&quot;user1&quot;&gt;user123&lt;&#x2F;span&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    let user &#x3D; document.getElementById(&#39;user&#39;);</span><br><span class="line">    console.log(user.innerHTML);   &#x2F;&#x2F; &lt;span id&#x3D;&quot;user1&quot;&gt;user123&lt;&#x2F;span&gt;</span><br><span class="line"></span><br><span class="line">    let user1 &#x3D; document.getElementById(&#39;user1&#39;);</span><br><span class="line">    console.log(user1.innerHTML);   &#x2F;&#x2F; user123</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;user&quot;&gt;</span><br><span class="line">    &lt;span id&#x3D;&quot;user1&quot;&gt;user123&lt;&#x2F;span&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    let user &#x3D; document.getElementById(&#39;user&#39;);</span><br><span class="line">    user.innerHTML &#x3D; &#96;&lt;span id&#x3D;&quot;user2&quot;&gt;user456&lt;&#x2F;span&gt;&#96;;</span><br><span class="line">    console.log(user.innerHTML);   &#x2F;&#x2F; &lt;span id&#x3D;&quot;user2&quot;&gt;user456&lt;&#x2F;span&gt;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
 
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">LeeU</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">37</span>
-          <span class="site-state-item-name">文章</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-        <span class="site-state-item-count">6</span>
-        <span class="site-state-item-name">分類</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">53</span>
-        <span class="site-state-item-name">標籤</span></a>
-      </div>
-  </nav>
-</div>
+<br>
 
+<h3 id="Node-textContent"><a href="#Node-textContent" class="headerlink" title="Node.textContent"></a>Node.textContent</h3><p>和 innerHTML 用法類似，修改/取得 一個元素節點中的 HTML 內容。<br>不過 textContent 會將 HTML 標籤去除，將 HTML 特殊符號自動轉成字元實體。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;user&quot;&gt;</span><br><span class="line">    &lt;span id&#x3D;&quot;user1&quot;&gt;user123&lt;&#x2F;span&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    let user &#x3D; document.getElementById(&#39;user&#39;);</span><br><span class="line">    console.log(user.textContent);   &#x2F;&#x2F; user123</span><br><span class="line"></span><br><span class="line">    let user1 &#x3D; document.getElementById(&#39;user1&#39;);</span><br><span class="line">    console.log(user1.textContent);   &#x2F;&#x2F; user123</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
 
+<br>
 
-      </div>
+<h3 id="Element-outerHTML"><a href="#Element-outerHTML" class="headerlink" title="Element.outerHTML"></a>Element.outerHTML</h3><p>修改/取得 一個元素節點中的 HTML 內容，會返回包括節點本身的 HTML 內容。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;user&quot;&gt;</span><br><span class="line">    &lt;span id&#x3D;&quot;user1&quot;&gt;user123&lt;&#x2F;span&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    let user &#x3D; document.getElementById(&#39;user&#39;);</span><br><span class="line"></span><br><span class="line">    console.log(user.outerHTML);   </span><br><span class="line">    &#x2F;&#x2F; &lt;div id&#x3D;&quot;user&quot;&gt;&lt;span id&#x3D;&quot;user1&quot;&gt;user123&lt;&#x2F;span&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;user&quot;&gt;</span><br><span class="line">    &lt;span id&#x3D;&quot;user1&quot;&gt;user123&lt;&#x2F;span&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    let user &#x3D; document.getElementById(&#39;user&#39;);</span><br><span class="line">    let user1 &#x3D; document.getElementById(&#39;user1&#39;);</span><br><span class="line"></span><br><span class="line">    user1.outerHTML &#x3D; &#96;&lt;span id&#x3D;&quot;user2&quot;&gt;user456&lt;&#x2F;span&gt;&#96;;</span><br><span class="line"></span><br><span class="line">    console.log(user.outerHTML);   &#x2F;&#x2F; &lt;div id&#x3D;&quot;user&quot;&gt;&lt;span id&#x3D;&quot;user2&quot;&gt;user456&lt;&#x2F;span&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-01-03T07:45:22.000Z" title="2021-1-3 3:45:22 ├F10: PM┤">2021-01-03</time>發表</span><span class="level-item"><time dateTime="2023-03-14T15:21:27.007Z" title="2023-3-14 11:21:27 ├F10: PM┤">2023-03-14</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/Javascript/">Javascript</a></span><span class="level-item">3 分鐘讀完 (大約495個字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/01/03/JS/DOM-%E6%9F%A5%E6%89%BE%E7%AF%80%E9%BB%9E/">JavaScript – DOM 查找節點</a></p><div class="content"><h3 id="document-getElementById-id"><a href="#document-getElementById-id" class="headerlink" title="document.getElementById(id)"></a>document.getElementById(id)</h3><p>根據 id 取得一個 HTML 元素。</p>
+<br>
 
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
+<h3 id="document-getElementsByTagName-tagName"><a href="#document-getElementsByTagName-tagName" class="headerlink" title="document.getElementsByTagName(tagName)"></a>document.getElementsByTagName(tagName)</h3><p>根據 HTML 標籤 (tag) 取得所有這個標籤的集合，回傳一個陣列。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var allP &#x3D; document.getElementsByTagName(&#39;p&#39;);</span><br></pre></td></tr></table></figure>
 
+<br>
 
-      </div>
-    </main>
+<h3 id="document-getElementsByName-name"><a href="#document-getElementsByName-name" class="headerlink" title="document.getElementsByName(name)"></a>document.getElementsByName(name)</h3><p>取得特定 name 屬性的 HTML 元素集合，回傳一個陣列。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var users &#x3D; document.getElementsByName(&#39;user&#39;);</span><br></pre></td></tr></table></figure>
 
-    <footer class="footer">
-      <div class="footer-inner">
-        
+<br>
 
-        
+<h3 id="document-getElementsByClassName-className"><a href="#document-getElementsByClassName-className" class="headerlink" title="document.getElementsByClassName(className)"></a>document.getElementsByClassName(className)</h3><p>取得特定 className 的 HTML 元素集合，回傳一個陣列。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 取得同時有 person 和 tester 兩個 class name 的所有元素</span><br><span class="line">document.getElementsByClassName(&#39;person tester&#39;);</span><br></pre></td></tr></table></figure>
 
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2023</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">LeeU</span>
-</div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
-  </div>
+<br>
 
-        
+<h3 id="document-querySelector-selector"><a href="#document-querySelector-selector" class="headerlink" title="document.querySelector(selector)"></a>document.querySelector(selector)</h3><p>selector : 可以用 CSS 選擇器來尋找符合條件的第一個元素。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 找出 className 是 user 的 HTML 元素</span><br><span class="line">document.querySelector(&#39;.user&#39;);</span><br><span class="line"></span><br><span class="line">name 屬性是 user 的 &lt;input&gt; 子元素 </span><br><span class="line">document.querySelector(&#39;input[name&#x3D;user]&#39;);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="document-querySelectorAll-selector"><a href="#document-querySelectorAll-selector" class="headerlink" title="document.querySelectorAll(selector)"></a>document.querySelectorAll(selector)</h3><p>selector : 可以用 CSS 選擇器來尋找所有符合條件的元素，回傳一個陣列。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.querySelectorAll(&#39;p&#39;);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Node-children"><a href="#Node-children" class="headerlink" title="Node.children"></a>Node.children</h3><p>用來取得該元素下的所有子元素的集合(元素節點名稱，不包含文字節點)，回傳一個陣列。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;user&quot;&gt;</span><br><span class="line">   &lt;p&gt;user123&lt;&#x2F;p&gt;</span><br><span class="line">   &lt;p&gt;user456&lt;&#x2F;p&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    let user &#x3D; document.getElementById(&#39;user&#39;);</span><br><span class="line">    var child &#x3D; user.children;</span><br><span class="line"></span><br><span class="line">    console.log(child);   &#x2F;&#x2F; [p, p]</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Node-childNodes"><a href="#Node-childNodes" class="headerlink" title="Node.childNodes"></a>Node.childNodes</h3><p>用來取得該元素下的所有子元素集合，回傳一個陣列。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;user&quot;&gt;</span><br><span class="line">   &lt;p&gt;user123&lt;&#x2F;p&gt;</span><br><span class="line">   &lt;p&gt;user456&lt;&#x2F;p&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    let user &#x3D; document.getElementById(&#39;user&#39;);</span><br><span class="line">    var child &#x3D; user.childNodes;</span><br><span class="line"></span><br><span class="line">    console.log(child);   &#x2F;&#x2F; [text, p, text, p, text]</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Node-firstChild"><a href="#Node-firstChild" class="headerlink" title="Node.firstChild"></a>Node.firstChild</h3><p>取得該元素下的第一個子節點或返回 null 表示沒有任何子節點。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;user&quot;&gt;</span><br><span class="line">   &lt;p&gt;user123&lt;&#x2F;p&gt;</span><br><span class="line">   &lt;p&gt;user456&lt;&#x2F;p&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    let user &#x3D; document.getElementById(&#39;user&#39;);</span><br><span class="line">    var child &#x3D; user.children[0].firstChild;</span><br><span class="line"></span><br><span class="line">    console.log(child);   &#x2F;&#x2F; user123</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
 
 
 
+<h3 id="Node-lastChild"><a href="#Node-lastChild" class="headerlink" title="Node.lastChild"></a>Node.lastChild</h3><p>取得該元素下的最後個子節點或返回 null 表示沒有任何子節點。</p>
+<br>
+
+<h3 id="Node-parentNode"><a href="#Node-parentNode" class="headerlink" title="Node.parentNode"></a>Node.parentNode</h3><p>取得該元素的父元素節點。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;user&quot;&gt;</span><br><span class="line">    &lt;p&gt;user123&lt;&#x2F;p&gt;</span><br><span class="line">    &lt;p&gt;user456&lt;&#x2F;p&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    let user &#x3D; document.getElementById(&#39;user&#39;);</span><br><span class="line">    var child &#x3D; user.parentNode.nodeName;</span><br><span class="line"></span><br><span class="line">    console.log(child);   &#x2F;&#x2F; BODY</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Node-previousSibling"><a href="#Node-previousSibling" class="headerlink" title="Node.previousSibling"></a>Node.previousSibling</h3><p>取得該元素前面的元素節點，回傳 null 表示已是第一個節點。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;user&quot;&gt;</span><br><span class="line">    &lt;p id&#x3D;&quot;user1&quot;&gt;user123&lt;&#x2F;p&gt;</span><br><span class="line">    &lt;p&gt;user456&lt;span id&#x3D;&quot;user2&quot;&gt;-789&lt;&#x2F;span&gt;&lt;&#x2F;p&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    let user1 &#x3D; document.getElementById(&#39;user1&#39;);</span><br><span class="line">    let user2 &#x3D; document.getElementById(&#39;user2&#39;);</span><br><span class="line"></span><br><span class="line">    var child1 &#x3D; user1.previousSibling;</span><br><span class="line">    var child2 &#x3D; user2.previousSibling</span><br><span class="line"></span><br><span class="line">    console.log(child1);   &#x2F;&#x2F; #text</span><br><span class="line">    console.log(child2);   &#x2F;&#x2F; user456</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="Node-nextSibling"><a href="#Node-nextSibling" class="headerlink" title="Node.nextSibling"></a>Node.nextSibling</h3><p>取得該元素後面的元素節點，回傳 null 表示已是最後一個節點。</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-01-02T12:50:35.000Z" title="2021-1-2 8:50:35 ├F10: PM┤">2021-01-02</time>發表</span><span class="level-item"><time dateTime="2023-03-14T15:20:29.077Z" title="2023-3-14 11:20:29 ├F10: PM┤">2023-03-14</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/Javascript/">Javascript</a></span><span class="level-item">5 分鐘讀完 (大約800個字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/01/02/JS/Array-%E6%96%B9%E6%B3%95/">JavaScript – Array方法</a></p><div class="content"><h3 id="push-新增值"><a href="#push-新增值" class="headerlink" title="push()    新增值"></a>push()    新增值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let Drink &#x3D; [&#39;water&#39;, &#39;coffee&#39;];</span><br><span class="line">Drink.push(&#39;milk&#39;);   &#x2F;&#x2F; [&quot;water&quot;, &quot;coffee&quot;, &quot;milk&quot;]</span><br></pre></td></tr></table></figure>
+
+<h3 id="array-array-length-新增值"><a href="#array-array-length-新增值" class="headerlink" title="array[array.length]    新增值"></a>array[array.length]    新增值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let Drink &#x3D; [&#39;water&#39;, &#39;coffee&#39;];</span><br><span class="line">Drink[Drink.length]&#x3D;&#39;milk&#39;;   &#x2F;&#x2F; [&quot;water&quot;, &quot;coffee&quot;, &quot;milk&quot;]</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="pop-移除最後一個值，回傳移除的值"><a href="#pop-移除最後一個值，回傳移除的值" class="headerlink" title="pop()    移除最後一個值，回傳移除的值"></a>pop()    移除最後一個值，回傳移除的值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let Drink &#x3D; [&#39;water&#39;, &#39;coffee&#39;,&#39;milk&#39;];</span><br><span class="line">let newMenu &#x3D; Drink.pop();</span><br><span class="line"></span><br><span class="line">console.log(Drink);   &#x2F;&#x2F; [&quot;water&quot;, &quot;coffee&quot;]</span><br><span class="line">console.log(newMenu);   &#x2F;&#x2F; milk</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="shift-移除第一個值，回傳移除的值"><a href="#shift-移除第一個值，回傳移除的值" class="headerlink" title="shift()    移除第一個值，回傳移除的值"></a>shift()    移除第一個值，回傳移除的值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let Drink &#x3D; [&#39;water&#39;, &#39;coffee&#39;,&#39;milk&#39;];</span><br><span class="line">let newMenu &#x3D; Drink.shift();</span><br><span class="line"></span><br><span class="line">console.log(Drink);   &#x2F;&#x2F; [&quot;coffee&quot;, &quot;milk&quot;]</span><br><span class="line">console.log(newMenu);   &#x2F;&#x2F; water</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="concat-合併陣列，回傳新陣列"><a href="#concat-合併陣列，回傳新陣列" class="headerlink" title="concat()    合併陣列，回傳新陣列"></a>concat()    合併陣列，回傳新陣列</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let Drink1 &#x3D; [&#39;water&#39;, &#39;coffee&#39;];</span><br><span class="line">let Drink2 &#x3D; [&#39;juice&#39;,&#39;milk&#39;];</span><br><span class="line">let newMenu &#x3D; Drink1.concat(Drink2);   &#x2F;&#x2F; [&quot;water&quot;, &quot;coffee&quot;, &quot;juice&quot;, &quot;milk&quot;]</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="join-將陣列依分隔符號合併成字串，預設是逗點，回傳字串。"><a href="#join-將陣列依分隔符號合併成字串，預設是逗點，回傳字串。" class="headerlink" title="join()    將陣列依分隔符號合併成字串，預設是逗點，回傳字串。"></a>join()    將陣列依分隔符號合併成字串，預設是逗點，回傳字串。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let Drink &#x3D; [&#39;water&#39;, &#39;coffee&#39;,];</span><br><span class="line">Drink.join(&#39;+&#39;);   &#x2F;&#x2F; water+coffee</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="every-檢查陣列是否全部都符合條件，回傳true-false。"><a href="#every-檢查陣列是否全部都符合條件，回傳true-false。" class="headerlink" title="every()    檢查陣列是否全部都符合條件，回傳true / false。"></a>every()    檢查陣列是否全部都符合條件，回傳true / false。</h3><p><strong>every(function(value, index){…});</strong></p>
+<ul>
+<li>value : 目前處理到的值。</li>
+<li>index : 值的索引位置。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.every(function (value) &#123;</span><br><span class="line">    return value &gt; 10;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; false</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h3 id="some-檢查陣列是否部分符合條件，回傳true-false。"><a href="#some-檢查陣列是否部分符合條件，回傳true-false。" class="headerlink" title="some()    檢查陣列是否部分符合條件，回傳true / false。"></a>some()    檢查陣列是否部分符合條件，回傳true / false。</h3><p><strong>some(function(value, index){…});</strong></p>
+<ul>
+<li>value : 目前處理到的值。</li>
+<li>index : 值的索引位置。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.some(function (value) &#123;</span><br><span class="line">    return value &gt; 10;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; true</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<br>
+
+<h3 id="filter-篩選符合條件的值，回傳新陣列。"><a href="#filter-篩選符合條件的值，回傳新陣列。" class="headerlink" title="filter()    篩選符合條件的值，回傳新陣列。"></a>filter()    篩選符合條件的值，回傳新陣列。</h3><p><strong>filter(function(value, index){…});</strong></p>
+<ul>
+<li>value : 目前處理到的值。</li>
+<li>index : 值的索引位置。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.filter(function (value) &#123;</span><br><span class="line">    return value &gt; 10;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; [21, 28]</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<br>
+
+<h3 id="forEach-遍歷陣列，回傳undefined。"><a href="#forEach-遍歷陣列，回傳undefined。" class="headerlink" title="forEach()    遍歷陣列，回傳undefined。"></a>forEach()    遍歷陣列，回傳undefined。</h3><p><strong>forEach(function(value, index){…});</strong></p>
+<ul>
+<li>value : 目前處理到的值。</li>
+<li>index : 值的索引位置。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let all &#x3D; 0;</span><br><span class="line">let test &#x3D; num.forEach(function (value) &#123;</span><br><span class="line">    all +&#x3D; value;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">console.log(all);   &#x2F;&#x2F; 60</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h3 id="map-遍歷陣列，回傳新陣列。"><a href="#map-遍歷陣列，回傳新陣列。" class="headerlink" title="map()    遍歷陣列，回傳新陣列。"></a>map()    遍歷陣列，回傳新陣列。</h3><p><strong>map(function(value, index){…});</strong></p>
+<ul>
+<li>value : 目前處理到的值。</li>
+<li>index : 值的索引位置。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.map(function (value) &#123;</span><br><span class="line">    return value * 2;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; [4, 0, 42, 18, 56]</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<br>
+
+<h3 id="indexOf-找出值出現在陣列中的位置，回傳索引位置，沒找到則返回-1。"><a href="#indexOf-找出值出現在陣列中的位置，回傳索引位置，沒找到則返回-1。" class="headerlink" title="indexOf()    找出值出現在陣列中的位置，回傳索引位置，沒找到則返回 -1。"></a>indexOf()    找出值出現在陣列中的位置，回傳索引位置，沒找到則返回 -1。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.indexOf(9)</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; 3</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="reverse-倒轉陣列，回傳新陣列。"><a href="#reverse-倒轉陣列，回傳新陣列。" class="headerlink" title="reverse()    倒轉陣列，回傳新陣列。"></a>reverse()    倒轉陣列，回傳新陣列。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.reverse()</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; [28, 9, 21, 0, 2]</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="sort-重新排序陣列，回傳新陣列。"><a href="#sort-重新排序陣列，回傳新陣列。" class="headerlink" title="sort()    重新排序陣列，回傳新陣列。"></a>sort()    重新排序陣列，回傳新陣列。</h3><p>預設將值轉型成字串再比對每個字元的 Unicode code point 大小。<br><strong>sort(function(a, b){…});</strong></p>
+<ul>
+<li>a, b : 分別表示兩個比較的值，傳回一個數字。</li>
+<li>回傳 : 數字小於 0 則 a 排序在 b 前面;大於 0 則 a 排序在 b 後面。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.sort();</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; [0, 2, 21, 28, 9]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.sort(function (a, b) &#123;</span><br><span class="line">    return a - b;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; [0, 2, 9, 21, 28]</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<br>
+
+<h3 id="unshift-新增一個值到陣列最前面，回傳陣列長度。"><a href="#unshift-新增一個值到陣列最前面，回傳陣列長度。" class="headerlink" title="unshift()    新增一個值到陣列最前面，回傳陣列長度。"></a>unshift()    新增一個值到陣列最前面，回傳陣列長度。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.unshift(6);</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; 6</span><br><span class="line">console.log(num);   &#x2F;&#x2F; [6, 2, 0, 21, 9, 28]</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="reduce-遍歷陣列，由左至右傳入函式運算，回傳累加值。"><a href="#reduce-遍歷陣列，由左至右傳入函式運算，回傳累加值。" class="headerlink" title="reduce()    遍歷陣列，由左至右傳入函式運算，回傳累加值。"></a>reduce()    遍歷陣列，由左至右傳入函式運算，回傳累加值。</h3><p><strong>reduce(function(allValue ,value, index){…});</strong></p>
+<ul>
+<li>allValue : 目前累加的值。</li>
+<li>value : 目前處理到的值。</li>
+<li>index : 值的索引位置。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.reduce(function(a,b)&#123;</span><br><span class="line">    return a+ b;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; 60</span><br></pre></td></tr></table></figure>
 
 
 
+</li>
+</ul>
+<h3 id="reduceRight-遍歷陣列，由右至左傳入函式運算，回傳累加值。"><a href="#reduceRight-遍歷陣列，由右至左傳入函式運算，回傳累加值。" class="headerlink" title="reduceRight()    遍歷陣列，由右至左傳入函式運算，回傳累加值。"></a>reduceRight()    遍歷陣列，由右至左傳入函式運算，回傳累加值。</h3><p><strong>reduceRight(function(allValue ,value, index){…});</strong></p>
+<ul>
+<li>allValue : 目前累加的值。</li>
+<li>value : 目前處理到的值。</li>
+<li>index : 值的索引位置。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.reduceRight(function(a,b)&#123;</span><br><span class="line">    return a+ b;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; 60</span><br></pre></td></tr></table></figure>
 
+</li>
+</ul>
+<br>
 
-      </div>
-    </footer>
-  </div>
+<h3 id="splice-刪除、插入值到陣列中，回傳新陣列。"><a href="#splice-刪除、插入值到陣列中，回傳新陣列。" class="headerlink" title="splice()    刪除、插入值到陣列中，回傳新陣列。"></a>splice()    刪除、插入值到陣列中，回傳新陣列。</h3><p><strong>splice(索引位置, 刪除個數, 新值1, 新值2…)</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.splice(3,2);</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; [9, 28]</span><br><span class="line">console.log(num);   &#x2F;&#x2F; [2, 0, 21]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let num &#x3D; [2, 0, 21, 9, 28];</span><br><span class="line">let test &#x3D; num.splice(3,2,12,30);</span><br><span class="line"></span><br><span class="line">console.log(test);   &#x2F;&#x2F; [9, 28]</span><br><span class="line">console.log(num);   &#x2F;&#x2F; [2, 0, 21, 12, 30]</span><br></pre></td></tr></table></figure></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2020-12-30T13:31:33.000Z" title="2020-12-30 9:31:33 ├F10: PM┤">2020-12-30</time>發表</span><span class="level-item"><time dateTime="2023-03-14T15:21:05.228Z" title="2023-3-14 11:21:05 ├F10: PM┤">2023-03-14</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/Javascript/">Javascript</a></span><span class="level-item">幾秒讀完 (大約58個字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2020/12/30/JS/Date-parse/">JavaScript - Date.parse()</a></p><div class="content"><h3 id="Date-parse-String"><a href="#Date-parse-String" class="headerlink" title="Date.parse(String)"></a>Date.parse(String)</h3><p>用來將日期時間字串轉成毫秒數。</p>
+<p>String 格式:</p>
+<ul>
+<li>YYYY-MM-DD<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Date.parse(&#39;2020-12-30&#39;);</span><br></pre></td></tr></table></figure></li>
+<li>YYYY-MM  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Date.parse(&#39;2020-12&#39;);</span><br></pre></td></tr></table></figure></li>
+<li>YYYY<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Date.parse(&#39;2020&#39;);</span><br></pre></td></tr></table></figure></li>
+<li>YYYY-MM-DDTHH:MM:SS<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Date.parse(&#39;2020-12-30T21:55:05&#39;);</span><br></pre></td></tr></table></figure></li>
+<li>MM/DD/YYYY<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Date.parse(&#39;12&#x2F;30&#x2F;2020&#39;);</span><br></pre></td></tr></table></figure></li>
+<li>MMM DD YYYY<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Date.parse(&#39;Dec 30 2020&#39;);</span><br></pre></td></tr></table></figure></li>
+<li>DD MMM YYYY<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Date.parse(&#39;30 Dec 2020&#39;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2020-12-30T09:38:13.000Z" title="2020-12-30 5:38:13 ├F10: PM┤">2020-12-30</time>發表</span><span class="level-item"><time dateTime="2023-03-14T15:21:22.131Z" title="2023-3-14 11:21:22 ├F10: PM┤">2023-03-14</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/Javascript/">Javascript</a></span><span class="level-item">2 分鐘讀完 (大約269個字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2020/12/30/JS/Date%E7%89%A9%E4%BB%B6/">JavaScript - Date物件</a></p><div class="content"><h3 id="new-Date"><a href="#new-Date" class="headerlink" title="new Date();"></a>new Date();</h3><p>建立一個表示現在時間的 Date 物件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var today &#x3D; new Date();</span><br></pre></td></tr></table></figure>
 
-  
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<h3 id="new-Date-value"><a href="#new-Date-value" class="headerlink" title="new Date(value);"></a>new Date(value);</h3><p>建立特定時間的 Date 物件，value 值單位是毫秒。</p>
+<p><strong>new Date(year,month[,date[,hours[,minutes[,seconds,[milliseconds]]]]]);</strong><br>建立特定時間的 Date 物件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var 我家仙人掌生日 &#x3D; new Date(2019,10,11,11,11,11);</span><br></pre></td></tr></table></figure>
+<p>month    表示月份的整數。由 0 開始（一月）到 11 （十二月）。<br>hours    採 24 小時制。<br>參數數值超過它的範圍，相鄰的參數值會被調整。</p>
+<p><strong>可以用 &gt;, &lt;, &lt;=, &gt;=, &lt;== 或 &gt;== 運算子來比較兩個 Date 物件的時間</strong><br><strong>比較兩個日期是否相等，要將 Date 物件用 date.getTime() 轉換為數值型態才能比</strong></p>
+<br>
 
-<script src="/js/utils.js"></script>
+<h3 id="取得日期和時間"><a href="#取得日期和時間" class="headerlink" title="取得日期和時間"></a>取得日期和時間</h3><p><strong>.getTime()</strong>    取得自 1970-01-01 00:00:00 UTC 累計的毫秒數<br><strong>.getFullYear()</strong>    取得年分。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var today &#x3D; new Date();</span><br><span class="line">var year &#x3D; today.getFullYear();</span><br></pre></td></tr></table></figure>
+<p><strong>.getMonth()</strong>    取得月分(0-11)。<br><strong>.getDate()</strong>    取得日期。<br><strong>.getDay()</strong>    取得星期(0-6)。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var weekday &#x3D; [&#39;星期日&#39;,&#39;星期一&#39;,&#39;星期二&#39;,&#39;星期三&#39;,&#39;星期四&#39;,&#39;星期五&#39;,&#39;星期六&#39;];</span><br><span class="line">var day &#x3D; today.getDay();</span><br><span class="line">weekday[day];</span><br></pre></td></tr></table></figure>
+<p><strong>.getHours()</strong><br><strong>.getMinutes()</strong><br><strong>.getSeconds()</strong><br><strong>.getMilliseconds()</strong></p>
+<h3 id="設定日期和時間"><a href="#設定日期和時間" class="headerlink" title="設定日期和時間"></a>設定日期和時間</h3><p><strong>.setTime()</strong><br><strong>.setFullYear()</strong><br><strong>.setMonth()</strong><br><strong>.setDate()</strong><br><strong>.setHours()</strong><br><strong>.setMinutes()</strong><br><strong>.setSeconds()</strong><br><strong>.setMilliseconds()</strong></p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2020-12-25T02:05:23.000Z" title="2020-12-25 10:05:23 ├F10: AM┤">2020-12-25</time>發表</span><span class="level-item"><time dateTime="2023-03-14T15:27:08.095Z" title="2023-3-14 11:27:08 ├F10: PM┤">2023-03-14</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/Javascript/">Javascript</a></span><span class="level-item">1 分鐘讀完 (大約114個字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2020/12/25/JS/Math/">JavaScript – Math</a></p><div class="content"><h3 id="Math-abs"><a href="#Math-abs" class="headerlink" title="Math.abs()"></a>Math.abs()</h3><p>取得數字的絕對值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var num &#x3D; Math.abs(&#39;-1&#39;);   &#x2F;&#x2F; 1</span><br></pre></td></tr></table></figure>
 
-<script src="/js/motion.js"></script>
+<h3 id="Math-ceil"><a href="#Math-ceil" class="headerlink" title="Math.ceil();"></a>Math.ceil();</h3><p>無條件進位。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var num &#x3D; Math.ceil(&#39;5.11&#39;);   &#x2F;&#x2F; 6</span><br></pre></td></tr></table></figure>
 
+<h3 id="Math-floor"><a href="#Math-floor" class="headerlink" title="Math.floor();"></a>Math.floor();</h3><p>無條件捨去。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var num &#x3D; Math.floor(&#39;5.11&#39;);   &#x2F;&#x2F; 5</span><br></pre></td></tr></table></figure>
 
-<script src="/js/schemes/muse.js"></script>
+<h3 id="Math-round"><a href="#Math-round" class="headerlink" title="Math.round();"></a>Math.round();</h3><p>四捨五入。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var num &#x3D; Math.round(&#39;5.6&#39;);   &#x2F;&#x2F; 6</span><br></pre></td></tr></table></figure>
 
+<h3 id="Math-random"><a href="#Math-random" class="headerlink" title="Math.random();"></a>Math.random();</h3><p>返回一個 0 (包含) ~ 1 (不包含) 之間的隨機數。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var num &#x3D; Math.random();   &#x2F;&#x2F; 0.5653752873923776</span><br></pre></td></tr></table></figure>
 
-<script src="/js/next-boot.js"></script>
+<h3 id="Math-max"><a href="#Math-max" class="headerlink" title="Math.max();"></a>Math.max();</h3><p>取得傳入所有傳入參數的最大值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var num &#x3D; Math.max(5,7,9,-3);   &#x2F;&#x2F; 9</span><br></pre></td></tr></table></figure>
 
+<h3 id="Math-min"><a href="#Math-min" class="headerlink" title="Math.min();"></a>Math.min();</h3><p>取得傳入所有傳入參數的最小值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var num &#x3D; Math.min(5,7,9,-3);   &#x2F;&#x2F; -3</span><br></pre></td></tr></table></figure></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2020-12-24T12:45:49.000Z" title="2020-12-24 8:45:49 ├F10: PM┤">2020-12-24</time>發表</span><span class="level-item"><time dateTime="2023-03-14T15:28:49.847Z" title="2023-3-14 11:28:49 ├F10: PM┤">2023-03-14</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/Javascript/">Javascript</a></span><span class="level-item">2 分鐘讀完 (大約253個字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2020/12/24/JS/Await/">JavaScript - Async function 和 Await</a></p><div class="content"><h3 id="Sync-同步-Async-非同步"><a href="#Sync-同步-Async-非同步" class="headerlink" title="Sync (同步) / Async (非同步)"></a>Sync (同步) / Async (非同步)</h3><p>Sync (同步) : 依序等待執行，一次執行完一件事，才能繼續往下執行。<br>Async (非同步) : 可以一次處理不同需求，不須等待事件執行完畢才往下執行。</p>
+<h3 id="Async-function"><a href="#Async-function" class="headerlink" title="Async function"></a>Async function</h3><p>async function 用來定義一個非同步函式</p>
+<h3 id="await"><a href="#await" class="headerlink" title="await"></a>await</h3><p>運行在 async function 內，用來暫停非同步函式的運行，直到非同步進入 resolve (解決) 或 reject (出錯) 才會進入下一步。</p>
+<p>例:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function promiseFn(num, s) &#123;                           &#x2F;&#x2F;Promise 函式</span><br><span class="line">    return new Promise(function (resolve) &#123;            &#x2F;&#x2F; 回傳一個 promise</span><br><span class="line">        setTimeout(resolve(&#96;第 $&#123;num&#125; 輸出&#96;), s);      &#x2F;&#x2F; 等待多少秒之後 resolve()</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">promiseFn(1, 200)</span><br><span class="line">.then(resolve &#x3D;&gt; &#123;                &#x2F;&#x2F; 使用 then 來接收</span><br><span class="line">    console.log(resolve);</span><br><span class="line">    return promiseFn(2, 200);     &#x2F;&#x2F; 使用 return 來鏈接</span><br><span class="line">&#125;).then(resolve &#x3D;&gt; &#123;</span><br><span class="line">    console.log(resolve);</span><br><span class="line">    return promiseFn(3, 200);</span><br><span class="line">&#125;).then(resolve &#x3D;&gt; &#123;</span><br><span class="line">    console.log(resolve);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>也可以:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function promiseFn(num, s) &#123;</span><br><span class="line">    return new Promise(function (resolve) &#123;            &#x2F;&#x2F; 回傳一個 promise</span><br><span class="line">        setTimeout(resolve(&#96;第 $&#123;num&#125; 輸出&#96;), s);      &#x2F;&#x2F; 等待多少秒之後 resolve()</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">async function delayFn() &#123;                            &#x2F;&#x2F; 回傳後才會往下依序執行</span><br><span class="line">    const data1 &#x3D; await promiseFn(1, 200);</span><br><span class="line">    const data2 &#x3D; await promiseFn(2, 200);</span><br><span class="line">    const data3 &#x3D; await promiseFn(3, 200);</span><br><span class="line">    console.log(data1, data2, data3);</span><br><span class="line">&#125;;</span><br><span class="line">delayFn();</span><br></pre></td></tr></table></figure>
 
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2020-12-12T07:31:59.000Z" title="2020-12-12 3:31:59 ├F10: PM┤">2020-12-12</time>發表</span><span class="level-item"><time dateTime="2023-03-14T15:27:27.424Z" title="2023-3-14 11:27:27 ├F10: PM┤">2023-03-14</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/Javascript/">Javascript</a></span><span class="level-item">2 分鐘讀完 (大約351個字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2020/12/12/JS/Object%E8%B3%87%E6%96%99%E8%A4%87%E8%A3%BD/">JavaScript – Object 資料複製</a></p><div class="content"><h3 id="淺層複製方法-Object-assign"><a href="#淺層複製方法-Object-assign" class="headerlink" title="淺層複製方法: Object.assign"></a>淺層複製方法: Object.assign</h3><p>複製到第一層物件的屬性，若有第二層以上的資料會與舊物件一起共用同一塊記憶體。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">var dog &#x3D; &#123;</span><br><span class="line">          name : &#39;舒跑&#39;,</span><br><span class="line">          like : &#123;</span><br><span class="line">              food : &#39;雞胸肉&#39;,</span><br><span class="line">              game : &#39;你丟我撿&#39;,</span><br><span class="line">              bed : &#39;主人的床&#39;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">var newDog &#x3D; Object.assign(&#123;&#125;, dog);</span><br><span class="line">newDog.name &#x3D; &#39;可爾必思&#39;;</span><br><span class="line">      </span><br><span class="line">console.log(dog.name);  &#x2F;&#x2F; 舒跑</span><br><span class="line">console.log(newDog.name);  &#x2F;&#x2F; 可爾必思</span><br><span class="line"></span><br><span class="line">newDog.like.bed &#x3D; &#39;地板&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.like.bed);  &#x2F;&#x2F; 地板</span><br><span class="line">console.log(newDog.like.bed);  &#x2F;&#x2F; 地板</span><br></pre></td></tr></table></figure>
 
+<h3 id="淺層複製方法-…其餘運算子"><a href="#淺層複製方法-…其餘運算子" class="headerlink" title="淺層複製方法: …其餘運算子"></a>淺層複製方法: …其餘運算子</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">var dog &#x3D; &#123;</span><br><span class="line">    name : &#39;舒跑&#39;,</span><br><span class="line">    like : &#123;</span><br><span class="line">        food : &#39;雞胸肉&#39;,</span><br><span class="line">        game : &#39;你丟我撿&#39;,</span><br><span class="line">        bed : &#39;主人的床&#39;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var newDog &#x3D; &#123;...dog&#125;;</span><br><span class="line">newDog.name &#x3D; &#39;可爾必思&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.name);  &#x2F;&#x2F; 舒跑</span><br><span class="line">console.log(newDog.name);  &#x2F;&#x2F; 可爾必思</span><br><span class="line"></span><br><span class="line">newDog.like.bed &#x3D; &#39;地板&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.like.bed);  &#x2F;&#x2F; 地板</span><br><span class="line">console.log(newDog.like.bed);  &#x2F;&#x2F; 地板</span><br></pre></td></tr></table></figure>
 
-  
+<h3 id="深層複製方法-JSON"><a href="#深層複製方法-JSON" class="headerlink" title="深層複製方法: JSON"></a>深層複製方法: JSON</h3><p>複製建立全新的物件。<br>JSON 方法限制:純資料的物件可行，有Function、Set、Map、undefined等型態會失效。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">var dog &#x3D; &#123;</span><br><span class="line">    name : &#39;舒跑&#39;,</span><br><span class="line">    like : &#123;</span><br><span class="line">        food : &#39;雞胸肉&#39;,</span><br><span class="line">        game : &#39;你丟我撿&#39;,</span><br><span class="line">        bed : &#39;主人的床&#39;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var newDog &#x3D; JSON.parse(JSON.stringify(dog));</span><br><span class="line">newDog.name &#x3D; &#39;可爾必思&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.name);  &#x2F;&#x2F; 舒跑</span><br><span class="line">console.log(newDog.name);  &#x2F;&#x2F; 可爾必思</span><br><span class="line"></span><br><span class="line">newDog.like.bed &#x3D; &#39;地板&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.like.bed);  &#x2F;&#x2F; 主人的床</span><br><span class="line">console.log(newDog.like.bed);  &#x2F;&#x2F; 地板</span><br></pre></td></tr></table></figure>
 
+<h3 id="深層複製方法-extend"><a href="#深層複製方法-extend" class="headerlink" title="深層複製方法: $.extend"></a>深層複製方法: $.extend</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var newDog &#x3D; $.extend(true,&#123;&#125;,dog);</span><br><span class="line">newDog.name &#x3D; &#39;可爾必思&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.name);  &#x2F;&#x2F; 舒跑</span><br><span class="line">console.log(newDog.name);  &#x2F;&#x2F; 可爾必思</span><br><span class="line"></span><br><span class="line">newDog.like.bed &#x3D; &#39;地板&#39;;</span><br><span class="line"></span><br><span class="line">console.log(dog.like.bed);  &#x2F;&#x2F; 主人的床</span><br><span class="line">console.log(newDog.like.bed);  &#x2F;&#x2F; 地板</span><br></pre></td></tr></table></figure></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2020-12-12T07:02:06.000Z" title="2020-12-12 3:02:06 ├F10: PM┤">2020-12-12</time>發表</span><span class="level-item"><time dateTime="2023-03-14T15:27:38.726Z" title="2023-3-14 11:27:38 ├F10: PM┤">2023-03-14</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/Javascript/">Javascript</a></span><span class="level-item">3 分鐘讀完 (大約486個字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2020/12/12/JS/String-%E5%AD%97%E4%B8%B2/">JavaScript – String(字串)</a></p><div class="content"><h3 id="String-x"><a href="#String-x" class="headerlink" title="String(x)"></a>String(x)</h3><p>將型別轉換成字串。</p>
+<br>
 
+<h3 id="charAt-index"><a href="#charAt-index" class="headerlink" title="charAt(index)"></a>charAt(index)</h3><p>取得字串中特定位置的字。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let sentence &#x3D; &#39;Dink some water &#x2F; tea &#x2F; milk.&#39;;</span><br><span class="line"></span><br><span class="line">sentence.charAt(3);   &#x2F;&#x2F; k</span><br></pre></td></tr></table></figure>
+<br>
 
+<h3 id="indexOf-str-value-index"><a href="#indexOf-str-value-index" class="headerlink" title="indexOf(str-value, index)"></a>indexOf(str-value, index)</h3><p>找出某個字串在字串中的出現位置。返回找到的位置，找不到則返回 -1 。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let sentence &#x3D; &#39;Dink some water &#x2F; tea &#x2F; milk.&#39;;</span><br><span class="line"></span><br><span class="line">sentence.indexOf(&#39;a&#39;);   &#x2F;&#x2F; 11</span><br><span class="line"></span><br><span class="line">sentence.indexOf(&#39;a&#39;, 12);   &#x2F;&#x2F; 20</span><br></pre></td></tr></table></figure>
 
-  
-<script src="/js/local-search.js"></script>
+<br>
 
+<h3 id="lastIndexOf-str-value-index"><a href="#lastIndexOf-str-value-index" class="headerlink" title="lastIndexOf(str-value, index)"></a>lastIndexOf(str-value, index)</h3><p>找出某個字串在字串中最後出現的位置。相對於indexOf()</p>
+<br>
 
+<h3 id="match-str-value"><a href="#match-str-value" class="headerlink" title="match(str-value)"></a>match(str-value)</h3><p>找出字串中匹配的內容，返回一個陣列。可搭配正規表達式 (Regex)使用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let sentence &#x3D; &#39;Dink some water &#x2F; tea &#x2F; milk.&#39;;</span><br><span class="line">let data &#x3D; &#39;water &#x2F; tea &#x2F; milk.&#39;</span><br><span class="line"></span><br><span class="line">console.log(sentence.match(data));    </span><br><span class="line">&#x2F;&#x2F; [&quot;water &#x2F; tea &#x2F; milk.&quot;, index: 10, input: &quot;Dink some water &#x2F; tea &#x2F; milk.&quot;, groups: undefined]</span><br></pre></td></tr></table></figure>
 
+<br>
 
+<h3 id="replace-old-str-new-str-function"><a href="#replace-old-str-new-str-function" class="headerlink" title="replace(old-str, new-str|function)"></a>replace(old-str, new-str|function)</h3><p>將字串中的字取代為另外的字。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let sentence &#x3D; &#39;Dink some water &#x2F; tea &#x2F; milk.&#39;;</span><br><span class="line"></span><br><span class="line">sentence.replace(&#39;water&#39;, &#39;coffee&#39;);   &#x2F;&#x2F; Dink some coffee &#x2F; tea &#x2F; milk.</span><br></pre></td></tr></table></figure>
 
+<br>
 
+<h3 id="search-str-value"><a href="#search-str-value" class="headerlink" title="search(str-value)"></a>search(str-value)</h3><p>找出某個字串在字串中的出現位置，找不到則返回 -1 。可以用正規表達式 (Regex)當參數。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let sentence &#x3D; &#39;Dink some water &#x2F; tea &#x2F; milk.&#39;;</span><br><span class="line"></span><br><span class="line">sentence.search(&#39;a&#39;);   &#x2F;&#x2F; 11</span><br></pre></td></tr></table></figure>
 
+<br>
 
+<h3 id="slice-begin-index-end-index"><a href="#slice-begin-index-end-index" class="headerlink" title="slice(begin-index, end-index)"></a>slice(begin-index, end-index)</h3><p>擷取兩個索引位置之間的字串，返回一個新字串。若begin-index大於字串長度，結果會返回空字串。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let sentence &#x3D; &#39;Dink some water &#x2F; tea &#x2F; milk.&#39;;</span><br><span class="line"></span><br><span class="line">sentence.slice(1, 7);   &#x2F;&#x2F; ink so</span><br></pre></td></tr></table></figure>
 
+<br>
 
+<h3 id="split-分隔符號-返回數量"><a href="#split-分隔符號-返回數量" class="headerlink" title="split.(分隔符號 [,返回數量])"></a>split.(分隔符號 [,返回數量])</h3><p>根據指定的分隔字符，切割字串，返回一個字串陣列。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let sentence &#x3D; &#39;Dink some water &#x2F; tea &#x2F; milk.&#39;;</span><br><span class="line"></span><br><span class="line">sentence.split(&#39; &#39;);   &#x2F;&#x2F; [&quot;Dink&quot;, &quot;some&quot;, &quot;water&quot;, &quot;&#x2F;&quot;, &quot;tea&quot;, &quot;&#x2F;&quot;, &quot;milk.&quot;]</span><br><span class="line"></span><br><span class="line">sentence.split(&#39;k&#39;);   &#x2F;&#x2F; [&quot;Din&quot;, &quot; some water &#x2F; tea &#x2F; mil&quot;, &quot;.&quot;]</span><br><span class="line"></span><br><span class="line">sentence.split(&#39; &#39;, 3);   &#x2F;&#x2F; [&quot;Dink&quot;, &quot;some&quot;, &quot;water&quot;]</span><br></pre></td></tr></table></figure>
 
+<br>
 
+<h3 id="substr-start-index-擷取長度"><a href="#substr-start-index-擷取長度" class="headerlink" title="substr.(start-index [,擷取長度])"></a>substr.(start-index [,擷取長度])</h3><p>切割擷取字串，返回一個新字串。擷取長度預設取到字串結尾。若start-index大於字串長度，結果會返回空字串。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let sentence &#x3D; &#39;Dink some water &#x2F; tea &#x2F; milk.&#39;;</span><br><span class="line"></span><br><span class="line">sentence.substr(3);   &#x2F;&#x2F; k some water &#x2F; tea &#x2F; milk.</span><br><span class="line"></span><br><span class="line">sentence.substr(6, 3);   &#x2F;&#x2F; ome</span><br></pre></td></tr></table></figure>
 
-  
+<br>
 
-  
+<h3 id="toLowerCase"><a href="#toLowerCase" class="headerlink" title=".toLowerCase()"></a>.toLowerCase()</h3><p>將字串中的英文字母都轉成小寫。</p>
+<br>
 
-<script>
-  function loadCount() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://LeeU.disqus.com/count.js';
-    s.id = 'dsq-count-scr';
-    (d.head || d.body).appendChild(s);
-  }
-  // defer loading until the whole page loading is completed
-  window.addEventListener('load', loadCount, false);
-</script>
+<h3 id="toUpperCase"><a href="#toUpperCase" class="headerlink" title=".toUpperCase()"></a>.toUpperCase()</h3><p>將字串中的英文字母都轉成大寫。</p>
+<br>
 
-</body>
-</html>
+<h3 id="trim"><a href="#trim" class="headerlink" title=".trim()"></a>.trim()</h3><p>刪除字串兩側空格。</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2020-12-10T13:25:05.000Z" title="2020-12-10 9:25:05 ├F10: PM┤">2020-12-10</time>發表</span><span class="level-item"><time dateTime="2023-03-14T15:18:00.124Z" title="2023-3-14 11:18:00 ├F10: PM┤">2023-03-14</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/Javascript/">Javascript</a></span><span class="level-item">1 分鐘讀完 (大約122個字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2020/12/10/JS/%E5%B1%95%E9%96%8B/">JavaScript – ... 其餘 / 展開</a></p><div class="content"><h3 id="其餘參數"><a href="#其餘參數" class="headerlink" title="其餘參數"></a>其餘參數</h3><p>表示函式所接受的參數數量不固定，而讓其餘參數合併成一個陣列。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function Fun(...arg) &#123; console.log(arg.length); &#125;</span><br><span class="line">Fun();   &#x2F;&#x2F; 0</span><br><span class="line">Fun(5);   &#x2F;&#x2F; 1</span><br><span class="line">Fun(5, 6, 7);   &#x2F;&#x2F; 3</span><br></pre></td></tr></table></figure>
+
+<h3 id="展開運算子"><a href="#展開運算子" class="headerlink" title="展開運算子"></a>展開運算子</h3><p>用在執行函式時的參數上，可將一個陣列展開成多個獨立參數。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const vau &#x3D; (...args) &#x3D;&gt; &#123;     </span><br><span class="line">return args.reduce((a, b) &#x3D;&gt; a + b, 0);    &#125;</span><br><span class="line"></span><br><span class="line">let arr &#x3D; [2, 3, 4];</span><br><span class="line">vau(...arr);   &#x2F;&#x2F; 9</span><br><span class="line">vau(1, ...arr, 5);   &#x2F;&#x2F; 15</span><br></pre></td></tr></table></figure>
+
+<p>也可用來合併及展開陣列。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let drink1 &#x3D; [&#39;milk&#39;, &#39;juice&#39;];</span><br><span class="line">let drink2 &#x3D; [&#39;coffee&#39;, &#39;water&#39;];</span><br><span class="line">let drink_menu &#x3D; [...drink1, ...drink2];   &#x2F;&#x2F;[&quot;milk&quot;, &quot;juice&quot;, &quot;coffee&quot;, &quot;water&quot;] </span><br></pre></td></tr></table></figure></div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous is-invisible is-hidden-mobile"><a href="/categories/Javascript/page/0/">上一頁</a></div><div class="pagination-next"><a href="/categories/Javascript/page/2/">下一頁</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link is-current" href="/categories/Javascript/">1</a></li><li><a class="pagination-link" href="/categories/Javascript/page/2/">2</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="默刻"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">默刻</p><p class="is-size-6 is-block">騎著車穿過風聲</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>晝夜</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">37</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分類</p><a href="/categories"><p class="title">6</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">標籤</p><a href="/tags"><p class="title">53</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/LeeU-1230" target="_blank" rel="noopener">追蹤</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/LeeU-1230"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分類</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/CSS/"><span class="level-start"><span class="level-item">CSS</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li><li><a class="level is-mobile" href="/categories/GOOGLE/"><span class="level-start"><span class="level-item">GOOGLE</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/HTML/"><span class="level-start"><span class="level-item">HTML</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/Javascript/"><span class="level-start"><span class="level-item">Javascript</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li><li><a class="level is-mobile" href="/categories/MARKDOWN/"><span class="level-start"><span class="level-item">MARKDOWN</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%BD%B1%E7%89%87%E8%A3%BD%E4%BD%9C/"><span class="level-start"><span class="level-item">影片製作</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-03-14T13:19:35.648Z">2023-03-14</time></p><p class="title"><a href="/2023/03/14/HTML/HTML%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%B4%B9/">什麼是HTML?</a></p><p class="categories"><a href="/categories/HTML/">HTML</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-08-03T13:41:38.000Z">2022-08-03</time></p><p class="title"><a href="/2022/08/03/%E6%90%9E%E6%87%82%E5%BD%B1%E7%89%87%E6%AA%94%E6%A1%88%E9%A1%9E%E5%9E%8B/">搞懂影片檔案格式與編解碼器</a></p><p class="categories"><a href="/categories/%E5%BD%B1%E7%89%87%E8%A3%BD%E4%BD%9C/">影片製作</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-02-26T06:30:19.000Z">2021-02-26</time></p><p class="title"><a href="/2021/02/26/CSS/%E4%BD%BF%E6%BB%91%E9%BC%A0%E6%8C%87%E6%A8%99%E6%94%B9%E8%AE%8A%E5%BD%A2%E7%8B%80/">CSS - 使滑鼠指標改變形狀</a></p><p class="categories"><a href="/categories/CSS/">CSS</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-02-26T06:22:11.000Z">2021-02-26</time></p><p class="title"><a href="/2021/02/26/CSS/%E8%AE%93%E6%90%9C%E7%B4%A2%E6%AC%84%E5%85%B7%E5%82%99%E5%8F%96%E6%B6%88%E6%8C%89%E9%88%95%E5%90%A7/">CSS - 讓搜索欄具備取消按鈕吧!</a></p><p class="categories"><a href="/categories/CSS/">CSS</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-01-10T06:23:34.000Z">2021-01-10</time></p><p class="title"><a href="/2021/01/10/CSS/%E5%81%BDclass/">CSS - 偽class</a></p><p class="categories"><a href="/categories/CSS/">CSS</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">彙整</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2023/"><span class="level-start"><span class="level-item">2023</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/"><span class="level-start"><span class="level-item">2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/"><span class="level-start"><span class="level-item">2021</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/"><span class="level-start"><span class="level-item">2020</span></span><span class="level-end"><span class="level-item tag">25</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">標籤</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/AJAX/"><span class="tag">AJAX</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Array/"><span class="tag">Array</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Array%E6%96%B9%E6%B3%95/"><span class="tag">Array方法</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Async/"><span class="tag">Async</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CSS/"><span class="tag">CSS</span><span class="tag">12</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CSS-Transform/"><span class="tag">CSS Transform</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CSS-animation/"><span class="tag">CSS animation</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CSS-text-overflow/"><span class="tag">CSS text-overflow</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CSS-%E5%81%BDclass/"><span class="tag">CSS 偽class</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CSS-%E5%81%BD%E5%85%83%E7%B4%A0/"><span class="tag">CSS 偽元素</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CSS-%E5%8B%95%E7%95%AB/"><span class="tag">CSS 動畫</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CSS-%E6%95%B8%E5%AD%B8%E5%87%BD%E5%BC%8F/"><span class="tag">CSS 數學函式</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CSS-%E6%BC%B8%E5%B1%A4/"><span class="tag">CSS 漸層</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CSS-%E8%AE%8A%E5%BD%A2/"><span class="tag">CSS 變形</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CSS-%E8%AE%8A%E6%95%B8/"><span class="tag">CSS 變數</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CSS-%E9%99%90%E5%88%B6%E6%96%87%E6%9C%AC%E5%85%A7%E5%AE%B9/"><span class="tag">CSS 限制文本內容</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/DOM/"><span class="tag">DOM</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/DOM-%E6%9F%A5%E6%89%BE%E7%AF%80%E9%BB%9E/"><span class="tag">DOM 查找節點</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/DOM-%E7%AF%80%E9%BB%9E%E5%B1%AC%E6%80%A7/"><span class="tag">DOM 節點屬性</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Date/"><span class="tag">Date</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Fetch/"><span class="tag">Fetch</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Firestore/"><span class="tag">Firestore</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Function/"><span class="tag">Function</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Google/"><span class="tag">Google</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Google-Drive/"><span class="tag">Google Drive</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/HTML/"><span class="tag">HTML</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/JavaScript/"><span class="tag">JavaScript</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Javascript/"><span class="tag">Javascript</span><span class="tag">16</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Math/"><span class="tag">Math</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Math%E6%96%B9%E6%B3%95/"><span class="tag">Math方法</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Object/"><span class="tag">Object</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Object%E8%B3%87%E6%96%99%E8%A4%87%E8%A3%BD/"><span class="tag">Object資料複製</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Promise/"><span class="tag">Promise</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/String/"><span class="tag">String</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/String%E6%96%B9%E6%B3%95/"><span class="tag">String方法</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/counter/"><span class="tag">counter</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/cursor/"><span class="tag">cursor</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/flex/"><span class="tag">flex</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/input/"><span class="tag">input</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/markdown/"><span class="tag">markdown</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/parse/"><span class="tag">parse()</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/this/"><span class="tag">this</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/this%E6%8C%87%E5%90%91/"><span class="tag">this指向</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/this%E6%96%B9%E6%B3%95/"><span class="tag">this方法</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%85%B6%E9%A4%98-%E5%B1%95%E9%96%8B%E9%81%8B%E7%AE%97%E5%AD%90/"><span class="tag">其餘/展開運算子</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%87%BD%E5%BC%8F%E9%96%89%E5%8C%85/"><span class="tag">函式閉包</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%BD%B1%E7%89%87%E6%A0%BC%E5%BC%8F/"><span class="tag">影片格式</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%BD%B1%E7%89%87%E8%A3%BD%E4%BD%9C/"><span class="tag">影片製作</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8/"><span class="tag">有序列表</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A8%99%E7%B1%A4/"><span class="tag">標籤</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%89%A9%E4%BB%B6%E5%8E%9F%E5%9E%8B%E3%80%81%E7%B9%BC%E6%89%BF/"><span class="tag">物件原型、繼承</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%89%A9%E4%BB%B6%E5%B1%AC%E6%80%A7/"><span class="tag">物件屬性</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%A1%A8%E5%96%AE%E6%A8%99%E7%B1%A4/"><span class="tag">表單標籤</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">訂閱 Email</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="訂閱"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="訂閱"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="默刻" height="28"></a><p class="is-size-7"><span>&copy; 2023 LeeU</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2019</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-tw");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到頁首" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此網站使用Cookie來改善您的體驗。",
+          dismiss: "知道了！",
+          allow: "允許使用Cookie",
+          deny: "拒絕",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="請輸入關鍵字..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"請輸入關鍵字...","untitled":"(無標題)","posts":"文章","pages":"頁面","categories":"分類","tags":"標籤"});
+        });</script></body></html>
