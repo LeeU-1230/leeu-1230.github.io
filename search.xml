@@ -1,79 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>搞懂影片檔案格式與編解碼器</title>
-    <url>/2022/08/03/%E6%90%9E%E6%87%82%E5%BD%B1%E7%89%87%E6%AA%94%E6%A1%88%E9%A1%9E%E5%9E%8B/</url>
-    <content><![CDATA[<h3 id="檔案格式"><a href="#檔案格式" class="headerlink" title="檔案格式"></a>檔案格式</h3><p>檔案格式就像是容器用來容納各種資訊，包含影片、音頻和元資料(檔案名稱、標籤、編解碼器資訊)，讓它可以做為單一檔案使用。</p>
-<a id="more"></a>
-
-<h4 id="mov（QuickTime）"><a href="#mov（QuickTime）" class="headerlink" title=".mov（QuickTime）"></a>.mov（QuickTime）</h4><p>由 Apple 公司開發。<br>與 MP4 檔一樣，MOV 視訊使用 MPEG-4 轉碼器進行編碼。</p>
-<h4 id="mp4（MPEG-4-Part-14）"><a href="#mp4（MPEG-4-Part-14）" class="headerlink" title=".mp4（MPEG-4 Part 14）"></a>.mp4（MPEG-4 Part 14）</h4><p>被廣泛支援，並且與 H.264 編解碼器相容。<br>適合用來製作高畫質影片，擁有相對較小的檔案大小。</p>
-<ul>
-<li>擁有音訊視訊的MPEG-4檔案通常使用標準擴展名 .mp4</li>
-<li>僅有音訊的MPEG-4檔案會使用 .m4a</li>
-<li>視訊格式：高效率視訊編碼（H.265 / HEVC）、進階視訊編碼（H.264 / AVC）</li>
-<li>音訊格式：進階音訊編碼（AAC）</li>
-</ul>
-<h4 id="avi（AVI）"><a href="#avi（AVI）" class="headerlink" title=".avi（AVI）"></a>.avi（AVI）</h4><p>雖然仍然被廣泛運用，但是年歲已久，這個容器無法搭配許多現代編解碼器。</p>
-<h4 id="wmv（WMV）"><a href="#wmv（WMV）" class="headerlink" title=".wmv（WMV）"></a>.wmv（WMV）</h4><p>限制眾多，它是舊版的微軟格式，只適用特定編解碼器。</p>
-<h4 id="mkv（Matroska）和-oog（Oog）"><a href="#mkv（Matroska）和-oog（Oog）" class="headerlink" title=".mkv（Matroska）和 .oog（Oog）"></a>.mkv（Matroska）和 .oog（Oog）</h4><p>這些是開放格式，，但是他們並未被廣泛支援。</p>
-<h4 id="AVCHD"><a href="#AVCHD" class="headerlink" title="AVCHD"></a>AVCHD</h4><p>是索尼與松下電器聯合發表的高畫質光碟壓縮技術。<br>AVCHD 標準基於 H.264 / MPEG-4 AVC 視訊編碼，支援480i、720p、1080i、1080p等格式，同時支援杜比數位5.1聲道或線性PCM 7.1聲道音訊壓縮。</p>
-<h3 id="編解碼器"><a href="#編解碼器" class="headerlink" title="編解碼器"></a>編解碼器</h3><p>編解碼器是壓縮、解壓縮檔案格式內影片和音頻數據的軟體，讓剪輯素材更容易處理。</p>
-<h4 id="ProRes-422-和-ProRes-4444"><a href="#ProRes-422-和-ProRes-4444" class="headerlink" title="ProRes 422 和 ProRes 4444"></a>ProRes 422 和 ProRes 4444</h4><p>是蘋果公司開發的高品質的有損影片壓縮格式，可用於高達8K的後期製作。<br>若使用 .mov 檔案，那麼 Apple ProRes 編解碼器會是個好選擇。<br>ProRes能夠大量減少影片的檔案大小，同時保留許多畫質。</p>
-<h4 id="H-264-MPEG-4-AVC"><a href="#H-264-MPEG-4-AVC" class="headerlink" title="H.264/MPEG-4 AVC"></a>H.264/MPEG-4 AVC</h4><p>是線上分享高畫質影片的最佳選擇之一。<br>雖然已經推出更新版本的H.265/HEVC編解碼器，但是H.264/AVC依然擁有廣泛支援。</p>
-<h4 id="H-265-HEVC"><a href="#H-265-HEVC" class="headerlink" title="H.265/HEVC"></a>H.265/HEVC</h4><p>被視為是 H.264/MPEG-4 AVC 標準的繼任者。<br>不僅提昇影像品質，同時也能達到H.264/MPEG-4 AVC兩倍之壓縮率。<br>最高解析度可達到8192×4320（8K解析度）。</p>
-<h3 id="社群媒體的最佳規格"><a href="#社群媒體的最佳規格" class="headerlink" title="社群媒體的最佳規格"></a>社群媒體的最佳規格</h3><ul>
-<li>.mp4最適合分享，因為它有廣泛支援，而且相對具備高畫質。</li>
-<li>H.264是將影片上傳到Facebook、Instagram和Twitter的好選擇。它具備高畫質、廣泛支援，並且提供很棒的壓縮檔案大小。</li>
-<li>如果有硬體設備，H.265非常適合超高畫質的直播影片。</li>
-<li>YouTube接受許多不同的檔案類型。如果要追求畫質，最好能夠堅持使用ProRes編碼的 .mov或是H.264編碼的 .mp4檔案。</li>
-</ul>
-<hr>
-
-<p>參考資料</p>
-<ul>
-<li><a href="https://www.shutterstock.com/zh-Hant/blog/video-file-types-and-codecs?amp=1">shutterstock</a></li>
-<li><a href="https://zh.m.wikipedia.org/wiki/%E7%B7%A8%E8%A7%A3%E7%A2%BC%E5%99%A8%E5%88%97%E8%A1%A8">維基百科</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>影片製作</category>
-      </categories>
-      <tags>
-        <tag>影片格式</tag>
-        <tag>影片製作</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>關於固態硬碟的二三事 - TLC和SLC的差異是什麼? DRAM Cache又是什麼?</title>
-    <url>/2023/04/03/%E9%97%9C%E6%96%BC%E5%9B%BA%E6%85%8B%E7%A1%AC%E7%A2%9F%E7%9A%84%E4%BA%8C%E4%B8%89%E4%BA%8B/</url>
-    <content><![CDATA[<p>SSD 固態硬碟是一種儲存硬碟類型，功能與傳統硬碟類似，但使用的技術不同。和 USB 隨身碟類似，SSD 使用快閃記憶體儲存資料，並以數位方式存取資料。</p>
-<a id="more"></a>
-<p>首先了解固態硬碟的內部構造：</p>
-<ol>
-<li><strong>NAND 快閃記憶體</strong>：SSD儲存資料的部分，以非易失性，即斷電後仍能保存資料的記憶體塊。</li>
-<li><strong>DRAM Cache</strong>：少量的易失性記憶體（需要電源來維護資料）用於緩存未來訪問的資訊。</li>
-<li><strong>主控晶片</strong>：連接NAND快閃記憶體與電腦之間的主要電子元件。<br>而常聽到的TLC和SLC顆粒就是指 NAND 快閃記憶體。</li>
-</ol>
-<p><img src="https://drive.google.com/uc?export=view&id=1IXgzZnL2rtPKTdB3Y4SVhudUhOnyzEch" alt="固態硬碟的內部構造"></p>
-<h3 id="NAND快閃記憶體"><a href="#NAND快閃記憶體" class="headerlink" title="NAND快閃記憶體"></a>NAND快閃記憶體</h3><p>由多個存放以位元（bit）為單位的單元構成，這些位元通過電荷被打開或關閉，如何組織這些開關單元來儲存在 SSD 上的資料，也決定了 NAND 快閃記憶體的命名，比如單級單元（SLC）快閃記憶體在每個存儲單元中包含一個位元。</p>
-<p>同樣的單元物理空間下，多級單元（MLC）能使容量翻倍，三級單元（TLC）更能使容量變為三倍，基於這種發展，為SSD趨向大容量開闢了道路。</p>
-<p>在性能、體積的優勢基礎上，NAND 快閃記憶體目前發展的方向便是降低每比特存儲成本、提高存儲容量。因此就催生了後來的四級單元（QLC），即每個存儲單元有4個bits的格式。</p>
-<p><strong>單級單元（Single Level Cell，簡稱SLC）</strong><br>這類型的快閃記憶體在讀寫資料時具有最為精確，還具有最長的資料讀寫壽命的優點。<br>SLC擦寫壽命約在9萬到10萬次之間。</p>
-<p><strong>多級單元（Multi Level Cell，簡稱MLC）</strong><br>多級單元俗稱 MLC，它的命名來源於它在 SLC 的 1bit/cell 的基礎上，變成了 2bit/cell。這樣做的一大優勢在於大大降低了大容量儲存快閃記憶體的成本。</p>
-<p><strong>三級單元（Triple Level Cell，簡稱TLC）</strong><br>TLC 快閃記憶體是快閃記憶體生產中最低廉的規格，其儲存達到了 3bit/cell，雖然高儲存密度實現了較廉價的大容量格式，但其讀寫的生命週期被極大地縮短，擦寫壽命只有短短的 500~1000次，同時讀寫速度較差。</p>
-<p><strong>四級單元（Quad-level cells，簡稱QLC）</strong><br>QLC 每個 SSD 顆粒可儲存 4bit 資料，跟 TLC 相比，QLC 的儲存密度提高了 33%。</p>
-<p><img src="https://drive.google.com/uc?export=view&id=1JPFZXgVlTbxqG4t8F4JZu5H37sIHhVxx" alt="NAND 快閃記憶體類型"></p>
-<h3 id="DRAM-Cache"><a href="#DRAM-Cache" class="headerlink" title="DRAM Cache"></a>DRAM Cache</h3><p>在SSD PCB上一個獨立的晶片，這顆DRAM晶片在SSD內負責的工作，就像一般記憶體在電腦運行過程中所負責的一樣，都是暫時存放部分數據，進而達到加速處理的目的。</p>
-<p>因為有了這個暫存的功能，讓很多讀寫過程是可以直接使用暫存內的數據，速度上會比從頭開始快很多，但同時也和記憶體一樣，只要關機斷電就會自動清除數據。</p>
-<p>另外，還有具備 <strong>SLC Cache</strong> 的固態硬碟，是在 TLC 或 QLC 的 NAND Flash IC 中，劃分出部分空間用來模擬 SLC 的寫入方式(每個 Cell 中只寫入 1bit 數據)，這樣就可以有效提升 SSD 在讀寫上的表現。</p>
-]]></content>
-      <tags>
-        <tag>固態硬碟</tag>
-        <tag>SSD</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CSS語法 - Animation(動畫)</title>
     <url>/2020/12/18/CSS/Animation-%E5%8B%95%E7%95%AB/</url>
     <content><![CDATA[<p>紀錄 CSS Animation的使用方法。</p>
@@ -1764,6 +1691,81 @@
       </categories>
       <tags>
         <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>搞懂影片檔案格式與編解碼器</title>
+    <url>/2022/08/03/%E6%9C%AA%E5%88%86%E9%A1%9E/%E6%90%9E%E6%87%82%E5%BD%B1%E7%89%87%E6%AA%94%E6%A1%88%E9%A1%9E%E5%9E%8B/</url>
+    <content><![CDATA[<h3 id="檔案格式"><a href="#檔案格式" class="headerlink" title="檔案格式"></a>檔案格式</h3><p>檔案格式就像是容器用來容納各種資訊，包含影片、音頻和元資料(檔案名稱、標籤、編解碼器資訊)，讓它可以做為單一檔案使用。</p>
+<a id="more"></a>
+
+<h4 id="mov（QuickTime）"><a href="#mov（QuickTime）" class="headerlink" title=".mov（QuickTime）"></a>.mov（QuickTime）</h4><p>由 Apple 公司開發。<br>與 MP4 檔一樣，MOV 視訊使用 MPEG-4 轉碼器進行編碼。</p>
+<h4 id="mp4（MPEG-4-Part-14）"><a href="#mp4（MPEG-4-Part-14）" class="headerlink" title=".mp4（MPEG-4 Part 14）"></a>.mp4（MPEG-4 Part 14）</h4><p>被廣泛支援，並且與 H.264 編解碼器相容。<br>適合用來製作高畫質影片，擁有相對較小的檔案大小。</p>
+<ul>
+<li>擁有音訊視訊的MPEG-4檔案通常使用標準擴展名 .mp4</li>
+<li>僅有音訊的MPEG-4檔案會使用 .m4a</li>
+<li>視訊格式：高效率視訊編碼（H.265 / HEVC）、進階視訊編碼（H.264 / AVC）</li>
+<li>音訊格式：進階音訊編碼（AAC）</li>
+</ul>
+<h4 id="avi（AVI）"><a href="#avi（AVI）" class="headerlink" title=".avi（AVI）"></a>.avi（AVI）</h4><p>雖然仍然被廣泛運用，但是年歲已久，這個容器無法搭配許多現代編解碼器。</p>
+<h4 id="wmv（WMV）"><a href="#wmv（WMV）" class="headerlink" title=".wmv（WMV）"></a>.wmv（WMV）</h4><p>限制眾多，它是舊版的微軟格式，只適用特定編解碼器。</p>
+<h4 id="mkv（Matroska）和-oog（Oog）"><a href="#mkv（Matroska）和-oog（Oog）" class="headerlink" title=".mkv（Matroska）和 .oog（Oog）"></a>.mkv（Matroska）和 .oog（Oog）</h4><p>這些是開放格式，，但是他們並未被廣泛支援。</p>
+<h4 id="AVCHD"><a href="#AVCHD" class="headerlink" title="AVCHD"></a>AVCHD</h4><p>是索尼與松下電器聯合發表的高畫質光碟壓縮技術。<br>AVCHD 標準基於 H.264 / MPEG-4 AVC 視訊編碼，支援480i、720p、1080i、1080p等格式，同時支援杜比數位5.1聲道或線性PCM 7.1聲道音訊壓縮。</p>
+<h3 id="編解碼器"><a href="#編解碼器" class="headerlink" title="編解碼器"></a>編解碼器</h3><p>編解碼器是壓縮、解壓縮檔案格式內影片和音頻數據的軟體，讓剪輯素材更容易處理。</p>
+<h4 id="ProRes-422-和-ProRes-4444"><a href="#ProRes-422-和-ProRes-4444" class="headerlink" title="ProRes 422 和 ProRes 4444"></a>ProRes 422 和 ProRes 4444</h4><p>是蘋果公司開發的高品質的有損影片壓縮格式，可用於高達8K的後期製作。<br>若使用 .mov 檔案，那麼 Apple ProRes 編解碼器會是個好選擇。<br>ProRes能夠大量減少影片的檔案大小，同時保留許多畫質。</p>
+<h4 id="H-264-MPEG-4-AVC"><a href="#H-264-MPEG-4-AVC" class="headerlink" title="H.264/MPEG-4 AVC"></a>H.264/MPEG-4 AVC</h4><p>是線上分享高畫質影片的最佳選擇之一。<br>雖然已經推出更新版本的H.265/HEVC編解碼器，但是H.264/AVC依然擁有廣泛支援。</p>
+<h4 id="H-265-HEVC"><a href="#H-265-HEVC" class="headerlink" title="H.265/HEVC"></a>H.265/HEVC</h4><p>被視為是 H.264/MPEG-4 AVC 標準的繼任者。<br>不僅提昇影像品質，同時也能達到H.264/MPEG-4 AVC兩倍之壓縮率。<br>最高解析度可達到8192×4320（8K解析度）。</p>
+<h3 id="社群媒體的最佳規格"><a href="#社群媒體的最佳規格" class="headerlink" title="社群媒體的最佳規格"></a>社群媒體的最佳規格</h3><ul>
+<li>.mp4最適合分享，因為它有廣泛支援，而且相對具備高畫質。</li>
+<li>H.264是將影片上傳到Facebook、Instagram和Twitter的好選擇。它具備高畫質、廣泛支援，並且提供很棒的壓縮檔案大小。</li>
+<li>如果有硬體設備，H.265非常適合超高畫質的直播影片。</li>
+<li>YouTube接受許多不同的檔案類型。如果要追求畫質，最好能夠堅持使用ProRes編碼的 .mov或是H.264編碼的 .mp4檔案。</li>
+</ul>
+<hr>
+
+<p>參考資料</p>
+<ul>
+<li><a href="https://www.shutterstock.com/zh-Hant/blog/video-file-types-and-codecs?amp=1">shutterstock</a></li>
+<li><a href="https://zh.m.wikipedia.org/wiki/%E7%B7%A8%E8%A7%A3%E7%A2%BC%E5%99%A8%E5%88%97%E8%A1%A8">維基百科</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>未分類</category>
+      </categories>
+      <tags>
+        <tag>影片格式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>關於固態硬碟的二三事 - TLC和SLC的差異是什麼? DRAM Cache又是什麼?</title>
+    <url>/2023/04/03/%E6%9C%AA%E5%88%86%E9%A1%9E/%E9%97%9C%E6%96%BC%E5%9B%BA%E6%85%8B%E7%A1%AC%E7%A2%9F%E7%9A%84%E4%BA%8C%E4%B8%89%E4%BA%8B/</url>
+    <content><![CDATA[<p>SSD 固態硬碟是一種儲存硬碟類型，功能與傳統硬碟類似，但使用的技術不同。和 USB 隨身碟類似，SSD 使用快閃記憶體儲存資料，並以數位方式存取資料。</p>
+<a id="more"></a>
+<p>首先了解固態硬碟的內部構造：</p>
+<ol>
+<li><strong>NAND 快閃記憶體</strong>：SSD儲存資料的部分，以非易失性，即斷電後仍能保存資料的記憶體塊。</li>
+<li><strong>DRAM Cache</strong>：少量的易失性記憶體（需要電源來維護資料）用於緩存未來訪問的資訊。</li>
+<li><strong>主控晶片</strong>：連接NAND快閃記憶體與電腦之間的主要電子元件。<br>而常聽到的TLC和SLC顆粒就是指 NAND 快閃記憶體。</li>
+</ol>
+<p><img src="https://drive.google.com/uc?export=view&id=1IXgzZnL2rtPKTdB3Y4SVhudUhOnyzEch" alt="固態硬碟的內部構造"></p>
+<h3 id="NAND快閃記憶體"><a href="#NAND快閃記憶體" class="headerlink" title="NAND快閃記憶體"></a>NAND快閃記憶體</h3><p>由多個存放以位元（bit）為單位的單元構成，這些位元通過電荷被打開或關閉，如何組織這些開關單元來儲存在 SSD 上的資料，也決定了 NAND 快閃記憶體的命名，比如單級單元（SLC）快閃記憶體在每個存儲單元中包含一個位元。</p>
+<p>同樣的單元物理空間下，多級單元（MLC）能使容量翻倍，三級單元（TLC）更能使容量變為三倍，基於這種發展，為SSD趨向大容量開闢了道路。</p>
+<p>在性能、體積的優勢基礎上，NAND 快閃記憶體目前發展的方向便是降低每比特存儲成本、提高存儲容量。因此就催生了後來的四級單元（QLC），即每個存儲單元有4個bits的格式。</p>
+<p><strong>單級單元（Single Level Cell，簡稱SLC）</strong><br>這類型的快閃記憶體在讀寫資料時具有最為精確，還具有最長的資料讀寫壽命的優點。<br>SLC擦寫壽命約在9萬到10萬次之間。</p>
+<p><strong>多級單元（Multi Level Cell，簡稱MLC）</strong><br>多級單元俗稱 MLC，它的命名來源於它在 SLC 的 1bit/cell 的基礎上，變成了 2bit/cell。這樣做的一大優勢在於大大降低了大容量儲存快閃記憶體的成本。</p>
+<p><strong>三級單元（Triple Level Cell，簡稱TLC）</strong><br>TLC 快閃記憶體是快閃記憶體生產中最低廉的規格，其儲存達到了 3bit/cell，雖然高儲存密度實現了較廉價的大容量格式，但其讀寫的生命週期被極大地縮短，擦寫壽命只有短短的 500~1000次，同時讀寫速度較差。</p>
+<p><strong>四級單元（Quad-level cells，簡稱QLC）</strong><br>QLC 每個 SSD 顆粒可儲存 4bit 資料，跟 TLC 相比，QLC 的儲存密度提高了 33%。</p>
+<p><img src="https://drive.google.com/uc?export=view&id=1JPFZXgVlTbxqG4t8F4JZu5H37sIHhVxx" alt="NAND 快閃記憶體類型"></p>
+<h3 id="DRAM-Cache"><a href="#DRAM-Cache" class="headerlink" title="DRAM Cache"></a>DRAM Cache</h3><p>在SSD PCB上一個獨立的晶片，這顆DRAM晶片在SSD內負責的工作，就像一般記憶體在電腦運行過程中所負責的一樣，都是暫時存放部分數據，進而達到加速處理的目的。</p>
+<p>因為有了這個暫存的功能，讓很多讀寫過程是可以直接使用暫存內的數據，速度上會比從頭開始快很多，但同時也和記憶體一樣，只要關機斷電就會自動清除數據。</p>
+<p>另外，還有具備 <strong>SLC Cache</strong> 的固態硬碟，是在 TLC 或 QLC 的 NAND Flash IC 中，劃分出部分空間用來模擬 SLC 的寫入方式(每個 Cell 中只寫入 1bit 數據)，這樣就可以有效提升 SSD 在讀寫上的表現。</p>
+]]></content>
+      <categories>
+        <category>未分類</category>
+      </categories>
+      <tags>
+        <tag>固態硬碟</tag>
+        <tag>SSD</tag>
       </tags>
   </entry>
 </search>
